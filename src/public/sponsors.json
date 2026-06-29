@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Elmbrook Education Foundation",
+    "image": "/assets/sponsor-logos/sponsors-elmbrook-education-foundation.png",
+    "website": "https://eef.elmbrookschools.org/"
+  },
+  {
+    "name": "School District of Elmbrook",
+    "image": "/assets/sponsor-logos/sponsors-elmbrook-schools.png",
+    "website": "https://www.elmbrookschools.org/"
+  },
+  {
+    "name": "GE HealthCare",
+    "image": "/assets/sponsor-logos/sponsors-ge-healthcare.png",
+    "website": "https://www.gehealthcare.com/"
+  },
+  {
+    "name": "Johnson Controls",
+    "image": "/assets/sponsor-logos/sponsors-johnson-control.png",
+    "website": "https://www.johnsoncontrols.com/"
+  },
+  {
+    "name": "MC Squared Computing",
+    "image": "/assets/sponsor-logos/sponsors-mc-squared-computing.png",
+    "website": "https://www.mc2computing.com/"
+  },
+  {
+    "name": "MelonBotics",
+    "image": "/assets/sponsor-logos/sponsors-melon-botics.png",
+    "website": "https://www.melonbotics.com/"
+  },
+  {
+    "name": "Milliman",
+    "image": "/assets/sponsor-logos/sponsors-milliman.png",
+    "website": "https://www.milliman.com/"
+  },
+  {
+    "name": "Milwaukee Tool",
+    "image": "/assets/sponsor-logos/sponsors-milwaukee.png",
+    "website": "https://www.milwaukeetool.com/"
+  },
+  {
+    "name": "MPC Advisers",
+    "image": "/assets/sponsor-logos/sponsors-mpc-advisers.png",
+    "website": "https://mpcadvisers.com/"
+  },
+  {
+    "name": "Northwestern Mutual",
+    "image": "/assets/sponsor-logos/sponsors-northwestern-mutual.png",
+    "website": "https://www.northwesternmutual.com/"
+  },
+  {
+    "name": "PRSG",
+    "image": "/assets/sponsor-logos/sponsors-prsg.png",
+    "website": "N/A"
+  },
+  {
+    "name": "Reserve Advisors",
+    "image": "/assets/sponsor-logos/sponsors-reserve-advisors.png",
+    "website": "https://www.reserveadvisors.com/"
+  },
+  {
+    "name": "Wisconsin Department of Public Instruction",
+    "image": "/assets/sponsor-logos/sponsors-wisconsin-department-of-public-instruction.png",
+    "website": "https://dpi.wi.gov/"
+  }
+]
