@@ -1,0 +1,134 @@
+{
+  "hero": {
+    "chip": "Growing FIRST · FLL Mentoring",
+    "title": "Guiding the next generation of FIRST.",
+    "subtitle": "Every GEarheads member started somewhere in FIRST LEGO League. We judge FLL events, showcase our FTC robot, deliver keynotes about the path from FLL to FTC, and guide parents through starting teams of their own — because the best way to grow the ecosystem is to show what it can become."
+  },
+  "impact": {
+    "label": "Why it matters",
+    "text": "GEarheads started as FLL students. That journey — from building LEGO robots on a cafeteria table to qualifying for the FTC World Championship — is exactly the pipeline FIRST is designed to create. When we show up at FLL events, we are not outsiders visiting a younger program. We are proof of what FLL can lead to, and the credibility that comes from that shared experience is something no slide deck can replicate."
+  },
+  "approach": {
+    "label": "Our Approach",
+    "heading": "We were those kids. Now we show them the path.",
+    "body": "The single most powerful thing GEarheads can offer FLL students is proof. Not statistics, not brochures — actual students, a few years older, who walked into their first FLL meeting with no idea what they were doing and came out the other end competing at a World Championship. That shared origin story opens doors that formal outreach cannot. When an eighth-grader at an FLL event asks our members how they got started, the honest answer — "we were doing exactly this a few years ago" — lands differently than any recruiting pitch.\n\nOur presence at FLL events is intentional across multiple roles. We judge, which means we are inside the event structure, reading research projects and scoring robot runs, with direct access to the families and students who most need a picture of where FLL leads. We showcase our FTC robot on the event floor, giving curious students a chance to see — and often drive — a machine built almost entirely from scratch by their peers. And we deliver keynotes to parents and students together, because the FLL-to-FTC transition only happens when families understand the pathway and believe it is achievable for their kid.\n\nParent guidance is a deliberate focus that most outreach programs skip. Parents are often the bottleneck: they want their child to continue in FIRST but do not know how to start an FTC team, what it costs, what it demands, or who else is doing it in their community. We address those questions directly — sharing what our team actually costs, how our season is structured, and what the journey from FLL to competition looks like from inside it. That transparency demystifies the transition and makes it more likely that motivated FLL families take the next step.",
+    "inlinePhoto": {
+      "src": null,
+      "caption": "GEarheads members explaining the FLL-to-FTC journey to a group of FLL families"
+    }
+  },
+  "activities": [
+    {
+      "id": "judging",
+      "label": "Judging FLL Projects",
+      "iconKey": "gavel",
+      "colorKey": "secondary",
+      "tagline": "Reading research projects alongside certified FLL judges.",
+      "description": "FLL judging puts our members inside the most consequential part of the event for a FIRST team: the judged project and robot design sessions. Certified FLL judges lead every judging panel, and our members sit alongside them, reviewing teams' Innovation Projects and Core Values demonstrations. The experience is genuinely educational in both directions. Our members get a rigorous first-person view of what FLL judging looks for — which directly informs how we approach our own engineering notebook and portfolio work. FLL teams get a panel that includes people who have recently been through the same experience, which makes the feedback feel less like a tribunal and more like a constructive review from people who understand the challenges from the inside.\n\nJudging also keeps us honest about our own documentation habits. Reviewing dozens of engineering notebooks in a single day makes the difference between a strong notebook and a thin one immediately obvious. That perspective comes back into our season: GEarheads members who have judged tend to write more substantive notebook entries because they have seen what a judge is actually looking for. It is one of the most direct feedback loops between our mentoring work and our own competitive performance.",
+      "highlights": [
+        "Sit alongside certified FLL judges in project review sessions",
+        "Score Innovation Projects and Core Values demonstrations",
+        "Provide constructive feedback from a near-peer perspective",
+        "Gain direct insight into what FLL judging standards require",
+        "Bring judging experience back into our own notebook and portfolio work"
+      ]
+    },
+    {
+      "id": "showcase",
+      "label": "FTC Robot Showcase",
+      "iconKey": "robot",
+      "colorKey": "secondary",
+      "tagline": "A working FTC robot on the FLL event floor — driven by students, for students.",
+      "description": "We bring our full FTC competition robot to FLL events and set it up in a designated showcase area where attendees can watch live demonstrations and, when the event flow allows, take turns driving it themselves. The showcase is calibrated to spark curiosity, not to impress. We explain what each subsystem does in plain language, describe the engineering decisions behind it, and talk honestly about the things we built that did not work. That candor — here is a design we scrapped, here is the test data that told us why — is more interesting to a curious FLL student than a polished pitch would be.\n\nThe robot also answers the implicit question every FLL student and parent is quietly carrying: what does this lead to? Seeing a robot that was designed, fabricated, and programmed by students ages thirteen to eighteen makes the FTC pathway concrete in a way that a photograph cannot. We have had FLL students spend twenty minutes at the showcase asking detailed mechanism questions, and we have had parents approach afterward to ask how their child could join a team like ours. Both outcomes are the point.",
+      "highlights": [
+        "Full FTC competition robot demonstrated at the event",
+        "Live drive demonstrations and hands-on interaction when possible",
+        "Plain-language explanations of subsystems and design decisions",
+        "Honest discussion of failed prototypes and what we learned",
+        "A direct, tangible answer to 'what does FLL lead to?'"
+      ]
+    },
+    {
+      "id": "keynote",
+      "label": "FLL → FTC Keynote",
+      "iconKey": "mic",
+      "colorKey": "secondary",
+      "tagline": "Sharing the GEarheads FLL-to-FTC journey, unfiltered.",
+      "description": "The keynote is our most direct opportunity to shape how FLL students and their families think about the road ahead. We structure it around the actual GEarheads origin story: when we started in FLL, what the first season felt like, what drove the decision to form an FTC team, and what we had to figure out along the way. The goal is not a recruitment pitch — it is a firsthand account that makes the journey legible. Students who hear it leave with a concrete understanding of what FTC actually is, how it differs from FLL, and what kind of commitment it involves.\n\nWe are deliberate about including the hard parts. Starting an FTC team requires fundraising, a dedicated mentor, a workspace, and a significant increase in the technical complexity of the robot. Glossing over those realities would produce more inquiries but fewer teams that actually succeed. Instead, we talk about the real costs, the real time commitment, and the real support structure we needed — and we pair each of those with the moment it became worth it. That balance between honesty and genuine enthusiasm is what makes the keynote land. Parents in the room have told us it was the first time the FTC pathway felt real rather than aspirational.",
+      "highlights": [
+        "The real GEarheads FLL-to-FTC origin story — unfiltered",
+        "Concrete description of what FTC is and how it differs from FLL",
+        "Honest discussion of the commitment, costs, and challenges",
+        "The moments that made the transition worth it",
+        "Q&A with students and parents together"
+      ]
+    },
+    {
+      "id": "parent-guidance",
+      "label": "Parent Guidance",
+      "iconKey": "family",
+      "colorKey": "secondary",
+      "tagline": "Demystifying the FTC transition for the families who drive it.",
+      "description": "Motivated FLL students rarely make the leap to FTC on their own — they make it with a parent who understood enough about what FTC requires to support the decision and help navigate the logistics. That is why parent guidance is a dedicated strand of our FLL mentoring work, not an afterthought. We hold structured conversations with FLL parents that cover the full landscape: what an FTC season looks like, what a team needs to function, what realistic costs are, how to find a mentor or sponsor, and what resources the Wisconsin FTC ecosystem provides.\n\nWe also address the questions parents are often too uncertain to ask out loud: whether their child is 'technical enough' for FTC (the answer is yes, with the right team culture), what the time commitment looks like across a full season (more than they expect, but structured around school), and what happens if the team does not qualify for higher-level competition (the experience is still transformative, and most teams improve sharply in their second year). The parents who leave these conversations with a clear mental model of the pathway are dramatically more likely to help their child take the next step than those who walked in uncertain. We think of parent guidance as leverage: one conversation with an engaged parent can create a team that runs for years.",
+      "highlights": [
+        "What an FTC season looks like from start to competition",
+        "Team formation: finding mentors, sponsors, and workspace",
+        "Realistic cost breakdown and funding sources",
+        "Wisconsin FTC ecosystem resources and support",
+        "Honest answers to the questions parents hesitate to ask"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "Mentored FLL Team",
+      "role": "FLL Partner Team",
+      "note": "An FLL team we directly coached — portrait slot for team photo",
+      "photo": null
+    },
+    {
+      "name": "FLL Event Judge",
+      "role": "Judging Partner",
+      "note": "Certified FLL judge we partnered with at an event",
+      "photo": null
+    },
+    {
+      "name": "Parent Coach",
+      "role": "Team Starter",
+      "note": "A parent we guided through starting an FTC team",
+      "photo": null
+    },
+    {
+      "name": "FLL Head Referee",
+      "role": "Event Coordinator",
+      "note": "Head referee at a GEarheads-attended FLL tournament",
+      "photo": null
+    }
+  ],
+  "photos": [
+    {
+      "src": null,
+      "caption": "Judging an FLL Innovation Project presentation"
+    },
+    {
+      "src": null,
+      "caption": "FTC robot showcase on the FLL event floor"
+    },
+    {
+      "src": null,
+      "caption": "Keynote to FLL families — the FLL-to-FTC journey"
+    },
+    {
+      "src": null,
+      "caption": "FLL student taking a turn driving our FTC robot"
+    },
+    {
+      "src": null,
+      "caption": "Parent Q&A after the keynote presentation"
+    },
+    {
+      "src": null,
+      "caption": "GEarheads member reviewing an FLL engineering notebook"
+    }
+  ]
+}

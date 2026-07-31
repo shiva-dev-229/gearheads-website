@@ -1,0 +1,89 @@
+{
+  "iterationLoop": [
+    {
+      "id": "test",
+      "label": "Test",
+      "iconKey": "science",
+      "description": "Data collection at scrimmages and qualifiers",
+      "details": "Every scrimmage and qualifier is a structured data-collection session. Cycle times, jam rates, launcher accuracy, and autonomous success rates are recorded match-by-match. Raw performance numbers go straight into the team's FMEA and Monte Carlo models — not just a general sense of how the robot felt."
+    },
+    {
+      "id": "analyze",
+      "label": "Analyze",
+      "iconKey": "analytics",
+      "description": "FMEA and Monte Carlo review to rank failure modes",
+      "details": "After testing, failure modes are logged in the FMEA — each ranked by severity and likelihood. Monte Carlo simulations are updated with real match statistics to project how identified issues affect win probability. The question is always: does fixing this increase our expected score per match?"
+    },
+    {
+      "id": "fix",
+      "label": "Fix",
+      "iconKey": "build",
+      "description": "Targeted design change based on ranked failure risk",
+      "details": "Design changes are made in Onshape against the specific failure mode identified in FMEA, not based on intuition. Every potential modification is evaluated against the Game Points Matrix before fabrication begins. Simplicity and reliability take priority over adding features."
+    },
+    {
+      "id": "validate",
+      "label": "Validate",
+      "iconKey": "checkCircle",
+      "description": "Re-test to confirm the fix held and no regression introduced",
+      "details": "After the fix is fabricated and integrated, the team retests under match-like conditions — repeated cycle stress, defense scenarios, and autonomous runs. Monte Carlo simulations are re-run with updated reliability estimates. If a component doesn't demonstrably improve projected match performance, it gets redesigned."
+    }
+  ],
+  "testingWorkflow": [
+    {
+      "iconKey": "event",
+      "step": "Pre-competition baseline",
+      "description": "Before each event, the team runs a fixed set of benchmark tests — cycle time under no defense, launcher accuracy from three zones, autonomous completion rate — so that post-event numbers have a clean baseline to compare against."
+    },
+    {
+      "iconKey": "science",
+      "step": "Match-by-match data collection",
+      "description": "During scrimmages and qualifiers, cycle times, jam events, and autonomous outcomes are recorded match-by-match. Data goes directly into the FMEA and Monte Carlo models, not a general impression of how the robot performed."
+    },
+    {
+      "iconKey": "analytics",
+      "step": "FMEA update and ranking",
+      "description": "After the event, each observed failure mode is logged — ranked by severity and likelihood. The FMEA drives which issues get addressed first. Issues that appear low-severity but happen frequently move up the priority list."
+    },
+    {
+      "iconKey": "tune",
+      "step": "Sprint-based iteration",
+      "description": "The team operates on two-week sprints aligned to competition dates. Each sprint starts with a sprint plan meeting where FMEA findings are translated into specific design or software tasks. Obstacles are addressed openly and priorities adjusted when needed."
+    },
+    {
+      "iconKey": "checkCircle",
+      "step": "Validation under match conditions",
+      "description": "Changes are validated by running repeated cycles under match-like stress — defense pressure, back-to-back cycles, and full autonomous runs. Monte Carlo simulations are updated with new reliability estimates before the next event."
+    }
+  ],
+  "fmea": {
+    "title": "FMEA-Driven Fixes",
+    "examples": [
+      {
+        "season": "Mark 1",
+        "failure": "Picking up artifacts was difficult with the passive claw",
+        "fix": "Implemented active intake rollers for reliable artifact pickup"
+      },
+      {
+        "season": "Mark 1",
+        "failure": "Robot was easily moved by opposing defense",
+        "fix": "Increased robot footprint and added mass to improve defensive stability"
+      },
+      {
+        "season": "Mark 1",
+        "failure": "Launcher could only fire from the close zone",
+        "fix": "Added an adjustable launch angle rail above the artifact launcher"
+      },
+      {
+        "season": "Mark 2",
+        "failure": "Robot unable to sort artifacts by motif pattern",
+        "fix": "Added rotating spindexer with integrated color sensor for auto-sort"
+      },
+      {
+        "season": "Mark 2",
+        "failure": "Artifacts occasionally misfired on intake transition",
+        "fix": "Added an additional omni wheel to reliably feed artifacts to the launcher"
+      }
+    ]
+  }
+}

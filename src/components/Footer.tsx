@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import { MdOpenInNew } from 'react-icons/md'
 import { FaGithub } from 'react-icons/fa'
 import { theme } from '../styles/theme'
-import logoImg from '../../assets/logos/logo-black-removebg-preview.png'
+import logoImg from '../assets/logos/logo-black-removebg-preview.png'
 
 const FooterWrapper = styled.footer`
   background: ${theme.colors.background};
   box-shadow: ${theme.shadows.neoRaised};
-  padding: 64px ${theme.spacing.marginMobile} 0;
+  padding: 48px ${theme.spacing.marginMobile} 0;
 
   @media (min-width: 768px) {
-    padding: 80px ${theme.spacing.marginDesktop} 0;
+    padding: 60px ${theme.spacing.marginDesktop} 0;
   }
 `
 
@@ -208,11 +208,10 @@ export default function Footer() {
             </NavCol>
 
             <NavCol>
-              <ColTitle>Technical</ColTitle>
+              <ColTitle>Design</ColTitle>
               <NavLinks>
-                <li><InternalLink to="/robot">Robot</InternalLink></li>
-                <li><InternalLink to="/engineering">Engineering</InternalLink></li>
-                <li><InternalLink to="/programming">Programming</InternalLink></li>
+                <li><InternalLink to="/engineering">Mechanical</InternalLink></li>
+                <li><InternalLink to="/programming">Software</InternalLink></li>
               </NavLinks>
             </NavCol>
 

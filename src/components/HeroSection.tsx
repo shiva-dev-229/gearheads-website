@@ -1,29 +1,30 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import { Link } from 'react-router-dom'
 import { theme } from '../styles/theme'
 import BlurText from './reactbits/BlurText'
 import BorderGlow from './reactbits/BorderGlow'
-import robotImg from '../photos/home/robot-removebg-preview.png'
+import robotImg from '../assets/photos/home/robot-removebg-preview.png'
 
-const spinSlow = keyframes`
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+const floatDrift = keyframes`
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-8px); }
 `
 
-const spinSlowReverse = keyframes`
-  from { transform: rotate(360deg); }
-  to   { transform: rotate(0deg); }
+const floatAnimation = css`
+  @media (prefers-reduced-motion: no-preference) {
+    animation: ${floatDrift} 7s ease-in-out infinite alternate;
+  }
 `
 
 const Section = styled.section`
   width: 100%;
   max-width: ${theme.spacing.containerMax};
   margin: 0 auto;
-  padding: 48px ${theme.spacing.marginMobile};
+  padding: 36px ${theme.spacing.marginMobile};
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 36px;
 
   @media (min-width: 768px) {
     padding: ${theme.spacing.sectionPaddingLg} ${theme.spacing.marginDesktop};
@@ -71,7 +72,7 @@ const BadgeText = styled.span`
 
 const Headline = styled.h1`
   font-family: ${theme.fonts.display};
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.2;
@@ -81,7 +82,7 @@ const Headline = styled.h1`
   gap: 4px;
 
   @media (min-width: 768px) {
-    font-size: 64px;
+    font-size: 52px;
   }
 `
 
@@ -91,7 +92,7 @@ const HeadlineAccent = styled.span`
 
 const SubHeadline = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.6;
   color: ${theme.colors.onSurfaceVariant};
   max-width: 560px;
@@ -166,35 +167,21 @@ const VisualWrapper = styled.div`
   }
 `
 
-const RadialBg = styled.div`
+const AmbientGlow = styled.div`
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, rgba(75, 142, 255, 0.05) 0%, ${theme.colors.background} 70%);
+  width: 140%;
+  height: 140%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse 60% 55% at 50% 50%,
+    rgba(75, 142, 255, 0.07) 0%,
+    rgba(75, 142, 255, 0.03) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
   z-index: 0;
-`
-
-const SpinRingOuter = styled.div`
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  border-radius: 50%;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInset};
-  animation: ${spinSlow} 60s linear infinite;
-  z-index: 0;
-  opacity: 0.5;
-`
-
-const SpinRingInner = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaised};
-  animation: ${spinSlowReverse} 40s linear infinite;
-  z-index: 0;
-  opacity: 0.5;
 `
 
 const RobotImage = styled.img`
@@ -204,7 +191,8 @@ const RobotImage = styled.img`
   max-width: 400px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 32px rgba(74, 225, 131, 0.12));
+  filter: drop-shadow(0 8px 40px rgba(74, 225, 131, 0.10)) drop-shadow(0 0 24px rgba(75, 142, 255, 0.08));
+  ${floatAnimation}
 
   @media (min-width: 768px) {
     max-width: 480px;
@@ -235,7 +223,7 @@ export default function HeroSection() {
 
         <Headline>
           <BlurText
-            text="FTC Team Gearheads"
+            text="FTC Team GEarheads"
             animateBy="words"
             delay={120}
             stepDuration={0.4}
@@ -253,7 +241,7 @@ export default function HeroSection() {
         </Headline>
 
         <SubHeadline>
-          The Gearheads are a student-led FTC team from Wisconsin that builds competitive robots
+          The GEarheads are a student-led FTC team from Wisconsin that builds competitive robots
           and brings hands-on STEM to the community through demos, workshops, and events.
         </SubHeadline>
 
@@ -278,9 +266,7 @@ export default function HeroSection() {
       </TextContent>
 
       <VisualWrapper>
-        <RadialBg />
-        <SpinRingOuter />
-        <SpinRingInner />
+        <AmbientGlow />
         <RobotImage src={robotImg} alt="Gearheads FTC robot" />
       </VisualWrapper>
     </Section>

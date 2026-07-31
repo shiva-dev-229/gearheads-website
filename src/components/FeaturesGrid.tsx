@@ -7,14 +7,14 @@ const Section = styled.section`
   width: 100%;
   max-width: ${theme.spacing.containerMax};
   margin: 0 auto;
-  padding: 48px ${theme.spacing.marginMobile};
+  padding: 36px ${theme.spacing.marginMobile};
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 28px;
 
   @media (min-width: 768px) {
     padding: ${theme.spacing.sectionPaddingLg} ${theme.spacing.marginDesktop};
-    gap: 48px;
+    gap: 36px;
   }
 `
 
@@ -30,20 +30,20 @@ const SectionHeader = styled.div`
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.headline};
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: ${theme.colors.onSurface};
 
   @media (min-width: 768px) {
-    font-size: 40px;
+    font-size: 34px;
   }
 `
 
 const SectionSubtitle = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: ${theme.colors.onSurfaceVariant};
 `

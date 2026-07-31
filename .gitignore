@@ -58,6 +58,9 @@ playwright/.cache/
 # Claude Code internal
 .claude/settings.local.json
 
+# Superpowers / visual companion brainstorm artifacts
+.superpowers/
+
 # Package manager locks (keep package-lock.json, ignore others if not used)
 yarn.lock
 pnpm-lock.yaml

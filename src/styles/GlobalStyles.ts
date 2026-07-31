@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 import { theme } from './theme'
+import AsimovFont from '../assets/fonts/Asimov.ttf'
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Asimov';
-    src: url('/fonts/Asimov.ttf') format('truetype');
+    src: url(${AsimovFont}) format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -18,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -27,6 +29,8 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   ::selection {

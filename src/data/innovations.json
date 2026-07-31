@@ -1,0 +1,52 @@
+{
+  "innovations": [
+    {
+      "id": "telemetry-dashboard",
+      "iconKey": "dashboard",
+      "title": "Live Telemetry Dashboard",
+      "description": "We stream real-time robot state — pose, sensor values, PID error, and motor output — to FTC Dashboard and a field overlay. Instead of guessing why a mechanism misbehaved, we watch the data live and replay logged runs in the pit. This turned debugging from a guessing game into a data-driven process.",
+      "tag": "Tooling",
+      "wide": true
+    },
+    {
+      "id": "optical-odometry",
+      "iconKey": "sensors",
+      "title": "Optical Odometry",
+      "description": "Precise position tracking that resists wheel slip, fused with the IMU for reliable heading.",
+      "tag": "Navigation",
+      "wide": false
+    },
+    {
+      "id": "live-tuning",
+      "iconKey": "tune",
+      "title": "No-Recompile Tuning",
+      "description": "PID gains and path constants are editable live, cutting a full tuning cycle from an afternoon to minutes.",
+      "tag": "Workflow",
+      "wide": false
+    },
+    {
+      "id": "reusable-architecture",
+      "iconKey": "widgets",
+      "title": "Season-Reusable Architecture",
+      "description": "Our subsystem and control framework carries over year to year. Each season starts from a proven foundation instead of a blank slate — so early-season time goes into strategy and mechanisms, not rebuilding the software base.",
+      "tag": "Architecture",
+      "wide": true
+    },
+    {
+      "id": "apriltag-alignment",
+      "iconKey": "cameraEnhance",
+      "title": "AprilTag Alignment",
+      "description": "Vision-based pose correction that eliminates odometry drift and enables precise scoring alignment.",
+      "tag": "Vision",
+      "wide": false
+    },
+    {
+      "id": "sim-and-logging",
+      "iconKey": "science",
+      "title": "Run Logging & Replay",
+      "description": "Every autonomous run is logged and replayable, so a failure at competition can be diagnosed from the data.",
+      "tag": "Reliability",
+      "wide": false
+    }
+  ]
+}

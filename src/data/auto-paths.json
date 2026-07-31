@@ -1,0 +1,29 @@
+{
+  "intro": "When we form an alliance, partners always ask which autonomous we can run and where we start. This page lists every auto path we have available — its starting position on the field, what it does, and a diagram of the route — so alliance partners can coordinate starting spots and avoid collisions before the match.",
+  "paths": [
+    {
+      "id": "example-1",
+      "name": "Example Path One",
+      "startingLocation": "Left tile, against the wall",
+      "description": "Placeholder entry — replace with a real routine. Describe what the robot does: which elements it scores, where it drives, and where it parks at the end so partners know which zones are occupied.",
+      "tags": ["Left start", "Scores preload", "Parks"],
+      "image": ""
+    },
+    {
+      "id": "example-2",
+      "name": "Example Path Two",
+      "startingLocation": "Right tile, center-aligned",
+      "description": "Placeholder entry — replace with a real routine. Note anything a partner needs: how far the robot travels, whether it crosses the field, and how long the routine takes.",
+      "tags": ["Right start", "Stays on our side"],
+      "image": ""
+    },
+    {
+      "id": "example-3",
+      "name": "Example Path Three",
+      "startingLocation": "Center tile",
+      "description": "Placeholder entry — replace with a real routine. Add a path diagram image so partners can see the exact route at a glance.",
+      "tags": ["Center start", "Short routine"],
+      "image": ""
+    }
+  ]
+}

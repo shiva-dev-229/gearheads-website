@@ -1,0 +1,125 @@
+{
+  "hero": {
+    "chip": "Events & Demos · Community Demos",
+    "title": "Taking Robotics to the Community",
+    "subtitle": "We don't wait for people to find FIRST — we bring the robot to libraries, schools, and community events across Elmbrook, showing students and families firsthand what student-built robotics looks like."
+  },
+  "impact": {
+    "label": "Our Approach",
+    "text": "Community demos are the fastest path from 'I've never heard of robotics' to 'I want to try that.' By showing up at places families already go — the public library, the school club fair, a district STEM expo — we remove the barrier of finding us and put GEarheads directly in front of kids who might never otherwise encounter competitive robotics. Every demo is hands-on: students operate the robot, ask questions of our members, and leave with a tangible sense of what building and programming a machine from scratch actually feels like."
+  },
+  "stats": [
+    {
+      "value": "4",
+      "label": "Venues",
+      "hint": "Libraries, schools, and district events"
+    },
+    {
+      "value": "200+",
+      "label": "Visitors Reached",
+      "hint": "Students, parents, and community members"
+    },
+    {
+      "value": "6+",
+      "label": "Demo Events",
+      "hint": "Across the Elmbrook community"
+    },
+    {
+      "value": "2",
+      "label": "Library Systems",
+      "hint": "Brookfield and Elm Grove public libraries"
+    }
+  ],
+  "approach": {
+    "label": "Why We Show Up",
+    "heading": "Robotics Shouldn't Require Seeking It Out",
+    "body": "The students most likely to thrive in an engineering program are often the ones who never knew it existed. Community demos fix that. We pick venues families already have reason to visit — the library branch down the street, the high school club fair, the district STEM showcase — and we set up where the foot traffic is. There's no application, no prior knowledge required, no commitment to make. Just a robot doing something unexpected in a place you already were.\n\nEvery setup is designed to hold attention for two minutes and leave a lasting impression. The robot moves. Members explain what they built and why. Parents hear a frank account of what joining an FTC team actually involves: the time, the skills, the competitive season, the community. Younger students see a long-horizon view of where an FLL kit or a middle-school coding class can lead. We answer every question the same way we would at a competition — straight, specific, and without overselling.\n\nThe cumulative effect is visibility. Across a season, hundreds of students in the Elmbrook district have seen GEarheads operate a robot. When a friend later mentions robotics, the name registers. When a teacher brings up FIRST, there's a reference point. That compounding awareness is what makes community demos one of the most efficient things we do — low overhead, high reach, and a direct pipeline from 'I've seen this' to 'I want to try this.'",
+    "inlinePhoto": {
+      "src": null,
+      "caption": "GEarheads members running a live demo — add a photo from any library or club fair event"
+    }
+  },
+  "venues": [
+    {
+      "id": "brookfield-library",
+      "iconKey": "menuBook",
+      "tag": "Public Library",
+      "title": "Brookfield Public Library",
+      "description": "The Brookfield Public Library demos are among our most interactive events. We set up in the main community room, bring the full competition robot, and run live demonstrations that let attendees direct the robot through sample game tasks. Librarians invite families through the library's regular programming calendar, which means we consistently reach kids who are curious about STEM but haven't yet found a club or after-school pathway. Members take turns explaining each subsystem — the drivetrain, the intake mechanism, the launcher — in plain language, practicing the communication skills that judges evaluate at competitions. Parents get a frank conversation about what joining an FTC team actually looks like: the time commitment, the skills developed, the competition season. These sessions have directly resulted in new member inquiries each year, making the library one of our most productive recruiting pipelines alongside genuine community engagement.",
+      "wide": true
+    },
+    {
+      "id": "elm-grove-library",
+      "iconKey": "localLibrary",
+      "tag": "Public Library",
+      "title": "Elm Grove Public Library",
+      "description": "The Elm Grove Library demos serve a slightly different audience than Brookfield — a smaller, tighter-knit community where word-of-mouth spreads quickly and families often know each other from school. We run a condensed version of the full demo: robot operation, a Q&A segment, and a table with printed materials about FIRST and GEarheads. Because the audience is smaller, members get more one-on-one time with individual kids, which produces deeper conversations about programming, mechanical design, and what a typical build-season Saturday actually looks like. Elm Grove families have been consistently enthusiastic, and the library staff have been generous with space and scheduling flexibility, making this a venue we return to each season.",
+      "wide": false
+    },
+    {
+      "id": "bc-club-fair",
+      "iconKey": "school",
+      "tag": "High School",
+      "title": "Brookfield Central Club Fair",
+      "description": "The Brookfield Central High School Club Fair is our most strategically important demo of the year. It is the single event where incoming freshmen and returning students actively explore what clubs and activities they want to commit to — which makes it the highest-leverage recruiting moment on the calendar. We set up a full booth: robot on display, match footage running on a laptop, printed handouts, and members available to answer questions. The fair draws hundreds of students across a morning, and we engage as many as possible with short live demos, keeping the robot moving so there is always something to watch even when members are mid-conversation. The goal is not just recruitment but visibility — making sure every student at BCHS has seen GEarheads and knows the team exists, so that when a friend later mentions robotics, the name registers.",
+      "wide": false
+    },
+    {
+      "id": "elmbrook-ef-stem",
+      "iconKey": "science",
+      "tag": "District Event",
+      "title": "Elmbrook Education Foundation STEM Fairs",
+      "description": "The Elmbrook Education Foundation organizes district-level STEM programming that reaches students across the Elmbrook school system — a broader and younger audience than the high school events. At these fairs, GEarheads operates more as a showcase than a recruiter: we demonstrate what years of FIRST progression can produce, giving younger students a long-horizon view of where elementary- and middle-school robotics can lead. We bring the competition robot and, when possible, supplementary materials like CAD printouts and engineering notebook pages to show the full depth of the design process. Foundation staff have been strong allies in connecting us with teachers and administrators, and these events have contributed to the district's broader awareness of GEarheads as a team worth supporting — a relationship that underpins some of the sponsorship and logistical backing we receive from Elmbrook Schools.",
+      "wide": true
+    }
+  ],
+  "partners": [
+    {
+      "id": "brookfield-public-library",
+      "name": "Brookfield Public Library",
+      "type": "Public Library",
+      "note": "Main community room host — families reached through library programming calendar"
+    },
+    {
+      "id": "elm-grove-public-library",
+      "name": "Elm Grove Public Library",
+      "type": "Public Library",
+      "note": "Condensed demos for a tight-knit community; generous with space and scheduling"
+    },
+    {
+      "id": "brookfield-central-hs",
+      "name": "Brookfield Central High School",
+      "type": "High School",
+      "note": "Annual Club Fair — highest-leverage recruiting moment on the calendar"
+    },
+    {
+      "id": "elmbrook-education-foundation",
+      "name": "Elmbrook Education Foundation",
+      "type": "District Partner",
+      "note": "District-level STEM fairs; allies in connecting GEarheads to teachers and administrators"
+    }
+  ],
+  "photos": [
+    {
+      "src": "IMG_0310.jpeg",
+      "caption": "GEarheads at the Brookfield Central Club Fair",
+      "folder": "brookfield central club fair"
+    },
+    {
+      "src": null,
+      "caption": "Robot demo at Brookfield Public Library"
+    },
+    {
+      "src": null,
+      "caption": "Elm Grove Library community session"
+    },
+    {
+      "src": null,
+      "caption": "Members explaining robot subsystems to visitors"
+    },
+    {
+      "src": null,
+      "caption": "Elmbrook Education Foundation STEM fair booth"
+    }
+  ]
+}

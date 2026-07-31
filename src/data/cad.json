@@ -1,0 +1,84 @@
+{
+  "subsystems": [
+    {
+      "id": "drivetrain",
+      "name": "Drivetrain",
+      "description": "The foundation every other subsystem builds on. CAD joints defined the chassis geometry and wheel placement before any physical part was cut, ensuring clearances were confirmed digitally first.",
+      "cadUsage": "Joints modeled wheel-pod kinematics and confirmed that the chassis width met field-constraint rules. Optical odometry sensor mounting was positioned in CAD to minimize encoder drift before fabrication.",
+      "iconKey": "MdDirectionsCar",
+      "diagramHint": "Drivetrain top-down view — chassis, wheel pods, optical odometry sensor mount"
+    },
+    {
+      "id": "intake",
+      "name": "Intake",
+      "description": "Evolved across three mark iterations — from an external claw, to a vertical active intake with two rollers, to a horizontal intake that spits out extra game pieces automatically. Each redesign was modeled in Onshape before any parts were printed.",
+      "cadUsage": "3D printing was the primary fabrication method because the intake required a large number of design iterations. CAD let the team test roller geometry and housing clearances digitally, then print the next version the same day.",
+      "iconKey": "MdInput",
+      "diagramHint": "Intake cross-section — roller geometry, housing, game piece path"
+    },
+    {
+      "id": "spindexer",
+      "name": "Spindexer",
+      "description": "A rotating carousel sorting mechanism with three anti-jam chambers that positions game pieces before they reach the launcher. Designed as a thin plate in Mark III to reduce overall robot weight.",
+      "cadUsage": "Joints defined the rotational axis and indexed positions, letting the team simulate the sorting sequence and confirm spacing between chambers before committing to CNC fabrication.",
+      "iconKey": "MdRotateRight",
+      "diagramHint": "Spindexer top view — three-chamber carousel, rotation axis, indexing positions"
+    },
+    {
+      "id": "launcher",
+      "name": "Launcher",
+      "description": "A high-speed roller launcher powered by a flywheel system for consistent shot velocity. The launch angle pivot was added in Mark II after the 30-hour build revealed that angle control was essential for scoring.",
+      "cadUsage": "Joints modeled the angle-adjustment pivot and confirmed the turret's 180-degree lock range. The flywheel housing was CNC-milled because the tight tolerances on roller spacing directly affect shooter velocity consistency.",
+      "iconKey": "MdRocketLaunch",
+      "diagramHint": "Launcher side view — flywheel, angle pivot rail, turret rotation arc"
+    }
+  ],
+  "workflowSteps": [
+    {
+      "id": "kickoff",
+      "title": "Kickoff — End-Goal Definition",
+      "description": "Phase one begins immediately after game kickoff. The team defines end-goal robot and subsystem capabilities before any parts are drawn.",
+      "iconKey": "MdFlag"
+    },
+    {
+      "id": "cad-preplan",
+      "title": "CAD Pre-Planning",
+      "description": "Phase two: advanced CAD techniques are used to pre-plan each subsystem in Onshape before integration. Joints define motion and linkages. Rough prototypes are fabricated and tested in parallel.",
+      "iconKey": "MdArchitecture"
+    },
+    {
+      "id": "fabrication",
+      "title": "Fabrication & Integration",
+      "description": "Phase three: finalized designs are exported to 3D printers and CNC mills. Because the robot is 100% CAD-designed, CNC setup is straightforward — the file is already there.",
+      "iconKey": "MdBuild"
+    },
+    {
+      "id": "iteration",
+      "title": "Learn & Iterate",
+      "description": "Post-competition learning feeds back into CAD. Driver feedback, FMEA analysis, and game-strategy data drive targeted redesigns — not full rebuilds.",
+      "iconKey": "MdAutorenew"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "version-control",
+      "title": "Version Control in Onshape",
+      "body": "When multiple members design subsystems simultaneously, overlap and compatibility conflicts arise. The team addressed this by implementing clearer version control and structured design reviews inside Onshape, ensuring all components meshed properly before integration and reducing late-stage conflicts."
+    },
+    {
+      "id": "cad-integration",
+      "title": "Subsystem Integration Sequencing",
+      "body": "Designing subsystems in isolation and integrating them later revealed interference problems that were costly to fix in hardware. The lesson: joints and assemblies should be built at the full-robot level from the start, not merged at the end."
+    },
+    {
+      "id": "iteration-speed",
+      "title": "Iterate in CAD Before Cutting",
+      "body": "The intake mechanism required a large number of design changes. Running those iterations in CAD and 3D printing each version — rather than machining — kept the team on schedule. Committing to CNC too early in the process wastes material and time."
+    },
+    {
+      "id": "parallel-sw-mech",
+      "title": "Mechanical & Software in Parallel",
+      "body": "Software development using subsystem-based design ran in parallel with mechanical CAD. This meant software teams could write and test control loops against the modeled geometry before physical parts existed, compressing the overall build timeline."
+    }
+  ]
+}

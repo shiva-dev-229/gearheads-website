@@ -1,0 +1,72 @@
+{
+  "controlLoop": [
+    {
+      "id": "setpoint",
+      "label": "Setpoint",
+      "iconKey": "flag",
+      "description": "The target the mechanism should reach",
+      "details": "Every closed-loop movement starts with a setpoint — a target position, heading, or velocity. It might be a lift height in ticks, a drivetrain heading in degrees, or a flywheel RPM. The setpoint is the single source of truth the rest of the loop works to satisfy."
+    },
+    {
+      "id": "feedback",
+      "label": "Feedback",
+      "iconKey": "sensors",
+      "description": "Where the mechanism actually is",
+      "details": "A sensor reports the mechanism's real state every loop cycle — a motor encoder for position, an IMU for heading, an encoder delta for velocity. This feedback is what separates closed-loop control from open-loop timing: the robot reacts to reality instead of assuming a command worked."
+    },
+    {
+      "id": "error",
+      "label": "Error",
+      "iconKey": "compareArrows",
+      "description": "Setpoint minus feedback",
+      "details": "Error is the gap between where the mechanism should be and where it actually is. The controller's entire job is to drive this number to zero. A large error means push hard; a small error means ease off. Every term in the PID controller is computed from this single value and its history."
+    },
+    {
+      "id": "pid",
+      "label": "PID",
+      "iconKey": "tune",
+      "description": "Proportional, integral, derivative correction",
+      "details": "The PID controller converts error into a correction. The proportional term responds to the current error, the integral term eliminates steady-state offset that P alone leaves behind, and the derivative term damps overshoot by reacting to how fast the error is changing. Balancing the three gains is what makes motion snappy but stable."
+    },
+    {
+      "id": "feedforward",
+      "label": "Feedforward",
+      "iconKey": "bolt",
+      "description": "Predicted effort added on top",
+      "details": "Feedforward adds the effort we know a mechanism will need before the error even appears — gravity compensation to hold a lift, static friction to break stiction, velocity terms to sustain motion. PID then only has to correct the small leftover error, which means lower gains, less overshoot, and far smoother movement."
+    },
+    {
+      "id": "output",
+      "label": "Output",
+      "iconKey": "settingsMotion",
+      "description": "Power sent to the motor",
+      "details": "The combined PID + feedforward output is clamped to a safe range and written to the motor or servo. Then the loop immediately repeats — reading feedback, recomputing error, correcting again — dozens of times per second. That continuous cycle is what holds a position under load or drives to an exact point on the field."
+    }
+  ],
+  "techniques": [
+    {
+      "id": "motion-profiling",
+      "iconKey": "speed",
+      "title": "Motion Profiling",
+      "description": "Instead of commanding a mechanism straight to its target, we generate a smooth trapezoidal or S-curve velocity profile that ramps acceleration up and back down. This limits jerk, protects the hardware, and keeps the robot from tipping or slipping during aggressive moves."
+    },
+    {
+      "id": "feedforward-models",
+      "iconKey": "bolt",
+      "title": "Feedforward Models",
+      "description": "For lifts and arms we model the physics — gravity, friction, and velocity — and feed that predicted effort in directly. PID is left to correct only the small residual error, which dramatically improves smoothness and lets us run lower, safer gains."
+    },
+    {
+      "id": "gain-tuning",
+      "iconKey": "tune",
+      "title": "Live Gain Tuning",
+      "description": "PID gains are exposed to FTC Dashboard so we can tune them live on the practice field without recompiling and redeploying. A tune that used to take an afternoon now takes a few minutes of watching the response curve settle."
+    },
+    {
+      "id": "driver-assists",
+      "iconKey": "sportsEsports",
+      "title": "Driver Assists",
+      "description": "Teleop isn't purely manual. Heading-lock holds the robot square to the field, field-centric drive keeps controls intuitive regardless of orientation, and slow-mode scales inputs for fine alignment. The driver commands intent; the control code handles the precision."
+    }
+  ]
+}

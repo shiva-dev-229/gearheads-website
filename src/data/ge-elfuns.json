@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "chip": "Access & Advocacy · GE Elfuns",
+    "title": "GEarheads meets GE Elfuns.",
+    "subtitle": "The GE Elfuns — GE's volunteer retiree organization, composed of engineers, project managers, and executives who built careers across GE Healthcare, GE Energy, and GE Manufacturing — have become partners in bringing FIRST robotics to a community it rarely reaches. GEarheads presents, connects, and lays the groundwork for a mentorship pipeline that could close the loop between decades of industrial expertise and the next generation of builders.",
+    "heroPhoto": {
+      "src": null,
+      "caption": "GEarheads team presenting to the GE Elfuns retiree group"
+    }
+  },
+  "impact": {
+    "label": "Why this partnership matters",
+    "text": "The GE Elfuns represent decades of real-world engineering and leadership experience that most high school robotics teams never get to access. By building a relationship with this group, GEarheads creates a two-way bridge: retirees learn what FIRST is and what student robotics teams actually do, and the team gains direct exposure to a network of technical professionals who have solved engineering problems at industrial scale. This is as much about expanding awareness as it is about opening a door to mentorship."
+  },
+  "approach": {
+    "label": "Why This Partnership",
+    "heading": "Two communities that were already connected.",
+    "body": "GEarheads is not named for GE by accident. When the team was founded, GE Healthcare employees were among its earliest supporters — people who brought with them an engineering culture built on rigorous process, structured design review, and data-driven decision-making. The DHF framework, the FMEA methodology, the DOE-informed testing discipline that the team now applies to competition robots all trace their lineage directly to GE practice.\n\nThe GE Elfuns partnership is the natural expression of that founding connection. The Elfuns are retirees — people who spent careers doing exactly the kind of engineering that GEarheads has been learning to emulate. When the team presents to them, it is not performing for a general audience. It is showing its work to people who recognize DHF notation, who have run FMEA on real products, who understand why a Monte Carlo simulation on an Excel sheet is a serious engineering tool and not a science project.\n\nThat shared technical language transforms what could be a routine outreach appearance into a genuine professional exchange. The Elfuns ask real questions. They push back on design choices. They draw connections between the team's competition challenges and problems they spent years solving in industry. That kind of engagement is rare for a high school robotics team — and it is exactly the kind of interaction that prepares students for careers in engineering.\n\nThe longer arc of this partnership is a formalized mentorship pipeline: a relationship where specific Elfuns members serve as design advisors, review the team's engineering documentation, and help students understand what professional engineering practice actually looks like beyond school. That work is not yet formalized, but every presentation deepens the relationship and makes it more possible.",
+    "inlinePhoto": {
+      "src": null,
+      "caption": "An Elfuns member in conversation with the GEarheads team"
+    }
+  },
+  "facets": [
+    {
+      "id": "presentations",
+      "label": "Presentations Overview",
+      "iconKey": "presenter",
+      "colorKey": "secondary",
+      "tagline": "Connecting the GEarheads story to GE's legacy.",
+      "description": "GEarheads has presented to the GE Elfuns retiree group, walking them through what FIRST Tech Challenge is, what the team builds, and how the program operates. These presentations are deliberately designed to meet the audience where they are: we draw parallels between the engineering challenges GEarheads faces on a competition robot and the kinds of problems the Elfuns spent careers solving in GE's manufacturing, healthcare, and energy divisions. Rather than a generic science-fair pitch, each presentation traces the team's actual design decisions — the DHF process, the Monte Carlo simulation, the DOE work on the launcher — in a language that resonates with people who have spent careers in engineering disciplines. The goal is to make the team's work legible and genuinely interesting to an audience that can recognize rigorous process when they see it, and to make the case that FIRST is not just a school activity but a serious technical and leadership pipeline.",
+      "highlights": [
+        "Tailored to an audience of career engineers and technical leaders",
+        "Walks through the team's actual DHF design process and decision-making tools",
+        "Draws direct parallels between competition robotics and industrial engineering challenges",
+        "Frames FIRST as a rigorous technical and leadership development program, not a hobby",
+        "Builds recognition and credibility for GEarheads within the broader GE community"
+      ]
+    },
+    {
+      "id": "mentorship-pipeline",
+      "label": "Technical Mentorship Pipeline",
+      "iconKey": "pipeline",
+      "colorKey": "secondary",
+      "tagline": "Decades of expertise, one introduction away.",
+      "description": "The most significant long-term opportunity this partnership represents is a technical mentorship pipeline. The GE Elfuns network includes engineers, project managers, and executives who spent careers at one of the most technically complex companies in the world — people with deep fluency in manufacturing, control systems, materials science, medical device engineering, and systems integration. GEarheads operates at a level where that kind of expertise is not just helpful but genuinely applicable: the team runs CNC mills, designs custom mechanical systems, writes closed-loop control software, and builds competition robots that require real engineering judgment at every step. A formal mentorship relationship would let the team tap into that experience directly — getting a second opinion on a mechanism design, understanding how industrial DOE is applied in practice, or learning how to communicate technical decisions to non-technical stakeholders. The pipeline is not yet formalized, but the presentations have established the relationship and the mutual recognition that makes it possible.",
+      "highlights": [
+        "Access to career engineers with GE-level depth in manufacturing and controls",
+        "Directly applicable expertise: CNC, control systems, materials, systems integration",
+        "Potential for structured mentorship on technical decisions and design reviews",
+        "Bridges the gap between school-level engineering and industrial-scale practice",
+        "Relationship groundwork is already laid through ongoing presentations"
+      ]
+    },
+    {
+      "id": "expanding-awareness",
+      "label": "Expanding FIRST Awareness",
+      "iconKey": "awareness",
+      "colorKey": "secondary",
+      "tagline": "FIRST reaches communities it has never reached before.",
+      "description": "Most of the FIRST ecosystem's outreach energy flows forward — toward younger students, toward schools, toward families with kids still in the pipeline. The GE Elfuns partnership runs in a different direction: it brings FIRST into a community of people who have already completed careers and who, in many cases, have grandchildren, neighbors' kids, or community organizations they influence. When a retired GE engineer understands what FIRST is and what a well-run FTC team actually does, that understanding spreads. It shows up in conversations at a grandchild's school, in a recommendation to a local community foundation, in a word put in with a company that might sponsor a rookie team. Expanding FIRST awareness among the Elfuns is not just goodwill — it multiplies the program's reach into networks that conventional outreach does not touch. The team's presentations have been an important first step in making that case, and each appearance deepens the Elfuns' understanding of why FIRST matters and how they can support it.",
+      "highlights": [
+        "Carries FIRST into retiree and community-influencer networks outside the typical school pipeline",
+        "Retirees can champion FIRST to grandchildren, community orgs, and local institutions",
+        "Multiplies outreach reach into networks conventional student-facing efforts never reach",
+        "Builds a community of informed FIRST advocates among career technical professionals",
+        "Each presentation deepens understanding and strengthens the case for future support"
+      ]
+    },
+    {
+      "id": "ge-gearheads-connection",
+      "label": "The GE↔GEarheads Connection",
+      "iconKey": "connection",
+      "colorKey": "secondary",
+      "tagline": "The name is not a coincidence.",
+      "description": "GEarheads is not named for GE by accident. The team's roots trace back to GE Healthcare, whose employees were among the founding supporters and whose engineering culture — rigorous process, data-driven decisions, systematic design — shaped how the team operates. The GE Elfuns partnership is, in this sense, a natural extension of that founding relationship: a way of honoring and deepening the connection to the industrial legacy that gave the team its name and its operational DNA. When GEarheads presents to the Elfuns, there is a recognition on both sides that is more than professional courtesy. The Elfuns understand what GE Healthcare built and what it means to apply that engineering culture to a student program. The team understands that the tools and frameworks it uses — the DHF, the FMEA, the DOE — were refined over decades in exactly the kind of environment the Elfuns built their careers in. That shared context makes every interaction richer, and it gives the partnership a foundation that purely transactional outreach never has.",
+      "highlights": [
+        "GEarheads was co-founded with support from GE Healthcare employees",
+        "The team's engineering culture — DHF, FMEA, DOE — comes directly from GE methodology",
+        "The partnership honors and deepens the founding GE connection that shaped the team",
+        "Shared engineering language makes the relationship substantive rather than ceremonial",
+        "Unique among FTC teams: a named, structural connection to a major industrial engineering legacy"
+      ]
+    }
+  ],
+  "people": [
+    {
+      "name": "GE Elfuns",
+      "role": "Partner Organization",
+      "note": "GE's retiree volunteer network — engineers, project managers, and leaders across GE Healthcare, Energy, and Manufacturing.",
+      "type": "partner"
+    },
+    {
+      "name": "Elfuns Coordinator",
+      "role": "Partnership Coordinator",
+      "note": "Contact to be added.",
+      "type": "person"
+    }
+  ],
+  "photos": [
+    {
+      "src": null,
+      "caption": "GEarheads presenting to the GE Elfuns group"
+    },
+    {
+      "src": null,
+      "caption": "Elfuns members examining the competition robot"
+    },
+    {
+      "src": null,
+      "caption": "Q&A with retirees after the presentation"
+    },
+    {
+      "src": null,
+      "caption": "Walking through the DHF design framework"
+    },
+    {
+      "src": null,
+      "caption": "Students discussing engineering with GE retirees"
+    },
+    {
+      "src": null,
+      "caption": "The GEarheads team with GE Elfuns members"
+    }
+  ]
+}

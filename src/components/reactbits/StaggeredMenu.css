@@ -172,6 +172,24 @@
   line-height: 1;
 }
 
+.sm-panel-groupHeader {
+  overflow: visible;
+  padding: 18px 0 4px;
+  margin-top: 4px;
+}
+
+.sm-panel-groupLabel {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #414755;
+  border-bottom: 1px solid #41475533;
+  padding-bottom: 6px;
+}
+
 .sm-panel-item {
   position: relative;
   color: #d8d8d8;
@@ -215,6 +233,44 @@
   pointer-events: none;
   user-select: none;
   opacity: var(--sm-num-opacity, 0);
+}
+
+/* back button (shown in submenu mode) */
+.sm-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--sm-accent, #adc6ff);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 0 28px;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+  pointer-events: auto;
+  line-height: 1;
+}
+
+.sm-back-btn:hover {
+  opacity: 1;
+}
+
+.sm-back-btn:focus-visible {
+  outline: 2px solid var(--sm-accent, #adc6ff);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* smaller font for submenu items (longer labels, more items) */
+.staggered-menu-panel[data-submenu] .sm-panel-item {
+  font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+  letter-spacing: -0.5px;
+  padding-right: 0;
+  line-height: 1.55;
 }
 
 /* socials */

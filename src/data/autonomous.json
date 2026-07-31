@@ -1,0 +1,67 @@
+{
+  "pipeline": [
+    {
+      "id": "localization",
+      "label": "Localization",
+      "iconKey": "myLocation",
+      "colorKey": "primary",
+      "tagline": "Knowing where the robot is on the field at all times.",
+      "description": "Autonomous is impossible without knowing the robot's pose — its x, y, and heading on the field. For DECODE we tracked pose with two odometry sources: an optical odometry sensor and a goBILDA Pinpoint odometry computer, integrating their readings into a running position estimate. This pose feeds every downstream decision: which way to turn, how far to drive, and when a routine is complete.",
+      "points": [
+        "Optical odometry paired with a goBILDA Pinpoint computer (DECODE)",
+        "IMU/heading fusion keeps orientation accurate over long routines",
+        "Pose estimate updated every control loop",
+        "Coordinate frame anchored to a known starting position"
+      ],
+      "link": null
+    },
+    {
+      "id": "planning",
+      "label": "Path Planning",
+      "iconKey": "timeline",
+      "colorKey": "secondary",
+      "tagline": "Laying out the waypoints and actions before the match.",
+      "description": "Each autonomous routine is a planned sequence of waypoints and mechanism actions. We design paths to be efficient and collision-free, sequencing scoring actions between drive segments. Paths are built and tuned on the practice field, then saved so the same routine runs identically at competition.",
+      "points": [
+        "Routines defined as ordered waypoints plus actions",
+        "Paths designed to avoid partners and field obstacles",
+        "Scoring actions interleaved with drive segments",
+        "Multiple routines prepared for different alliance scenarios"
+      ],
+      "link": null
+    },
+    {
+      "id": "following",
+      "label": "Path Following",
+      "iconKey": "route",
+      "colorKey": "tertiary",
+      "tagline": "Driving the planned path smoothly and accurately.",
+      "description": "We follow paths with Pedro Pathing — a reactive follower built around Bézier-curve paths instead of stop-and-turn segments. Every loop it reads the live pose and computes a correction vector that pulls the robot back onto the curve, keeping motion smooth and fully closed-loop on position and heading. A nudge from a partner or a bit of wheel slip gets corrected instead of derailing the routine.",
+      "points": [
+        "Pedro Pathing follower tracks smooth Bézier-curve paths",
+        "Vector-based correction pulls the robot back onto the path every loop",
+        "Closed-loop on position and heading — recovers from bumps and slip",
+        "Constants tuned live and replayed identically at competition"
+      ],
+      "link": {
+        "label": "Pedro Pathing documentation",
+        "url": "https://pedropathing.com/"
+      }
+    },
+    {
+      "id": "vision",
+      "label": "Vision Correction",
+      "iconKey": "cameraEnhance",
+      "colorKey": "primary",
+      "tagline": "Snapping the pose estimate back to ground truth.",
+      "description": "Odometry drifts over time as small errors accumulate. AprilTag vision fixes this: when the camera sees a field tag, we compute the robot's true position and snap the odometry estimate back to reality. This keeps precision high across a full 30-second routine and enables reliable alignment to scoring targets.",
+      "points": [
+        "AprilTag detection resets accumulated odometry drift",
+        "Robot pose recovered from known tag positions",
+        "Precise alignment to scoring elements",
+        "Accuracy maintained across the full routine"
+      ],
+      "link": null
+    }
+  ]
+}

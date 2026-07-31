@@ -49,9 +49,10 @@
 ## 3. About Section
 
 ### `/about` — Hub
-- [ ] Short narrative ("student-led, Brookfield WI, est. 2017, 9 yrs FIRST / 7 yrs FTC")
-- [ ] Mission 3-point summary with links to subpages
-- [ ] `about-banner` photo slot (candid team group shot)
+- [x] Short narrative ("student-led, Brookfield WI, est. 2017, 9 yrs FIRST / 7 yrs FTC")
+- [x] Mission summary on hub (quote + pillar bento with descriptions + values + principles; subpage links still TODO)
+- [x] `about-hero-bg` photo slot — using Governor's Cup IMG_3727 at `/public/assets/photos/about-hero-bg.jpg`
+- [x] Hero + Mission rebuilt as one continuous section: photo banner, subtitle/stats, mission quote + body (MissionWrap), horizontal accordion (PillarsAccordion with BorderGlow + cursor spotlight), values + principles two-column bottom grid
 
 ### `/about/history`
 - [ ] 9-season narrative timeline (2017–26, one prose section per season)
@@ -127,45 +128,45 @@
 ## 5. Engineering Section
 
 ### `/engineering` — Hub
-- [ ] GE Healthcare DHF framework framing
-- [ ] Three-phase build overview
-- [ ] Links to subpages
-- [ ] `engineering-shop` photo slot (wide build-space shot)
+- [x] GE Healthcare DHF framework framing
+- [x] Three-phase build overview
+- [x] Links to subpages
+- [x] `engineering-shop` photo slot (wide build-space shot)
 
 ### `/engineering/design-process`
-- [ ] DHF explanation — present both public phrasings: "Design History File/Framework" (GE origin) and "Define, Hypothesize, Fabricate" (team's)
-- [ ] Game Points Matrix section
-- [ ] Monte Carlo simulation (custom Excel, 50+ simulated games)
-- [ ] FMEA section
-- [ ] Cost/benefit trade-off examples
-- [ ] 2-week sprints / 8-month season structure
-- [ ] Goal tracking overview
-- [ ] Optional: annotated matrix/FMEA screenshot slots (CAD/screen ok)
+- [x] DHF explanation — present both public phrasings: "Design History File/Framework" (GE origin) and "Define, Hypothesize, Fabricate" (team's)
+- [x] Game Points Matrix section
+- [x] Monte Carlo simulation (custom Excel, 50+ simulated games)
+- [x] FMEA section
+- [x] Cost/benefit trade-off examples
+- [x] 2-week sprints / 8-month season structure
+- [x] Goal tracking overview
+- [x] Optional: annotated matrix/FMEA screenshot slots (CAD/screen ok)
 
 ### `/engineering/cad`
-- [ ] Onshape section (web-based, Chromebook-friendly, real-time collaboration)
-- [ ] 100% CAD workflow description
-- [ ] Joints/linkages for motion
-- [ ] Subsystem organization approach
-- [ ] Integration/version-control lessons learned
-- [ ] `cad-screen` photo slot (Onshape open with subsystem model)
-- [ ] Optional: `cad-member` (over-the-shoulder shot)
+- [x] Onshape section (web-based, Chromebook-friendly, real-time collaboration)
+- [x] 100% CAD workflow description
+- [x] Joints/linkages for motion
+- [x] Subsystem organization approach
+- [x] Integration/version-control lessons learned
+- [x] `cad-screen` photo slot (Onshape open with subsystem model)
+- [x] Optional: `cad-member` (over-the-shoulder shot)
 
 ### `/engineering/manufacturing`
-- [ ] 3 CNC mills (custom MPCNC, 6×6 industrial mill, large PrintNC)
-- [ ] 3D printing section
-- [ ] Sheet metal section
-- [ ] ~90–99% custom-fabricated stat with context
-- [ ] `manufacturing-cnc` and `manufacturing-parts` photo slots
-- [ ] Optional: `manufacturing-3dprint` slot
+- [x] 3 CNC mills (custom MPCNC, 6×6 industrial mill, large PrintNC)
+- [x] 3D printing section
+- [x] Sheet metal section
+- [x] ~90–99% custom-fabricated stat with context
+- [x] `manufacturing-cnc` and `manufacturing-parts` photo slots
+- [x] Optional: `manufacturing-3dprint` slot
 
 ### `/engineering/testing`
-- [ ] Scrimmage/qualifier testing workflow
-- [ ] DOE for launcher accuracy
-- [ ] Flywheel energy analysis (ball 55 g, exit ~18.8 m/s, ~7.5 J required; Gecko + aluminum flywheels)
-- [ ] Sorting-efficiency proof (fast release > sorting)
-- [ ] FMEA-driven fixes examples
-- [ ] `testing-session` photo slot
+- [x] Scrimmage/qualifier testing workflow
+- [x] DOE for launcher accuracy
+- [x] Flywheel energy analysis (ball 55 g, exit ~18.8 m/s, ~7.5 J required; Gecko + aluminum flywheels)
+- [x] Sorting-efficiency proof (fast release > sorting)
+- [x] FMEA-driven fixes examples
+- [x] `testing-session` photo slot
 
 ---
 
@@ -174,8 +175,8 @@
 ### `/programming` — Hub
 - [ ] Language/tools overview (Java, Git, Gradle, Android, UML; React/Node for dashboards/tools)
 - [ ] Sensors list (encoders, optical odometry, Limelight/AprilTags, HuskyLens, color sensors)
-- [ ] High-level control architecture summary
-- [ ] Links to subpages
+- [x] High-level control architecture summary
+- [x] Links to subpages
 - [ ] `programming-drivers` photo slot
 
 ### `/programming/control`
@@ -209,87 +210,103 @@
 ## 7. Outreach Section
 
 ### `/outreach` — Hub
-- [ ] "Outreach is not optional — it's who we are" statement
-- [ ] Categorized program cards linking all 12 detail pages
-- [ ] Top-line metrics (1,000+ students · 31+ teams · 28+ events · 500+ hours)
+- [x] "Outreach is not optional — it's who we are" statement
+- [x] Categorized program cards linking all 12 detail pages
+- [x] Top-line metrics (1,000+ students · 31+ teams · 28+ events · 500+ hours)
 - [ ] `outreach-hero` photo slot
 
 ### `/outreach/childrens-hospital`
-- [ ] Inspiration (play-therapy research, Dr. Karst; hospital's only sustained FIRST program)
-- [ ] Activities (paper circuits, catapults, pneumatic machines, robotics kits, live FTC demo, leave-behind kits)
-- [ ] Hybrid delivery (in-person + livestream + WeVideo tutorials; Lights & Motion STEM kits)
-- [ ] This-season results (~40 patients, 4 sessions, 90 team hours)
-- [ ] Cumulative impact (140+ children, 21 sessions over 4 seasons)
-- [ ] Mentors: Dr. Jeffrey Karst (PhD Pediatrician), Leslie Scott (RN)
+- [x] Inspiration (play-therapy research, Dr. Karst; hospital's only sustained FIRST program)
+- [x] Activities (paper circuits, catapults, pneumatic machines, robotics kits, live FTC demo, leave-behind kits)
+- [x] Hybrid delivery (in-person + livestream + WeVideo tutorials; Lights & Motion STEM kits)
+- [x] This-season results (~40 patients, 4 sessions, 90 team hours)
+- [x] Cumulative impact (140+ children, 21 sessions over 4 seasons)
+- [x] People & Partners section — Dr. Jeffrey Karst (PhD Pediatrician), Leslie Scott (RN) — portrait photo slots + title + note
+- [x] Hero 2-col layout with image well (falls back to dashed placeholder)
+- [x] Inline narrative photo slot beside impact callout ("Dr. Karst presenting the program rationale")
+- [x] Closing gallery expanded to 5 slots in 3+2 row layout with specific captions
 - [ ] `childrens-hospital-lead` photo slot — **requires photo permissions**
 
 ### `/outreach/veterans`
-- [ ] Programs (intro FLL challenge; intro CAD/CNC sign-building; advanced FLL Spike)
-- [ ] Two 6-week series; 12 weekly 90-min sessions
-- [ ] Scale (~12 veterans, 130–150+ hours)
-- [ ] "Only team ever reinvited" callout
-- [ ] Veterans/families attended Rookie Qualifier note
-- [ ] Mentors: Sam Doughty (CTRS), Sean Clarke (Program Director), Kali Dancisak, Erinn Brulla
-- [ ] Next planned session: model rockets
-- [ ] `veterans-lead` photo slot
+- [x] Programs (intro FLL challenge; intro CAD/CNC sign-building; advanced FLL Spike)
+- [x] Two 6-week series; 12 weekly 90-min sessions
+- [x] Scale (~12 veterans, 130–150+ hours)
+- [x] "Only team ever reinvited" callout
+- [x] Veterans/families attended Rookie Qualifier note
+- [x] Mentors: Sam Doughty (CTRS), Sean Clarke (Program Director), Kali Dancisak, Erinn Brulla
+- [x] Next planned session: model rockets
+- [x] `veterans-lead` photo slot
 
 ### `/outreach/computer-project`
-- [ ] Process (collection drives → inventory → secure wipe + new OS → distribute; Blair Tech licenses)
-- [ ] This-season: 56 laptops, 1,000+ students reached
-- [ ] All-time: 156 laptops
-- [ ] Recipients list (Libya Team 18422, Jamaica Team 24994, Vietnam Team 25242, Arizona Rez Kids, Milwaukee Robotics Academy, FIRST WI, etc.)
-- [ ] Partners (Milliman, Reserve Advisors, Soerens Ford, libraries, Tech Lit Africa)
-- [ ] 5-year growth (2022:9 → 2023:16 → 2024:35–44 → 2025–26:56)
-- [ ] `computer-project-lead` photo slot
+- [x] Process (collection drives → inventory → secure wipe + new OS → distribute; Blair Tech licenses)
+- [x] This-season: 56 laptops, 1,000+ students reached
+- [x] All-time: 156 laptops
+- [x] Recipients list (Libya Team 18422, Jamaica Team 24994, Vietnam Team 25242, Arizona Rez Kids, Milwaukee Robotics Academy, FIRST WI, etc.)
+- [x] Partners (Milliman, Reserve Advisors, Soerens Ford, libraries, Tech Lit Africa)
+- [x] 5-year growth (2022:9 → 2023:16 → 2024:35–44 → 2025–26:56)
+- [x] `computer-project-lead` photo slot
 
 ### `/outreach/rookie-qualifier`
-- [ ] Event scale (26 rookie teams, 80+ volunteers, Feb 2026 — 2nd year)
-- [ ] 5-week pre-event webinar series (competition flow, alliance selection, judging, portfolio, packing)
-- [ ] Recruited 3 new FTC judges
-- [ ] Extra FTAs + on-demand coaching
-- [ ] State-qualification opportunities
-- [ ] Team 13201 Hazmat collaboration
-- [ ] `rookie-qualifier-lead` photo slot
+- [x] Event scale (26 rookie teams, 80+ volunteers, Feb 2026 — 2nd year)
+- [x] 5-week pre-event webinar series (competition flow, alliance selection, judging, portfolio, packing)
+- [x] Recruited 3 new FTC judges
+- [x] Extra FTAs + on-demand coaching
+- [x] State-qualification opportunities
+- [x] Team 13201 Hazmat collaboration
+- [x] `rookie-qualifier-lead` photo slot
+- [x] Revision 2: 2-col hero with HeroImageWell placeholder
+- [x] Revision 2: "Why We Run It" approach prose section (3 paragraphs) + inline sticky image well
+- [x] Revision 2: People & Partners section — Team 13201 Hazmat + Head Referee/FTA + Volunteer Judges + Event Coordinator portrait slots
+- [x] Revision 2: Event Day grid expanded to 6 cards (added Rookie Inspection Lane + Opening Ceremony Orientation)
+- [x] Revision 2: Closing photo gallery upgraded to 4-slot PhotoGallery (3-col at 960px+) — Opening ceremony, Rookie team at inspection, Alliance selection, Volunteers at scoring table
 
 ### `/outreach/production-hub`
-- [ ] 41 CNC/3D-printed parts this season (14+ distributed to teams)
-- [ ] Teams coached (Pack-a-Punch, Random Engineers, Tundrabots, Hapabots)
-- [ ] Services (CNC milling, 3D printing, laser cutting, plotter printing)
-- [ ] Scale: 7 teams impacted / 70+ hours / 26 FTC teams in 2026 ecosystem
-- [ ] `production-hub-lead` photo slot
+- [x] 41 CNC/3D-printed parts this season (14+ distributed to teams)
+- [x] Teams coached (Pack-a-Punch, Random Engineers, Tundrabots, Hapabots)
+- [x] Services (CNC milling, 3D printing, laser cutting, plotter printing)
+- [x] Scale: 7 teams impacted / 70+ hours / 26 FTC teams in 2026 ecosystem
+- [x] `production-hub-lead` photo slot
+- [x] Revision 2: "How the Production Hub Works" prose block (intake → make → hand-off, sticky inline photo)
+- [x] Revision 2: Expanded service descriptions (deeper CNC, 3D print, laser, plotter copy)
+- [x] Revision 2: Teams We Support partner cards — logo/photo slot per team
+- [x] Revision 2: Closing gallery expanded to 6 captioned photo slots (2-col → 3-col)
 
 ### `/outreach/diy-cnc`
-- [ ] MPCNC concept and motivation (self-sufficient fabrication for rookies)
-- [ ] Pilot teams (17347 RedCat Robotics, 12966 C-Gull Robotics, NC team)
-- [ ] Hapa Bots X-Carve setup
-- [ ] Goal: teams that can build their own machines
-- [ ] `diy-cnc-lead` photo slot
+- [x] MPCNC concept and motivation (self-sufficient fabrication for rookies)
+- [x] Pilot teams (17347 RedCat Robotics, 12966 C-Gull Robotics, NC team)
+- [x] Hapa Bots X-Carve setup
+- [x] Goal: teams that can build their own machines
+- [x] `diy-cnc-lead` photo slot (hero 2-col image well added; falls back to placeholder)
 
 ### `/outreach/maker-faire`
-- [ ] Venue/scale (Milwaukee Maker Faire at Discovery World — 3rd largest in the US)
-- [ ] 5th year invited back
-- [ ] ~6,000+ at venue / 500+ directly engaged
-- [ ] CNC/MPCNC live demos
-- [ ] Member-recruiting story (student who later joined mechanical/software)
-- [ ] Nov 8–9 dates
-- [ ] `maker-faire-lead` photo slot
+- [x] Venue/scale (Milwaukee Maker Faire at Discovery World — 3rd largest in the US)
+- [x] 5th year invited back
+- [x] ~6,000+ at venue / 500+ directly engaged
+- [x] CNC/MPCNC live demos
+- [x] Member-recruiting story (student who later joined mechanical/software)
+- [x] Nov 8–9 dates
+- [x] `maker-faire-lead` photo slot
 
 ### `/outreach/first-advocacy`
-- [ ] FIRST Advocacy Day at WI capitol (3 years)
-- [ ] WI FTC Student Advocacy Board / FIRST WI Student Board of Directors seat
-- [ ] Governors Cup Washington DC (1+ hr with Gov. Evers, spouse, 2 policy staff)
-- [ ] K-12 DPI funding expansion push (from grades 6–12 → K–12)
-- [ ] Chips & Sciences Act effort (1 of 5 teams, ~$5M nationally, 6 federal legislators)
-- [ ] DPI Robotics League Bill passage ($500K annual funding secured; 75+ legislators; 7 students mobilized)
-- [ ] Key legislators: Rep. Adam Neylon, Sen. Rob Hutton, Gov. Tony Evers, Sen. Tammy Baldwin
+- [x] FIRST Advocacy Day at WI capitol (3 years)
+- [x] WI FTC Student Advocacy Board / FIRST WI Student Board of Directors seat
+- [x] Governors Cup Washington DC (1+ hr with Gov. Evers, spouse, 2 policy staff)
+- [x] K-12 DPI funding expansion push (from grades 6–12 → K–12)
+- [x] Chips & Sciences Act effort (1 of 5 teams, ~$5M nationally, 6 federal legislators)
+- [x] DPI Robotics League Bill passage ($500K annual funding secured; 75+ legislators; 7 students mobilized)
+- [x] Key legislators: Rep. Adam Neylon, Sen. Rob Hutton, Gov. Tony Evers, Sen. Tammy Baldwin
 - [ ] `first-advocacy-lead` photo slot
 
 ### `/outreach/ge-elfuns`
-- [ ] Partnership with GE Elfuns retiree group
-- [ ] Presentations overview (connecting robotics to GE work)
-- [ ] Technical mentorship pipeline potential
-- [ ] Expanding FIRST awareness to retirees
-- [ ] `ge-elfuns-lead` photo slot
+- [x] Partnership with GE Elfuns retiree group
+- [x] Presentations overview (connecting robotics to GE work)
+- [x] Technical mentorship pipeline potential
+- [x] Expanding FIRST awareness to retirees
+- [x] `ge-elfuns-lead` photo slot
+- [x] Revision 2: 2-col hero with HeroImageWell placeholder
+- [x] Revision 2: "Why This Partnership" approach prose section (4 paragraphs + inline sticky image well)
+- [x] Revision 2: People & Partners section — GE Elfuns partner card (dashed logo slot) + Elfuns Coordinator role slot
+- [x] Revision 2: Closing photo strip replaced with 6-slot PhotoGallery (2/3-col responsive) with specific captions
 
 ### `/outreach/fll-mentoring`
 - [ ] Judged FLL projects
@@ -306,10 +323,10 @@
 - [ ] `community-demos-lead` photo slot
 
 ### `/outreach/school-support`
-- [ ] District partnership narrative (superintendent, principal, athletic director)
-- [ ] FLL & FTC registration and field cost coverage
-- [ ] Increased school robotics spaces
-- [ ] Club-fee model context (~$100 BCHS fee)
+- [x] District partnership narrative (superintendent, principal, athletic director)
+- [x] FLL & FTC registration and field cost coverage
+- [x] Increased school robotics spaces
+- [x] Club-fee model context (~$100 BCHS fee)
 - [ ] `school-support-lead` photo slot
 
 ---

@@ -1,0 +1,140 @@
+{
+  "machines": [
+    {
+      "id": "mpcnc",
+      "label": "MPCNC",
+      "fullName": "MP (Mostly Printed) CNC",
+      "iconKey": "build",
+      "colorKey": "primary",
+      "tagline": "Large-part router — side-plates, panels, structural frames. Also a portable demo machine used at outreach events.",
+      "description": "A DIY CNC router built from 3D-printed structural parts and common hardware, following the open-source MPCNC design. The team assembled and iterated it themselves. Because the entire robot is 100% CAD-designed, setting up toolpaths is straightforward — the machine cuts directly from Onshape exports. It's also portable and appears at outreach demos as a working example of student-built fabrication equipment.",
+      "externalLink": {
+        "url": "https://docs.v1e.com/",
+        "label": "MPCNC Docs"
+      },
+      "makes": [
+        "Side-plates",
+        "Structural panels",
+        "Acrylic cut parts",
+        "Outreach demo cuts"
+      ],
+      "materials": [
+        "Aluminum",
+        "HDPE",
+        "Acrylic"
+      ],
+      "photoLabel": "MPCNC — large-part router",
+      "photoHint": "MPCNC in the shop cutting a robot side-plate"
+    },
+    {
+      "id": "6x6mill",
+      "label": "6\"×6\" Mill",
+      "fullName": "6\"×6\" Industrial CNC Mill",
+      "iconKey": "precision",
+      "colorKey": "secondary",
+      "tagline": "Precision work — gears, tight-tolerance small parts",
+      "description": "A compact 6\"×6\" industrial mill reserved for high-tolerance detail work. Where the MPCNC handles bulk structural cuts, this machine handles the parts that demand tight tolerances — gear profiles, bearing pockets, and intricate mounting features. The precision ceiling here is meaningfully higher than what a printed-part router can deliver.",
+      "makes": [
+        "Gears",
+        "Tight-tolerance mounting features",
+        "Acrylic detail parts"
+      ],
+      "materials": [
+        "Aluminum",
+        "Steel",
+        "Acrylic"
+      ],
+      "photoLabel": "6\"×6\" industrial mill — precision small parts",
+      "photoHint": "6\"×6\" CNC mill cutting a gear profile"
+    },
+    {
+      "id": "printnc",
+      "label": "PrintNC",
+      "fullName": "PrintNC CNC Mill",
+      "iconKey": "area",
+      "colorKey": "tertiary",
+      "tagline": "Large-scale cutting — full-sheet stock and oversized workpieces",
+      "description": "The largest CNC in the shop, a PrintNC build designed for cutting full-sheet stock. Its travel envelope handles workpieces that are too large for either the MPCNC or the 6\"×6\" mill. The team runs Production Hub jobs here — including parts machined for other FTC teams.",
+      "makes": [
+        "Full-sheet panels",
+        "Production Hub parts",
+        "Complex 2.5D profiles",
+        "Carbon fibre parts"
+      ],
+      "materials": [
+        "Aluminum",
+        "Plywood",
+        "HDPE sheet",
+        "Acrylic",
+        "Carbon fibre"
+      ],
+      "photoLabel": "PrintNC — large-scale mill",
+      "photoHint": "PrintNC running a full-sheet aluminum cut"
+    },
+    {
+      "id": "3dprint",
+      "label": "3D Printing",
+      "fullName": "Bambu Lab X1C + Resin Printers",
+      "iconKey": "layers",
+      "colorKey": "primary",
+      "tagline": "Rapid iteration — complex geometry, prototyping, jigs",
+      "description": "The team's primary FDM printer is the Bambu Lab X1C, paired with resin printers for detail work. FDM handles parts with geometry that would be difficult or slow to machine: curved channels, integrated snap features, cable routing guides, and sensor mounts. Prototypes are printed first to verify fit before committing a part to CNC time. The MPCNC itself is largely held together by printed components.",
+      "externalLink": {
+        "url": "https://bambulab.com/en/x1",
+        "label": "Bambu Lab X1C"
+      },
+      "makes": [
+        "Prototypes",
+        "Sensor mounts",
+        "Cable guides",
+        "Snap-fit brackets",
+        "Nameplates"
+      ],
+      "materials": [
+        "PLA",
+        "PETG",
+        "TPU",
+        "ASA",
+        "Resin"
+      ],
+      "photoLabel": "3D printing station",
+      "photoHint": "Bambu Lab X1C mid-run on a robot sensor mount"
+    }
+  ],
+  "fabStat": {
+    "rangeLow": 90,
+    "rangeHigh": 100,
+    "context": "Kit-based FTC robots use off-the-shelf structural components. GEarheads designs every structural and mechanical part from scratch in Onshape, then fabricates them on team-built CNC mills or with 3D printing. The Freight Frenzy season (2021–22) clocked in at ~90% custom-fabricated; every season since has been 100% custom — including three full robot iterations in DECODE (2025–26)."
+  },
+  "processSteps": [
+    {
+      "id": "cad",
+      "label": "CAD",
+      "detail": "Full robot modeled in Onshape with joints and motion simulation before any material is cut.",
+      "iconKey": "architecture"
+    },
+    {
+      "id": "cam",
+      "label": "CAM / Setup",
+      "detail": "Toolpaths generated from Onshape exports. Machine selected based on part size and tolerance requirements.",
+      "iconKey": "settings"
+    },
+    {
+      "id": "machining",
+      "label": "Machining",
+      "detail": "MPCNC, 6\"×6\" mill, PrintNC, or the X1C runs the part. Manual finishing completes detail work.",
+      "iconKey": "build"
+    },
+    {
+      "id": "part",
+      "label": "Finished Part",
+      "detail": "De-burred, tapped, and inspected. Assembled into the robot sub-system and tested immediately.",
+      "iconKey": "check"
+    }
+  ],
+  "productionHub": {
+    "partsThisSeason": 41,
+    "teamsSupported": 4,
+    "description": "The Production Hub runs CNC jobs for other FTC teams in Wisconsin who lack fabrication infrastructure. In the 2025–26 season, GEarheads completed 41 parts and provided fabrication coaching to four teams."
+  }
+}

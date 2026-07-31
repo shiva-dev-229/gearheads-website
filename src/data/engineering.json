@@ -1,0 +1,94 @@
+{
+  "phases": [
+    {
+      "id": "phase-1",
+      "number": 1,
+      "label": "Define",
+      "title": "End-Goal Planning & Subsystem Scoping",
+      "description": "We open every season by breaking the game down before touching hardware. The Game Points Matrix maps every mission by risk, reward, and time cost — forcing honest prioritization before any design commitment. From this, we define robot capability targets per subsystem, setting measurable requirements that guide every decision downstream.",
+      "bullets": [
+        "Game Points Matrix: score and rank every scoring mission",
+        "Monte Carlo simulation to predict score ranges and mission times",
+        "Subsystem capability targets set before prototyping begins",
+        "User and subsystem requirements documented in the DHF"
+      ]
+    },
+    {
+      "id": "phase-2",
+      "number": 2,
+      "label": "Hypothesize",
+      "title": "Advanced CAD Pre-Planning & Rough Prototypes",
+      "description": "With requirements locked, the team moves into 100% CAD-first design using Onshape. Every subsystem is modeled before a single physical part is made. Joints define motion ranges, assemblies validate clearances, and CAD-derived drawings feed directly into CNC toolpaths. Rough prototypes test risky mechanisms early, when changes are cheap.",
+      "bullets": [
+        "Full robot modeled in Onshape — no part fabricated before CAD review",
+        "Subsystems designed with joints to define and validate motion ranges",
+        "FMEA (Failure Mode Effect Analysis) to catch failure modes before build",
+        "Rough physical prototypes validate high-risk subsystem assumptions"
+      ]
+    },
+    {
+      "id": "phase-3",
+      "number": 3,
+      "label": "Fabricate",
+      "title": "Finalize Designs & Advanced Fabrication",
+      "description": "Finalized CAD drives production. 3D printing handles complex geometry; CNC milling produces structural aluminum, acrylic, and plate components. Because the robot is 100% CAD-designed, CNC setup is straightforward — every part traces back to a model. Integration testing runs against the requirements defined in Phase 1.",
+      "bullets": [
+        "3D printing for complex geometry and custom mechanism parts",
+        "CNC milling for structural aluminum, plate work, and precision components",
+        "Performance testing against Phase 1 requirements; DHF updated with results"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "100%",
+      "label": "CAD-Based Design",
+      "hint": "Every part modeled in Onshape before fabrication"
+    },
+    {
+      "value": "90%+",
+      "label": "Custom-Fabricated Parts",
+      "hint": "Minimal off-the-shelf kit reliance"
+    },
+    {
+      "value": "3",
+      "label": "CNC Mills",
+      "hint": "Custom MPCNC, Bantam Tools, and large-scale PrintNC"
+    },
+    {
+      "value": "2-Week",
+      "label": "Sprint Cycles",
+      "hint": "Rigorous sprint plans through the 8-month season"
+    }
+  ],
+  "subpageCards": [
+    {
+      "id": "design-process",
+      "title": "Design Process",
+      "description": "DHF framework, Game Points Matrix, FMEA, and sprint planning methodology.",
+      "href": "/engineering#design-process",
+      "iconKey": "assignment"
+    },
+    {
+      "id": "cad",
+      "title": "CAD & Mechanical",
+      "description": "100% Onshape workflow, subsystem modeling, and joint-defined assemblies.",
+      "href": "/engineering#cad",
+      "iconKey": "architecture"
+    },
+    {
+      "id": "manufacturing",
+      "title": "Manufacturing",
+      "description": "CNC milling and 3D printing — how designs become hardware.",
+      "href": "/engineering#manufacturing",
+      "iconKey": "precision_manufacturing"
+    },
+    {
+      "id": "testing",
+      "title": "Testing & Iteration",
+      "description": "Performance testing, Monte Carlo validation, and continuous improvement.",
+      "href": "/engineering#testing",
+      "iconKey": "science"
+    }
+  ]
+}

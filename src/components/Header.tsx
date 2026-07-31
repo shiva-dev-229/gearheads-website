@@ -4,7 +4,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { MdExpandMore } from 'react-icons/md'
 import { theme } from '../styles/theme'
 import StaggeredMenu from './reactbits/StaggeredMenu'
-import logoImg from '../../assets/logos/logo-black-removebg-preview.png'
+import logoImg from '../assets/logos/logo-black-removebg-preview.png'
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -30,6 +30,7 @@ type DropdownNavItem = {
   readonly dropdown: true
   readonly to: string | null
   readonly cols: number
+  readonly stacked?: boolean
   readonly items: readonly (MegaItem | MegaGroup)[]
 }
 
@@ -47,47 +48,68 @@ const navItems: readonly NavItem[] = [
     label: 'About',
     dropdown: true,
     to: '/about',
-    cols: 3,
+    cols: 4,
     items: [
-      { label: 'Our Story / History', to: '/about/history', desc: 'Season-by-season journey from 2017 to today.' },
-      { label: 'Mission & Values',    to: '/about/mission', desc: 'What drives us and the goals we chase.' },
-      { label: 'Team Culture',        to: '/about/culture', desc: 'How we work, collaborate, and grow together.' },
-      { label: 'Awards',              to: '/about/awards',  desc: 'Our competition awards and recognition history.' },
-      { label: 'Meet the Team',       to: '/team',          desc: 'The students and mentors behind #16460.' },
+      {
+        groupLabel: 'Who We Are',
+        links: [
+          { label: 'Mission & Values', to: '/about#mission', desc: 'What drives us and the goals we chase.' },
+          { label: 'Team Culture',     to: '/about#culture', desc: 'How we work, collaborate, and grow together.' },
+        ],
+      },
+      {
+        groupLabel: 'The Team',
+        links: [
+          { label: 'Meet the Team', to: '/about#team', desc: 'The students and mentors behind #16460.' },
+        ],
+      },
+      {
+        groupLabel: 'Season History',
+        links: [
+          { label: 'Our Journey', to: '/about#history', desc: 'Every season — from FLL to Worlds.' },
+        ],
+      },
+      {
+        groupLabel: 'Seasons',
+        links: [
+          { label: 'DECODE',         to: '/about#season-2025-26', desc: '2025–26 · Current season.' },
+          { label: 'Into the Deep',  to: '/about#season-2024-25', desc: '2024–25 · 1st CONNECT Award at Worlds.' },
+          { label: 'CENTERSTAGE',    to: '/about#season-2023-24', desc: '2023–24 · 2nd Inspire at Worlds.' },
+          { label: 'POWERPLAY',      to: '/about#season-2022-23', desc: '2022–23 · First Worlds qualification.' },
+          { label: 'Freight Frenzy', to: '/about#season-2021-22', desc: '2021–22 · State alliance win.' },
+          { label: 'Ultimate Goal',  to: '/about#season-2020-21', desc: '2020–21 · COVID hybrid season.' },
+          { label: 'Skystone',       to: '/about#season-2019-20', desc: '2019–20 · FTC rookie year.' },
+          { label: 'Into Orbit',     to: '/about#season-2018-19', desc: '2018–19 · FLL Worlds — Detroit.' },
+          { label: 'Hydro Dynamics', to: '/about#season-2017-18', desc: '2017–18 · Where it all began.' },
+        ],
+      },
     ],
   },
   {
-    label: 'STEM',
+    label: 'Design',
     dropdown: true,
     to: null,
-    cols: 3,
+    cols: 5,
+    stacked: true,
     items: [
-      {
-        groupLabel: 'Robot',
-        links: [
-          { label: 'Overview',        to: '/robot',             desc: 'The machines we design, build, and compete with.' },
-          { label: 'Gearboticus',     to: '/robot/gearboticus', desc: 'Our latest competition robot, up close.' },
-          { label: 'Subsystems',      to: '/robot/subsystems',  desc: 'Drivetrain, intake, scoring, and more, broken down.' },
-          { label: 'Robot Evolution', to: '/robot/evolution',   desc: 'How our robots have advanced each season.' },
-        ],
-      },
-      {
-        groupLabel: 'Engineering',
-        links: [
-          { label: 'Overview',            to: '/engineering',                 desc: 'Our end-to-end engineering approach.' },
-          { label: 'Design Process',      to: '/engineering/design-process',  desc: 'From concept to competition-ready, step by step.' },
-          { label: 'CAD & Mechanical',    to: '/engineering/cad',             desc: '100% CAD-based design and custom parts.' },
-          { label: 'Manufacturing',       to: '/engineering/manufacturing',   desc: 'CNC, fabrication, and how we build.' },
-          { label: 'Testing & Iteration', to: '/engineering/testing',         desc: 'Analysis, testing, and continuous improvement.' },
-        ],
-      },
       {
         groupLabel: 'Software',
         links: [
-          { label: 'Overview',                to: '/programming',              desc: 'How we program and control our robots.' },
-          { label: 'Control Systems',         to: '/programming/control',      desc: 'PID, motion profiling, and driver controls.' },
-          { label: 'Autonomous & Navigation', to: '/programming/autonomous',   desc: 'Pathing and optical odometry for autonomous.' },
-          { label: 'Software Innovations',    to: '/programming/innovations',  desc: "The tools and techniques we've pioneered." },
+          { label: 'Overview',                to: '/programming',               desc: 'How we program and control our robots.' },
+          { label: 'Control Systems',         to: '/programming#control',       desc: 'PID, motion profiling, and driver controls.' },
+          { label: 'Autonomous & Navigation', to: '/programming#autonomous',    desc: 'Pathing and optical odometry for autonomous.' },
+          { label: 'Software Innovations',    to: '/programming#innovations',   desc: "The tools and techniques we've pioneered." },
+          { label: 'Auto Paths',              to: '/robot/auto-paths',          desc: 'Our autonomous routines — open for other teams to reference.' },
+        ],
+      },
+      {
+        groupLabel: 'Mechanical',
+        links: [
+          { label: 'Overview',            to: '/engineering',                  desc: 'Our end-to-end engineering approach.' },
+          { label: 'Design Process',      to: '/engineering#design-process',  desc: 'From concept to competition-ready, step by step.' },
+          { label: 'CAD & Mechanical',    to: '/engineering#cad',             desc: '100% CAD-based design and custom parts.' },
+          { label: 'Manufacturing',       to: '/engineering#manufacturing',   desc: 'CNC, fabrication, and how we build.' },
+          { label: 'Testing & Iteration', to: '/engineering#testing',         desc: 'Analysis, testing, and continuous improvement.' },
         ],
       },
     ],
@@ -133,30 +155,99 @@ const navItems: readonly NavItem[] = [
     ],
   },
   {
-    label: 'Seasons',
+    label: 'Resources',
     dropdown: true,
     to: null,
-    cols: 4,
+    cols: 3,
     items: [
-      { label: 'DECODE (2025–26)',        to: '/seasons/2025-26', desc: 'Our current season.' },
-      { label: 'Into the Deep (2024–25)', to: '/seasons/2024-25', desc: 'Connect Award at Worlds.' },
-      { label: 'CENTERSTAGE (2023–24)',   to: '/seasons/2023-24', desc: 'Inspire Award finalist at Worlds.' },
-      { label: 'POWERPLAY (2022–23)',     to: '/seasons/2022-23', desc: 'Our first Inspire Award and Worlds berth.' },
-      { label: 'Freight Frenzy (2021–22)',to: '/seasons/2021-22', desc: 'Leveling up reliability and strategy.' },
-      { label: 'Ultimate Goal (2020–21)', to: '/seasons/2020-21', desc: 'Growing through a challenging year.' },
-      { label: 'Skystone (2019–20)',      to: '/seasons/2019-20', desc: 'Our rookie FTC season.' },
+      {
+        groupLabel: 'Software',
+        links: [
+          { label: 'GIT Tutorial',    to: '/resources/git',    desc: 'Version control for FTC code workflows.' },
+          { label: 'Blocks Tutorial', to: '/resources/blocks', desc: 'Get started with FTC Blocks programming.' },
+          { label: 'Java Tutorial',   to: '/resources/java',   desc: 'Level up with Java for advanced robot control.' },
+          { label: 'React Tutorial',  to: '/resources/react',  desc: 'Web development for building your team site.' },
+        ],
+      },
+      {
+        groupLabel: 'Mechanical',
+        links: [
+          { label: 'Onshape Basics',          to: '/resources/onshape-basics',     desc: 'Introduction to Onshape for mechanical CAD.' },
+          { label: 'Onshape Tutorials',        to: '/resources/onshape-tutorials',  desc: 'Step-by-step tutorials for common Onshape tasks.' },
+          { label: 'Parts',                    to: '/resources/parts',              desc: 'Public part designs we\'re sharing with the community.' },
+          { label: 'Production Hub',           to: '/outreach/production-hub#form', desc: 'CNC parts with us — request parts for your robot.' },
+        ],
+      },
+      {
+        groupLabel: 'General',
+        links: [
+          { label: 'Qualifier Prep',    to: '/resources/qualifier-prep',         desc: 'Checklists and guides to prepare for competition.' },
+          { label: 'Computer Outreach', to: '/outreach/computer-project#form',   desc: 'Request a refurbished computer for your team.' },
+        ],
+      },
     ],
   },
 ]
 
 // Mobile StaggeredMenu items
 const mobileNavItems = [
-  { label: 'Home',     ariaLabel: 'Home page',    link: '/' },
-  { label: 'About',    ariaLabel: 'About us',     link: '/about' },
-  { label: 'Robot',    ariaLabel: 'Our robots',   link: '/robot' },
-  { label: 'Outreach', ariaLabel: 'Outreach',     link: '/outreach' },
-  { label: 'Seasons',  ariaLabel: 'Seasons',      link: '/seasons/2025-26' },
-  { label: 'Contact',  ariaLabel: 'Contact us',   link: '/contact' },
+  { label: 'Home',     ariaLabel: 'Home page',  link: '/' },
+  {
+    label: 'About', ariaLabel: 'About us', link: '/about',
+    children: [
+      { label: 'Who We Are',              isHeader: true,                      link: '' },
+      { label: 'Mission & Values',        ariaLabel: 'Mission and values',     link: '/about#mission' },
+      { label: 'Team Culture',            ariaLabel: 'Team culture',           link: '/about#culture' },
+      { label: 'The Team',                isHeader: true,                      link: '' },
+      { label: 'Meet the Team',           ariaLabel: 'Meet the team',          link: '/about#team' },
+      { label: 'Season History',          isHeader: true,                      link: '' },
+      { label: 'Our Journey',             ariaLabel: 'Season history',         link: '/about#history' },
+      { label: 'Seasons',                 isHeader: true,                      link: '' },
+      { label: 'DECODE 2025–26',          ariaLabel: '2025-26 season',         link: '/about#season-2025-26' },
+      { label: 'Into the Deep 2024–25',   ariaLabel: '2024-25 season',         link: '/about#season-2024-25' },
+      { label: 'CENTERSTAGE 2023–24',     ariaLabel: '2023-24 season',         link: '/about#season-2023-24' },
+      { label: 'POWERPLAY 2022–23',       ariaLabel: '2022-23 season',         link: '/about#season-2022-23' },
+      { label: 'Freight Frenzy 2021–22',  ariaLabel: '2021-22 season',         link: '/about#season-2021-22' },
+      { label: 'Ultimate Goal 2020–21',   ariaLabel: '2020-21 season',         link: '/about#season-2020-21' },
+      { label: 'Skystone 2019–20',        ariaLabel: '2019-20 season',         link: '/about#season-2019-20' },
+      { label: 'Into Orbit 2018–19',      ariaLabel: '2018-19 season',         link: '/about#season-2018-19' },
+      { label: 'Hydro Dynamics 2017–18',  ariaLabel: '2017-18 season',         link: '/about#season-2017-18' },
+    ],
+  },
+  {
+    label: 'Design', ariaLabel: 'Design', link: '',
+    children: [
+      { label: 'Software',              isHeader: true,                        link: '' },
+      { label: 'Overview',              ariaLabel: 'Programming overview',     link: '/programming' },
+      { label: 'Control Systems',       ariaLabel: 'Control systems',          link: '/programming#control' },
+      { label: 'Autonomous & Nav',      ariaLabel: 'Autonomous and nav',       link: '/programming#autonomous' },
+      { label: 'Software Innovations',  ariaLabel: 'Software innovations',     link: '/programming#innovations' },
+      { label: 'Auto Paths',            ariaLabel: 'Auto paths',               link: '/robot/auto-paths' },
+      { label: 'Mechanical',            isHeader: true,                        link: '' },
+      { label: 'Overview',              ariaLabel: 'Engineering overview',     link: '/engineering' },
+      { label: 'Design Process',        ariaLabel: 'Design process',           link: '/engineering#design-process' },
+      { label: 'CAD & Mechanical',      ariaLabel: 'CAD and mechanical',       link: '/engineering#cad' },
+      { label: 'Manufacturing',         ariaLabel: 'Manufacturing',            link: '/engineering#manufacturing' },
+      { label: 'Testing & Iteration',   ariaLabel: 'Testing and iteration',    link: '/engineering#testing' },
+    ],
+  },
+  { label: 'Outreach', ariaLabel: 'Outreach',    link: '/outreach' },
+  {
+    label: 'Resources', ariaLabel: 'Resources', link: '',
+    children: [
+      { label: 'GIT Tutorial',       ariaLabel: 'GIT Tutorial',       link: '/resources/git' },
+      { label: 'Blocks Tutorial',    ariaLabel: 'Blocks Tutorial',     link: '/resources/blocks' },
+      { label: 'Java Tutorial',      ariaLabel: 'Java Tutorial',       link: '/resources/java' },
+      { label: 'React Tutorial',     ariaLabel: 'React Tutorial',      link: '/resources/react' },
+      { label: 'Onshape Basics',     ariaLabel: 'Onshape Basics',      link: '/resources/onshape-basics' },
+      { label: 'Onshape Tutorials',  ariaLabel: 'Onshape Tutorials',   link: '/resources/onshape-tutorials' },
+      { label: 'Parts',              ariaLabel: 'Parts',               link: '/resources/parts' },
+      { label: 'Production Hub',     ariaLabel: 'Production Hub',      link: '/outreach/production-hub' },
+      { label: 'Qualifier Prep',     ariaLabel: 'Qualifier Prep',      link: '/resources/qualifier-prep' },
+      { label: 'Computer Outreach',  ariaLabel: 'Computer Outreach',   link: '/outreach/computer-project' },
+    ],
+  },
+  { label: 'Contact',  ariaLabel: 'Contact us',  link: '/contact' },
 ]
 
 const mobileSocialItems = [
@@ -213,7 +304,7 @@ const BrandLogo = styled.img`
   flex-shrink: 0;
 `
 
-const BrandText = styled.span`
+const BrandText = styled.span<{ $geActive?: boolean }>`
   font-family: ${theme.fonts.brand};
   font-size: 22px;
   font-weight: 400;
@@ -222,7 +313,8 @@ const BrandText = styled.span`
 
   em {
     font-style: normal;
-    color: ${theme.colors.secondary};
+    color: ${({ $geActive }) => ($geActive ? '#0088ff' : theme.colors.secondary)};
+    transition: color 250ms ease;
   }
 `
 
@@ -374,22 +466,33 @@ const MegaItemLink = styled(NavLink)`
     color: ${theme.colors.secondary};
   }
 
-  &.active {
-    background: ${theme.colors.background};
-    box-shadow: ${theme.shadows.neoInsetSm};
-  }
-
-  &.active ${MegaItemLabel} {
-    color: ${theme.colors.primary};
-  }
-
-  &.active:hover ${MegaItemLabel} {
-    color: ${theme.colors.secondary};
-  }
-
   &:focus-visible {
     outline: 2px solid ${theme.colors.secondary}55;
     outline-offset: 2px;
+  }
+`
+
+const SeasonRow = styled.div`
+  padding-top: 14px;
+  margin-top: 12px;
+`
+
+const SeasonRowLabel = styled.span`
+  display: block;
+  font-family: ${theme.fonts.label};
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: ${theme.colors.outlineVariant};
+  padding: 0 12px 10px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid ${theme.colors.outlineVariant}18;
+`
+
+const StackedRow = styled.div`
+  &:not(:first-child) {
+    margin-top: 10px;
   }
 `
 
@@ -450,24 +553,70 @@ const MobileMenuOverlay = styled.div`
 function MegaContent({ item, onClose }: { item: DropdownNavItem; onClose: () => void }) {
   const hasGroups = item.items.some(isGroup)
 
-  if (hasGroups) {
+  if (hasGroups && item.stacked) {
     return (
-      <MegaGroupGrid $cols={item.cols}>
+      <>
         {item.items.map((entry) => {
           if (!isGroup(entry)) return null
           return (
-            <MegaGroupCol key={entry.groupLabel}>
+            <StackedRow key={entry.groupLabel}>
               <MegaGroupLabel>{entry.groupLabel}</MegaGroupLabel>
-              {entry.links.map((link) => (
+              <MegaGrid $cols={item.cols}>
+                {entry.links.map((link) => (
+                  <MegaItemLink key={link.to} to={link.to} onClick={onClose}>
+                    <MegaItemLabel>{link.label}</MegaItemLabel>
+                    <MegaItemDesc>{link.desc}</MegaItemDesc>
+                  </MegaItemLink>
+                ))}
+              </MegaGrid>
+            </StackedRow>
+          )
+        })}
+      </>
+    )
+  }
+
+  if (hasGroups) {
+    const seasonGroup = item.items.find(
+      (x): x is MegaGroup => isGroup(x) && x.groupLabel === 'Seasons'
+    )
+    const mainGroups = item.items.filter(
+      (x) => !isGroup(x) || (x as MegaGroup).groupLabel !== 'Seasons'
+    )
+    const mainCols = mainGroups.filter(isGroup).length || item.cols
+
+    return (
+      <>
+        <MegaGroupGrid $cols={mainCols}>
+          {mainGroups.map((entry) => {
+            if (!isGroup(entry)) return null
+            return (
+              <MegaGroupCol key={entry.groupLabel}>
+                <MegaGroupLabel>{entry.groupLabel}</MegaGroupLabel>
+                {entry.links.map((link) => (
+                  <MegaItemLink key={link.to} to={link.to} onClick={onClose}>
+                    <MegaItemLabel>{link.label}</MegaItemLabel>
+                    <MegaItemDesc>{link.desc}</MegaItemDesc>
+                  </MegaItemLink>
+                ))}
+              </MegaGroupCol>
+            )
+          })}
+        </MegaGroupGrid>
+        {seasonGroup && (
+          <SeasonRow>
+            <SeasonRowLabel>Seasons</SeasonRowLabel>
+            <MegaGrid $cols={3}>
+              {seasonGroup.links.map((link) => (
                 <MegaItemLink key={link.to} to={link.to} onClick={onClose}>
                   <MegaItemLabel>{link.label}</MegaItemLabel>
                   <MegaItemDesc>{link.desc}</MegaItemDesc>
                 </MegaItemLink>
               ))}
-            </MegaGroupCol>
-          )
-        })}
-      </MegaGroupGrid>
+            </MegaGrid>
+          </SeasonRow>
+        )}
+      </>
     )
   }
 
@@ -490,8 +639,17 @@ function MegaContent({ item, onClose }: { item: DropdownNavItem; onClose: () => 
 
 export default function Header() {
   const [openLabel, setOpenLabel] = useState<string | null>(null)
+  const [geActive, setGeActive] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const { pathname } = useLocation()
+
+  useEffect(() => {
+    function onGeHover(e: Event) {
+      setGeActive((e as CustomEvent<{ active: boolean }>).detail.active)
+    }
+    window.addEventListener('ge-hover', onGeHover)
+    return () => window.removeEventListener('ge-hover', onGeHover)
+  }, [])
 
   useEffect(() => {
     setOpenLabel(null)
@@ -536,7 +694,7 @@ export default function Header() {
         <Inner>
           <BrandLink to="/" onClick={closeNow}>
             <BrandLogo src={logoImg} alt="GEarheads logo" />
-            <BrandText>
+            <BrandText $geActive={geActive}>
               <em>GE</em>arheads
             </BrandText>
           </BrandLink>

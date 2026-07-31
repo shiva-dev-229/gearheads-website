@@ -1,4 +1,4 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import './StaggeredMenu.css'
@@ -7,6 +7,8 @@ export interface StaggeredMenuItem {
   label: string
   ariaLabel?: string
   link: string
+  isHeader?: boolean
+  children?: StaggeredMenuItem[]
 }
 
 export interface StaggeredMenuSocialItem {
@@ -48,7 +50,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuClose,
 }) => {
   const [open, setOpen] = useState(false)
+  const [submenu, setSubmenu] = useState<{ items: StaggeredMenuItem[]; parentLabel: string } | null>(null)
   const openRef = useRef(false)
+  const needsAnimateIn = useRef(false)
   const panelRef = useRef<HTMLElement>(null)
   const preLayersRef = useRef<HTMLDivElement>(null)
   const preLayerElsRef = useRef<HTMLElement[]>([])
@@ -67,6 +71,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const colorTweenRef = useRef<gsap.core.Tween | null>(null)
   const toggleBtnRef = useRef<HTMLButtonElement>(null)
   const busyRef = useRef(false)
+
+  const displayItems = submenu?.items ?? items
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -246,6 +252,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     if (openRef.current) {
       openRef.current = false
       setOpen(false)
+      setSubmenu(null)
       onMenuClose?.()
       playClose()
       animateIcon(false)
@@ -270,6 +277,24 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     animateText(target)
   }, [playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen, onMenuClose])
 
+  // Animate new items in after submenu state swap
+  useEffect(() => {
+    if (!needsAnimateIn.current) return
+    needsAnimateIn.current = false
+    const panel = panelRef.current
+    if (!panel) return
+    requestAnimationFrame(() => {
+      const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[]
+      if (!itemEls.length) return
+      gsap.set(itemEls, { yPercent: 140, rotate: 10, opacity: 1 })
+      gsap.to(itemEls, {
+        yPercent: 0, rotate: 0,
+        duration: 0.65, ease: 'power4.out',
+        stagger: { each: 0.07, from: 'start' }
+      })
+    })
+  }, [submenu])
+
   React.useEffect(() => {
     if (!closeOnClickAway || !open) return
     const handleClickOutside = (event: MouseEvent) => {
@@ -284,10 +309,50 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [closeOnClickAway, open, closeMenu])
 
-  const handleItemClick = useCallback((link: string) => {
+  const handleItemClick = useCallback((item: StaggeredMenuItem) => {
+    if (item.children && item.children.length) {
+      const panel = panelRef.current
+      if (!panel) return
+      const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[]
+      if (itemEls.length) {
+        gsap.to(itemEls, {
+          yPercent: -140, rotate: -5, opacity: 0,
+          duration: 0.2, ease: 'power3.in',
+          stagger: { each: 0.03, from: 'end' },
+          onComplete: () => {
+            needsAnimateIn.current = true
+            setSubmenu({ items: item.children!, parentLabel: item.label })
+          }
+        })
+      } else {
+        needsAnimateIn.current = true
+        setSubmenu({ items: item.children!, parentLabel: item.label })
+      }
+      return
+    }
     closeMenu()
-    setTimeout(() => navigate(link), 320)
+    setTimeout(() => navigate(item.link), 320)
   }, [closeMenu, navigate])
+
+  const handleBack = useCallback(() => {
+    const panel = panelRef.current
+    if (!panel) return
+    const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[]
+    if (itemEls.length) {
+      gsap.to(itemEls, {
+        yPercent: 140, rotate: 5, opacity: 0,
+        duration: 0.2, ease: 'power3.in',
+        stagger: { each: 0.03, from: 'start' },
+        onComplete: () => {
+          needsAnimateIn.current = true
+          setSubmenu(null)
+        }
+      })
+    } else {
+      needsAnimateIn.current = true
+      setSubmenu(null)
+    }
+  }, [])
 
   const prelayerColors = (() => {
     const raw = colors && colors.length ? colors.slice(0, 4) : ['#1a2540', '#0f1520']
@@ -330,21 +395,39 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </button>
       </header>
 
-      <aside id="sm-mobile-panel" ref={panelRef} className="staggered-menu-panel" aria-hidden={!open}>
+      <aside
+        id="sm-mobile-panel"
+        ref={panelRef}
+        className="staggered-menu-panel"
+        aria-hidden={!open}
+        data-submenu={submenu ? 'true' : undefined}
+      >
         <div className="sm-panel-inner">
+          {submenu && (
+            <button className="sm-back-btn" onClick={handleBack} type="button">
+              ← {submenu.parentLabel}
+            </button>
+          )}
+
           <ul className="sm-panel-list" role="list" data-numbering={displayItemNumbering || undefined}>
-            {items.length ? items.map((it, idx) => (
-              <li className="sm-panel-itemWrap" key={it.label + idx}>
-                <button
-                  className="sm-panel-item"
-                  aria-label={it.ariaLabel}
-                  data-index={idx + 1}
-                  onClick={() => handleItemClick(it.link)}
-                  style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer' }}
-                >
-                  <span className="sm-panel-itemLabel">{it.label}</span>
-                </button>
-              </li>
+            {displayItems.length ? displayItems.map((it, idx) => (
+              it.isHeader ? (
+                <li className="sm-panel-itemWrap sm-panel-groupHeader" key={it.label + idx} aria-hidden="true">
+                  <span className="sm-panel-groupLabel">{it.label}</span>
+                </li>
+              ) : (
+                <li className="sm-panel-itemWrap" key={it.label + idx}>
+                  <button
+                    className="sm-panel-item"
+                    aria-label={it.ariaLabel}
+                    data-index={idx + 1}
+                    onClick={() => handleItemClick(it)}
+                    style={{ background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer' }}
+                  >
+                    <span className="sm-panel-itemLabel">{it.label}</span>
+                  </button>
+                </li>
+              )
             )) : null}
           </ul>
 

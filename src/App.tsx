@@ -33,19 +33,13 @@ const RobotPage              = lazy(() => import('./pages/RobotPage'))
 const GearbotPage            = lazy(() => import('./pages/robot/GearbotPage'))
 const SubsystemsPage         = lazy(() => import('./pages/robot/SubsystemsPage'))
 const EvolutionPage          = lazy(() => import('./pages/robot/EvolutionPage'))
+const AutoPathsPage          = lazy(() => import('./pages/robot/AutoPathsPage'))
 
 // Engineering
 const EngineeringPage        = lazy(() => import('./pages/EngineeringPage'))
-const DesignProcessPage      = lazy(() => import('./pages/engineering/DesignProcessPage'))
-const CadPage                = lazy(() => import('./pages/engineering/CadPage'))
-const ManufacturingPage      = lazy(() => import('./pages/engineering/ManufacturingPage'))
-const TestingPage            = lazy(() => import('./pages/engineering/TestingPage'))
 
 // Programming
 const ProgrammingPage        = lazy(() => import('./pages/ProgrammingPage'))
-const ControlPage            = lazy(() => import('./pages/programming/ControlPage'))
-const AutonomousPage         = lazy(() => import('./pages/programming/AutonomousPage'))
-const InnovationsPage        = lazy(() => import('./pages/programming/InnovationsPage'))
 
 // Outreach
 const OutreachPage           = lazy(() => import('./pages/OutreachPage'))
@@ -62,16 +56,16 @@ const FllMentoringPage       = lazy(() => import('./pages/outreach/FllMentoringP
 const CommunityDemosPage     = lazy(() => import('./pages/outreach/CommunityDemosPage'))
 const SchoolSupportPage      = lazy(() => import('./pages/outreach/SchoolSupportPage'))
 
-// Seasons
-const Season1718Page         = lazy(() => import('./pages/seasons/Season1718Page'))
-const Season1819Page         = lazy(() => import('./pages/seasons/Season1819Page'))
-const Season2526Page         = lazy(() => import('./pages/seasons/Season2526Page'))
-const Season2425Page         = lazy(() => import('./pages/seasons/Season2425Page'))
-const Season2324Page         = lazy(() => import('./pages/seasons/Season2324Page'))
-const Season2223Page         = lazy(() => import('./pages/seasons/Season2223Page'))
-const Season2122Page         = lazy(() => import('./pages/seasons/Season2122Page'))
-const Season2021Page         = lazy(() => import('./pages/seasons/Season2021Page'))
-const Season1920Page         = lazy(() => import('./pages/seasons/Season1920Page'))
+
+// Resources
+const GitTutorialPage        = lazy(() => import('./pages/resources/GitTutorialPage'))
+const BlocksTutorialPage     = lazy(() => import('./pages/resources/BlocksTutorialPage'))
+const JavaTutorialPage       = lazy(() => import('./pages/resources/JavaTutorialPage'))
+const ReactTutorialPage      = lazy(() => import('./pages/resources/ReactTutorialPage'))
+const OnshapeBasicsPage      = lazy(() => import('./pages/resources/OnshapeBasicsPage'))
+const OnshapeTutorialsPage   = lazy(() => import('./pages/resources/OnshapeTutorialsPage'))
+const PartsPage              = lazy(() => import('./pages/resources/PartsPage'))
+const QualifierPrepPage      = lazy(() => import('./pages/resources/QualifierPrepPage'))
 
 // Standalone
 const ImpactPage             = lazy(() => import('./pages/ImpactPage'))
@@ -162,19 +156,20 @@ export default function App() {
                 <Route path="/robot/gearboticus"     element={<GearbotPage />} />
                 <Route path="/robot/subsystems"      element={<SubsystemsPage />} />
                 <Route path="/robot/evolution"       element={<EvolutionPage />} />
+                <Route path="/robot/auto-paths"      element={<AutoPathsPage />} />
 
                 {/* Engineering */}
                 <Route path="/engineering"                    element={<EngineeringPage />} />
-                <Route path="/engineering/design-process"     element={<DesignProcessPage />} />
-                <Route path="/engineering/cad"                element={<CadPage />} />
-                <Route path="/engineering/manufacturing"      element={<ManufacturingPage />} />
-                <Route path="/engineering/testing"            element={<TestingPage />} />
+                <Route path="/engineering/design-process"     element={<Navigate to="/engineering#design-process" replace />} />
+                <Route path="/engineering/cad"                element={<Navigate to="/engineering#cad" replace />} />
+                <Route path="/engineering/manufacturing"      element={<Navigate to="/engineering#manufacturing" replace />} />
+                <Route path="/engineering/testing"            element={<Navigate to="/engineering#testing" replace />} />
 
                 {/* Programming */}
                 <Route path="/programming"                    element={<ProgrammingPage />} />
-                <Route path="/programming/control"            element={<ControlPage />} />
-                <Route path="/programming/autonomous"         element={<AutonomousPage />} />
-                <Route path="/programming/innovations"        element={<InnovationsPage />} />
+                <Route path="/programming/control"            element={<Navigate to="/programming#control" replace />} />
+                <Route path="/programming/autonomous"         element={<Navigate to="/programming#autonomous" replace />} />
+                <Route path="/programming/innovations"        element={<Navigate to="/programming#innovations" replace />} />
 
                 {/* Outreach */}
                 <Route path="/outreach"                          element={<OutreachPage />} />
@@ -191,16 +186,27 @@ export default function App() {
                 <Route path="/outreach/community-demos"          element={<CommunityDemosPage />} />
                 <Route path="/outreach/school-support"           element={<SchoolSupportPage />} />
 
-                {/* Seasons */}
-                <Route path="/seasons/2017-18" element={<Season1718Page />} />
-                <Route path="/seasons/2018-19" element={<Season1819Page />} />
-                <Route path="/seasons/2025-26" element={<Season2526Page />} />
-                <Route path="/seasons/2024-25" element={<Season2425Page />} />
-                <Route path="/seasons/2023-24" element={<Season2324Page />} />
-                <Route path="/seasons/2022-23" element={<Season2223Page />} />
-                <Route path="/seasons/2021-22" element={<Season2122Page />} />
-                <Route path="/seasons/2020-21" element={<Season2021Page />} />
-                <Route path="/seasons/2019-20" element={<Season1920Page />} />
+                {/* Seasons — redirect to about page anchors */}
+                <Route path="/seasons/2017-18" element={<Navigate to="/about#season-2017-18" replace />} />
+                <Route path="/seasons/2018-19" element={<Navigate to="/about#season-2018-19" replace />} />
+                <Route path="/seasons/2019-20" element={<Navigate to="/about#season-2019-20" replace />} />
+                <Route path="/seasons/2020-21" element={<Navigate to="/about#season-2020-21" replace />} />
+                <Route path="/seasons/2021-22" element={<Navigate to="/about#season-2021-22" replace />} />
+                <Route path="/seasons/2022-23" element={<Navigate to="/about#season-2022-23" replace />} />
+                <Route path="/seasons/2023-24" element={<Navigate to="/about#season-2023-24" replace />} />
+                <Route path="/seasons/2024-25" element={<Navigate to="/about#season-2024-25" replace />} />
+                <Route path="/seasons/2025-26" element={<Navigate to="/about#season-2025-26" replace />} />
+
+                {/* Resources */}
+                <Route path="/resources/git"                element={<Navigate to="/resources/git/repository-basics" replace />} />
+                <Route path="/resources/git/:slug"          element={<GitTutorialPage />} />
+                <Route path="/resources/blocks"             element={<BlocksTutorialPage />} />
+                <Route path="/resources/java"               element={<JavaTutorialPage />} />
+                <Route path="/resources/react"              element={<ReactTutorialPage />} />
+                <Route path="/resources/onshape-basics"     element={<OnshapeBasicsPage />} />
+                <Route path="/resources/onshape-tutorials"  element={<OnshapeTutorialsPage />} />
+                <Route path="/resources/parts"              element={<PartsPage />} />
+                <Route path="/resources/qualifier-prep"     element={<QualifierPrepPage />} />
 
                 {/* Standalone */}
                 <Route path="/impact"    element={<ImpactPage />} />
@@ -211,7 +217,7 @@ export default function App() {
 
                 {/* Redirects */}
                 <Route path="/robot/current"               element={<Navigate to="/robot/gearboticus" replace />} />
-                <Route path="/engineering/cad-mechanical"  element={<Navigate to="/engineering/cad" replace />} />
+                <Route path="/engineering/cad-mechanical"  element={<Navigate to="/engineering#cad" replace />} />
                 <Route path="/outreach/computer-refurbishing" element={<Navigate to="/outreach/computer-project" replace />} />
                 <Route path="/new-members"                 element={<Navigate to="/join" replace />} />
 

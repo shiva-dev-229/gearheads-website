@@ -1,0 +1,162 @@
+{
+  "seasons": [
+    { "id": "2025-26", "label": "DECODE 2025–26" },
+    { "id": "2024-25", "label": "Into the Deep 2024–25" },
+    { "id": "2023-24", "label": "CENTERSTAGE 2023–24" },
+    { "id": "2022-23", "label": "POWERPLAY 2022–23" },
+    { "id": "2021-22", "label": "Freight Frenzy 2021–22" },
+    { "id": "2020-21", "label": "Ultimate Goal 2020–21" },
+    { "id": "2019-20", "label": "Skystone 2019–20" }
+  ],
+  "membersBySeason": {
+    "2025-26": [
+      { "id": "a1", "name": "Team Captain",       "subteam": "Strategy & Docs", "grade": "11" },
+      { "id": "a2", "name": "Lead Engineer",       "subteam": "Mechanical",       "grade": "11" },
+      { "id": "a3", "name": "Lead Programmer",     "subteam": "Software",         "grade": "10" },
+      { "id": "a4", "name": "Lead Outreach",       "subteam": "Outreach",         "grade": "10" },
+      { "id": "a5", "name": "Driver",              "subteam": "Strategy & Docs", "grade": "9"  },
+      { "id": "a6", "name": "Mechanical Engineer", "subteam": "Mechanical",       "grade": "9"  }
+    ],
+    "2024-25": [
+      { "id": "b1", "name": "Team Captain",   "subteam": "Strategy & Docs", "grade": "12" },
+      { "id": "b2", "name": "Lead Engineer",  "subteam": "Mechanical",       "grade": "12" },
+      { "id": "b3", "name": "Lead Programmer","subteam": "Software",         "grade": "11" },
+      { "id": "b4", "name": "Lead Outreach",  "subteam": "Outreach",         "grade": "11" },
+      { "id": "b5", "name": "Co-Driver",      "subteam": "Strategy & Docs", "grade": "10" },
+      { "id": "b6", "name": "CAD Lead",       "subteam": "Mechanical",       "grade": "10" }
+    ],
+    "2023-24": [
+      { "id": "c1", "name": "Team Captain",   "subteam": "Strategy & Docs", "grade": "12" },
+      { "id": "c2", "name": "Lead Engineer",  "subteam": "Mechanical",       "grade": "11" },
+      { "id": "c3", "name": "Lead Programmer","subteam": "Software",         "grade": "11" },
+      { "id": "c4", "name": "Lead Outreach",  "subteam": "Outreach",         "grade": "10" },
+      { "id": "c5", "name": "Strategy Lead",  "subteam": "Strategy & Docs", "grade": "10" }
+    ],
+    "2022-23": [
+      { "id": "d1", "name": "Team Captain",   "subteam": "Strategy & Docs", "grade": "12" },
+      { "id": "d2", "name": "Lead Engineer",  "subteam": "Mechanical",       "grade": "11" },
+      { "id": "d3", "name": "Lead Programmer","subteam": "Software",         "grade": "10" },
+      { "id": "d4", "name": "Lead Outreach",  "subteam": "Outreach",         "grade": "10" }
+    ],
+    "2021-22": [
+      { "id": "e1", "name": "Team Captain",   "subteam": "Strategy & Docs", "grade": "11" },
+      { "id": "e2", "name": "Lead Engineer",  "subteam": "Mechanical",       "grade": "10" },
+      { "id": "e3", "name": "Lead Programmer","subteam": "Software",         "grade": "9"  },
+      { "id": "e4", "name": "Lead Outreach",  "subteam": "Outreach",         "grade": "9"  }
+    ],
+    "2020-21": [
+      { "id": "f1", "name": "Team Captain",   "subteam": "Strategy & Docs", "grade": "11" },
+      { "id": "f2", "name": "Lead Engineer",  "subteam": "Mechanical",       "grade": "10" },
+      { "id": "f3", "name": "Lead Programmer","subteam": "Software",         "grade": "10" },
+      { "id": "f4", "name": "Lead Outreach",  "subteam": "Outreach",         "grade": "9"  }
+    ],
+    "2019-20": [
+      { "id": "g1", "name": "Team Captain",   "subteam": "Strategy & Docs", "grade": "11" },
+      { "id": "g2", "name": "Lead Engineer",  "subteam": "Mechanical",       "grade": "10" },
+      { "id": "g3", "name": "Lead Programmer","subteam": "Software",         "grade": "9"  },
+      { "id": "g4", "name": "Lead Outreach",  "subteam": "Outreach",         "grade": "9"  }
+    ]
+  },
+  "subteams": [
+    {
+      "name": "Strategy & Docs",
+      "iconKey": "flag",
+      "colorKey": "primary",
+      "desc": "Game analysis, portfolio, judge prep, and season planning.",
+      "fullDesc": "The nerve center of every season. Strategy & Docs owns the Engineering Portfolio — GEarheads' primary award submission document — as well as game analysis, season planning, and all judge-facing presentations. Every strategic direction and budget decision flows through this subteam.",
+      "projects": [
+        { "name": "Engineering Portfolio", "desc": "Season-long document capturing the full design cycle, outreach impact, and team identity — built for the Inspire Award judging panel." },
+        { "name": "Game Analysis", "desc": "Breaking down the season's challenge to identify the highest-value autonomous routes and driver-controlled scoring strategies." },
+        { "name": "Judge Presentation", "desc": "Live five-minute presentation covering robot design, outreach, and team culture — rehearsed and iterated throughout competition season." },
+        { "name": "Sprint Planning", "desc": "Coordinating two-week sprint cycles across all subteams — backlog grooming, goals, and retrospectives for the full eight-month season." }
+      ]
+    },
+    {
+      "name": "Mechanical",
+      "iconKey": "build",
+      "colorKey": "secondary",
+      "desc": "Robot design, CAD, CNC manufacturing, and assembly.",
+      "url": "/engineering",
+      "linkLabel": "Engineering Section",
+      "fullDesc": "Everything physical — from initial sketches to finished metal. Mechanical owns robot design, parametric CAD in Onshape, CNC and 3D-print fabrication, and full assembly. The subteam uses a data-driven design process with FMEA and Monte Carlo analysis to validate decisions before cutting a single part.",
+      "projects": [
+        { "name": "Robot CAD", "desc": "Full parametric assembly in Onshape — every bracket, shaft, and mounting point modeled and version-controlled before fabrication." },
+        { "name": "CNC Fabrication", "desc": "Custom aluminum and polycarbonate parts cut on the team's in-house CNC router, with DXF exports generated directly from Onshape." },
+        { "name": "Drivetrain", "desc": "Competition-tuned drivetrain design and build — tested against field conditions and iterated each sprint cycle." },
+        { "name": "End Effector", "desc": "Game-piece-specific intake and scoring mechanisms, redesigned each season for the new game challenge." }
+      ]
+    },
+    {
+      "name": "Software",
+      "iconKey": "code",
+      "colorKey": "tertiary",
+      "desc": "Autonomous, teleop, control systems, and sensor integration.",
+      "url": "/programming",
+      "linkLabel": "Programming Section",
+      "fullDesc": "Robot control from the ground up. Software writes and tests every line of code — autonomous routines, driver-controlled teleop, computer vision pipelines, and the sensor fusion systems that tie it all together. All code lives on GitHub with pull request reviews before anything touches the competition branch.",
+      "projects": [
+        { "name": "Autonomous", "desc": "Fully scripted pre-match routines using path-following algorithms and sensor-guided execution for consistent scoring." },
+        { "name": "TeleOp", "desc": "Polished driver-controlled code with hardware abstraction, gamepad bindings, and failsafe handling for competition reliability." },
+        { "name": "Vision Pipeline", "desc": "Camera-based game piece detection and pose estimation using OpenCV and TensorFlow Lite running on a dedicated coprocessor." },
+        { "name": "Odometry System", "desc": "Three-wheel dead-reckoning odometry for precise robot localization throughout autonomous and driver-controlled periods." }
+      ]
+    },
+    {
+      "name": "Outreach",
+      "iconKey": "volunteerActivism",
+      "colorKey": "primary",
+      "desc": "Community programs, events, advocacy, and impact tracking.",
+      "url": "/outreach",
+      "linkLabel": "Outreach Programs",
+      "fullDesc": "GEarheads' community impact arm. Outreach plans, executes, and measures every external program the team runs — from hospital visits to rookie mentorship to computer donation drives. Every program is intentional, tied to measurable impact metrics, and tracked in a dedicated spreadsheet.",
+      "projects": [
+        { "name": "Children's Wisconsin", "desc": "Monthly STEM workshops at Children's Wisconsin hospital, bringing hands-on robotics activities to young patients and families." },
+        { "name": "VA Hospital Program", "desc": "STEM demonstrations and robotics activities for veterans and staff at the Milwaukee VA Medical Center." },
+        { "name": "Computer Donation Drive", "desc": "Collecting, refurbishing, and distributing computers to under-resourced families and schools across the Milwaukee area." },
+        { "name": "Rookie Qualifier Hosting", "desc": "Co-hosting regional FTC Rookie Qualifier events to grow the FIRST Tech Challenge ecosystem in Wisconsin." }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "Slack",
+      "iconKey": "forum",
+      "desc": "Team communication",
+      "colorKey": "primary",
+      "url": "https://slack.com",
+      "fullDesc": "Our primary communication hub. Every subteam has its own channel, and we run dedicated channels for sprint announcements, build updates, outreach events, and competition logistics. Real-time coordination keeps everyone on the same page across the full eight-month season."
+    },
+    {
+      "name": "Google Workspace",
+      "iconKey": "cloud",
+      "desc": "Docs, Drive & Sheets",
+      "colorKey": "secondary",
+      "url": "https://workspace.google.com",
+      "fullDesc": "Docs, Sheets, Drive, Slides, and Forms power the entire documentation pipeline — engineering notebooks, outreach impact trackers, budget spreadsheets, judge presentation decks, and a shared Drive that holds every asset from every season going back to 2017."
+    },
+    {
+      "name": "Onshape",
+      "iconKey": "architecture",
+      "desc": "3D CAD & robot design",
+      "colorKey": "tertiary",
+      "url": "https://www.onshape.com",
+      "fullDesc": "Cloud-native parametric CAD used for every robot component — individual brackets, full assemblies, and fabrication drawings. We run weekly CAD reviews in Onshape, track design iterations across versions, and generate DXF/STEP exports directly for CNC and 3D printing workflows."
+    },
+    {
+      "name": "GitHub",
+      "iconKey": "code",
+      "desc": "Code & version control",
+      "colorKey": "primary",
+      "url": "https://github.com",
+      "fullDesc": "Version control for all robot code. Teleop, autonomous, control systems, and utility modules each live in their own branches. Pull requests go through code review before merging to the competition branch — same professional workflow we'd use in industry."
+    },
+    {
+      "name": "Microsoft Office",
+      "iconKey": "apps",
+      "desc": "Docs & presentations",
+      "colorKey": "secondary",
+      "url": "https://www.microsoft.com/en-us/microsoft-365",
+      "fullDesc": "Word and PowerPoint handle formal documentation, sponsor decks, and the FIRST technical portfolio. We use Office for any document that needs precise formatting control — award submissions, grant applications, and sponsor-facing materials that represent the team professionally."
+    }
+  ]
+}

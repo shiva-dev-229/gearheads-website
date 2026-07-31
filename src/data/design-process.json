@@ -1,0 +1,171 @@
+{
+  "steps": [
+    {
+      "id": "kickoff",
+      "number": "01",
+      "label": "Kickoff & Game Analysis",
+      "iconKey": "flag",
+      "colorKey": "primary",
+      "summary": "Season begins with full game analysis — every scoring element, every rule, every strategic constraint.",
+      "detail": "At kickoff, the team watches the game release and immediately breaks down the field. Every scoring element is catalogued with its point value and estimated difficulty. The output feeds directly into the Game Points Matrix: a structured ranking of what the robot should pursue, in what order, and why. No design decisions are made until this baseline exists.",
+      "outputs": [
+        "Game Points Matrix draft",
+        "Scoring element inventory",
+        "Strategic priority ranking"
+      ]
+    },
+    {
+      "id": "strategy",
+      "number": "02",
+      "label": "Strategy & Simulation",
+      "iconKey": "analytics",
+      "colorKey": "secondary",
+      "summary": "Game Points Matrix + Monte Carlo simulation — predict score ranges and mission times before building anything.",
+      "detail": "The Game Points Matrix compares each task's scoring value against implementation difficulty, producing a prioritized list of capabilities. That list feeds a custom Excel-based Monte Carlo simulation — 50+ simulated games per iteration — which projects expected score ranges and mission times under realistic conditions. This tells the team whether a proposed design is viable before a single part is cut.",
+      "outputs": [
+        "Finalized Game Points Matrix",
+        "Monte Carlo score projections",
+        "Mission time estimates",
+        "Design viability threshold"
+      ]
+    },
+    {
+      "id": "design",
+      "number": "03",
+      "label": "Design & Trade-offs",
+      "iconKey": "architecture",
+      "colorKey": "tertiary",
+      "summary": "CAD-first design with cost/benefit analysis at every fork — trade-offs are documented, not guessed.",
+      "detail": "Every design decision is evaluated with cost/benefit analysis: weight, complexity, reliability, and fabrication time weighed against expected performance gain. Multiple concepts are explored in Onshape before anything is fabricated. The DHF structure requires that each design decision is traceable — if a choice is made, there is a documented reason. 100% of the robot is designed in CAD before manufacturing begins.",
+      "outputs": [
+        "Subsystem CAD models",
+        "Cost/benefit analysis records",
+        "Design decision log",
+        "Fabrication drawings"
+      ]
+    },
+    {
+      "id": "fabricate",
+      "number": "04",
+      "label": "Fabricate",
+      "iconKey": "build",
+      "colorKey": "primary",
+      "summary": "Custom fabrication — CNC milling and 3D printing — from CAD to physical parts.",
+      "detail": "Nearly every robot part is custom-fabricated using the team's three CNC mills (custom MPCNC, 6\"×6\" industrial mill, large PrintNC) and 3D printers. The CAD-first workflow means parts are cut to spec, not iterated by hand. Subsystems are assembled and bench-tested independently before integration, following the DHF subsystem-based design requirement.",
+      "outputs": [
+        "Fabricated subsystem components",
+        "Bench-test results",
+        "Integration checklist"
+      ]
+    },
+    {
+      "id": "test",
+      "number": "05",
+      "label": "Test & Iterate (FMEA)",
+      "iconKey": "science",
+      "colorKey": "secondary",
+      "summary": "FMEA surfaces failure modes before competition. Every failure is documented, root-caused, and fixed.",
+      "detail": "Failure Mode and Effect Analysis (FMEA) is applied systematically: every subsystem is evaluated for potential failure modes, their likelihood, and their impact on match performance. Observed failures during testing are logged, prioritized by severity, and assigned to sprint tasks. Monte Carlo runs are updated with new timing data after each test session. This loop — test, observe, FMEA, fix, re-simulate — repeats across the 8-month season.",
+      "outputs": [
+        "FMEA log",
+        "Updated Monte Carlo model",
+        "Sprint task backlog",
+        "Verified subsystem specs"
+      ]
+    },
+    {
+      "id": "competition",
+      "number": "06",
+      "label": "Competition-Ready",
+      "iconKey": "trophy",
+      "colorKey": "tertiary",
+      "summary": "Data-verified, mechanically proven, and strategically tuned — the robot earns its place on the field.",
+      "detail": "Before each competition, the team reviews the Game Points Matrix against current robot capabilities, runs a final Monte Carlo pass with observed match performance data, and confirms all FMEA items are resolved or mitigated. Post-match analysis feeds back into the sprint cycle for the next event. The process doesn't end at competition — it closes the loop for the next iteration.",
+      "outputs": [
+        "Pre-competition readiness checklist",
+        "Post-match analysis",
+        "Next-sprint task list"
+      ]
+    }
+  ],
+  "dhf": [
+    {
+      "id": "origin",
+      "summary": "A GE Healthcare engineering framework used to develop FDA-regulated medical devices — applied here to FTC robotics.",
+      "question": "Design History File — the GE Healthcare origin",
+      "bullets": [
+        "Framework comes directly from GE Healthcare's medical device development process",
+        "Used in production of FDA-regulated hardware: MRI machines, CT scanners, X-ray systems",
+        "Team coaches are CTOs at GE Healthcare — they introduced the process to the team",
+        "Core principle: every design decision is documented, traceable, and reviewable"
+      ]
+    },
+    {
+      "id": "dhf-reading",
+      "summary": "The team's shorthand: Define · Hypothesize · Fabricate maps the industrial framework onto the FTC season.",
+      "question": "Define · Hypothesize · Fabricate — the team's reading",
+      "bullets": [
+        "Define — game breakdown, scoring priorities, robot requirements, and constraints",
+        "Hypothesize — design concepts, simulation runs, cost/benefit analysis, CAD models",
+        "Fabricate — custom manufacturing, subsystem testing, FMEA, and iteration",
+        "Three phases mirror the FTC season timeline, making the framework student-actionable"
+      ]
+    },
+    {
+      "id": "subsystem",
+      "summary": "Every subsystem is designed, built, and validated in isolation before it touches the rest of the robot.",
+      "question": "Subsystem-based design",
+      "bullets": [
+        "Each robot subsystem is scoped, designed, and tested as an independent unit",
+        "Integration only happens after individual subsystem tests pass",
+        "Isolates failure points — a broken mechanism doesn't halt the whole build",
+        "Matches GE Healthcare's medical-device validation methodology"
+      ]
+    },
+    {
+      "id": "traceability",
+      "summary": "Every specification links back to a documented design goal — nothing is built without a recorded reason.",
+      "question": "Requirement traceability",
+      "bullets": [
+        "Each design requirement traces to a scoring goal from the Game Points Matrix",
+        "Design decisions are logged with rationale, not just outcomes",
+        "Enables post-match review: if performance misses a target, the trace shows why",
+        "Mirrors FDA traceability requirements applied to life-critical hardware"
+      ]
+    },
+    {
+      "id": "gates",
+      "summary": "No fabrication before CAD review. No integration before subsystem test. Gates enforce quality at every transition.",
+      "question": "Formal design review gates",
+      "bullets": [
+        "CAD review gate: 100% of parts modeled in Onshape before any manufacturing begins",
+        "Subsystem gate: bench-test results must pass before the part joins the full robot",
+        "Integration gate: full robot assembly only after all subsystem gates are cleared",
+        "Gates are team-enforced checkpoints, not suggestions — they match industrial review cadence"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "Game Points Matrix",
+      "iconKey": "grid",
+      "colorKey": "primary",
+      "description": "Ranks every scoring element by point value vs. implementation difficulty. Drives strategic priority decisions before any design work begins.",
+      "slotHint": "Annotated Game Points Matrix — scoring value vs. difficulty grid for the DECODE season"
+    },
+    {
+      "name": "Monte Carlo Simulation",
+      "iconKey": "analytics",
+      "colorKey": "secondary",
+      "description": "Custom Excel model runs 50+ simulated games per iteration. Outputs expected score ranges and mission times to validate design viability before fabrication.",
+      "slotHint": "Monte Carlo output — score distribution and mission time projections across 50+ simulated matches"
+    },
+    {
+      "name": "FMEA",
+      "iconKey": "warning",
+      "colorKey": "tertiary",
+      "description": "Failure Mode and Effect Analysis applied to each subsystem. Identifies, observes, and prioritizes failure modes by likelihood and match impact.",
+      "slotHint": "FMEA table — failure modes, severity ratings, and remediation actions for a subsystem"
+    }
+  ]
+}

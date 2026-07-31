@@ -1,0 +1,108 @@
+{
+  "layers": [
+    {
+      "id": "layer-1",
+      "number": 1,
+      "label": "Abstraction",
+      "title": "Hardware Abstraction Layer",
+      "description": "Every motor, servo, and sensor is wrapped in a subsystem class — Intake, Spindexer, Camera, Turret — so the rest of the code never touches raw hardware. This keeps opmodes readable, makes hardware swaps a one-line change, and lets us reuse the same subsystem structure season after season without rewriting the foundation.",
+      "bullets": [
+        "One subsystem class per mechanism — no raw hardware in opmodes",
+        "Hardware mapped in a single place; swaps are one-line changes",
+        "Subsystem structure carries over between seasons",
+        "Unit-testable logic separated from hardware calls"
+      ]
+    },
+    {
+      "id": "layer-2",
+      "number": 2,
+      "label": "Control",
+      "title": "Closed-Loop Control",
+      "description": "On top of the hardware layer sits the control code — PID controllers, feedforward models, and motion profiles that turn a target into smooth, repeatable motion. Whether it's holding a lift height under load or driving to an exact heading, control loops read sensor feedback continuously and correct in real time rather than guessing with open-loop timing.",
+      "bullets": [
+        "PID + feedforward on every position- and velocity-critical mechanism",
+        "Motion profiling for smooth acceleration and jerk limits",
+        "Sensor feedback closes the loop — no timing-based guesses",
+        "Gains tuned live and stored per mechanism"
+      ]
+    },
+    {
+      "id": "layer-3",
+      "number": 3,
+      "label": "Autonomy",
+      "title": "Autonomous & Navigation",
+      "description": "The autonomous layer combines localization, path following, and vision correction to run repeatable routines without a driver. For DECODE we fused two odometry sources — an optical odometry sensor and a goBILDA Pinpoint computer — to track the robot's pose, drove planned paths with Pedro Pathing, and used AprilTag vision to snap the estimate back to ground truth so error never compounds across a 30-second routine.",
+      "bullets": [
+        "Pose tracking fusing optical odometry and a goBILDA Pinpoint (DECODE)",
+        "Pedro Pathing for smooth Bézier-curve path following with heading control",
+        "AprilTag vision correction to eliminate accumulated drift",
+        "Routines swappable at match time based on alliance"
+      ]
+    },
+    {
+      "id": "layer-4",
+      "number": 4,
+      "label": "Tooling",
+      "title": "Telemetry & Tuning",
+      "description": "None of this is possible without visibility. We stream live telemetry to FTC Dashboard, tune PID gains and path constants without redeploying code, and log every run so a failure at competition can be replayed and diagnosed in the pit. The tooling layer is what turns a slow guess-and-check process into fast, data-driven iteration.",
+      "bullets": [
+        "Live telemetry and field visualization via FTC Dashboard",
+        "Gains and constants tuned without recompiling",
+        "Every run logged for pit-side replay and diagnosis",
+        "All code version-controlled in Git across the season"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "Java",
+      "label": "Primary Language",
+      "hint": "FTC SDK on Android Studio, version-controlled in Git"
+    },
+    {
+      "value": "Subsystem",
+      "label": "Architecture",
+      "hint": "Reusable class-per-mechanism structure across seasons"
+    },
+    {
+      "value": "Closed-Loop",
+      "label": "Motion Control",
+      "hint": "PID + feedforward on every critical mechanism"
+    },
+    {
+      "value": "Live",
+      "label": "Telemetry & Tuning",
+      "hint": "FTC Dashboard for real-time data and gain tuning"
+    }
+  ],
+  "subpageCards": [
+    {
+      "id": "control",
+      "title": "Control Systems",
+      "description": "PID, feedforward, motion profiling, and the driver controls behind precise motion.",
+      "href": "/programming#control",
+      "iconKey": "tune"
+    },
+    {
+      "id": "autonomous",
+      "title": "Autonomous & Navigation",
+      "description": "Localization, path following, and AprilTag vision for repeatable autonomous.",
+      "href": "/programming#autonomous",
+      "iconKey": "route"
+    },
+    {
+      "id": "innovations",
+      "title": "Software Innovations",
+      "description": "The tools and techniques we've built to iterate faster than the field.",
+      "href": "/programming#innovations",
+      "iconKey": "lightbulb"
+    },
+    {
+      "id": "auto-paths",
+      "title": "Auto Paths",
+      "description": "Our autonomous routines and starting positions — open for alliance partners.",
+      "href": "/robot/auto-paths",
+      "iconKey": "map"
+    }
+  ]
+}

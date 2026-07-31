@@ -2,10 +2,13 @@ import { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import { theme } from '../styles/theme'
-import sponsorsData from '../public/sponsors.json'
+import sponsorsData from '../data/sponsors.json'
 import BorderGlow from './reactbits/BorderGlow'
 
-const SPONSORS = sponsorsData
+const logoModules = import.meta.glob('../assets/sponsor-logos/*.png', { eager: true, import: 'default' }) as Record<string, string>
+const resolveLogo = (filename: string) => logoModules[`../assets/sponsor-logos/${filename}`] ?? ''
+
+const SPONSORS = sponsorsData.map(s => ({ ...s, image: resolveLogo(s.image) }))
 const N = SPONSORS.length
 const ITEMS = [...SPONSORS, ...SPONSORS, ...SPONSORS] // tripled for seamless loop
 
@@ -25,11 +28,11 @@ const Section = styled.section`
   width: 100%;
   max-width: ${theme.spacing.containerMax};
   margin: 0 auto;
-  padding: 80px 0 96px;
+  padding: 56px 0 72px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 28px;
 `
 
 const SectionHeader = styled.div`
@@ -47,7 +50,7 @@ const SectionHeader = styled.div`
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.headline};
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -55,13 +58,13 @@ const SectionTitle = styled.h2`
   text-align: center;
 
   @media (min-width: 768px) {
-    font-size: 40px;
+    font-size: 34px;
   }
 `
 
 const SectionSubtitle = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: ${theme.colors.onSurfaceVariant};
   text-align: center;
@@ -325,6 +328,12 @@ export default function SponsorsSection() {
                     {...(hasLink
                       ? { href: s.website, target: '_blank', rel: 'noopener noreferrer' }
                       : {})}
+                    onMouseEnter={() => {
+                      if (s.name === 'GE HealthCare') window.dispatchEvent(new CustomEvent('ge-hover', { detail: { active: true } }))
+                    }}
+                    onMouseLeave={() => {
+                      if (s.name === 'GE HealthCare') window.dispatchEvent(new CustomEvent('ge-hover', { detail: { active: false } }))
+                    }}
                   >
                     <BorderGlow
                       backgroundColor="#141414"

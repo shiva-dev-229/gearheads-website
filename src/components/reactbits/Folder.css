@@ -1,0 +1,86 @@
+.folder-wrapper {
+  display: inline-block;
+}
+
+.folder {
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+
+.folder:hover {
+  transform: translateY(-12px);
+}
+
+.folder:hover .paper {
+  transform: translate(-50%, 0%);
+}
+
+.folder:hover .folder__front {
+  transform: skew(15deg) scaleY(0.6);
+}
+
+.folder:hover .right {
+  transform: skew(-15deg) scaleY(0.6);
+}
+
+.folder__back {
+  position: relative;
+  width: 180px;
+  height: 144px;
+  background: var(--folder-back-color);
+  border-radius: 0px 18px 18px 18px;
+}
+
+.folder__back::after {
+  position: absolute;
+  z-index: 0;
+  bottom: 98%;
+  left: 0;
+  content: '';
+  width: 54px;
+  height: 18px;
+  background: var(--folder-back-color);
+  border-radius: 9px 9px 0 0;
+}
+
+.paper {
+  position: absolute;
+  z-index: 2;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  width: 70%;
+  height: 80%;
+  background: var(--paper-1);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.paper:nth-child(2) {
+  background: var(--paper-2);
+  width: 80%;
+  height: 70%;
+}
+
+.paper:nth-child(3) {
+  background: var(--paper-3);
+  width: 90%;
+  height: 60%;
+}
+
+.folder__front {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: var(--folder-color);
+  border-radius: 9px 18px 18px 18px;
+  transform-origin: bottom;
+  transition: all 0.3s ease-in-out;
+}
+
+.folder:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 6px;
+  border-radius: 18px;
+}

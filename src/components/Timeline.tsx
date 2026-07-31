@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { MdSchool, MdBuild } from 'react-icons/md'
 import { theme } from '../styles/theme'
-import rawEntries from '../public/timeline.json'
+import rawEntries from '../data/timeline.json'
 
 const entries = rawEntries.map((e) => ({
   ...e,
@@ -14,15 +14,15 @@ const Section = styled.section`
   width: 100%;
   max-width: ${theme.spacing.containerMax};
   margin: 0 auto;
-  padding: 32px ${theme.spacing.marginMobile};
+  padding: 24px ${theme.spacing.marginMobile};
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 36px;
   background: ${theme.colors.surfaceContainerLow};
   border-radius: 24px;
 
   @media (min-width: 768px) {
-    padding: 64px ${theme.spacing.marginDesktop};
+    padding: 48px ${theme.spacing.marginDesktop};
   }
 `
 
@@ -38,20 +38,20 @@ const SectionHeader = styled.div`
 
 const SectionTitle = styled.h2`
   font-family: ${theme.fonts.headline};
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: ${theme.colors.onSurface};
 
   @media (min-width: 768px) {
-    font-size: 40px;
+    font-size: 34px;
   }
 `
 
 const SectionSubtitle = styled.p`
   font-family: ${theme.fonts.body};
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: ${theme.colors.onSurfaceVariant};
 `

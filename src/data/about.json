@@ -1,0 +1,51 @@
+{
+  "pillars": [
+    {
+      "iconKey": "build",
+      "colorKey": "primary",
+      "title": "Build Competitively",
+      "desc": "Design and fabricate industry-grade robots using the DHF engineering framework — data-driven, FMEA-tested, and built to compete at the highest level.",
+      "stat": "3×",
+      "statLabel": "World Championship"
+    },
+    {
+      "iconKey": "volunteerActivism",
+      "colorKey": "secondary",
+      "title": "Reach Outward",
+      "desc": "Bring meaningful STEM access to communities that need it most — Children's Wisconsin, the Milwaukee VA, computer donation programs, and beyond.",
+      "stat": "6+",
+      "statLabel": "Active Programs"
+    },
+    {
+      "iconKey": "school",
+      "colorKey": "tertiary",
+      "title": "Develop People",
+      "desc": "Grow the next generation of engineers, designers, and leaders through real challenges, a strong mentorship pipeline, and fully student-led decision making.",
+      "stat": "Gr. 6–12",
+      "statLabel": "Open to Everyone"
+    },
+    {
+      "iconKey": "eco",
+      "colorKey": "secondary",
+      "title": "Sustain FIRST",
+      "desc": "Actively grow the FIRST ecosystem in Wisconsin — hosting rookie qualifiers, mentoring FLL teams, and building CNCs for resource-limited programs.",
+      "stat": "9",
+      "statLabel": "Seasons of Ecosystem Work"
+    }
+  ],
+  "values": [
+    { "iconKey": "lightbulb", "colorKey": "primary",   "label": "Innovation" },
+    { "iconKey": "favorite",  "colorKey": "tertiary",  "label": "Impact" },
+    { "iconKey": "people",    "colorKey": "secondary", "label": "Inclusion" },
+    { "iconKey": "handshake", "colorKey": "primary",   "label": "Teamwork" },
+    { "iconKey": "star",      "colorKey": "secondary", "label": "Fun" }
+  ],
+  "principles": [
+    "Data over opinion — every design decision is backed by testing, FMEA, or Monte Carlo simulation.",
+    "Simplicity over complexity — if the simplest solution works, that's the right solution.",
+    "Sustainability over short-term wins — we build systems and culture that last beyond any one season.",
+    "Outreach is strategic — every program we run is intentional and tied to measurable community impact.",
+    "Continuous improvement — two-week sprints, retrospectives, and goal tracking keep us moving forward.",
+    "Collaboration over competition — we share openly with other teams because growing the ecosystem grows everyone."
+  ]
+}

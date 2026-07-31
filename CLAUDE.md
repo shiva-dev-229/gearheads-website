@@ -19,20 +19,25 @@ npm run build     # Type-check + build to dist/
 npm run preview   # Preview production build
 ```
 
+**Note:** Dev server often runs in a separate session at `localhost:5173`. Always use the existing running server instead of starting a new one.
+
 ## Project Structure
 
 ```
 src/
-  components/   # React components
-  styles/       # Global styles + theme
-  App.tsx       # Root component
-  main.tsx      # Entry point
-assets/
-  logos/        # Brand logos
-  photos/       # Photography
-  fonts/        # Custom fonts (Asimov.ttf — not yet used)
-  sponsor-logos/  # 13 sponsor PNGs — not yet displayed on site
-ai_context/     # AI session context and design reference files
+  assets/         # All static assets (Vite-processed)
+    fonts/        # Asimov.ttf (imported via JS in GlobalStyles.ts)
+    logos/        # Brand logos
+    photos/       # Photography (home/, outreach/, about-hero-bg.jpg)
+    sponsor-logos/  # 13 sponsor PNGs (resolved via import.meta.glob in SponsorsSection)
+  components/     # React components
+  data/           # Static JSON data files (imported directly in components)
+  pages/          # Page-level components
+  styles/         # Global styles + theme
+  App.tsx         # Root component
+  main.tsx        # Entry point
+public/           # Vite static root — only favicon.png lives here
+ai_context/       # AI session context and design reference files
 ```
 
 ---
@@ -91,6 +96,27 @@ Every response must begin with the user's name: **Shivansh**.
 - New environment or secret files
 - OS-generated files (`.DS_Store`, `Thumbs.db`)
 - Editor config or workspace files
+
+---
+
+### Screenshot Cleanup
+
+**Delete all screenshots before ending any session.** Screenshots accumulate quickly from Playwright and manual verification steps.
+
+- Root-level PNGs (e.g. `hero-check.png`, `after-1280.png`) — delete after verification is done
+- `.playwright-mcp/*.png` — delete the entire contents of this folder at session end
+- Never commit screenshots to git
+
+---
+
+## Static Data Convention
+
+**All static site content (team members, seasons, tools, FAQs, sponsors, timeline entries, etc.) must be stored as JSON files in `src/data/`.** Components import these files directly — no inline data arrays or objects in component files.
+
+- Existing files: `faq.json`, `sponsors.json`, `timeline.json`, `team.json`, `about.json`
+- When adding new static content, create or extend a JSON file in `src/data/` rather than hardcoding it in the component
+- Icon components and theme color references cannot go in JSON — use `iconKey`/`colorKey` string maps and resolve them in the component
+- Sponsor logo images in `sponsors.json` use bare filenames (e.g. `"sponsors-ge-healthcare.png"`); resolved to imported URLs via `import.meta.glob` in SponsorsSection
 
 ---
 

@@ -1,0 +1,124 @@
+{
+  "hero": {
+    "chip": "Events & Demos · Milwaukee Maker Faire",
+    "title": "Robotics on the biggest stage in the state.",
+    "subtitle": "For the fifth consecutive year, GEarheads brought live robotics and fabrication demos to the Milwaukee Maker Faire at Discovery World — one of the largest maker events in the United States. Six thousand attendees. Five hundred direct conversations. One stage we've earned the right to keep coming back to."
+  },
+  "impact": {
+    "label": "Why it matters",
+    "text": "The Milwaukee Maker Faire doesn't re-invite teams as a courtesy — it re-invites teams that pull crowds, spark genuine curiosity, and leave attendees with something they couldn't have gotten anywhere else. Being asked back five years running is the clearest possible signal that what we bring to the floor resonates. And in year four, the event gave us something we didn't expect: a visitor who was so drawn in by our CNC demo that he later joined the team."
+  },
+  "stats": [
+    {
+      "value": "6000+",
+      "label": "At The Venue",
+      "hint": "Total attendees across both days"
+    },
+    {
+      "value": "500+",
+      "label": "Directly Engaged",
+      "hint": "Conversations, demos, and hands-on interactions"
+    },
+    {
+      "value": "5",
+      "label": "Years Invited Back",
+      "hint": "Consecutive seasons at Discovery World"
+    },
+    {
+      "value": "2",
+      "label": "Days of Demos",
+      "hint": "Nov 8–9, full weekend"
+    }
+  ],
+  "approach": {
+    "label": "Our Approach",
+    "heading": "What We Bring to Maker Faire",
+    "inlinePhoto": {
+      "src": null,
+      "caption": "GEarheads booth setup at Discovery World, full floor view"
+    },
+    "body": "Most teams at Maker Faire bring a poster and a robot on a table. We bring a fabrication shop.\n\nFor five years we've treated our Maker Faire booth as a working demonstration of everything GEarheads actually does — not a highlight reel, not a pitch, but a live cross-section of the team in operation. That means a CNC machine running real toolpaths, a full competition robot attendees can drive, and members who know how to read what a visitor actually wants from a conversation. It means treating a twelve-year-old asking 'how does it know where to go?' with exactly the same seriousness as a mechanical engineer asking about our feedrate calculations.\n\nThe discipline behind this approach is intentional. We brief the team before each day: rotate the stations, read the crowd, meet people where they are. If someone wants a ten-second answer, give them a ten-second answer. If someone wants to stand at the CNC table for twenty minutes unpacking the G-code pipeline, stay with them. The five hundred direct engagements we log across a weekend aren't passive impressions — they're conversations we actively chose to have well.\n\nThere's also a strategic dimension that gets less attention than the spectacle. Maker Faire draws exactly the audience we most want to reach: families with middle-schoolers who haven't found their FIRST team yet, hobbyist machinists who didn't know students were doing this, teachers looking for a hook for their engineering class, and professionals who want to see what the next generation of engineers looks like up close. We design the booth so every one of those visitors leaves with something useful — information about joining FIRST, a MPCNC build guide, or just a genuine sense that student robotics is more serious and more accessible than they assumed."
+  },
+  "highlights": [
+    {
+      "id": "venue-scale",
+      "iconKey": "place",
+      "tag": "Venue",
+      "title": "Discovery World — The Third Largest Maker Faire in the US",
+      "description": "The Milwaukee Maker Faire at Discovery World isn't a local craft show — it's one of the top three Maker Faire events in the entire country by attendance, drawing makers, engineers, artists, and curious families from across the Midwest. Discovery World sits on the Milwaukee lakefront and dedicates its full multi-floor facility to the event, meaning our booth sits alongside CNC shops, textile hackers, amateur radio operators, large-format 3D printing rigs, and everything in between.\n\nThe scale of the event is part of the point: it puts student robotics directly in front of an audience that includes professional engineers, parents evaluating STEM programs for their kids, and middle schoolers seeing a real competition robot for the first time. That mix of visitors — technically sophisticated adults and curious kids, often in the same conversation — forces a kind of explanatory discipline that makes our team stronger every year. You can't survive a Maker Faire crowd at Discovery World with a vague pitch. You need to know your machine, your software, and your purpose.\n\nFor a team built around the idea that outreach is strategic — not optional — there is no better-curated audience in Wisconsin. Every November we walk into one of the state's densest concentrations of people who already care about making things, and we spend two days showing them what student-led engineering looks like when it's done seriously.",
+      "wide": true
+    },
+    {
+      "id": "cnc-demo",
+      "iconKey": "precisionManufacturing",
+      "tag": "Live Demo",
+      "title": "CNC and MPCNC Live Machining on the Floor",
+      "description": "Our flagship demo at Maker Faire isn't a passive display — it's a live CNC machine cutting real material while attendees watch, ask questions, and understand exactly what's happening. We bring our MPCNC (Mostly Printed CNC), the same type of machine we teach other FTC teams to build through our DIY-CNC program, and run it through live toolpaths on the event floor.\n\nWatching a router bit trace a precise path through a piece of wood or acrylic is immediately, viscerally legible to people who have never seen CNC before — it answers the question 'what does a robotics team actually build?' better than any poster or slide ever could. We talk through how the machine was designed, how the toolpaths are generated in Fusion 360, and how the same fabrication logic powers every custom part on Gearboticus, our competition robot.\n\nThe MPCNC is also a deliberate choice beyond spectacle. It's a machine built primarily from 3D-printed parts and off-the-shelf hardware, which means it's replicable by any team with a printer and a hardware store run. Showing it live at Maker Faire is part of how we evangelize self-sufficient fabrication across the Wisconsin FTC ecosystem — every team that walks away knowing the MPCNC exists is a potential future participant in our DIY-CNC outreach program. The demo is a conversation starter that reliably draws a crowd and keeps it.",
+      "wide": false
+    },
+    {
+      "id": "robot-demo",
+      "iconKey": "smartToy",
+      "tag": "Hands-On",
+      "title": "Full FTC Robot Demo and Hands-On Driving",
+      "description": "We bring Gearboticus — our full competition robot — to the floor and let attendees drive it. This is consistently the highest-engagement piece of our setup: there is something qualitatively different about holding a controller and making a 30-pound competition robot move that no amount of video footage replicates.\n\nOur members walk visitors through every subsystem — the active sweeping intake, the triple-chamber spindexer, the flywheel launcher, the mecanum drivetrain — and explain the engineering decisions behind each one. Younger visitors get to load a scoring element and watch the launcher fire. Older attendees and parents tend to dig into the software side: how does the robot know where it is on the field, how does the auto-aim work, what does a two-week engineering sprint look like?\n\nWe treat every conversation as a genuine technical exchange, not a sales pitch, and that register — students talking seriously about engineering with strangers — is what keeps people at our table longer than any other. The robot is also a proof point: it's not a concept, it's not a kit, it's a machine this team designed, fabricated, programmed, and competed with at the FIRST World Championship. That context, delivered by the students who built it, lands differently than any brochure.",
+      "wide": false
+    },
+    {
+      "id": "engagement",
+      "iconKey": "groups",
+      "tag": "Community",
+      "title": "500+ Conversations Across Two Days",
+      "description": "Across both days of the event, our team directly engages more than five hundred people — not headcount passing by, but people who stopped, asked questions, touched hardware, or stayed for a full demo cycle. That number reflects something intentional about how we staff the booth: we rotate members throughout the weekend so every visitor gets a student who is genuinely excited to talk, and we brief the team beforehand on how to read what a visitor actually wants.\n\nFor families with kids in middle school, we always close with information about how to get involved in FIRST: team-finding resources on the FIRST website, what the first season looks like, how the GEarheads new-member pipeline works. For adults who are curious about CNC, we hand off the MPCNC build documentation and talk through what a self-build actually requires. For kids who want to drive the robot, we make sure there's a member at the controller station ready to hand off and explain every button.\n\nThe Maker Faire isn't just exposure — it's a structured recruitment and community-building operation, and we treat it like one. Five hundred conversations across two days, each handled with care, is what five years of continuous improvement at the same event looks like.",
+      "wide": false
+    },
+    {
+      "id": "recruiting",
+      "iconKey": "personAdd",
+      "tag": "Impact",
+      "title": "From Attendee to Team Member — The Recruiting Story",
+      "description": "In our fourth year at Maker Faire, a visitor who had wandered into our demo area became transfixed by the CNC machine running live toolpaths. He asked detailed questions about the MPCNC design, how the feedrate was set, what CAM software we used to generate the toolpaths, and how the same machine logic applied to the robot on the table next to it. He wasn't a middle schooler looking for a club — he was someone who had walked in curious about fabrication and found a student team doing it at a level that surprised him.\n\nBy the end of the conversation he had our contact information and a genuine sense of what the team was actually like — not a polished pitch, but an honest look at the work. He came to a meeting. He joined. He is now a contributing member on both the mechanical and software subteams.\n\nWe tell this story not because one recruiting conversion justifies a two-day event — the five hundred other conversations do that — but because it illustrates exactly what we're trying to do. The Maker Faire is the widest front door GEarheads has. We build it to be worth walking through. Every conversation we have well is a version of that story: someone who didn't know we existed finding out that student robotics is more serious, more accessible, and more interesting than they assumed.",
+      "wide": true
+    }
+  ],
+  "recruitingCallout": {
+    "label": "The moment it clicked",
+    "title": "A visitor walked up to the CNC machine and never really left.",
+    "text": "He stood at our table for forty minutes asking questions about feedrates, toolpaths, and how a machine built mostly from printed parts could cut metal. By the end of the conversation, he had our contact info. He came to a meeting the following week. He is now an active member on mechanical and software. One conversation at Maker Faire — the kind that happens five hundred times across a weekend — turned into a teammate who will be building robots with this team for years."
+  },
+  "partners": [
+    {
+      "id": "discovery-world",
+      "name": "Milwaukee Maker Faire at Discovery World",
+      "type": "Venue Partner",
+      "logo": null,
+      "note": "Third-largest Maker Faire in the US by attendance. Hosts the event annually at the Discovery World lakefront science and technology museum in Milwaukee, WI. GEarheads has been a returning exhibitor for five consecutive years."
+    }
+  ],
+  "photos": [
+    {
+      "src": null,
+      "caption": "Our booth at Discovery World — full floor view, both days"
+    },
+    {
+      "src": null,
+      "caption": "Kids driving Gearboticus at the hands-on station"
+    },
+    {
+      "src": null,
+      "caption": "MPCNC live demo crowd gathered around the CNC table"
+    },
+    {
+      "src": null,
+      "caption": "Team members explaining the robot subsystems to visitors"
+    },
+    {
+      "src": null,
+      "caption": "Attendee loading a scoring element into the intake"
+    },
+    {
+      "src": null,
+      "caption": "Wide shot of the Discovery World event floor, Nov 8–9"
+    }
+  ]
+}

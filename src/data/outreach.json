@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "chip": "Outreach",
+    "title": "Outreach is not optional — it's who we are.",
+    "subtitle": "GEarheads runs over 28 events a year, reaching 1,000+ students across hospitals, veteran centers, schools, and maker spaces. Every program we run is student-led and fully hands-on."
+  },
+  "stats": [
+    { "value": "1000+", "label": "Students Reached", "hint": "across all programs and events" },
+    { "value": "31+",   "label": "FIRST Teams Supported", "hint": "qualifiers, mentoring, and advocacy" },
+    { "value": "28+",   "label": "Events Per Year", "hint": "demos, qualifiers, and workshops" },
+    { "value": "500+",  "label": "Volunteer Hours", "hint": "logged by team members annually" }
+  ],
+  "categories": [
+    {
+      "id": "community-health",
+      "label": "Community & Health",
+      "description": "Bringing robotics to spaces where it isn't expected — and making it stick.",
+      "pages": [
+        {
+          "slug": "childrens-hospital",
+          "title": "Children's Hospital",
+          "description": "Play, powered by robotics — bringing hands-on robot builds to pediatric patients."
+        },
+        {
+          "slug": "veterans",
+          "title": "Veterans Program",
+          "description": "Robotics that serves those who served — weekly FLL sessions at the Milwaukee VA."
+        },
+        {
+          "slug": "computer-project",
+          "title": "Computer Project",
+          "description": "Computers, wiped clean and sent far — refurbished hardware reaching underserved communities."
+        }
+      ]
+    },
+    {
+      "id": "growing-first",
+      "label": "Growing FIRST",
+      "description": "Expanding the FIRST ecosystem — one qualifier, team, and skill at a time.",
+      "pages": [
+        {
+          "slug": "rookie-qualifier",
+          "title": "Rookie Qualifier",
+          "description": "A low-pressure first tournament for brand-new FTC teams to get their feet wet."
+        },
+        {
+          "slug": "production-hub",
+          "title": "Production Hub",
+          "description": "Behind-the-scenes qualifier production — judging, scoring, and AV for regional events."
+        },
+        {
+          "slug": "diy-cnc",
+          "title": "DIY CNC Workshop",
+          "description": "Teaching teams to build their own CNC machines from scratch using open-source hardware."
+        },
+        {
+          "slug": "fll-mentoring",
+          "title": "FLL Mentoring",
+          "description": "Long-term mentorship for FLL teams in Elmbrook — from strategy to robot design."
+        }
+      ]
+    },
+    {
+      "id": "access-advocacy",
+      "label": "Access & Advocacy",
+      "description": "Lowering the barriers to FIRST and pushing for systemic change from the inside.",
+      "pages": [
+        {
+          "slug": "first-advocacy",
+          "title": "FIRST Advocacy",
+          "description": "Making the case for FIRST funding and access at the state and district level."
+        },
+        {
+          "slug": "ge-elfuns",
+          "title": "GE Elfuns",
+          "description": "Partnering with GE HealthCare volunteers to extend STEM reach across the region."
+        },
+        {
+          "slug": "school-support",
+          "title": "School Support",
+          "description": "On-site visits and resource drops that help teachers bring FIRST into the classroom."
+        }
+      ]
+    },
+    {
+      "id": "events-demos",
+      "label": "Events & Demos",
+      "description": "Showing up in public — live demos that spark curiosity and start conversations.",
+      "pages": [
+        {
+          "slug": "maker-faire",
+          "title": "Maker Faire",
+          "description": "Annual public showcase where GEarheads demos the robot and runs hands-on build stations."
+        },
+        {
+          "slug": "community-demos",
+          "title": "Community Demos",
+          "description": "Pop-up robot demos at libraries, fairs, and community events across Brookfield."
+        }
+      ]
+    }
+  ]
+}

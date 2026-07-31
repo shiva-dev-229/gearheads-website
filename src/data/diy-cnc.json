@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "chip": "Growing FIRST · DIY CNC Machines",
+    "title": "Teaching teams to build their own machines.",
+    "subtitle": "We do not just lend access to a CNC mill — we teach FTC teams to build one from scratch. The goal is radical self-sufficiency: a team that can fabricate its own parts is never dependent on anyone else's shop, schedule, or generosity.",
+    "heroImage": {
+      "src": "IMG_2174.JPEG",
+      "caption": "Hapa Bots X-Carve setup session with GEarheads"
+    }
+  },
+  "impact": {
+    "label": "Why it matters",
+    "text": "Most rookie FTC teams face a hard ceiling early: they can design whatever they want in CAD, but they cannot make it. Outsourcing fabrication adds cost, lead time, and dependency — none of which a new team can afford. The DIY-CNC program breaks that ceiling by turning teams into their own manufacturing resource. A team that builds its first MPCNC learns not just how to operate a machine, but how machines work — and that knowledge compounds across every season that follows."
+  },
+  "concept": {
+    "label": "The MPCNC Concept",
+    "heading": "Open-source, low-cost, self-built",
+    "subtext": "What the MPCNC is, where it came from, and why it is the right tool for the job.",
+    "inlinePhoto": {
+      "src": null,
+      "caption": "MPCNC frame mid-build — conduit rails and printed corner blocks before the first squaring check"
+    },
+    "body": [
+      "The Mostly Printed CNC — MPCNC for short — is an open-source CNC router designed from the ground up to be built by ordinary people from ordinary materials. The frame is 3D-printed from standard PLA filament, the structural members are common electrical conduit available at any hardware store, and the motion system uses off-the-shelf stepper motors, V1 Engineering's documented hardware kit, and widely available GRBL or Marlin firmware. The entire bill of materials for a well-specified machine lands well under $500 — a fraction of what even the cheapest commercial desktop CNC costs.",
+      "The project was originated by Ryan Zellars at V1 Engineering and has been developed in public for over a decade, with a community of tens of thousands of builders worldwide. Its documentation is thorough, its tolerances are achievable on a standard consumer 3D printer, and when something breaks or needs tuning, the forums are full of people who have already solved the same problem. That community infrastructure is part of what makes it practical for a student team — they are not debugging alone.",
+      "For FTC teams specifically, the machine's cutting envelope is well-matched to robot-part geometry. Polycarbonate brackets, aluminum mounting plates, custom intake housings, and thin structural panels all fall within what an MPCNC can reliably cut once it is properly trammed and the feeds and speeds are dialed in. Our own team runs three CNC machines in-house — including a custom MPCNC build — and has accumulated the know-how to pass that process on: which print settings matter, how to true the frame, how to approach toolpath generation for FTC-relevant materials, and how to troubleshoot the failures that show up in the first few sessions.",
+      "The program is not just machine hand-off. We walk teams through the full arc: sourcing the hardware, printing the structural parts on whatever printer they have access to, assembling and tramming the frame, installing and configuring the electronics, running first cuts in foam before touching aluminum, and getting to a point where they can generate their own toolpaths from a CAD export. The goal is a team that can operate and maintain the machine without us — because a dependency on GEarheads is just a different kind of ceiling."
+    ]
+  },
+  "whyItWorks": {
+    "label": "Our Approach",
+    "heading": "Why teach teams to build their own machines",
+    "body": [
+      "The most common model for fabrication access in FTC is borrowing: a team with a CNC routes parts for a team without one, or a school shop gets used after-hours, or a mentor brings in a laser cutter from work. These arrangements are generous, but they are also fragile. A borrowed shop slot disappears when the owner has a competition conflict. A mentor's employer changes its equipment policy. A team from out of state has no local resource at all. Every one of these arrangements reintroduces the same dependency the team was trying to escape: the inability to make parts on its own schedule, to its own tolerances, from its own design files.",
+      "Building a machine changes the relationship entirely. When a team assembles the frame, wires the electronics, squares the gantry, and runs its own first cut, the machine stops being a tool they borrowed and becomes one they built. They know why every bolt is torqued to specification because they were the ones who stripped one when they did not. They know how to re-tram after a crash because they have done it. They understand the relationship between feed rate, spindle speed, and chip load because they watched what happened when those parameters were wrong. That understanding is not something a manual can fully transmit — it has to be earned by working through the problems.",
+      "Rookie teams benefit the most from this, and that is intentional. The fabrication ceiling hits earliest and hardest in a team's first and second seasons, when they are still learning what the machine needs to do and do not yet have the network access that more established programs have built over years. A rookie team with its own CNC at the end of year one is not behind — it is ahead of most programs that have been running for three or four years without one. That asymmetry is the point.",
+      "The program is also designed to scale. The MPCNC build process is documentable, the hardware is globally available, and the knowledge transfers through remote sessions as well as in-person ones — as the North Carolina pilot proved. The ambition is not to support four teams a year indefinitely. It is to develop a documented, replicable process that other experienced teams can adopt and deliver, creating a distributed network of MPCNC-capable programs across the FTC community."
+    ]
+  },
+  "teams": [
+    {
+      "id": "redcat",
+      "number": "17347",
+      "name": "RedCat Robotics",
+      "location": "Brookfield, WI",
+      "iconKey": "build",
+      "colorKey": "secondary",
+      "tagline": "First in our region to build and operate their own MPCNC.",
+      "description": "RedCat Robotics was the first team in the GEarheads' local ecosystem to go through the complete DIY-CNC build process from start to finish. The collaboration started with a straightforward question: could a team with no prior machining experience build a functioning CNC mill in a single season? The answer turned out to be yes — with the right scaffolding. GEarheads provided the print files, the hardware sourcing list, and hands-on tramming sessions in our shop. RedCat's student members handled every step of the assembly, learning along the way why the frame geometry matters, how to read runout on a spindle, and why squareness tolerances that seem irrelevant on paper show up visibly in the first real cut.\n\nBy the end of the season, their machine was running polycarbonate and thin aluminum reliably, and the team had started generating their own toolpaths from Onshape exports rather than copying ours. The fabrication capability they gained was real and immediate: parts they had previously been asking other teams to cut for them, they were now making in-house, faster and to their own tolerances. Every session with RedCat was a test of the program's core assumption — that the knowledge required to build and run a CNC machine is learnable by students in a single season — and every session confirmed it.",
+      "highlights": [
+        "Completed the full MPCNC build process from printed parts to first cut",
+        "Learned tramming, squareness checks, and feeds-and-speeds fundamentals",
+        "Transitioned from borrowing fabrication to fully in-house part production",
+        "Now generates toolpaths directly from their own Onshape CAD exports",
+        "First team in the local ecosystem to achieve self-sufficient CNC fabrication"
+      ]
+    },
+    {
+      "id": "cgull",
+      "number": "12966",
+      "name": "C-Gull Robotics",
+      "location": "Brookfield, WI",
+      "iconKey": "precision",
+      "colorKey": "secondary",
+      "tagline": "A more experienced team that went deeper into toolpath optimization and material science.",
+      "description": "C-Gull Robotics came into the program with more competition experience than most, which meant the build fundamentals clicked quickly and the interesting work happened in what came after: learning how to push the machine harder, tune it for specific materials, and integrate it tightly into their existing design-to-fabrication workflow. Working with GEarheads, they explored feeds-and-speeds tradeoffs for the materials FTC robots actually use — polycarbonate, HDPE, thin 6061 aluminum — and iterated on toolpath strategies that minimized chatter without sacrificing cycle time.\n\nThe sessions went well past basic operation into practical manufacturing process development: understanding chip load, choosing between climb and conventional milling for different scenarios, and knowing when a part design needs to change to be machinable rather than forcing the machine to do something it was not built for. C-Gull's willingness to go deep on that material-science layer was valuable not just for their own program but for the documentation the collaboration produced — much of what we now tell new pilot teams about polycarbonate and thin aluminum came out of those sessions. The outcome was a team that does not just have a CNC machine but has a real manufacturing process — documented, repeatable, and owned entirely by the students.",
+      "highlights": [
+        "Explored feeds-and-speeds optimization across polycarbonate, HDPE, and thin aluminum",
+        "Developed documented, repeatable toolpath strategies for FTC-relevant part geometries",
+        "Learned climb vs. conventional milling tradeoffs and when each applies",
+        "Integrated the MPCNC into a tight CAD-to-cut workflow via Onshape exports",
+        "Built student-owned manufacturing process documentation for future seasons"
+      ]
+    },
+    {
+      "id": "nc-team",
+      "number": "TBD",
+      "name": "North Carolina Pilot Team",
+      "location": "North Carolina",
+      "iconKey": "school",
+      "colorKey": "secondary",
+      "tagline": "Proving the program can travel — same approach, different region, same results.",
+      "description": "The inclusion of a team from North Carolina in the pilot cohort was a deliberate test of a core assumption: that the program's value is not tied to geography or to in-person hand-holding. FTC teams across the country face the same fabrication ceiling that local teams do, but they do not have access to a regional production hub or a nearby team running a machine shop. The NC pilot was designed to validate that the MPCNC build process, documented well enough, could be completed by a team working independently — with GEarheads available for remote troubleshooting sessions but not physically present.\n\nThe result confirmed that hypothesis. The documentation needed some refinement based on questions that came up in the remote sessions, but the team was able to progress through assembly, tramming, and first cuts without needing anyone to fly out and hold their hand. The troubleshooting calls were revealing: the questions the NC team asked pointed directly to gaps in the written documentation that in-person support had been quietly papering over. Fixing those gaps made the program more robust for every subsequent pilot team. That matters enormously for the long-term vision of the program: if it only works for teams within driving distance of Brookfield, it helps a handful of teams. If it works remotely, it scales.",
+      "highlights": [
+        "First out-of-state pilot — tested remote delivery of the full build process",
+        "Completed assembly and tramming with GEarheads available for remote sessions only",
+        "Documentation gaps surfaced and resolved through the remote troubleshooting process",
+        "Validated that the program can scale beyond the GEarheads' local ecosystem",
+        "Demonstrated that geographic distance is not a barrier to self-sufficient fabrication"
+      ]
+    },
+    {
+      "id": "hapabots",
+      "number": "—",
+      "name": "Hapa Bots",
+      "location": "Brookfield, WI",
+      "iconKey": "router",
+      "colorKey": "secondary",
+      "tagline": "A different machine, same philosophy — Hapa Bots came in with an X-Carve and went deeper.",
+      "description": "Hapa Bots arrived at the program with a different starting point than the other pilot teams: they already had an X-Carve CNC router, a commercially assembled machine that is larger and more rigid than an MPCNC but shares the same fundamental operating principles. Rather than build from scratch, the collaboration with Hapa Bots focused on making a machine they already owned actually useful for competitive FTC fabrication — which turned out to require nearly as much work as building from scratch.\n\nThe X-Carve had been assembled and used for light woodworking, but making it reliable for polycarbonate and aluminum meant going back through the mechanical baseline: checking gantry squareness, addressing flex in the z-axis, tuning the stepper current and micro-stepping settings, and rebuilding the toolpath workflow from the ground up around FTC-appropriate cutting parameters. GEarheads worked alongside Hapa Bots' student members through that process, sharing what the team had learned from running its own machines through similar calibration arcs. The sessions were as much about process and mental model as they were about the machine itself — understanding what 'the machine is not ready' looks like diagnostically, and developing the habit of checking the mechanical baseline before blaming the toolpath. The outcome: a commercially built machine that had been a light woodworking tool became a reliable fabrication resource for competitive robot parts.",
+      "highlights": [
+        "Existing X-Carve brought up to spec for polycarbonate and thin aluminum fabrication",
+        "Full mechanical re-baseline: gantry squareness, z-axis flex, stepper tuning",
+        "Rebuilt toolpath workflow around FTC-relevant cutting parameters",
+        "Developed diagnostic habits for telling machine problems from toolpath problems",
+        "Bridged commercial machine ownership into genuine competitive fabrication capability"
+      ]
+    }
+  ],
+  "partners": [
+    {
+      "id": "v1engineering",
+      "name": "V1 Engineering",
+      "note": "Creators of the MPCNC open-source platform; community and documentation partner"
+    },
+    {
+      "id": "redcat-partner",
+      "name": "Team 17347 RedCat Robotics",
+      "note": "First local pilot team; proved the end-to-end build process is achievable in a single season"
+    },
+    {
+      "id": "cgull-partner",
+      "name": "Team 12966 C-Gull Robotics",
+      "note": "Advanced pilot; contributed toolpath documentation for polycarbonate and aluminum"
+    },
+    {
+      "id": "hapabots-partner",
+      "name": "Hapa Bots",
+      "note": "X-Carve pilot; validated the approach for teams upgrading existing commercial machines"
+    }
+  ],
+  "photos": [
+    {
+      "src": "IMG_2174.JPEG",
+      "caption": "Hapa Bots X-Carve setup session"
+    },
+    {
+      "src": null,
+      "caption": "MPCNC frame assembly in progress"
+    },
+    {
+      "src": null,
+      "caption": "First cuts on a pilot team's machine"
+    }
+  ],
+  "closingGallery": [
+    {
+      "src": null,
+      "caption": "MPCNC mid-build — conduit rails and printed corner blocks"
+    },
+    {
+      "src": null,
+      "caption": "Pilot team assembling their machine — first stepper motor mount"
+    },
+    {
+      "src": null,
+      "caption": "First cut on a team-built CNC — foam proving the geometry"
+    },
+    {
+      "src": null,
+      "caption": "Polycarbonate part cut on a pilot team's MPCNC — competition-ready tolerances"
+    },
+    {
+      "src": null,
+      "caption": "Remote troubleshooting session — NC team on video call with GEarheads"
+    },
+    {
+      "src": null,
+      "caption": "Finished MPCNC on a team's workbench — ready for first aluminum run"
+    }
+  ]
+}
