@@ -1,6 +1,18 @@
-import { MdCode } from 'react-icons/md'
-import UnderConstruction from '../../components/UnderConstruction'
+import { MdWidgets } from 'react-icons/md'
+import VideoCourseTutorial from '../../components/tutorial/VideoCourseTutorial'
+import { modules, courseResources } from '../../data/blocks-tutorial'
 
 export default function BlocksTutorialPage() {
-  return <UnderConstruction title="Blocks Tutorial" icon={<MdCode />} />
+  return (
+    <VideoCourseTutorial
+      basePath="/resources/blocks"
+      brandIcon={<MdWidgets size={17} />}
+      brandTitle="Blocks Course"
+      brandSub="FTC Programming for Beginners"
+      navLabel="Episodes"
+      modules={modules}
+      courseResources={courseResources}
+      defaultSlug={modules[0].slug}
+    />
+  )
 }

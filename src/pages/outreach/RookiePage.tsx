@@ -192,7 +192,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`
@@ -656,94 +655,6 @@ const EventCardDesc = styled.p`
   margin: 0;
 `
 
-// ─── People & Partners grid ───────────────────────────────────────────────────
-
-const PeopleGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-
-  @media (min-width: 640px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-`
-
-const PersonCard = styled.div`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaised};
-  border-radius: 20px;
-  padding: 24px 16px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
-
-  &:hover {
-    box-shadow: ${theme.shadows.neoRaisedLg};
-    transform: translateY(-2px);
-  }
-`
-
-const PortraitSlot = styled.div`
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInset};
-  border: 1px dashed ${theme.colors.outlineVariant}50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  flex-shrink: 0;
-  transition: border-color 0.2s;
-
-  ${PersonCard}:hover & {
-    border-color: ${theme.colors.secondary}40;
-  }
-`
-
-const PortraitSlotIcon = styled.span`
-  color: ${theme.colors.secondary};
-  opacity: 0.35;
-`
-
-const PersonInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-`
-
-const PersonName = styled.span`
-  font-family: ${theme.fonts.headline};
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: ${theme.colors.onSurface};
-`
-
-const PersonRole = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${theme.colors.secondary};
-  opacity: 0.7;
-`
-
-const PersonNote = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 11px;
-  line-height: 1.5;
-  color: ${theme.colors.onSurfaceVariant};
-  opacity: 0.5;
-  margin-top: 2px;
-`
-
 // ─── Photo gallery ────────────────────────────────────────────────────────────
 
 const PhotoGallery = styled.div`
@@ -826,7 +737,6 @@ const WEBINARS  = data.webinars
 const STATS     = data.stats
 const EVENT_DAY = data.eventDay
 const PHOTOS    = data.photos
-const PEOPLE    = data.people
 const APPROACH  = data.approach
 
 const heroPhotoSrc     = resolve(data.hero.heroPhoto.src)
@@ -1051,40 +961,7 @@ export default function RookiePage() {
 
       <Divider />
 
-      {/* ── 7. People & Partners ──────────────────────────────────────── */}
-      <Section>
-        <Inner>
-          <FadeIn direction="up">
-            <SectionLabel>People & Partners</SectionLabel>
-            <SectionHeading>The People Behind It</SectionHeading>
-            <SectionSubtext style={{ marginBottom: 24 }}>
-              The organizations and individuals who make the Rookie Qualifier run. Portrait and logo
-              slots are ready whenever assets are available.
-            </SectionSubtext>
-
-            <PeopleGrid>
-              {PEOPLE.map((p) => (
-                <PersonCard key={p.name} aria-label={`${p.name}, ${p.role}`}>
-                  <PortraitSlot aria-label={`Portrait placeholder for ${p.name}`}>
-                    <PortraitSlotIcon>
-                      <MdPeople size={22} />
-                    </PortraitSlotIcon>
-                  </PortraitSlot>
-                  <PersonInfo>
-                    <PersonName>{p.name}</PersonName>
-                    <PersonRole>{p.role}</PersonRole>
-                    {p.note && <PersonNote>{p.note}</PersonNote>}
-                  </PersonInfo>
-                </PersonCard>
-              ))}
-            </PeopleGrid>
-          </FadeIn>
-        </Inner>
-      </Section>
-
-      <Divider />
-
-      {/* ── 8. Photo gallery ──────────────────────────────────────────── */}
+      {/* ── 7. Photo gallery ──────────────────────────────────────────── */}
       <Section>
         <Inner>
           <FadeIn direction="up">

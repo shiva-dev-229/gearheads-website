@@ -2,11 +2,11 @@
   "hero": {
     "chip": "Community & Health · Milwaukee VA",
     "title": "Robotics that serves those who served.",
-    "subtitle": "We run hands-on robotics and engineering programs for veterans at the Milwaukee VA — building, programming, and fabricating alongside them. What started as a single introductory series has become an ongoing partnership: we are the only team ever invited back."
+    "subtitle": "We run hands-on robotics sessions for veterans at the Milwaukee VA, building right alongside them. What started as a one-off series became an ongoing partnership — we're the only team they've asked back."
   },
   "impact": {
     "label": "Why it matters",
-    "text": "The Milwaukee VA has invited us back season after season — the only robotics team to earn a return invitation. Veterans and their families have even come out to volunteer and cheer at our Rookie Qualifier, turning a therapy program into a two-way community."
+    "text": "The Milwaukee VA keeps inviting us back — no other robotics team has gotten a second invite. Veterans and their families now show up to volunteer and cheer at our Rookie Qualifier, too. It's become a two-way thing."
   },
   "stats": [
     {
@@ -33,74 +33,62 @@
   "approach": {
     "label": "Our Approach",
     "heading": "Build-first. One-on-one. No experience needed.",
-    "body": "Our veterans program is grounded in therapeutic recreation — the idea that purposeful, engaging activity is itself a form of healing. Rather than lecturing or demonstrating from a distance, every session is build-first: veterans have hardware in their hands within the first five minutes, and progress is measured in things they made rather than things they heard about. We match each participant with a GEarheads student mentor for one-on-one support throughout the session, so no one is left waiting for help or pushed past a comfortable pace.\n\nThat pairing is deliberate. Student mentors are close in age to junior veterans, and the dynamic is collaborative rather than instructional — two people figuring out a problem together, not a teacher and a student. We've found that veterans who come in skeptical of robotics relax quickly once they realize the goal is to build something that works, not to pass a test. The FLL and SPIKE platforms we use are forgiving: failed builds tell you exactly what to fix, which makes iteration feel natural rather than discouraging.\n\nOver two six-week series, the program is designed to build on itself. Each week's session references what participants made the week before, so skills accumulate rather than reset. By the time veterans reach the CAD/CNC sign-building program in the second series, they are applying design thinking that started with LEGO motors and mission fields — a progression that mirrors how our own team trains new members.",
+    "body": "The program leans on therapeutic recreation — hands-on activity as healing. Every session is build-first: hardware in hand within five minutes, no lectures, and a one-on-one GEarheads mentor so nobody's waiting around.\n\nMentors are close in age to junior veterans, so it feels like two people solving a problem, not teacher and student. Skeptics relax once they see the real goal is just to build something that works — and FLL/SPIKE makes that easy, since a failed build tells you exactly what to fix.\n\nSkills stack across the two six-week series instead of resetting each week. By the CAD/CNC program in series two, veterans are applying design thinking that started with LEGO motors — the same progression we use for our own new members.",
     "inlinePhoto": {
       "src": null,
       "caption": "GEarheads mentor working one-on-one with a veteran on a SPIKE Prime build"
     }
   },
-  "programs": [
+  "activities": [
     {
-      "id": "intro-fll",
-      "step": "01",
-      "label": "Intro FLL Challenge",
+      "id": "fll",
       "iconKey": "extension",
-      "summary": "An accessible first step into robotics.",
-      "detail": "The program opens with FIRST LEGO League — the same entry-level robotics platform that launches elementary and middle-school students into FIRST. Veterans work in small groups to build a LEGO robot from the ground up and program it to complete a series of missions on a themed competition field. We chose FLL deliberately as the on-ramp: it needs no prior engineering background, every session ends with something that visibly works, and progress is easy to feel week over week. Our student mentors sit alongside each participant, breaking builds and code into small, achievable steps so the focus stays on problem-solving and confidence rather than on the technology itself. The competitive structure of FLL missions also gives each session a clear win condition — which turns what could feel like an abstract exercise into something with genuine stakes and satisfaction.",
-      "highlights": [
-        "Build a working LEGO robot from the ground up",
-        "Program it to complete missions on a themed FLL field",
-        "No prior robotics or coding experience required",
-        "One-on-one support from student mentors every session",
-        "Small-group, team-based problem solving"
-      ]
+      "label": "FLL",
+      "heading": "Starting With FLL",
+      "text": "Every series opens with FIRST LEGO League — veterans build a LEGO robot and program it to run missions on a themed field. No experience needed; a mentor works one-on-one with each person, and every session ends with something that works. Returning veterans move up to SPIKE Prime.",
+      "photo": {
+        "src": null,
+        "caption": "Veteran building a LEGO robot during an intro FLL session"
+      }
     },
     {
-      "id": "cad-cnc",
-      "step": "02",
-      "label": "CAD/CNC Sign-Building",
+      "id": "cnc",
       "iconKey": "precisionManufacturing",
-      "summary": "Design it on a screen, cut it on a real machine.",
-      "detail": "The second program bridges the digital and the physical. Veterans learn the fundamentals of computer-aided design, sketching and refining a custom sign on-screen, then watch that same design come to life on one of our CNC machines. Taking a project from an idea, to a CAD model, to toolpaths, to a finished piece of material demystifies the manufacturing process the team uses on its own competition robots. It is deliberately tangible: participants leave holding something they designed and machined themselves — a personalized sign they get to keep — which makes the leap from software to real fabrication click in a way a lecture never could. The CAD/CNC sessions are also the moment many veterans first realize that the tools used to build competition robots are within reach of anyone who can use a computer, not just trained engineers.",
-      "highlights": [
-        "Hands-on introduction to computer-aided design (CAD)",
-        "Design a personalized sign from a blank canvas",
-        "See the design machined on a real CNC mill",
-        "Understand the full design-to-fabrication pipeline",
-        "Leave with a finished, physical project to keep"
-      ]
+      "label": "CNC",
+      "heading": "From Screen To Sign",
+      "text": "The second series goes from screen to shop floor: veterans learn CAD basics, design a custom sign, then watch it get cut on a real CNC machine. Everyone leaves with a finished piece they made themselves.",
+      "photo": {
+        "src": null,
+        "caption": "CNC sign reveal — a finished personalized piece"
+      }
     },
     {
-      "id": "adv-spike",
-      "step": "03",
-      "label": "Advanced FLL Spike",
-      "iconKey": "memory",
-      "summary": "A step up in building and code.",
-      "detail": "For returning veterans ready for more, the advanced series moves up to LEGO SPIKE Prime — a richer platform with more capable motors, a wider sensor set, and a deeper programming environment. Sessions push past following instructions into genuine engineering thinking: reading sensor feedback, writing conditional logic, and designing mechanisms that solve a specific problem. Because it builds directly on the foundation from the intro series, participants get to see how far the fundamentals they already learned can scale, and they take on challenges that would have felt out of reach on day one. The SPIKE Prime platform is also the same category of hardware that FTC teams around the state are building with — so veterans who complete the advanced series have genuine, transferable skills in robotics programming.",
-      "highlights": [
-        "Advanced building and programming with LEGO SPIKE Prime",
-        "Sensor-driven logic and conditional programming",
-        "Design mechanisms that solve a defined problem",
-        "Builds directly on the intro FLL foundation",
-        "A clear progression for returning participants"
-      ]
+      "id": "rockets",
+      "iconKey": "rocketLaunch",
+      "label": "Model Rockets",
+      "heading": "What's Next: Model Rockets",
+      "text": "Next up, we're taking the same build-first approach into aerospace — building and launching model rockets.",
+      "photo": {
+        "src": null,
+        "caption": "Reserved for the first model rocket launch with the group"
+      }
     }
   ],
   "howItRuns": [
     {
       "value": "2",
       "label": "Six-Week Series",
-      "desc": "The program runs as two dedicated six-week series across the season — one introductory and one advanced. Each series has a clear arc: skills from week one carry forward and build on themselves, so participants arrive knowing what to expect and leave with a sense of sustained progress rather than isolated one-off activities."
+      "desc": "Two six-week series each season — one intro, one advanced. Skills carry forward week to week, so it feels like real progress, not a string of one-offs."
     },
     {
       "value": "12",
       "label": "Weekly Sessions",
-      "desc": "Twelve weekly sessions in total, each running approximately 90 minutes. The consistent schedule — same day, same time, same mentors — matters as much as the content. Predictability reduces the friction of showing up, and the rhythm of a weekly practice is what turns individual lessons into a skill set."
+      "desc": "Twelve sessions total, about 90 minutes each. Same day, same time, same mentors every week — that consistency matters as much as the content."
     },
     {
       "value": "100%",
       "label": "Hands-On",
-      "desc": "Every session is build-first: hardware is on the table and in participants' hands within the first few minutes. There are no slide decks or passive lectures. Student mentors work alongside veterans one-on-one — breaking down a build step, debugging a line of code, or thinking through why a mechanism isn't behaving as expected — so the work stays active throughout the full 90 minutes."
+      "desc": "Hardware's in hand within the first few minutes — no slide decks, no lectures. Mentors work one-on-one the whole session, whether that's a build step or a line of code."
     }
   ],
   "people": [
@@ -129,11 +117,6 @@
       "photo": null
     }
   ],
-  "next": {
-    "label": "What's next",
-    "title": "Model rockets",
-    "text": "Our next planned session brings model rockets to the program — extending the hands-on engineering arc from robots and CNC into aerospace, with the same build-first, no-experience-needed approach."
-  },
   "photos": [
     {
       "src": "IMG_2782.JPEG",

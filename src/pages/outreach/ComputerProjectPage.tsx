@@ -12,6 +12,7 @@ import {
   MdHandshake,
   MdImage,
   MdBusiness,
+  MdExpandMore,
 } from 'react-icons/md'
 import { theme } from '../../styles/theme'
 import BlurText from '../../components/reactbits/BlurText'
@@ -924,6 +925,192 @@ const PhotoSlotHint = styled.span`
   max-width: 220px;
 `
 
+// ─── Get involved — donate or request form ────────────────────────────────────
+
+const RequestCard = styled.div`
+  background: ${theme.colors.background};
+  box-shadow: ${theme.shadows.neoRaised};
+  border-radius: 24px;
+  padding: 32px ${theme.spacing.marginMobile};
+
+  @media (min-width: 768px) {
+    padding: 40px 48px;
+  }
+`
+
+const ModeToggle = styled.div`
+  display: inline-flex;
+  background: ${theme.colors.background};
+  box-shadow: ${theme.shadows.neoInsetSm};
+  border-radius: 50px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 24px;
+`
+
+const ModeButton = styled.button<{ $active: boolean }>`
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: ${({ $active }) => ($active ? theme.colors.background : 'transparent')};
+  box-shadow: ${({ $active }) => ($active ? theme.shadows.neoRaisedSm : 'none')};
+  color: ${({ $active }) => ($active ? theme.colors.secondary : theme.colors.onSurfaceVariant)};
+  transition: box-shadow 0.2s, color 0.2s;
+`
+
+const FormGrid = styled.form`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
+const FieldGroup = styled.div<{ $span2?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: 640px) {
+    grid-column: ${({ $span2 }) => ($span2 ? 'span 2' : 'span 1')};
+  }
+`
+
+const FieldLabel = styled.label`
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${theme.colors.onSurfaceVariant};
+  opacity: 0.7;
+`
+
+const fieldBase = `
+  background: transparent;
+  box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e;
+  border-radius: 12px;
+  border: none;
+  padding: 14px 16px;
+  width: 100%;
+`
+
+const Input = styled.input`
+  ${fieldBase}
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.body};
+  font-size: 14px;
+
+  &::placeholder {
+    color: ${theme.colors.onSurfaceVariant}4d;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
+      0 0 0 1px ${theme.colors.primary}80;
+  }
+`
+
+const Textarea = styled.textarea`
+  ${fieldBase}
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.body};
+  font-size: 14px;
+  min-height: 110px;
+  resize: vertical;
+
+  &::placeholder {
+    color: ${theme.colors.onSurfaceVariant}4d;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
+      0 0 0 1px ${theme.colors.primary}80;
+  }
+`
+
+const SelectWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`
+
+const Select = styled.select`
+  ${fieldBase}
+  appearance: none;
+  -webkit-appearance: none;
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.body};
+  font-size: 14px;
+  padding-right: 40px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
+      0 0 0 1px ${theme.colors.primary}80;
+  }
+
+  option {
+    background: ${theme.colors.background};
+    color: ${theme.colors.onSurface};
+  }
+`
+
+const SelectChevron = styled(MdExpandMore)`
+  position: absolute;
+  right: 14px;
+  color: ${theme.colors.onSurfaceVariant};
+  opacity: 0.6;
+  pointer-events: none;
+`
+
+const SubmitButton = styled.button`
+  justify-self: start;
+  background: ${theme.colors.background};
+  color: ${theme.colors.primary};
+  box-shadow: ${theme.shadows.neoButtonPrimary};
+  border-radius: 50px;
+  border: none;
+  padding: 16px 32px;
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
+  &:active {
+    box-shadow: ${theme.shadows.neoButtonPrimaryActive};
+  }
+`
+
+const FormNote = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 12px;
+  line-height: 1.6;
+  color: ${theme.colors.onSurfaceVariant};
+  opacity: 0.6;
+  margin: 14px 0 0;
+
+  a {
+    color: ${theme.colors.primary};
+    opacity: 1;
+    text-decoration: underline;
+  }
+`
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function parseStatValue(value: string): { count: number; suffix: string } | null {
@@ -940,12 +1127,62 @@ const RECIPIENTS   = data.recipients  as Recipient[]
 const PARTNER_ORGS = data.partnerOrgs as PartnerOrg[]
 const GROWTH       = data.growth      as GrowthEntry[]
 const PHOTOS       = data.photos      as Photo[]
+const REQUEST      = data.requestForm
+
+type InvolveMode = 'donate' | 'request'
+
+function buildInvolveMailto(
+  mode: InvolveMode,
+  fields: { name: string; email: string; quantity: string; detail: string; message: string }
+): string {
+  const subject =
+    mode === 'donate'
+      ? `Laptop Donation — ${fields.name || 'New donation'}`
+      : `Computer Request — ${fields.name || 'New request'}`
+
+  const body =
+    mode === 'donate'
+      ? [
+          `Name: ${fields.name}`,
+          `Email: ${fields.email}`,
+          `Laptops to donate: ${fields.quantity}`,
+          `Condition: ${fields.detail}`,
+          '',
+          'Details:',
+          fields.message,
+        ].join('\n')
+      : [
+          `Team / Organization: ${fields.name}`,
+          `Contact email: ${fields.email}`,
+          `Machines needed: ${fields.quantity}`,
+          `Region: ${fields.detail}`,
+          '',
+          "What it's for:",
+          fields.message,
+        ].join('\n')
+
+  return `mailto:${REQUEST.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function ComputerProjectPage() {
   const [activeStep, setActiveStep] = useState(0)
   const step = PIPELINE[activeStep]
+
+  const [involveMode, setInvolveMode] = useState<InvolveMode>('donate')
+  const [involveFields, setInvolveFields] = useState({
+    name: '',
+    email: '',
+    quantity: '',
+    detail: '',
+    message: '',
+  })
+
+  function handleInvolveSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    window.location.href = buildInvolveMailto(involveMode, involveFields)
+  }
 
   const heroPhoto: string | null = (data.hero as { heroPhoto: string | null }).heroPhoto
 
@@ -1170,6 +1407,138 @@ export default function ComputerProjectPage() {
                 </PartnerOrgCard>
               ))}
             </PartnerCardsGrid>
+          </FadeIn>
+        </Inner>
+      </Section>
+
+      <Divider />
+
+      {/* ── 6b. Get involved — donate or request ───────────────────────── */}
+      <Section id="form">
+        <Inner>
+          <FadeIn direction="up">
+            <SectionLabel>{REQUEST.label}</SectionLabel>
+            <SectionHeading>{REQUEST.heading}</SectionHeading>
+            <SectionSubtext>{REQUEST.subtext}</SectionSubtext>
+
+            <RequestCard>
+              <ModeToggle role="tablist" aria-label="Donate or request a machine">
+                <ModeButton
+                  type="button"
+                  role="tab"
+                  aria-selected={involveMode === 'donate'}
+                  $active={involveMode === 'donate'}
+                  onClick={() => setInvolveMode('donate')}
+                >
+                  Donate a Laptop
+                </ModeButton>
+                <ModeButton
+                  type="button"
+                  role="tab"
+                  aria-selected={involveMode === 'request'}
+                  $active={involveMode === 'request'}
+                  onClick={() => setInvolveMode('request')}
+                >
+                  Request a Computer
+                </ModeButton>
+              </ModeToggle>
+
+              <FormGrid onSubmit={handleInvolveSubmit}>
+                <FieldGroup>
+                  <FieldLabel htmlFor="cp-name">
+                    {involveMode === 'donate' ? 'Your Name' : 'Team / Organization'}
+                  </FieldLabel>
+                  <Input
+                    id="cp-name"
+                    placeholder={involveMode === 'donate' ? 'Your name' : 'e.g. FTC #12345 Ironclads'}
+                    value={involveFields.name}
+                    onChange={(e) => setInvolveFields((f) => ({ ...f, name: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup>
+                  <FieldLabel htmlFor="cp-email">Contact Email</FieldLabel>
+                  <Input
+                    id="cp-email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={involveFields.email}
+                    onChange={(e) => setInvolveFields((f) => ({ ...f, email: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup>
+                  <FieldLabel htmlFor="cp-quantity">
+                    {involveMode === 'donate' ? 'Laptops To Donate' : 'Machines Needed'}
+                  </FieldLabel>
+                  <Input
+                    id="cp-quantity"
+                    placeholder="e.g. 3"
+                    value={involveFields.quantity}
+                    onChange={(e) => setInvolveFields((f) => ({ ...f, quantity: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup>
+                  <FieldLabel htmlFor="cp-detail">
+                    {involveMode === 'donate' ? 'Condition' : 'Region / Location'}
+                  </FieldLabel>
+                  {involveMode === 'donate' ? (
+                    <SelectWrap>
+                      <Select
+                        id="cp-detail"
+                        value={involveFields.detail}
+                        onChange={(e) => setInvolveFields((f) => ({ ...f, detail: e.target.value }))}
+                      >
+                        <option value="">Select condition</option>
+                        <option value="Working">Working</option>
+                        <option value="Not sure">Not sure</option>
+                        <option value="Needs repair">Needs repair</option>
+                      </Select>
+                      <SelectChevron size={18} aria-hidden="true" />
+                    </SelectWrap>
+                  ) : (
+                    <Input
+                      id="cp-detail"
+                      placeholder="e.g. Brookfield, WI"
+                      value={involveFields.detail}
+                      onChange={(e) => setInvolveFields((f) => ({ ...f, detail: e.target.value }))}
+                      required
+                    />
+                  )}
+                </FieldGroup>
+
+                <FieldGroup $span2>
+                  <FieldLabel htmlFor="cp-message">
+                    {involveMode === 'donate' ? 'Anything Else?' : "What's It For?"}
+                  </FieldLabel>
+                  <Textarea
+                    id="cp-message"
+                    placeholder={
+                      involveMode === 'donate'
+                        ? 'Make/model if known, pickup vs. drop-off, timing — whatever helps us plan.'
+                        : 'What the machines are for and when you need them by.'
+                    }
+                    value={involveFields.message}
+                    onChange={(e) => setInvolveFields((f) => ({ ...f, message: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup $span2>
+                  <SubmitButton type="submit">
+                    {involveMode === 'donate' ? 'Send Donation Details' : 'Send Request'}
+                  </SubmitButton>
+                  <FormNote>
+                    This opens your email client with everything filled in. Prefer to email
+                    directly? Reach us at <a href={`mailto:${REQUEST.email}`}>{REQUEST.email}</a>.
+                  </FormNote>
+                </FieldGroup>
+              </FormGrid>
+            </RequestCard>
           </FadeIn>
         </Inner>
       </Section>

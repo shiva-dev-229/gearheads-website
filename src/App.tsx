@@ -62,10 +62,10 @@ const GitTutorialPage        = lazy(() => import('./pages/resources/GitTutorialP
 const BlocksTutorialPage     = lazy(() => import('./pages/resources/BlocksTutorialPage'))
 const JavaTutorialPage       = lazy(() => import('./pages/resources/JavaTutorialPage'))
 const ReactTutorialPage      = lazy(() => import('./pages/resources/ReactTutorialPage'))
-const OnshapeBasicsPage      = lazy(() => import('./pages/resources/OnshapeBasicsPage'))
 const OnshapeTutorialsPage   = lazy(() => import('./pages/resources/OnshapeTutorialsPage'))
 const PartsPage              = lazy(() => import('./pages/resources/PartsPage'))
 const QualifierPrepPage      = lazy(() => import('./pages/resources/QualifierPrepPage'))
+const SponsorshipGuidePage   = lazy(() => import('./pages/resources/SponsorshipGuidePage'))
 
 // Standalone
 const ImpactPage             = lazy(() => import('./pages/ImpactPage'))
@@ -200,13 +200,20 @@ export default function App() {
                 {/* Resources */}
                 <Route path="/resources/git"                element={<Navigate to="/resources/git/repository-basics" replace />} />
                 <Route path="/resources/git/:slug"          element={<GitTutorialPage />} />
-                <Route path="/resources/blocks"             element={<BlocksTutorialPage />} />
-                <Route path="/resources/java"               element={<JavaTutorialPage />} />
-                <Route path="/resources/react"              element={<ReactTutorialPage />} />
-                <Route path="/resources/onshape-basics"     element={<OnshapeBasicsPage />} />
-                <Route path="/resources/onshape-tutorials"  element={<OnshapeTutorialsPage />} />
+                <Route path="/resources/blocks"             element={<Navigate to="/resources/blocks/welcome-to-ftc" replace />} />
+                <Route path="/resources/blocks/:slug"       element={<BlocksTutorialPage />} />
+                <Route path="/resources/java"                element={<Navigate to="/resources/java/intro-to-ftc-programming" replace />} />
+                <Route path="/resources/java/:slug"          element={<JavaTutorialPage />} />
+                <Route path="/resources/react"              element={<Navigate to="/resources/react/why-react-and-setup" replace />} />
+                <Route path="/resources/react/:slug"        element={<ReactTutorialPage />} />
+                <Route path="/resources/onshape-basics"     element={<Navigate to="/resources/onshape-tutorials/why-cad-and-the-onshape-workspace" replace />} />
+                <Route path="/resources/onshape-tutorials"  element={<Navigate to="/resources/onshape-tutorials/why-cad-and-the-onshape-workspace" replace />} />
+                <Route path="/resources/onshape-tutorials/:slug" element={<OnshapeTutorialsPage />} />
                 <Route path="/resources/parts"              element={<PartsPage />} />
-                <Route path="/resources/qualifier-prep"     element={<QualifierPrepPage />} />
+                <Route path="/resources/qualifier-prep"     element={<Navigate to="/resources/qualifier-prep/engineering-portfolio" replace />} />
+                <Route path="/resources/qualifier-prep/:slug" element={<QualifierPrepPage />} />
+                <Route path="/resources/sponsorship"        element={<Navigate to="/resources/sponsorship/why-sponsors-say-yes" replace />} />
+                <Route path="/resources/sponsorship/:slug"  element={<SponsorshipGuidePage />} />
 
                 {/* Standalone */}
                 <Route path="/impact"    element={<ImpactPage />} />

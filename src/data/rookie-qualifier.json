@@ -2,7 +2,7 @@
   "hero": {
     "chip": "Growing FIRST · Rookie Qualifier",
     "title": "Running the event that grows the region.",
-    "subtitle": "GEarheads host the Wisconsin FTC Rookie Qualifier — giving new teams their first competitive experience in a low-pressure, high-support environment. In our second year running the event, we recruited 3 new FTC judges, partnered with Team 13201 Hazmat, and hosted 26 rookie teams with more than 80 volunteers on the floor.",
+    "subtitle": "We host the Wisconsin FTC Rookie Qualifier, a low-pressure first event for new teams. This year: 26 rookie teams, 3 new judges, and a partnership with Team 13201 Hazmat.",
     "heroPhoto": {
       "src": null,
       "caption": "Event floor at the 2026 Wisconsin FTC Rookie Qualifier"
@@ -10,7 +10,7 @@
   },
   "impact": {
     "label": "Why it matters",
-    "text": "Most rookie FTC teams have never seen a real competitive field before their first qualifier. The Rookie Qualifier changes that. By hosting a dedicated event for first-year teams — supported by experienced volunteers, extra Field Technical Advisors, and an on-demand coaching system — we give those teams the runway they need to find their footing before the stakes get higher. Every team that competes here earns a real shot at advancing to the state championship."
+    "text": "Most rookie teams have never seen a real field before their first qualifier. We run one just for them, and everyone gets a shot at states."
   },
   "stats": [
     {
@@ -37,7 +37,7 @@
   "approach": {
     "label": "Our Approach",
     "heading": "Why we run the qualifier",
-    "body": "Wisconsin's FTC region loses teams every year — not because the teams stop caring, but because the first qualifier is overwhelming. Pit confusion, judging anxiety, alliance selection mystery: these are fixable problems. We built the Rookie Qualifier because GEarheads knows first-hand how much a supportive first event changes a team's trajectory.\n\nLowering the barrier for new teams is a long-term investment in the region. Every rookie team that has a good first event comes back next season, brings new members, mentors the next cohort of rookies, and eventually trains the region's next generation of judges and FTAs. The compounding value of one well-run event is enormous.\n\nWe run the qualifier to the same competitive standards as any sanctioned FTC event — real rankings, real alliance selection, real state-qualification slots. High support does not mean low stakes. The difference is that we surround every team with people who have been exactly where they are, and who want them to succeed.",
+    "body": "Wisconsin loses FTC teams every year to an overwhelming first qualifier. We've been there, so we fixed it.\n\nIt still runs to full FTC standards: real rankings, alliance selection, state slots. More support means friendly faces who get it.",
     "inlinePhoto": {
       "src": null,
       "caption": "GEarheads volunteers briefing teams before the event"
@@ -49,14 +49,12 @@
       "step": "01",
       "label": "Competition Flow",
       "iconKey": "schedule",
-      "summary": "What actually happens on event day, from load-in to alliance selection.",
-      "detail": "For a team that has never been to a qualifier, the sheer pace of event day is disorienting. Pits open, inspection queues form, practice matches run, qualification rounds start — and the schedule waits for no one. Our first webinar lays out the complete arc of a competition day in explicit, chronological detail so that no team is blindsided by a process they didn't know existed. We walk through what happens in the pit crew area versus at the field, how a match is called, what the MC and field supervisor roles are, and where to find real-time scoring. Teams leave with a mental map of event day so they can focus their energy on their robot rather than on figuring out where to be.",
+      "summary": "What event day actually looks like.",
+      "detail": "Event day moves fast. We walk through it so teams know what to expect.",
       "highlights": [
-        "Full chronological walkthrough of an FTC qualifier schedule",
-        "Pit operations: layout, power access, tool rules, and inspection flow",
-        "Understanding match calling, queuing, and field reset procedures",
-        "Where to find live scores, match replays, and alliance standings",
-        "Q&A with GEarheads members who have competed at nationals and worlds"
+        "Full qualifier-day walkthrough",
+        "Pit layout, power access, inspection flow",
+        "Where to check scores and standings"
       ]
     },
     {
@@ -64,14 +62,12 @@
       "step": "02",
       "label": "Alliance Selection",
       "iconKey": "groups",
-      "summary": "How to pick and be picked — the strategy layer most rookie teams miss entirely.",
-      "detail": "Alliance selection is one of the most misunderstood phases of an FTC event, and it has ended many rookie teams' advancement hopes not because of their robot, but because of avoidable strategic mistakes. This session covers both sides of the table: what captains are looking for when they pick alliance partners, and how a team with a mid-tier ranking can make itself a compelling choice. We discuss the mechanics of the selection process — how many rounds there are, what happens when a team declines, and how the playoff bracket forms — and then move into practical strategy: which autonomous routines, endgame capabilities, and driver behaviors consistently catch the eye of alliance captains. We also cover what to do if you are not picked, and why that outcome is not the end of the road.",
+      "summary": "How to pick a good alliance, and be picked.",
+      "detail": "More teams lose here than to bad robots. We cover what captains want and what to do if you're passed over.",
       "highlights": [
-        "Step-by-step mechanics of the FTC alliance selection process",
-        "What captains look for: reliability, auto consistency, endgame capability",
-        "How to present your robot's strengths during pit scouting conversations",
-        "Handling a decline and the alternate/captain fallback sequence",
-        "Real examples from Wisconsin qualifiers — what swung selections"
+        "How alliance selection works",
+        "What captains look for: reliability, auto, endgame",
+        "What to do if you're declined"
       ]
     },
     {
@@ -79,14 +75,12 @@
       "step": "03",
       "label": "Judging",
       "iconKey": "gavel",
-      "summary": "How judged awards work, what judges are actually evaluating, and how to prepare.",
-      "detail": "The judged awards — Think, Connect, Innovate, Design, and the coveted Inspire Award — represent more than half of what FTC rewards, yet most rookie teams put nearly all their preparation time into the robot and almost none into their judging presentation. This webinar demystifies the process from the judges' perspective. We cover what a judging panel looks for across each award category, how to structure a five-minute presentation that communicates both technical depth and community impact, and how to answer follow-up questions confidently. We also address common rookie mistakes: presentations that are too rehearsed to feel genuine, portfolios that front-load the engineering log and bury the outreach story, and answers that describe what the robot does rather than why the team made the choices they did. GEarheads have earned Inspire nominations at the state and world level — we share what we learned.",
+      "summary": "What judges evaluate, and how to prepare.",
+      "detail": "Judged awards are over half of what FTC scores, but most rookies skip prep.",
       "highlights": [
-        "Overview of all FTC judged awards and their evaluation criteria",
-        "How to structure a 5-minute interview-style presentation",
-        "Portfolio format: engineering log, outreach story, and team identity",
-        "Common rookie mistakes and how to avoid them",
-        "Tips from GEarheads' own award-winning presentation experience"
+        "Overview of judged award criteria",
+        "How to structure a 5-minute presentation",
+        "Common rookie mistakes to avoid"
       ]
     },
     {
@@ -94,14 +88,12 @@
       "step": "04",
       "label": "Portfolio",
       "iconKey": "menuBook",
-      "summary": "The engineering portfolio: what belongs in it, how to organize it, and what judges actually read.",
-      "detail": "The FTC engineering portfolio is both a documentation tool and a storytelling vehicle, and the best ones do both jobs simultaneously. This session gives teams a concrete framework for building a portfolio that reads like a design narrative rather than a collection of meeting notes. We cover what sections are required versus optional, how to present your design decisions with evidence (photos, data, sketches) rather than just conclusions, and how to use the portfolio to tell the arc of a season — the problems you started with, the iterations you ran, and the outcomes you measured. We pay particular attention to the outreach and community impact sections, which rookie teams consistently underweight. A strong portfolio does not describe what the team did; it makes the reader understand why the choices mattered.",
+      "summary": "What belongs in your portfolio, and why.",
+      "detail": "Good portfolios tell the story behind your decisions, not just meeting notes.",
       "highlights": [
-        "Required vs. optional portfolio sections explained",
-        "How to write design decisions with evidence, not just outcomes",
-        "Structuring the engineering log as a design narrative arc",
-        "Documenting outreach: depth over volume, impact over activity count",
-        "Formatting, photo quality, and length — what actually matters"
+        "Required vs. optional portfolio sections",
+        "Backing decisions with evidence",
+        "Documenting outreach: depth over volume"
       ]
     },
     {
@@ -109,70 +101,46 @@
       "step": "05",
       "label": "Packing",
       "iconKey": "inventory",
-      "summary": "Everything that needs to fit in the van — and why packing right determines how your event starts.",
-      "detail": "Showing up to a competition without the right tools, spare parts, or power supplies is not an uncommon rookie mistake — and it is an entirely preventable one. The final webinar in the series covers the logistics that experienced teams have learned through hard experience. We walk through a full pit checklist: what tools are non-negotiable, which spare parts save events (and which are too heavy to justify), how to manage battery rotation, and how to pack the robot for transport without introducing new mechanical problems. We also cover the soft logistics: arrival and load-in timing, how to use the practice match window effectively, and how to set up a pit area that keeps the drive team focused and the pit crew organized. Teams that arrive prepared do not spend the first two hours of an event solving problems they could have solved at home.",
+      "summary": "Everything that needs to be in the van.",
+      "detail": "Showing up without the right tools is the most avoidable mistake.",
       "highlights": [
-        "Complete pit checklist: tools, spares, cables, and consumables",
-        "Battery management and rotation strategy for a full event day",
-        "How to pack the robot safely for transit",
-        "Pit area setup — layout, organization, and drive-team communication",
-        "Arrival timing, load-in strategy, and using practice matches"
+        "Pit checklist: tools, spares, consumables",
+        "Battery management for the day",
+        "Pit setup and drive-team communication"
       ]
     }
   ],
   "eventDay": {
     "label": "On Event Day",
     "heading": "Extra support from the moment teams arrive.",
-    "subtext": "The webinar series prepares teams — but the event itself is where preparation meets reality. We staff the Rookie Qualifier differently from a standard qualifier, with additional layers of on-site support specifically designed for teams in their first competitive season.",
+    "subtext": "We staff this differently, with extra support for rookies.",
     "cards": [
       {
         "label": "Extra FTAs on the Floor",
-        "desc": "We bring additional Field Technical Advisors to the event beyond the standard requirement. Rookie teams encounter hardware and software issues that more experienced teams have already worked through — having extra FTAs means there is someone ready to help immediately rather than waiting for a busy inspection queue to clear."
+        "desc": "More FTAs than usual, so help arrives fast."
       },
       {
         "label": "On-Demand Coaching",
-        "desc": "GEarheads members and alumni circulate through the pit area throughout the day offering on-demand technical coaching. Teams can flag down a coach between matches for a quick robot diagnosis, control system advice, or strategy check — no appointment needed, no judgment. The goal is to keep every team on the field and competing."
+        "desc": "Members and alumni walk the pits all day for fixes."
       },
       {
         "label": "State-Qualification Path",
-        "desc": "The Rookie Qualifier is a fully sanctioned FTC event. Teams that perform well advance directly to the Wisconsin state championship — the same path as any standard qualifier. We run the event to the same competitive standards, which means high support does not mean low stakes. Every team competes for real."
+        "desc": "Fully sanctioned — strong finishes advance straight to state."
       },
       {
         "label": "Hazmat Partnership",
-        "desc": "Team 13201 Hazmat co-runs the event alongside GEarheads, bringing their own judge recruitment network, volunteer coordination experience, and competitive knowledge to the table. The partnership doubles our organizational capacity and gives rookie teams the benefit of two experienced programs' collective expertise."
+        "desc": "Team 13201 Hazmat co-runs it, doubling what we can pull off."
       },
       {
         "label": "Rookie-Specific Inspection Lane",
-        "desc": "A dedicated inspection lane staffed by experienced volunteers walks rookie teams through every checklist item step by step. Rather than a pass/fail stamp, teams leave inspection understanding exactly what was checked and why — so they can fix issues confidently and arrive at the field ready to compete."
+        "desc": "Volunteers walk rookie teams through inspection step by step."
       },
       {
         "label": "Opening Ceremony Orientation",
-        "desc": "Before the first match, we run a short all-teams orientation in the competition hall — field layout, match procedure, scoring reminders, and who to ask for help. Experienced teams can skip it; rookie teams who attend consistently report higher confidence through the first two rounds."
+        "desc": "A short orientation before the first match: layout, procedure, who to ask."
       }
     ]
   },
-  "people": [
-    {
-      "name": "Team 13201 Hazmat",
-      "role": "Co-Organizing Team",
-      "note": "Co-runs the event — volunteer coordination, judge recruitment, and competitive logistics"
-    },
-    {
-      "name": "Head Referee / FTA",
-      "role": "Head Referee & Field Technical Advisor",
-      "note": "Spot reserved — add name when confirmed"
-    },
-    {
-      "name": "Volunteer Judges",
-      "role": "Award Judging Panel",
-      "note": "3 judges recruited this season — spots open for future seasons"
-    },
-    {
-      "name": "Event Coordinator",
-      "role": "Event Operations",
-      "note": "Spot reserved — add name when confirmed"
-    }
-  ],
   "photos": [
     {
       "src": null,

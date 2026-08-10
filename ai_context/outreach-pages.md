@@ -109,6 +109,26 @@ After the first build pass, three enhancements apply to ALL outreach detail page
 
 Keep everything else (green accent, no back-nav, reuse of patterns, theme tokens, strict TS).
 
+## Revision 3 — copy length reversed (2026-08-03)
+
+The "GO LONG" directive above (Revision 1, "Content depth" bullet) is **superseded**. The team
+found the long-form essay copy too wordy. All 12 detail-page JSONs (childrens-hospital, veterans,
+computer-project, rookie-qualifier, production-hub, diy-cnc, maker-faire, first-advocacy,
+ge-elfuns, fll-mentoring, community-demos, school-support) were rewritten for a ~35-46% word-count
+cut, in a shorter, more conversational/human voice — cutting brochure phrasing ("underscores our
+commitment to," padded transitions, restated points) while preserving every factual claim (numbers,
+names, places). `outreach.json` (the hub page) was already tight and untouched.
+
+**Going forward: do not re-inflate outreach copy back to the old "4-6 sentences per item,
+never a thin summary" standard.** If more detail is wanted for a specific page in the future, treat
+it as a deliberate per-page request, not a return to the old blanket rule.
+
+`production-hub.json` also gained a `video` field (`{ label, heading, subtext, youtubeId }`) —
+`ProductionHubPage.tsx` renders it as a portrait (9:16) YouTube embed section (`VideoWell`/
+`VideoFrame`) between "Teams We Support" and the closing photo gallery, matching the existing
+neumorphic inset-well pattern used for `ApproachImageWell`/`PhotoFrame`. This is a one-off pattern;
+other outreach pages don't have a `video` field unless a video is explicitly requested for them.
+
 ## Revision 2 status — maker-faire ✅
 
 `/outreach/maker-faire` completed Revision 2 (2026-07-07):

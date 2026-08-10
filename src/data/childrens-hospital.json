@@ -2,11 +2,11 @@
   "hero": {
     "chip": "Community & Health · Children's Wisconsin",
     "title": "Play, powered by robotics.",
-    "subtitle": "GEarheads brings hands-on STEM activities to patients at Children's Wisconsin — inspired by play-therapy research and sustained over four seasons as the hospital's only ongoing FIRST program."
+    "subtitle": "GEarheads brings hands-on STEM activities to patients at Children's Wisconsin, built on play-therapy research. Four seasons in, we're still the hospital's only ongoing FIRST program."
   },
   "impact": {
     "label": "Why it matters",
-    "text": "Dr. Jeffrey Karst's research on play therapy for pediatric patients showed that purposeful, engaging activity meaningfully supports recovery. GEarheads built this program around that finding: every activity is chosen because it creates moments of focus, curiosity, and small victories. After four seasons and 21 sessions, GEarheads remains the only FIRST Tech Challenge team running a sustained program inside Children's Wisconsin — not a one-time demo, but a year-round partnership with the hospital's Child Life team."
+    "text": "Dr. Jeffrey Karst's research found that purposeful activity helps kids recover. We built this program around that — every activity aims for a moment of focus or a small win. Four seasons and 21 sessions later, we're still the only FTC team with a standing program here, working year-round with Child Life."
   },
   "statsThisSeason": [
     {
@@ -49,13 +49,13 @@
       "iconKey": "lightbulb",
       "colorKey": "secondary",
       "tagline": "When a drawing lights up, it changes everything.",
-      "description": "Paper circuits are the gentlest possible on-ramp to electronics — and one of the most memorable moments in the program. Patients use conductive copper tape to lay out a circuit directly onto paper, then add an LED and a coin-cell battery. When their drawing, card, or painting lights up for the first time, the reaction is immediate and genuine. The activity requires no fine-motor prerequisites; the tape can be pressed down with a finger or a flat object, and the circuit works even if the path is imperfect. GEarheads students walk each patient through the concept of a complete circuit using simple, visual language — no formulas, just the idea that electricity needs a loop to travel. Patients who finish early explore how multiple LEDs can share a circuit, or experiment with parallel versus series arrangements at their own pace. The low barrier to a working result makes it ideal for patients with limited session windows.",
+      "description": "Patients lay copper tape onto paper, add an LED and a coin-cell battery, and watch their drawing light up. No fine motor skills needed — the tape forgives an imperfect path. We keep it simple: a circuit just needs a complete loop.",
       "highlights": [
-        "Patients design their own artwork and light it up with copper-tape circuits",
-        "No prior electronics knowledge required — success is built into the activity",
-        "Adaptable for single-hand use or limited range of motion",
-        "Introduces voltage, current, and circuit closure through direct observation",
-        "LED colors and battery placement can be varied to extend the challenge"
+        "Patients light up their own artwork",
+        "No electronics background needed",
+        "Works one-handed or with limited motion",
+        "Shows voltage and circuits firsthand",
+        "Early finishers try multiple LEDs"
       ]
     },
     {
@@ -64,13 +64,13 @@
       "iconKey": "launch",
       "colorKey": "secondary",
       "tagline": "Engineering the perfect launch — one rubber band at a time.",
-      "description": "Catapult-building sits at the intersection of physics, iteration, and the fundamental fun of launching a small object across a room. Patients construct a miniature catapult from wooden craft sticks, rubber bands, and a plastic spoon arm, then test and tune it to hit a target. GEarheads frames the session around the engineering design cycle — design, build, test, improve — so every failed shot is explicitly reframed as data. Where is the ball landing? Is the arm too short or too long? Is there too much or too little elastic tension? Students from the team act as engineering partners, asking questions rather than providing answers, so the patient arrives at each adjustment themselves. The activity works in a bed, on a tray table, or in a chair, making it one of the most flexible options in the program. It also scales well: a patient who finishes quickly can move on to optimizing for range, accuracy, or consistency.",
+      "description": "Patients build a mini catapult from craft sticks, rubber bands, and a spoon, then aim it at a target. Every miss becomes data — too much tension, arm too short. Our students ask questions instead of giving answers, so patients find the fix themselves.",
       "highlights": [
-        "Patients build, launch, and iteratively improve their own catapult",
-        "Introduces tension, leverage, and projectile motion through physical trial",
-        "Works on a tray table — fully bedside-compatible",
-        "GEarheads students coach through the engineering-design cycle, not just assembly",
-        "Optional extension: measure and graph launch distance for older patients"
+        "Patients build, launch, and improve their catapult",
+        "Shows tension and motion through trial and error",
+        "Works bedside, on a tray table",
+        "Students coach, don't just assemble",
+        "Older patients can graph launch distance"
       ]
     },
     {
@@ -79,13 +79,13 @@
       "iconKey": "air",
       "colorKey": "secondary",
       "tagline": "Compressed air, piston motion, and a real mechanism in your hands.",
-      "description": "Pneumatics introduces one of the core actuator types in competitive robotics — and it does so in a way that feels almost magical the first time: push a button, and a piston extends with authority. Patients build a small pneumatic mechanism using tubing, a hand-operated pump or syringe, and a simple valve, then use it to push, lift, or clamp an object. The goal is to make pneumatics legible: air is pushed into a sealed space, and that pressure has to go somewhere — so it moves the piston. From there, students connect the activity to how FTC robots use pneumatics to deploy mechanisms, grab game pieces, or lock subsystems in place. Because the systems use low pressure and there are no sharp edges, the activity is safe for patients across a wide age range. The hands-on pump-and-observe loop creates a quick, repeatable feedback cycle that holds attention even in shorter sessions.",
+      "description": "Patients build a small pneumatic mechanism — tubing, a syringe, a valve — and use it to push, lift, or clamp something. Air pushed into a sealed space has to go somewhere, so it moves the piston. We tie that to how our robot uses pneumatics to grab game pieces.",
       "highlights": [
-        "Hands-on pneumatic mechanism using tubing, syringes, and a simple valve",
-        "Demonstrates pressure, volume, and force in an immediately observable way",
-        "Directly connected to how the GEarheads robot uses pneumatics",
-        "No sharp edges or high pressures — safe for all ages and conditions",
-        "Fast feedback loop keeps engagement high in shorter sessions"
+        "Hands-on mechanism with tubing and a valve",
+        "Shows pressure and force in real time",
+        "Ties to how our robot uses pneumatics",
+        "Safe for all ages, no sharp edges",
+        "Fast feedback keeps sessions engaging"
       ]
     },
     {
@@ -94,13 +94,13 @@
       "iconKey": "memory",
       "colorKey": "secondary",
       "tagline": "Build a robot. Program it. Drive it.",
-      "description": "For sessions where patients have more time and energy, GEarheads brings FIRST LEGO League and SPIKE Prime robotics kits — the same hardware the team uses in its veterans program and in FLL mentoring. Patients build a small wheeled robot from LEGO components, then write or block-code a short program to move it through a simple course. GEarheads students sit alongside each patient, adapting the complexity to match the individual: a younger child might program the robot to drive forward and stop; an older patient might add a turn sequence, a sensor trigger, or a loop. The kits are designed for fast assembly with large, tactile pieces, so a meaningful build can be completed even in a 30–45 minute session. The programming environment is visual and immediate — write a block, run it, see the result — which means no prior coding experience is needed to feel genuine progress.",
+      "description": "For patients with more time, we bring FLL and SPIKE Prime kits — the same hardware from our veterans program. Patients build a small LEGO robot, then block-code it through a course. We scale it to the patient: a young child just programs a stop; an older one adds a turn or sensor. A full build fits in 30–45 minutes.",
       "highlights": [
-        "FLL and SPIKE Prime kits — real competitive robotics hardware",
-        "Adapted in real time by GEarheads students to each patient's pace and ability",
-        "Visual block-coding environment: no typing or syntax errors",
-        "Build-to-drive cycle completable in 30–45 minutes",
-        "Older patients can extend into sensor-driven or looping programs"
+        "FLL and SPIKE Prime — real competition hardware",
+        "Students adapt the build to each patient's pace",
+        "Block-coding — no typing or syntax errors",
+        "Build-to-drive in 30–45 minutes",
+        "Older patients add sensors or loops"
       ]
     },
     {
@@ -109,13 +109,13 @@
       "iconKey": "sports",
       "colorKey": "secondary",
       "tagline": "This is what all the building leads to.",
-      "description": "At the high point of each in-person session, GEarheads brings its full-scale FTC competition robot — Gearboticus — into the hospital space and lets patients drive it. Seeing a robot that weighs over 30 pounds, moves at full competition speed, and can autonomously score points in under 30 seconds makes an impression that no kit or demo video can replicate. GEarheads students explain how each system works — the intake, the spindexer, the flywheel launcher, the autonomous navigation — in terms calibrated to the audience, from 'it uses sensors to aim itself' for younger patients to a full technical walkthrough for those who want it. Patients who are able take turns at the driver station, experiencing what it feels like to operate a robot built entirely by a student team. The demo also gives context to all the earlier activities: paper circuits, pneumatics, and robotics kits are not standalone exercises — they are pieces of the same engineering vocabulary the team used to build the real robot.",
+      "description": "At the high point of every session, we bring our full-size robot, Gearboticus, into the hospital and let patients drive it. Thirty-plus pounds, full competition speed, scoring on its own in under 30 seconds — nothing else compares. We explain each system, intake to flywheel, at whatever level fits the patient.",
       "highlights": [
-        "Full-scale FTC competition robot on the floor — not a render or a video",
+        "Full-scale robot on the floor, not a video",
         "Patients drive Gearboticus from a real driver station",
-        "Technical walkthrough calibrated to each patient's age and curiosity level",
-        "Connects every earlier activity to real competition robotics",
-        "Team members explain their engineering choices in accessible language"
+        "Technical depth adjusted to each patient",
+        "Ties every earlier activity to real robotics",
+        "Students explain their choices simply"
       ]
     },
     {
@@ -124,36 +124,36 @@
       "iconKey": "cardGiftcard",
       "colorKey": "secondary",
       "tagline": "So the session continues after we leave.",
-      "description": "Hospital stays often mean long stretches of quiet time between activities and appointments. GEarheads assembles leave-behind kits — curated, pre-packaged sets of materials that let patients continue experimenting on their own or with a family member after the session ends. A typical kit includes copper tape and LEDs for extended paper circuit work, additional craft-stick components for catapult iterations, and a printed instruction card with a simple challenge or two at different difficulty levels. The kits are designed to be self-explanatory: no screen, no adult facilitation required. They also serve a secondary purpose — they give parents and siblings a structured activity to do together, which the Child Life team has noted as a meaningful way to involve family in the patient's hospital day. GEarheads assembles the kits in bulk before each hospital visit so every patient in the session receives one regardless of how the day's timing unfolds.",
+      "description": "Hospital stays mean long stretches between activities. We put together leave-behind kits — copper tape, LEDs, craft sticks, a challenge card — so patients keep experimenting after we leave, no screen or adult needed. They also give family something to do together, which Child Life says matters.",
       "highlights": [
-        "Pre-packaged kits let patients keep experimenting after GEarheads leaves",
-        "Includes copper tape, LEDs, craft sticks, and printed challenge cards",
-        "Self-explanatory — no screen or facilitator required",
-        "Involves family members in a shared, purposeful activity",
-        "Assembled in bulk by the team before every hospital visit"
+        "Lets patients keep experimenting after we leave",
+        "Copper tape, LEDs, craft sticks, challenge cards",
+        "Self-explanatory — no screen needed",
+        "Gives family something to do together",
+        "Assembled in bulk before every visit"
       ]
     }
   ],
   "delivery": {
     "label": "How We Deliver",
     "heading": "Hybrid delivery — wherever patients are",
-    "subtext": "Not every patient can join a group session. GEarheads reaches patients who cannot leave their rooms through livestream and on-demand video — ensuring no child misses the program because of their condition.",
+    "subtext": "Not every patient can leave their room. Livestream and video let us reach them too.",
     "modes": [
       {
         "title": "In-Person Sessions",
-        "desc": "GEarheads students visit Children's Wisconsin with materials and the full FTC robot. Group sessions are held in the hospital's dedicated activity space, where multiple patients can participate together and interact with the robot and with each other. Team members are present for every table — no one waits long for help."
+        "desc": "Students visit Children's Wisconsin with materials and the full FTC robot. Sessions run in the hospital's activity space, with someone at every table."
       },
       {
         "title": "Livestream",
-        "desc": "Patients who cannot leave their rooms can follow along with a group session in real time via a hospital-room screen. The livestream is set up to show both the activity close-up and the GEarheads students walking through the steps, so the remote viewer gets the same instructional experience as in-room participants."
+        "desc": "Patients who can't leave their room join live, on an in-room screen, watching the activity and our students up close."
       },
       {
         "title": "WeVideo Tutorials",
-        "desc": "For patients who miss a live session or want to revisit an activity, GEarheads produces short instructional videos using WeVideo. Each video covers one activity end-to-end — materials, steps, and common troubleshooting — so a patient, parent, or Child Life specialist can run the activity independently at any time."
+        "desc": "Short videos covering materials, steps, and troubleshooting, so anyone can run an activity on their own, anytime."
       },
       {
         "title": "Lights & Motion STEM Kits",
-        "desc": "The hospital's Child Life team can deploy Lights & Motion STEM kits — developed in coordination with GEarheads — independently between visits. These kits standardize the leave-behind format and allow the hospital to extend the program to patients who arrive after a GEarheads visit or who need a self-guided STEM activity at any point during their stay."
+        "desc": "Child Life can hand these out between visits — kits we developed together for self-guided STEM, no team visit required."
       }
     ]
   },
@@ -161,25 +161,25 @@
     {
       "name": "Dr. Jeffrey Karst",
       "role": "PhD Pediatrician",
-      "bio": "Dr. Karst's research on play therapy and purposeful activity in pediatric recovery is the intellectual foundation of the program. He advises on activity design and patient appropriateness, ensuring every session element reflects evidence-based understanding of how engagement supports healing."
+      "bio": "Dr. Karst's play-therapy research is the foundation of this program. He advises on activity design and patient fit."
     },
     {
       "name": "Leslie Scott",
       "role": "RN",
-      "bio": "Leslie coordinates the clinical side of every visit — patient scheduling, room logistics, and alignment with the Child Life team. Her nursing perspective keeps the program grounded in patient safety and ensures the team adapts when clinical priorities shift on any given day."
+      "bio": "Leslie coordinates the clinical side of every visit — scheduling, logistics, Child Life alignment — and keeps the program grounded in patient safety."
     }
   ],
   "people": [
     {
       "name": "Dr. Jeffrey Karst",
       "title": "PhD Pediatrician",
-      "note": "Whose play-therapy research is the intellectual foundation of the program — he advises on activity design and patient appropriateness.",
+      "note": "His play-therapy research is the foundation of this program; he advises on activity design and patient fit.",
       "photo": null
     },
     {
       "name": "Leslie Scott",
       "title": "RN, Child Life",
-      "note": "Coordinates every visit from the clinical side — patient scheduling, room logistics, and alignment with the Child Life team.",
+      "note": "Coordinates every visit clinically — scheduling, logistics, and alignment with Child Life.",
       "photo": null
     }
   ],

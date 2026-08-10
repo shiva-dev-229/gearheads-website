@@ -91,6 +91,9 @@ const HeroImageWell = styled.div`
   overflow: hidden;
   aspect-ratio: 4 / 3;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const HeroImg = styled.img`
@@ -100,34 +103,12 @@ const HeroImg = styled.img`
 `
 
 const HeroImagePlaceholder = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 10px;
-  border: 1px dashed ${theme.colors.outlineVariant}38;
-  border-radius: 24px;
-`
-
-const HeroImagePlaceholderLabel = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${theme.colors.secondary};
-  opacity: 0.6;
-`
-
-const HeroImagePlaceholderHint = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 12px;
-  line-height: 1.5;
+  opacity: 0.25;
   color: ${theme.colors.onSurfaceVariant};
-  opacity: 0.4;
-  text-align: center;
-  max-width: 200px;
 `
 
 const Section = styled.section`
@@ -207,18 +188,6 @@ const HeroSubtitle = styled.p`
 
 // ─── Impact callout ───────────────────────────────────────────────────────────
 
-const ImpactSplit = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  align-items: start;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 280px;
-    gap: 32px;
-  }
-`
-
 const ImpactNote = styled.div`
   display: flex;
   align-items: flex-start;
@@ -227,7 +196,7 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
+  max-width: 780px;
 `
 
 const ImpactIconWell = styled.div`
@@ -265,44 +234,6 @@ const ImpactText = styled.p`
   line-height: 1.7;
   color: ${theme.colors.onSurfaceVariant};
   margin: 0;
-`
-
-const ImpactPhotoSlot = styled.div`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  border-radius: 18px;
-  aspect-ratio: 3 / 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  border: 1px dashed ${theme.colors.outlineVariant}38;
-  transition: border-color 0.2s;
-
-  &:hover {
-    border-color: ${theme.colors.outlineVariant}60;
-  }
-`
-
-const ImpactPhotoLabel = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${theme.colors.secondary};
-  opacity: 0.7;
-`
-
-const ImpactPhotoHint = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 11px;
-  line-height: 1.5;
-  color: ${theme.colors.onSurfaceVariant};
-  opacity: 0.4;
-  text-align: center;
-  max-width: 180px;
 `
 
 // ─── Section header atoms ─────────────────────────────────────────────────────
@@ -528,7 +459,7 @@ const StageContent = styled.div<{ $visible: boolean }>`
   left: 72px;
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   transition: opacity 0.28s ease-out ${({ $visible }) => ($visible ? '0.12s' : '0s')};
-  overflow: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 28px 28px;
@@ -926,11 +857,7 @@ export default function ChildrensHospitalPage() {
                   <HeroImg src={firstHeroImage} alt="Children's Hospital program" />
                 ) : (
                   <HeroImagePlaceholder>
-                    <MdImage size={24} color={theme.colors.outlineVariant} aria-hidden="true" />
-                    <HeroImagePlaceholderLabel>Photo slot</HeroImagePlaceholderLabel>
-                    <HeroImagePlaceholderHint>
-                      childrens-hospital-lead — requires photo permissions
-                    </HeroImagePlaceholderHint>
+                    <MdImage size={36} />
                   </HeroImagePlaceholder>
                 )}
               </HeroImageWell>
@@ -943,23 +870,15 @@ export default function ChildrensHospitalPage() {
       <Section style={{ paddingTop: 0 }}>
         <Inner>
           <FadeIn direction="up">
-            <ImpactSplit>
-              <ImpactNote>
-                <ImpactIconWell aria-hidden="true">
-                  <MdLocalHospital size={20} />
-                </ImpactIconWell>
-                <ImpactBody>
-                  <ImpactEyebrow>{data.impact.label}</ImpactEyebrow>
-                  <ImpactText>{data.impact.text}</ImpactText>
-                </ImpactBody>
-              </ImpactNote>
-
-              <ImpactPhotoSlot aria-label="Photo slot: Dr. Karst presenting the program rationale">
-                <MdImage size={20} color={theme.colors.outlineVariant} aria-hidden="true" />
-                <ImpactPhotoLabel>Photo slot</ImpactPhotoLabel>
-                <ImpactPhotoHint>Dr. Karst presenting the program rationale</ImpactPhotoHint>
-              </ImpactPhotoSlot>
-            </ImpactSplit>
+            <ImpactNote>
+              <ImpactIconWell aria-hidden="true">
+                <MdLocalHospital size={20} />
+              </ImpactIconWell>
+              <ImpactBody>
+                <ImpactEyebrow>{data.impact.label}</ImpactEyebrow>
+                <ImpactText>{data.impact.text}</ImpactText>
+              </ImpactBody>
+            </ImpactNote>
           </FadeIn>
         </Inner>
       </Section>

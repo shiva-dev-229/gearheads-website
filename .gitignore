@@ -61,6 +61,12 @@ playwright/.cache/
 # Superpowers / visual companion brainstorm artifacts
 .superpowers/
 
+# Impeccable design skill runtime state (generated caches; DESIGN.md/PRODUCT.md are the source of truth)
+.impeccable/
+
 # Package manager locks (keep package-lock.json, ignore others if not used)
 yarn.lock
 pnpm-lock.yaml
+
+# Local lesson-plan / working notes, not part of the site
+/temp/

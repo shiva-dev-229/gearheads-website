@@ -184,7 +184,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`

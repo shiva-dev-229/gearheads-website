@@ -2,7 +2,7 @@
   "hero": {
     "chip": "Growing FIRST · Production Hub",
     "title": "A fabrication shop for the whole region.",
-    "subtitle": "GEarheads run a full-service Production Hub, machining custom parts for FTC teams across the region who lack the equipment, expertise, or time to fabricate on their own. CNC milling, 3D printing, laser cutting, plotter printing — if you need it made, we make it.",
+    "subtitle": "A fab shop for FTC teams without their own mill. CNC, 3D printing, laser cutting, plotter work — if it needs making, we make it.",
     "heroPhoto": {
       "src": null,
       "caption": "Production Hub fabrication space — mills and printers running"
@@ -10,7 +10,7 @@
   },
   "impact": {
     "label": "Why it matters",
-    "text": "26 FTC teams call this ecosystem home in 2026. Most of them are rookies or small programs that cannot afford a CNC mill or spend weeks learning manufacturing from scratch. The Production Hub closes that gap: any team can submit a design and receive a finished part, letting them focus on what they do best — building competitive robots and learning engineering skills — rather than being blocked by fabrication constraints."
+    "text": "26 FTC teams share our region in 2026, mostly rookies without a mill of their own. Send us a design, get back a part — simple as that."
   },
   "stats": [
     {
@@ -41,7 +41,13 @@
       "src": null,
       "caption": "GEarheads manufacturing subteam — mid-run on the industrial mill"
     },
-    "body": "A team reaches out — usually via our group chat, a direct message from a mentor, or a conversation at a qualifier. They share their design file: an Onshape link, a DXF export, an STL, or sometimes a rough sketch in a shared doc. From there, our manufacturing subteam takes over. The student who owns the request reviews the geometry for tool-path feasibility, confirms material and tolerances with the requesting team, and gets it into the queue. That feedback loop — before a single cut is made — is where most fitment problems get caught.\n\nFabrication runs on our shop schedule. During the build season that can mean evenings and weekend sessions; in the off-season we batch jobs more loosely. For CNC work, our team handles all CAM setup so the requesting team never needs to touch G-code. For 3D prints, we orient, support, and monitor each job. For laser work, we confirm the geometry converts cleanly from vector before committing sheet material. When a part comes off the machine, a second student checks it against the design spec before it goes into a handoff bag.\n\nDelivery happens at the next shared event — a practice session, qualifier, or a dedicated pickup at our shop. For teams that are farther away, we have shipped parts. The whole cycle, from intake message to part-in-hand, typically runs three to ten days depending on queue depth and complexity. Teams that have gone through the process once know exactly what to expect the second time — and many come back every season."
+    "body": "Send a design file — Onshape, DXF, STL, or a sketch. We check it over, queue it up, and catch fit issues early.\n\nCAM, slicing, quality checks — no G-code on your end. Pick up at the next event or our shop, usually within three to ten days."
+  },
+  "requestForm": {
+    "label": "Get Support",
+    "heading": "Request Something From Us",
+    "subtext": "Need a part made? This opens a pre-filled email — attach your design file first.",
+    "email": "ftcgearheads@gmail.com"
   },
   "services": [
     {
@@ -50,14 +56,11 @@
       "iconKey": "precisionManufacturing",
       "tag": "Subtractive Manufacturing",
       "title": "CNC Milling",
-      "description": "GEarheads operate three CNC mills in-house: a custom-built MPCNC (Mostly Printed CNC) designed and assembled by the team, a 6×6 industrial-grade mill capable of handling full robot-size sheet stock, and a large-format PrintNC for high-throughput plate work. Teams submit their Onshape or DXF files and our manufacturing subteam handles everything from CAM setup to final cut. We mill aluminum, polycarbonate, HDPE, and plywood — the same material stack we use on our own competition robots. Because we design-to-tolerance and run quality checks after every cut, the parts that leave our shop are ready to install, not ready to be re-drilled. For a rookie team that has never run a CNC machine, receiving a precision-milled drivetrain plate or intake arm can be the difference between a robot that works and one that shakes apart at the first match. We do not just hand off parts — we talk through the geometry with the requesting team, flag any wall-thickness issues we see in their CAD, and suggest fixes before material is touched. Over a season, that mentorship layer compounds: teams that start by receiving parts end up understanding tolerances, feeds-and-speeds, and DFM principles they would not have encountered otherwise.",
+      "description": "Three in-house mills cut aluminum, polycarbonate, HDPE, and plywood. Send an Onshape or DXF file and we handle CAM, cutting, and quality checks.",
       "highlights": [
-        "Three mills on-site: custom MPCNC, 6×6 industrial mill, large-format PrintNC",
+        "Three mills on-site: MPCNC, 6×6 industrial, large-format PrintNC",
         "Cuts aluminum, polycarbonate, HDPE, and plywood",
-        "Accepts Onshape links and DXF/SVG exports directly",
-        "CAM setup handled by GEarheads — no G-code knowledge required",
-        "Post-cut quality checks before every delivery",
-        "Design feedback included — wall-thickness, fit, and DFM notes on every job"
+        "CAM setup handled by GEarheads — no G-code needed"
       ]
     },
     {
@@ -66,13 +69,11 @@
       "iconKey": "print",
       "tag": "Additive Manufacturing",
       "title": "3D Printing",
-      "description": "FDM 3D printing is the fastest path from a CAD sketch to a working prototype, and GEarheads have dialed in the process across PLA, PETG, and TPU. We print brackets, motor mounts, sensor housings, guide channels, and any geometry that would be impossible or impractical to mill. Teams submit STL or 3MF files and we handle slicing, orientation, support strategy, and print monitoring. Parts are inspected for layer adhesion and dimensional accuracy before handoff. We can also iterate: if the first print reveals a fit issue, we discuss the fix, reslice, and reprint typically within a day. This tight feedback loop is how teams learn design-for-manufacturability without expensive trial-and-error on their own machines.",
+      "description": "The fastest way from CAD sketch to working part, in PLA, PETG, or TPU. We handle slicing, check every print, and re-print same-day if something's off.",
       "highlights": [
         "PLA, PETG, and TPU in stock",
-        "Prints brackets, mounts, housings, channels, and complex geometry",
         "Slicing and support strategy handled by GEarheads",
-        "Dimensional inspection on every part before delivery",
-        "Fast iteration cycle — typically same-day re-prints on fit fixes"
+        "Fast iteration — typically same-day re-prints"
       ]
     },
     {
@@ -81,13 +82,11 @@
       "iconKey": "flashOn",
       "tag": "Precision Cutting",
       "title": "Laser Cutting",
-      "description": "Laser cutting unlocks a different material world than CNC milling: thin sheet acrylic, Delrin, wood, fabric, and foam can be cut to tight tolerances without tooling pressure that would warp or crack the workpiece. GEarheads use their laser cutter to produce robot field elements, bumper guides, wire management panels, and decorative robot shells for teams that want a clean, professional look at competition. The laser is also the right tool for etching team numbers, part labels, and sponsor logos directly into panels — a detail that impresses judges and drives awards consideration. We accept SVG and DXF geometry and can convert raster artwork to vector paths if a team only has a logo file.",
+      "description": "Acrylic, Delrin, wood, fabric, and foam cut to tight tolerances — field elements, bumper guides, robot shells. We'll etch logos and numbers into panels too.",
       "highlights": [
         "Cuts acrylic, Delrin, wood, foam, and thin sheet material",
-        "Accepts SVG and DXF; raster-to-vector conversion available",
-        "Etches logos, team numbers, and part labels directly into panels",
-        "Clean-cut edges ready for direct installation",
-        "Useful for field elements, wire panels, and robot cosmetics"
+        "Etches logos, team numbers, and labels into panels",
+        "Accepts SVG and DXF; raster-to-vector conversion available"
       ]
     },
     {
@@ -96,13 +95,11 @@
       "iconKey": "colorLens",
       "tag": "Graphics & Branding",
       "title": "Plotter Printing",
-      "description": "A competition robot that is well-documented and visually polished signals to judges that the team takes their work seriously. GEarheads' vinyl plotter and large-format printer produce team graphics, robot decals, engineering portfolio covers, and pit signage at competition quality. We help teams translate their branding into a coherent visual identity — logo sizing, color matching, material selection for durability under field conditions — and output finished vinyl cuts or prints ready to apply. This matters more than many rookie teams realize: Inspire Award evaluations factor in how a team presents their work, and a clean, professional pit setup with matching graphics and a well-laid-out portfolio signals the same level of organization that judges look for in every other category. We have produced graphics for teams with zero design experience and helped them look like they have been at this for years.",
+      "description": "Vinyl plotting and large-format printing for decals, pit signage, and portfolio covers — graphics as sharp as the engineering behind them.",
       "highlights": [
-        "Vinyl cuts and large-format prints for robot decals and pit signage",
-        "Logo sizing, color matching, and material selection guidance",
-        "Durability-rated materials for field and transportation conditions",
-        "Engineering portfolio covers and presentation inserts",
-        "Helps rookie teams present at competition quality from day one"
+        "Vinyl cuts and large-format prints for decals and signage",
+        "Logo sizing, color matching, and material guidance",
+        "Engineering portfolio covers and presentation inserts"
       ]
     }
   ],
@@ -113,7 +110,7 @@
       "number": null,
       "logoSrc": null,
       "tag": "Fabrication · Coaching",
-      "description": "One of the first teams to receive Production Hub support, Pack-a-Punch brought us a drivetrain plate design that needed precision holes and weight-reduction pockets their shop couldn't run. We milled their aluminum plates on the industrial mill and helped them work through their CAD tolerances so the final assembly fit clean.",
+      "description": "Needed a drivetrain plate with precision holes their shop couldn't run. We milled it and tightened their CAD tolerances for a clean fit.",
       "iconKey": "sports"
     },
     {
@@ -122,7 +119,7 @@
       "number": null,
       "logoSrc": null,
       "tag": "3D Printing · Iteration",
-      "description": "The Random Engineers came to us mid-season with a custom intake arm that wasn't available off the shelf in the geometry they needed. We 3D-printed multiple iterations across two days, dialing in the angle and clearance until it ran without hitting the robot frame at any extension point.",
+      "description": "Needed a custom intake arm — nothing off-the-shelf fit. We printed a few iterations over two days until it cleared the frame.",
       "iconKey": "engineering"
     },
     {
@@ -131,7 +128,7 @@
       "number": null,
       "logoSrc": null,
       "tag": "Laser Cutting · Field Elements",
-      "description": "Tundrabots needed laser-cut field element panels for their practice setup — dimensions that matched the official game elements without the cost of buying a second kit. We cut and handed off panels within a week of receiving their measurements, letting them run full-field practice while their regional peers were still doing dry runs on partial setups.",
+      "description": "Needed official-dimension field panels without buying a second kit. We cut and delivered in a week for full-field practice.",
       "iconKey": "ac_unit"
     },
     {
@@ -140,10 +137,16 @@
       "number": null,
       "logoSrc": null,
       "tag": "Multi-season · DIY-CNC Graduate",
-      "description": "We've worked with Hapabots across multiple seasons, from early plotter-printed robot graphics that helped them look polished at their first qualifier, to later support getting their own X-Carve CNC machine configured and running. Hapabots are now part of our DIY-CNC initiative — moving from Production Hub recipients to self-sufficient fabricators.",
+      "description": "Worked with us for several seasons, from plotter graphics to getting their own X-Carve running. Now part of DIY-CNC, fabricating on their own.",
       "iconKey": "group"
     }
   ],
+  "video": {
+    "label": "In Action",
+    "heading": "The Hub, running",
+    "subtext": "A quick look inside the shop.",
+    "youtubeId": "sGO89UeazNQ"
+  },
   "photos": [
     {
       "src": null,

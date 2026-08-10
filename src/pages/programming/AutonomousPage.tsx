@@ -197,7 +197,7 @@ const StageContent = styled.div<{ $visible: boolean }>`
   top: 0; right: 0; bottom: 0; left: 72px;
   opacity: ${({ $visible }) => ($visible ? 1 : 0)};
   transition: opacity 0.28s ease-out ${({ $visible }) => ($visible ? '0.12s' : '0s')};
-  overflow: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 28px 28px;

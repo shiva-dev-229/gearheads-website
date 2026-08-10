@@ -43,7 +43,6 @@ function isGroup(x: MegaItem | MegaGroup): x is MegaGroup {
 // ── Nav data ───────────────────────────────────────────────────────────────────
 
 const navItems: readonly NavItem[] = [
-  { label: 'Home', dropdown: false, to: '/' },
   {
     label: 'About',
     dropdown: true,
@@ -172,8 +171,7 @@ const navItems: readonly NavItem[] = [
       {
         groupLabel: 'Mechanical',
         links: [
-          { label: 'Onshape Basics',          to: '/resources/onshape-basics',     desc: 'Introduction to Onshape for mechanical CAD.' },
-          { label: 'Onshape Tutorials',        to: '/resources/onshape-tutorials',  desc: 'Step-by-step tutorials for common Onshape tasks.' },
+          { label: 'Onshape Tutorials',        to: '/resources/onshape-tutorials',  desc: 'Robot CAD tutorials, from sketching to a finished subsystem.' },
           { label: 'Parts',                    to: '/resources/parts',              desc: 'Public part designs we\'re sharing with the community.' },
           { label: 'Production Hub',           to: '/outreach/production-hub#form', desc: 'CNC parts with us — request parts for your robot.' },
         ],
@@ -182,6 +180,7 @@ const navItems: readonly NavItem[] = [
         groupLabel: 'General',
         links: [
           { label: 'Qualifier Prep',    to: '/resources/qualifier-prep',         desc: 'Checklists and guides to prepare for competition.' },
+          { label: 'Sponsorship Guide', to: '/resources/sponsorship',            desc: 'How to find sponsors and write an email that gets read.' },
           { label: 'Computer Outreach', to: '/outreach/computer-project#form',   desc: 'Request a refurbished computer for your team.' },
         ],
       },
@@ -239,11 +238,11 @@ const mobileNavItems = [
       { label: 'Blocks Tutorial',    ariaLabel: 'Blocks Tutorial',     link: '/resources/blocks' },
       { label: 'Java Tutorial',      ariaLabel: 'Java Tutorial',       link: '/resources/java' },
       { label: 'React Tutorial',     ariaLabel: 'React Tutorial',      link: '/resources/react' },
-      { label: 'Onshape Basics',     ariaLabel: 'Onshape Basics',      link: '/resources/onshape-basics' },
       { label: 'Onshape Tutorials',  ariaLabel: 'Onshape Tutorials',   link: '/resources/onshape-tutorials' },
       { label: 'Parts',              ariaLabel: 'Parts',               link: '/resources/parts' },
       { label: 'Production Hub',     ariaLabel: 'Production Hub',      link: '/outreach/production-hub' },
       { label: 'Qualifier Prep',     ariaLabel: 'Qualifier Prep',      link: '/resources/qualifier-prep' },
+      { label: 'Sponsorship Guide',  ariaLabel: 'Sponsorship Guide',   link: '/resources/sponsorship' },
       { label: 'Computer Outreach',  ariaLabel: 'Computer Outreach',   link: '/outreach/computer-project' },
     ],
   },

@@ -1,0 +1,396 @@
+import type { CourseModule } from './tutorial-types'
+
+export const courseResources = [
+  { label: 'FTC Docs — Official Documentation', url: 'https://ftc-docs.firstinspires.org/' },
+  { label: 'FTC SDK — GitHub Repository', url: 'https://github.com/FIRST-Tech-Challenge/FtcRobotController' },
+  { label: 'Android Studio — Download', url: 'https://developer.android.com/studio' },
+]
+
+export const sectionOrder = [
+  'Foundations',
+  'Core Skills',
+  'Sensors & Feedback',
+  'Autonomous Programming',
+  'Pedro Pathing',
+  'Advanced Control',
+  'Software Architecture',
+  'Competition Prep',
+]
+
+export const modules: CourseModule[] = [
+  // ─── Section 1: Foundations ──────────────────────────────────────────────
+  {
+    id: 'l-1',
+    slug: 'intro-to-ftc-programming',
+    number: '01',
+    section: 'Foundations',
+    title: 'Intro to FTC Programming',
+    description: 'The inputs → decisions → outputs model, and the tools you\'ll use all season.',
+    body: [
+      'Every OpMode boils down to the same loop: read inputs, make decisions, produce outputs. This lesson maps that model onto the FTC SDK and compares OnBot Java (in-browser, no setup) against Android Studio (full IDE, used for the rest of the course).',
+      'A tour of the course roadmap closes the lesson — mecanum drive, sensors, autonomous, Pedro Pathing, PID/odometry, software architecture, and competition prep, each building on the last.',
+    ],
+    concepts: ['Inputs → decisions → outputs', 'OnBot Java vs. Android Studio', 'FTC SDK', 'Course roadmap'],
+  },
+  {
+    id: 'l-2',
+    slug: 'hardware-map-and-motor-control',
+    number: '02',
+    section: 'Foundations',
+    title: 'Hardware Map + Basic Motor Control',
+    description: 'Look up hardware by name and drive a motor for the first time.',
+    body: [
+      'The hardware map is a name lookup — the string in your code must exactly match the name configured on the Driver Station, the same rule Blocks users learn on day one.',
+      'This lesson covers DcMotor.setPower(), setDirection(), and setZeroPowerBehavior(), and explains why one side of a drivetrain almost always needs REVERSE — motors mounted facing opposite directions spin opposite ways for the same power value.',
+    ],
+    concepts: ['Hardware map', 'DcMotor.setPower()', 'setDirection()', 'setZeroPowerBehavior()'],
+    tip: 'A hardware name typo throws at Init, not at compile time — if the OpMode won\'t initialize, check the Driver Station config name first.',
+  },
+  {
+    id: 'l-3',
+    slug: 'mecanum-drivetrain',
+    number: '03',
+    section: 'Foundations',
+    title: 'Drivetrain System — Simple Mecanum',
+    description: 'The mecanum kinematics and mixing formula behind holonomic driving.',
+    body: [
+      'Mecanum wheels let a robot strafe sideways, not just drive and turn. This lesson derives the 4-motor mixing formula that combines forward, strafe, and rotate inputs into individual wheel powers.',
+      'Because the formula can produce values outside the -1.0 to 1.0 range, power normalization scales all four values down proportionally so the robot drives in a straight line instead of clipping unevenly.',
+    ],
+    concepts: ['Mecanum kinematics', '4-motor mixing formula', 'Power normalization'],
+  },
+  {
+    id: 'l-4',
+    slug: 'field-oriented-drive',
+    number: '04',
+    section: 'Foundations',
+    title: 'Field-Oriented Drive (FOV)',
+    description: 'Drive relative to the field instead of the robot\'s current heading.',
+    body: [
+      'Robot-centric driving means "forward" always means the front of the robot; field-centric driving means "forward" always means the same direction on the field, regardless of which way the robot is facing.',
+      'The trick is reading IMU heading and rotating the joystick vector by -heading before the mixing formula from the previous lesson runs — a few lines of trigonometry that make driving dramatically easier after a spin.',
+    ],
+    concepts: ['Robot-centric vs. field-centric', 'IMU heading', 'Joystick vector rotation'],
+  },
+
+  // ─── Section 2: Core Skills ──────────────────────────────────────────────
+  {
+    id: 'l-5',
+    slug: 'java-refresher',
+    number: '05',
+    section: 'Core Skills',
+    title: 'Java Refresher for FTC',
+    description: 'Classes, methods, and variables in the context of an OpMode.',
+    body: [
+      'A quick refresher on classes, methods, and variables — grounded entirely in OpMode code rather than abstract examples — including the while (opModeIsActive()) loop every LinearOpMode is built around.',
+      'Covers if/else in a Java-specific context, and the distinction between fields (persist across Loop iterations) and local variables (reset every time) — a distinction that matters a lot once toggle logic shows up in Lesson 7.',
+    ],
+    concepts: ['Classes/methods/variables', 'while (opModeIsActive())', 'Fields vs. local variables'],
+  },
+  {
+    id: 'l-6',
+    slug: 'opmode-anatomy-and-javadoc',
+    number: '06',
+    section: 'Core Skills',
+    title: 'Anatomy of an OpMode + JavaDoc',
+    description: 'LinearOpMode vs. event-driven OpMode, and documenting classes for the next season.',
+    body: [
+      'LinearOpMode runs top-to-bottom inside a single loop; the event-driven OpMode base class instead calls init()/loop()/stop() methods the SDK invokes for you. This lesson explains when each shape makes sense.',
+      'JavaDoc syntax — @param, @return, @author — is introduced here specifically so documentation habits start from the very first real class students write, not bolted on later.',
+    ],
+    concepts: ['LinearOpMode vs. OpMode', 'JavaDoc syntax', 'Team handoff across seasons'],
+    tip: 'Documentation habits established here carry through to the capstone in Lesson 27 — treat JavaDoc as part of writing the class, not an afterthought.',
+  },
+  {
+    id: 'l-7',
+    slug: 'gamepad-input',
+    number: '07',
+    section: 'Core Skills',
+    title: 'Gamepad Input',
+    description: 'The gamepad1/gamepad2 convention, deadzones, and detecting a fresh button press.',
+    body: [
+      'gamepad1 is always the driver, gamepad2 is always the operator — a convention worth enforcing early since it\'s hard to change once code depends on it. Deadzones filter out joystick drift near zero.',
+      'Detecting "just pressed" (as opposed to "currently held") requires manually tracking the previous cycle\'s button state and comparing it to the current one — the same edge-detection idea Blocks students learn in Episode 5.',
+    ],
+    concepts: ['gamepad1/gamepad2', 'Deadzones', 'Manual previous-state tracking', 'Two-controller setup'],
+  },
+  {
+    id: 'l-8',
+    slug: 'servos-and-mechanisms',
+    number: '08',
+    section: 'Core Skills',
+    title: 'Servos and Simple Mechanisms',
+    description: 'Position control vs. power control, and a reusable toggle pattern.',
+    body: [
+      'Servo position control (0.0–1.0) is fundamentally different from DcMotor power control — a servo moves to a position and holds it, rather than spinning continuously. Continuous-rotation servos are the exception, behaving more like a motor.',
+      'The claw/arm toggle pattern reuses the edge-detection technique from Lesson 7 to flip a servo between two positions on a single button press, without re-triggering while the button stays held.',
+    ],
+    concepts: ['Servo position control', 'Continuous-rotation servos', 'Toggle pattern'],
+  },
+
+  // ─── Section 3: Sensors & Feedback ───────────────────────────────────────
+  {
+    id: 'l-9',
+    slug: 'encoders',
+    number: '09',
+    section: 'Sensors & Feedback',
+    title: 'Encoders',
+    description: 'What encoders measure, and converting ticks into real-world distance.',
+    body: [
+      'Encoders count motor shaft rotation in ticks. This lesson covers the three run modes — RUN_USING_ENCODER, RUN_WITHOUT_ENCODER, and STOP_AND_RESET_ENCODER — and when each is appropriate.',
+      'A ticks-to-distance conversion constant, derived from wheel diameter and gear ratio, turns a raw tick count into inches or centimeters traveled — the foundation the next lesson builds an autonomous routine on top of.',
+    ],
+    concepts: ['Encoder ticks', 'RUN_USING_ENCODER / RUN_WITHOUT_ENCODER / STOP_AND_RESET_ENCODER', 'Ticks-to-distance constant'],
+  },
+  {
+    id: 'l-10',
+    slug: 'encoder-autonomous',
+    number: '10',
+    section: 'Sensors & Feedback',
+    title: 'Autonomous Driving with Encoders',
+    description: 'Drive-to-distance and turn-to-angle routines using setTargetPosition().',
+    body: [
+      'setTargetPosition() combined with RUN_TO_POSITION mode lets a motor drive to an exact tick count and stop on its own — the basis for a reliable drive-to-distance routine.',
+      'Turning is trickier: encoder-only turning drifts without gyro correction, since wheel slip on a turn isn\'t reflected in the tick count. This limitation is exactly what motivates the IMU lesson next.',
+    ],
+    concepts: ['setTargetPosition()', 'RUN_TO_POSITION', 'Drive-to-distance', 'Turn-to-angle'],
+    tip: 'Encoder-only turning drifts over time from wheel slip — don\'t rely on it alone for precision turns once the IMU is available.',
+  },
+  {
+    id: 'l-11',
+    slug: 'imu-gyro-basics',
+    number: '11',
+    section: 'Sensors & Feedback',
+    title: 'IMU (Gyro) Basics',
+    description: 'Reading yaw/pitch/roll and building a gyro-corrected turn.',
+    body: [
+      'IMU initialization requires telling the SDK how the hub is physically mounted — get the orientation parameters wrong and every heading reading is off by a fixed, confusing amount.',
+      'This lesson reads yaw/pitch/roll and builds a gyro-based turn-to-angle routine, previewing the PID control covered in Section 5.',
+    ],
+    concepts: ['IMU initialization', 'Hub orientation parameters', 'Yaw/pitch/roll', 'Gyro turn-to-angle'],
+    tip: 'Angle wraps around at ±180° — a naive angle comparison breaks near that boundary, so handle the wraparound explicitly.',
+  },
+  {
+    id: 'l-12',
+    slug: 'other-sensors',
+    number: '12',
+    section: 'Sensors & Feedback',
+    title: 'Other Sensors',
+    description: 'Touch, color, and distance sensors, and filtering noisy readings.',
+    body: [
+      'Touch (isPressed()), color (RGB), and distance sensors round out the sensor suite most FTC teams use. Each has a distinct failure mode worth knowing before you build logic on top of it.',
+      'A brief note on filtering noisy readings — averaging or discarding outliers — closes the lesson, since a single bad sample can otherwise trigger a false transition in autonomous logic.',
+    ],
+    concepts: ['Touch sensor (isPressed())', 'Color sensor (RGB)', 'Distance sensor', 'Noise filtering'],
+  },
+
+  // ─── Section 4: Autonomous Programming ───────────────────────────────────
+  {
+    id: 'l-13',
+    slug: 'state-machines-for-auto',
+    number: '13',
+    section: 'Autonomous Programming',
+    title: 'State Machines for Auto',
+    description: 'Replacing blocking sequential code with an enum-based state machine.',
+    body: [
+      'Blocking sequential code — "drive, then wait, then turn" written top to bottom — can\'t react to anything while it\'s running. An enum-based state machine solves this by running one step per Loop call and transitioning between named states.',
+      'Transitions can be driven by elapsed time, a sensor reading, or an encoder target reached — this state machine becomes the backbone reused for waypoints, vision, and the final capstone build.',
+    ],
+    concepts: ['Blocking sequential code', 'enum-based state machine', 'Time/sensor/encoder transitions'],
+  },
+  {
+    id: 'l-14',
+    slug: 'path-planning-basics',
+    number: '14',
+    section: 'Autonomous Programming',
+    title: 'Path Planning Basics',
+    description: 'Waypoints as data, looped through the state machine from Lesson 13.',
+    body: [
+      'A waypoint is just data — an (x, y, heading) triple. This lesson loops the Lesson 13 state machine through a list of waypoints instead of hardcoding each state by hand.',
+      'It\'s framed explicitly as the manual precursor to Pedro Pathing (Lesson 17) — understanding what a path-follower does under the hood makes the library far less of a black box.',
+    ],
+    concepts: ['Waypoints (x, y, heading)', 'State machine + waypoint list', 'Manual path-following'],
+  },
+  {
+    id: 'l-15',
+    slug: 'vision-intro',
+    number: '15',
+    section: 'Autonomous Programming',
+    title: 'Vision Intro',
+    description: 'AprilTags, Vuforia, and TFOD under one unified VisionPortal API.',
+    body: [
+      'AprilTags, Vuforia, and TFOD each solve a different vision problem, but the SDK\'s VisionPortal wraps them behind one consistent API.',
+      'This lesson reads a detection\'s tag ID, position, and bearing — the raw data the next lesson turns into autonomous decisions.',
+    ],
+    concepts: ['AprilTags vs. Vuforia vs. TFOD', 'VisionPortal API', 'Tag ID / position / bearing'],
+  },
+  {
+    id: 'l-16',
+    slug: 'vision-plus-auto',
+    number: '16',
+    section: 'Autonomous Programming',
+    title: 'Combining Vision + Auto',
+    description: 'Vision as a state-transition condition, with a fallback when nothing is detected.',
+    body: [
+      'Vision becomes just another state-transition condition inside the Lesson 13 state machine — branching autonomous behavior by which tag ID was detected.',
+      'A fallback path for when no detection occurs is non-negotiable — this is the capstone lesson of the Autonomous Programming section, tying state machines, waypoints, and vision together.',
+    ],
+    concepts: ['Vision as state condition', 'Branching by tag ID', 'No-detection fallback'],
+    tip: 'Always build a no-detection fallback path — a camera glitch or occluded tag should never leave autonomous stuck waiting forever.',
+  },
+
+  // ─── Section 4.5: Pedro Pathing ──────────────────────────────────────────
+  {
+    id: 'l-17',
+    slug: 'pedro-pathing-intro',
+    number: '17',
+    section: 'Pedro Pathing',
+    title: 'Pedro Pathing Intro',
+    description: 'The Follower/Path/PathChain/Point API that replaces manual waypoint-following.',
+    body: [
+      'Pedro Pathing replaces the manual waypoint-following built in Lesson 14 with a maintained library — Follower, Path, PathChain, and Point are the core API surface.',
+      'Pedro replaces the following, not the decision logic — the state machine from Lesson 13 still drives when and why the robot moves, Pedro just handles the how.',
+    ],
+    concepts: ['Follower', 'Path / PathChain', 'Point'],
+    tip: 'Tuning Pedro\'s drive constants, PIDF coefficients, and localization is the team\'s ongoing responsibility — this lesson covers the API, not the tuning process.',
+  },
+
+  // ─── Section 5: Advanced Control ─────────────────────────────────────────
+  {
+    id: 'l-18',
+    slug: 'pid-control',
+    number: '18',
+    section: 'Advanced Control',
+    title: 'PID Control',
+    description: 'P/I/D theory and a from-scratch PID loop in Java.',
+    body: [
+      'Proportional, Integral, and Derivative terms each correct a different symptom: no D term means overshoot, no I term means steady-state error. This lesson builds a PID loop from scratch rather than starting from a library.',
+      'Tuning is taught by feel — adjust one term at a time and watch the robot\'s response — since that\'s how most FTC teams actually tune in the pit.',
+    ],
+    concepts: ['P/I/D terms', 'Overshoot vs. steady-state error', 'Tune-by-feel', 'From-scratch PID loop'],
+  },
+  {
+    id: 'l-19',
+    slug: 'pidf-for-drivetrains-and-lifts',
+    number: '19',
+    section: 'Advanced Control',
+    title: 'PIDF for Drivetrains/Lifts',
+    description: 'Adding a feedforward term for gravity and static friction.',
+    body: [
+      'The feedforward term (F) compensates for a constant force PID alone struggles with — gravity pulling a lift down, or static friction resisting a drivetrain at rest.',
+      'Tuning order matters: F is tuned first, alone, before layering P, I, and D on top — tuning them together makes it much harder to isolate what each term is doing.',
+    ],
+    concepts: ['Feedforward (F) term', 'Gravity compensation', 'Static friction', 'F-first tuning order'],
+  },
+  {
+    id: 'l-20',
+    slug: 'odometry',
+    number: '20',
+    section: 'Advanced Control',
+    title: 'Odometry',
+    description: 'Dead-wheel odometry, and integrating deltas into a live pose estimate.',
+    body: [
+      'Regular drive encoders slip under load, making them unreliable for precise position tracking. Dedicated dead-wheel odometry pods — in 2- or 3-wheel layouts — avoid this by not touching the ground under drive power.',
+      'The lesson covers integrating small position deltas over time into a running (x, y, heading) pose estimate — the same pose Pedro Pathing (Lesson 17) consumes under the hood.',
+    ],
+    concepts: ['Drive-encoder slip', 'Dead-wheel odometry pods', '2-/3-wheel layouts', 'Pose integration'],
+  },
+  // ─── Section 6: Software Architecture ────────────────────────────────────
+  {
+    id: 'l-21',
+    slug: 'code-organization',
+    number: '21',
+    section: 'Software Architecture',
+    title: 'Code Organization',
+    description: 'Subsystem classes, with the OpMode as a thin orchestrator.',
+    body: [
+      'Splitting a robot into subsystem classes — Drivetrain, Lift, Claw — keeps each piece of hardware behind a small, focused interface, with the OpMode reduced to a thin orchestrator that calls into them.',
+      'This is a lightweight, command-based-ish pattern rather than a full framework, chosen specifically because the same subsystem classes are reused across both TeleOp and Autonomous.',
+    ],
+    concepts: ['Subsystem classes', 'Thin OpMode orchestrator', 'Command-based-ish pattern', 'Teleop/auto reuse'],
+  },
+  {
+    id: 'l-22',
+    slug: 'multithreading-basics',
+    number: '22',
+    section: 'Software Architecture',
+    title: 'Multithreading Basics',
+    description: 'Why single-threaded is the default — and almost always correct.',
+    body: [
+      'Single-threaded code is the default in FTC OpModes for a reason: it\'s predictable, and race conditions are hard to debug on a robot mid-match.',
+      'Most situations that feel like they "need a thread" are actually state-machine problems in disguise — this lesson walks through recognizing that distinction before reaching for a Thread.',
+    ],
+    concepts: ['Single-threaded default', 'Race-condition risk', 'State machine vs. thread'],
+    tip: 'If a problem feels like it needs a background thread, check first whether it\'s really just a state machine you haven\'t modeled yet.',
+  },
+  {
+    id: 'l-23',
+    slug: 'telemetry-and-debugging',
+    number: '23',
+    section: 'Software Architecture',
+    title: 'Telemetry & Debugging',
+    description: 'telemetry.addData/.update, FTC Dashboard, and isolate-one-variable debugging.',
+    body: [
+      'Beyond the basic telemetry.addData() / .update() pair from Lesson 2, this lesson introduces FTC Dashboard for graphing values live and tuning constants without redeploying code, plus a preview of the @Config annotation.',
+      'The debugging mindset taught here — isolate one variable at a time — is the same strategy carried into the capstone and the final pitfalls lesson.',
+    ],
+    concepts: ['telemetry.addData / .update', 'FTC Dashboard', '@Config preview', 'Isolate-one-variable debugging'],
+  },
+  {
+    id: 'l-24',
+    slug: 'version-control-with-git',
+    number: '24',
+    section: 'Software Architecture',
+    title: 'Version Control with Git',
+    description: 'Clone, commit, push, pull, branch, and merge for a team codebase.',
+    body: [
+      'Covers the core Git workflow every programmer needs — clone, commit, push, pull, branch, merge — and a branch-per-feature workflow so multiple programmers can work without blocking each other.',
+      'Merge conflicts and how to resolve them are covered directly, along with a callback to Lesson 21: subsystem separation is one of the biggest practical levers for reducing how often conflicts happen in the first place.',
+    ],
+    concepts: ['clone/commit/push/pull', 'branch/merge', 'Branch-per-feature workflow', 'Merge conflicts'],
+    tip: 'For a full hands-on walkthrough of this workflow — including PRs, CI, and conflict resolution — see the dedicated Git Tutorial.',
+    resources: [{ label: 'GEarheads Git Tutorial', url: '/resources/git/repository-basics' }],
+  },
+
+  // ─── Section 7: Competition Prep ─────────────────────────────────────────
+  {
+    id: 'l-25',
+    slug: 'driver-practice-tools',
+    number: '25',
+    section: 'Competition Prep',
+    title: 'Driver Practice Tools',
+    description: '@Config-tunable constants and driver-facing telemetry.',
+    body: [
+      '@Config-tunable constants — max power, turn sensitivity, an FOV toggle — let drivers and programmers adjust feel between matches without redeploying code.',
+      'Driver-facing telemetry (battery voltage, current state, mechanism status) assembles everything built so far into one polished teleop build ready for practice.',
+    ],
+    concepts: ['@Config-tunable constants', 'Driver-facing telemetry', 'Practice-ready teleop build'],
+  },
+  {
+    id: 'l-26',
+    slug: 'putting-it-all-together',
+    number: '26',
+    section: 'Competition Prep',
+    title: 'Putting It All Together',
+    description: 'A full teleop + autonomous reference build — synthesis, no new concepts.',
+    body: [
+      'This synthesis lesson introduces no new concepts — it walks the complete file and class structure of a finished robot: subsystems, then OpModes, then telemetry and dashboard wiring.',
+      'It\'s meant as the reference build to compare a team\'s own code structure against once every previous lesson has been applied.',
+    ],
+    concepts: ['Full reference build', 'Subsystems → OpModes → telemetry', 'Synthesis lesson'],
+  },
+  {
+    id: 'l-27',
+    slug: 'common-bugs-and-pitfalls',
+    number: '27',
+    section: 'Competition Prep',
+    title: 'Common Bugs & Pitfalls',
+    description: 'A course-spanning troubleshooting checklist for the pit.',
+    body: [
+      'A course-spanning checklist of the bugs most likely to show up at competition: hardware-name mismatches, a missing telemetry.update() call, wrong motor direction, diagonal mecanum strafe issues, turn drift, and PID oscillation.',
+      'It also covers untuned Pedro constants, Git conflicts, and IMU orientation drifting after a hub remount — closing the course on the exact failures a team is most likely to hit in the pit at 7am.',
+    ],
+    concepts: ['Hardware-name mismatches', 'Missing telemetry.update()', 'Turn drift', 'PID oscillation', 'IMU remount drift'],
+    tip: 'This lesson is a checklist, not new material — walk it before every competition to catch the same handful of bugs that account for most pit-side troubleshooting.',
+  },
+]

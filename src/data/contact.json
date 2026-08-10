@@ -1,0 +1,66 @@
+{
+  "pathways": [
+    {
+      "id": "production-hub",
+      "title": "Production Hub",
+      "description": "Need a part machined or printed? We run CNC, 3D printing, and laser cutting for FTC teams across the region — 41 parts made for 7 teams this season.",
+      "iconKey": "precisionManufacturing",
+      "cta": "Explore Production Hub",
+      "type": "link",
+      "to": "/outreach/production-hub",
+      "span": 1
+    },
+    {
+      "id": "computer-project",
+      "title": "Request or Donate a Computer",
+      "description": "We refurbish laptops and get them to students who need one — 56 this season, 156 all-time, across four continents. Request a machine, or donate one.",
+      "iconKey": "laptop",
+      "cta": "Get Involved",
+      "type": "link",
+      "to": "/outreach/computer-project",
+      "span": 1
+    },
+    {
+      "id": "sponsorship",
+      "title": "Become a Sponsor",
+      "description": "About 95% of our ~$12K season budget comes from sponsors and grants. Partner with us and we'll make sure it shows — on the robot, at events, and in what your support builds.",
+      "iconKey": "handshake",
+      "cta": "See How Sponsorship Works",
+      "type": "anchor",
+      "to": "#sponsorship",
+      "span": 2
+    }
+  ],
+  "sponsorship": {
+    "title": "Partner With Team #16460",
+    "paragraphs": [
+      "Every season we build a competition-ready robot almost entirely from scratch — custom CAD, in-house CNC and 3D printing, a real engineering process — and run outreach that reaches hospitals, veterans, and students on four continents. None of it runs on the school budget alone.",
+      "Sponsorship funds parts, competition travel, and the outreach programs above. In return, your name goes on the robot and pit banner, out to our social following, and into every story we tell about what got built this season."
+    ],
+    "benefits": [
+      {
+        "iconKey": "campaign",
+        "text": "Logo placement on the robot, pit banner, and team social channels"
+      },
+      {
+        "iconKey": "emojiEvents",
+        "text": "An open invitation to see the robot compete in person"
+      },
+      {
+        "iconKey": "volunteerActivism",
+        "text": "A direct line to real community impact — Children's Wisconsin, the Milwaukee VA, and computer donations reaching four continents"
+      },
+      {
+        "iconKey": "insights",
+        "text": "A season-end recap of exactly what your support made possible"
+      }
+    ],
+    "cta": "Fill Out the Form Below"
+  },
+  "reasons": [
+    { "value": "general", "label": "General Inquiry" },
+    { "value": "sponsorship", "label": "Sponsorship" },
+    { "value": "production-hub", "label": "Production Hub" },
+    { "value": "computer-project", "label": "Computer Program" }
+  ]
+}

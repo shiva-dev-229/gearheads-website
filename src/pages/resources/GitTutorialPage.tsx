@@ -18,7 +18,6 @@ import {
   MdMenuBook,
 } from 'react-icons/md'
 import HoverTitle from '../../components/reactbits/HoverTitle'
-import HeroSpotlight from '../../components/reactbits/HeroSpotlight'
 import FadeIn from '../../components/reactbits/FadeIn'
 import BorderGlow from '../../components/reactbits/BorderGlow'
 
@@ -574,101 +573,99 @@ export default function GitTutorialPage() {
           <MobileChip>Module {module.number} / 7</MobileChip>
         </MobileBar>
 
-        <HeroSpotlight>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={module.id}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-            >
-              <ModuleBadge>Module {module.number}</ModuleBadge>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={module.id}
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            <ModuleBadge>Module {module.number}</ModuleBadge>
 
-              <StyledHoverTitle text={module.title} delay={18} />
+            <StyledHoverTitle text={module.title} delay={18} />
 
-              <PageDesc>{module.description}</PageDesc>
-              <TitleDivider />
+            <PageDesc>{module.description}</PageDesc>
+            <TitleDivider />
 
-              <ChipsRow>
-                {module.concepts.map((c, i) => (
-                  <motion.div
-                    key={c}
-                    style={{ display: 'inline-flex' }}
-                    initial={{ opacity: 0, scale: 0.78, y: 4 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ delay: 0.1 + i * 0.06, duration: 0.25, ease: 'easeOut' }}
+            <ChipsRow>
+              {module.concepts.map((c, i) => (
+                <motion.div
+                  key={c}
+                  style={{ display: 'inline-flex' }}
+                  initial={{ opacity: 0, scale: 0.78, y: 4 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06, duration: 0.25, ease: 'easeOut' }}
+                >
+                  <ConceptChip>{c}</ConceptChip>
+                </motion.div>
+              ))}
+            </ChipsRow>
+
+            {module.body.map((p, i) => (
+              <FadeIn key={i} direction="up" delay={i * 70} duration={480}>
+                <BodyText>{p}</BodyText>
+              </FadeIn>
+            ))}
+
+            {module.terminals.map(tb => (
+              <TerminalBlockComponent key={tb.id} block={tb} />
+            ))}
+
+            {module.tip && <TipBox tip={module.tip} />}
+
+            <NavFooter>
+              {prevModule ? (
+                <NavCardWrapper>
+                  <BorderGlow
+                    borderRadius={10}
+                    backgroundColor="#1c1b1b"
+                    glowColor="222 100 84"
+                    glowIntensity={0.55}
+                    animated
+                    colors={['#adc6ff', '#4ae183', '#adc6ff']}
+                    fillOpacity={0.05}
+                    glowRadius={28}
                   >
-                    <ConceptChip>{c}</ConceptChip>
-                  </motion.div>
-                ))}
-              </ChipsRow>
-
-              {module.body.map((p, i) => (
-                <FadeIn key={i} direction="up" delay={i * 70} duration={480}>
-                  <BodyText>{p}</BodyText>
-                </FadeIn>
-              ))}
-
-              {module.terminals.map(tb => (
-                <TerminalBlockComponent key={tb.id} block={tb} />
-              ))}
-
-              {module.tip && <TipBox tip={module.tip} />}
-
-              <NavFooter>
-                {prevModule ? (
-                  <NavCardWrapper>
-                    <BorderGlow
-                      borderRadius={10}
-                      backgroundColor="#1c1b1b"
-                      glowColor="222 100 84"
-                      glowIntensity={0.55}
-                      animated
-                      colors={['#adc6ff', '#4ae183', '#adc6ff']}
-                      fillOpacity={0.05}
-                      glowRadius={28}
-                    >
-                      <NavCardBody onClick={() => navigate(`/resources/git/${prevModule.slug}`)}>
-                        <NavDirection>
-                          <MdKeyboardArrowLeft size={14} />
-                          Previous
-                        </NavDirection>
-                        <NavTitle>{prevModule.title}</NavTitle>
-                      </NavCardBody>
-                    </BorderGlow>
-                  </NavCardWrapper>
-                ) : (
-                  <div />
-                )}
-                {nextModule ? (
-                  <NavCardWrapper>
-                    <BorderGlow
-                      borderRadius={10}
-                      backgroundColor="#1c1b1b"
-                      glowColor="222 100 84"
-                      glowIntensity={0.55}
-                      animated
-                      colors={['#adc6ff', '#4ae183', '#adc6ff']}
-                      fillOpacity={0.05}
-                      glowRadius={28}
-                    >
-                      <NavCardBody onClick={() => navigate(`/resources/git/${nextModule.slug}`)}>
-                        <NavDirection>
-                          Next
-                          <MdKeyboardArrowRight size={14} />
-                        </NavDirection>
-                        <NavTitle>{nextModule.title}</NavTitle>
-                      </NavCardBody>
-                    </BorderGlow>
-                  </NavCardWrapper>
-                ) : (
-                  <div />
-                )}
-              </NavFooter>
-            </motion.div>
-          </AnimatePresence>
-        </HeroSpotlight>
+                    <NavCardBody onClick={() => navigate(`/resources/git/${prevModule.slug}`)}>
+                      <NavDirection>
+                        <MdKeyboardArrowLeft size={14} />
+                        Previous
+                      </NavDirection>
+                      <NavTitle>{prevModule.title}</NavTitle>
+                    </NavCardBody>
+                  </BorderGlow>
+                </NavCardWrapper>
+              ) : (
+                <div />
+              )}
+              {nextModule ? (
+                <NavCardWrapper>
+                  <BorderGlow
+                    borderRadius={10}
+                    backgroundColor="#1c1b1b"
+                    glowColor="222 100 84"
+                    glowIntensity={0.55}
+                    animated
+                    colors={['#adc6ff', '#4ae183', '#adc6ff']}
+                    fillOpacity={0.05}
+                    glowRadius={28}
+                  >
+                    <NavCardBody onClick={() => navigate(`/resources/git/${nextModule.slug}`)}>
+                      <NavDirection>
+                        Next
+                        <MdKeyboardArrowRight size={14} />
+                      </NavDirection>
+                      <NavTitle>{nextModule.title}</NavTitle>
+                    </NavCardBody>
+                  </BorderGlow>
+                </NavCardWrapper>
+              ) : (
+                <div />
+              )}
+            </NavFooter>
+          </motion.div>
+        </AnimatePresence>
       </Content>
     </PageRoot>
   )

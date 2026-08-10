@@ -1,4 +1,4 @@
-import { useRef, useEffect, type ComponentType } from 'react'
+import { useRef, useEffect, useState, type ComponentType } from 'react'
 import styled, { keyframes } from 'styled-components'
 import {
   MdPrecisionManufacturing,
@@ -15,6 +15,7 @@ import {
   MdAcUnit,
   MdGroups,
   MdBuild,
+  MdExpandMore,
 } from 'react-icons/md'
 import { theme } from '../../styles/theme'
 import BlurText from '../../components/reactbits/BlurText'
@@ -203,7 +204,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`
@@ -402,6 +402,167 @@ const ApproachImageHint = styled.span`
   opacity: 0.45;
   text-align: center;
   max-width: 220px;
+`
+
+// ─── Request form ─────────────────────────────────────────────────────────────
+
+const RequestCard = styled.div`
+  background: ${theme.colors.background};
+  box-shadow: ${theme.shadows.neoRaised};
+  border-radius: 24px;
+  padding: 32px ${theme.spacing.marginMobile};
+
+  @media (min-width: 768px) {
+    padding: 40px 48px;
+  }
+`
+
+const FormGrid = styled.form`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 8px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
+const FieldGroup = styled.div<{ $span2?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (min-width: 640px) {
+    grid-column: ${({ $span2 }) => ($span2 ? 'span 2' : 'span 1')};
+  }
+`
+
+const FieldLabel = styled.label`
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${theme.colors.onSurfaceVariant};
+  opacity: 0.7;
+`
+
+const fieldBase = `
+  background: transparent;
+  box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e;
+  border-radius: 12px;
+  border: none;
+  padding: 14px 16px;
+  width: 100%;
+`
+
+const Input = styled.input`
+  ${fieldBase}
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.body};
+  font-size: 14px;
+
+  &::placeholder {
+    color: ${theme.colors.onSurfaceVariant}4d;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
+      0 0 0 1px ${theme.colors.primary}80;
+  }
+`
+
+const Textarea = styled.textarea`
+  ${fieldBase}
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.body};
+  font-size: 14px;
+  min-height: 110px;
+  resize: vertical;
+
+  &::placeholder {
+    color: ${theme.colors.onSurfaceVariant}4d;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
+      0 0 0 1px ${theme.colors.primary}80;
+  }
+`
+
+const SelectWrap = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`
+
+const Select = styled.select`
+  ${fieldBase}
+  appearance: none;
+  -webkit-appearance: none;
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.body};
+  font-size: 14px;
+  padding-right: 40px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
+      0 0 0 1px ${theme.colors.primary}80;
+  }
+
+  option {
+    background: ${theme.colors.background};
+    color: ${theme.colors.onSurface};
+  }
+`
+
+const SelectChevron = styled(MdExpandMore)`
+  position: absolute;
+  right: 14px;
+  color: ${theme.colors.onSurfaceVariant};
+  opacity: 0.6;
+  pointer-events: none;
+`
+
+const SubmitButton = styled.button`
+  justify-self: start;
+  background: ${theme.colors.background};
+  color: ${theme.colors.primary};
+  box-shadow: ${theme.shadows.neoButtonPrimary};
+  border-radius: 50px;
+  border: none;
+  padding: 16px 32px;
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+
+  &:active {
+    box-shadow: ${theme.shadows.neoButtonPrimaryActive};
+  }
+`
+
+const FormNote = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 12px;
+  line-height: 1.6;
+  color: ${theme.colors.onSurfaceVariant};
+  opacity: 0.6;
+  margin: 14px 0 0;
+
+  a {
+    color: ${theme.colors.primary};
+    opacity: 1;
+    text-decoration: underline;
+  }
 `
 
 // ─── Bento grid — services ────────────────────────────────────────────────────
@@ -641,6 +802,32 @@ const PartnerDesc = styled.p`
   text-align: left;
 `
 
+// ─── In-action video ──────────────────────────────────────────────────────────
+
+const VideoLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+`
+
+const VideoWell = styled.div`
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 9 / 16;
+  background: ${theme.colors.background};
+  box-shadow: ${theme.shadows.neoInset};
+  border-radius: 24px;
+  overflow: hidden;
+`
+
+const VideoFrame = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+`
+
 // ─── Photo gallery ────────────────────────────────────────────────────────────
 
 const PhotoGallery = styled.div`
@@ -731,12 +918,48 @@ const STATS     = data.stats
 const PARTNERS  = data.partners
 const PHOTOS    = data.photos
 const HOW       = data.howItWorks
+const REQUEST   = data.requestForm
 
 const heroPhotoSrc    = resolve(data.hero.heroPhoto.src)
 const approachPhotoSrc = resolve(HOW.inlinePhoto.src)
+const VIDEO = data.video
+
+function buildRequestMailto(fields: {
+  team: string
+  contact: string
+  email: string
+  service: string
+  message: string
+}): string {
+  const subject = `Production Hub Request — ${fields.team || 'New request'}`
+  const body = [
+    `Team: ${fields.team}`,
+    `Contact name: ${fields.contact}`,
+    `Contact email: ${fields.email}`,
+    `Service requested: ${fields.service}`,
+    '',
+    'What we need:',
+    fields.message,
+    '',
+    '(Attach your design file — Onshape link, STL, or DXF — before sending.)',
+  ].join('\n')
+  return `mailto:${REQUEST.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
 
 export default function ProductionHubPage() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [requestFields, setRequestFields] = useState({
+    team: '',
+    contact: '',
+    email: '',
+    service: SERVICES[0]?.title ?? '',
+    message: '',
+  })
+
+  function handleRequestSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    window.location.href = buildRequestMailto(requestFields)
+  }
 
   useEffect(() => {
     const observers = cardRefs.current.map((el) => {
@@ -930,6 +1153,95 @@ export default function ProductionHubPage() {
 
       <Divider />
 
+      {/* ── 5b. Request a part ────────────────────────────────────────── */}
+      <Section id="form">
+        <Inner>
+          <FadeIn direction="up">
+            <SectionLabel>{REQUEST.label}</SectionLabel>
+            <SectionHeading>{REQUEST.heading}</SectionHeading>
+            <SectionSubtext>{REQUEST.subtext}</SectionSubtext>
+
+            <RequestCard>
+              <FormGrid onSubmit={handleRequestSubmit}>
+                <FieldGroup>
+                  <FieldLabel htmlFor="rq-team">Team Name</FieldLabel>
+                  <Input
+                    id="rq-team"
+                    placeholder="e.g. FTC #12345 Ironclads"
+                    value={requestFields.team}
+                    onChange={(e) => setRequestFields((f) => ({ ...f, team: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup>
+                  <FieldLabel htmlFor="rq-contact">Contact Name</FieldLabel>
+                  <Input
+                    id="rq-contact"
+                    placeholder="Your name"
+                    value={requestFields.contact}
+                    onChange={(e) => setRequestFields((f) => ({ ...f, contact: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup>
+                  <FieldLabel htmlFor="rq-email">Contact Email</FieldLabel>
+                  <Input
+                    id="rq-email"
+                    type="email"
+                    placeholder="you@example.com"
+                    value={requestFields.email}
+                    onChange={(e) => setRequestFields((f) => ({ ...f, email: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup>
+                  <FieldLabel htmlFor="rq-service">Service Needed</FieldLabel>
+                  <SelectWrap>
+                    <Select
+                      id="rq-service"
+                      value={requestFields.service}
+                      onChange={(e) => setRequestFields((f) => ({ ...f, service: e.target.value }))}
+                    >
+                      {SERVICES.map((s) => (
+                        <option key={s.id} value={s.title}>{s.title}</option>
+                      ))}
+                    </Select>
+                    <SelectChevron size={18} aria-hidden="true" />
+                  </SelectWrap>
+                </FieldGroup>
+
+                <FieldGroup $span2>
+                  <FieldLabel htmlFor="rq-message">What Do You Need?</FieldLabel>
+                  <Textarea
+                    id="rq-message"
+                    placeholder="Describe the part — dimensions, material, deadline, and anything else we should know."
+                    value={requestFields.message}
+                    onChange={(e) => setRequestFields((f) => ({ ...f, message: e.target.value }))}
+                    required
+                  />
+                </FieldGroup>
+
+                <FieldGroup $span2>
+                  <SubmitButton type="submit">
+                    Send Request
+                  </SubmitButton>
+                  <FormNote>
+                    This opens your email client with everything filled in — attach your design
+                    file before sending. Prefer to email directly? Reach us at{' '}
+                    <a href={`mailto:${REQUEST.email}`}>{REQUEST.email}</a>.
+                  </FormNote>
+                </FieldGroup>
+              </FormGrid>
+            </RequestCard>
+          </FadeIn>
+        </Inner>
+      </Section>
+
+      <Divider />
+
       {/* ── 6. Teams We Support ───────────────────────────────────────── */}
       <Section>
         <Inner>
@@ -972,7 +1284,33 @@ export default function ProductionHubPage() {
 
       <Divider />
 
-      {/* ── 7. Photo gallery ──────────────────────────────────────────── */}
+      {/* ── 7. In-action video ────────────────────────────────────────── */}
+      <Section>
+        <Inner>
+          <FadeIn direction="up">
+            <VideoLayout>
+              <div style={{ textAlign: 'center' }}>
+                <SectionLabel>{VIDEO.label}</SectionLabel>
+                <SectionHeading>{VIDEO.heading}</SectionHeading>
+                <SectionSubtext style={{ margin: '0 auto' }}>{VIDEO.subtext}</SectionSubtext>
+              </div>
+              <VideoWell>
+                <VideoFrame
+                  src={`https://www.youtube.com/embed/${VIDEO.youtubeId}`}
+                  title={VIDEO.heading}
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </VideoWell>
+            </VideoLayout>
+          </FadeIn>
+        </Inner>
+      </Section>
+
+      <Divider />
+
+      {/* ── 8. Photo gallery ──────────────────────────────────────────── */}
       <Section>
         <Inner>
           <FadeIn direction="up">

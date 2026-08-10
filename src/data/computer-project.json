@@ -2,17 +2,17 @@
   "hero": {
     "chip": "Community & Health · Computer Refurbishing",
     "title": "Computers, wiped clean and sent far.",
-    "subtitle": "We collect used laptops, refurbish them with a secure wipe and a fresh operating system, and put them into the hands of students who need them — from Wisconsin to Libya to Vietnam. What started as nine machines in 2022 has scaled to 56 this season and 156 all-time.",
+    "subtitle": "We collect used laptops, wipe and re-image them, then send them where they're needed — Wisconsin to Libya to Vietnam. 9 machines in 2022, 56 this season, 156 total.",
     "heroPhoto": null
   },
   "impact": {
     "label": "Global reach",
-    "text": "Every laptop we refurbish reaches students who otherwise would not have reliable computing access. This season alone, 56 machines reached 1,000+ students across FTC teams and community programs on four continents — turning hardware that would sit unused in a closet into an active educational tool."
+    "text": "Every laptop we refurbish reaches a student who wouldn't otherwise have one. This season, 56 machines reached 1,000+ students across four continents."
   },
   "whyItMatters": {
     "heading": "Why It Matters",
-    "body": "Access to a working laptop is not a given for a student team in Tripoli, Kingston, or Ho Chi Minh City. When Libya Team 18422 runs Android Studio or Vietnam Team 25242 writes their autonomous routine, they are doing it on machines that were headed for a Wisconsin storage closet eighteen months earlier. The same machines that sat idle in a Milliman office in 2023 are now running FTC dashboards in Arizona and powering after-school coding sessions at the Milwaukee Robotics Academy. The arithmetic is blunt: zero marginal hardware cost to the recipient, zero landfill waste, and a student who can actually write code on a real computer instead of sharing one between six people.",
-    "callout": "From 9 laptops in our first season to 56 this year — a program that was an experiment in 2022 is now a structured supply chain reaching four continents. The growth is not coincidental: every season we have refined the intake process, deepened partner relationships, and expanded the distribution network to match the real demand that exists in underserved FIRST programs worldwide."
+    "body": "A working laptop isn't a given for a team in Tripoli, Kingston, or Ho Chi Minh City. Libya Team 18422 runs Android Studio on a machine headed for a Wisconsin closet a year earlier — zero cost to the recipient, nothing in a landfill.",
+    "callout": "From 9 laptops our first season to 56 this year — an experiment in 2022 is now a supply chain spanning four continents."
   },
   "stats": [
     {
@@ -43,13 +43,13 @@
       "label": "Collect",
       "iconKey": "inbox",
       "summary": "Community drives and partner donations bring machines in.",
-      "detail": "The pipeline begins before we touch a single screw. We run collection drives through partner organizations — libraries, corporate sponsors like Milliman and Reserve Advisors, and local businesses including Soerens Ford — to gather machines that would otherwise sit forgotten in storage closets or get sent to a landfill. We put the word out broadly, making it easy for individuals, offices, and schools to hand over old laptops without worrying about data — that part is our job. Each collection point is coordinated in advance so machines arrive in manageable batches rather than overwhelming our workflow. Over five seasons we have learned that the quality and consistency of incoming hardware directly determines what we can ship downstream, so we also turn away machines too old or broken to make the cut, keeping our refurbishing pipeline efficient and our recipients satisfied.",
+      "detail": "Collection drives run through partners — libraries, Milliman, Reserve Advisors, Soerens Ford — catching machines headed for a closet or landfill. Donors skip the data worries; that's on us.",
       "highlights": [
-        "Coordinated drives with Milliman, Reserve Advisors, Soerens Ford, and local libraries",
-        "Machines collected from individuals, offices, and schools across the Brookfield area",
-        "Clear intake criteria — machines too old or damaged are responsibly redirected",
-        "Batched collection schedule to match our refurbishing capacity",
-        "No data concerns for donors — secure wipe happens in our pipeline"
+        "Drives with Milliman, Reserve Advisors, Soerens Ford",
+        "Collected from individuals, offices, schools in Brookfield",
+        "Too old or damaged machines are redirected",
+        "Batched intake to match our capacity",
+        "No data worries — the wipe is on us"
       ]
     },
     {
@@ -58,13 +58,13 @@
       "label": "Inventory",
       "iconKey": "checklist",
       "summary": "Every machine is logged, tested, and triaged before any work begins.",
-      "detail": "Before a laptop enters the refurbishing queue, it goes through a structured intake check. We log make, model, processor, RAM, storage, and any visible hardware issues. Each machine is powered on and assessed: does the battery hold a charge, does the keyboard respond, does the display show dead pixels, do the ports function? Machines that pass this triage move to the wipe queue. Those that fail are assessed further — a machine with a bad battery but working internals might have its drive reimaged and go to a fixed-power use case; a machine with a cracked motherboard is parted out or responsibly recycled. This step keeps the downstream process predictable: every machine that enters the wipe station has already been screened, so we are not discovering surprises mid-install. Good inventory hygiene has been one of the biggest operational lessons of the program — it is what allows us to scale without losing quality control.",
+      "detail": "Every laptop gets logged and tested first: make, model, RAM, storage, battery, keyboard, screen, ports. What passes moves to the wipe queue; what fails gets reimaged or parted out.",
       "highlights": [
-        "Each machine logged: make, model, RAM, storage, processor generation",
-        "Full hardware triage — battery, display, keyboard, ports, boot test",
-        "Clear pass/fail/triage criteria for each hardware category",
-        "Failed machines parted out or recycled — none go to landfill",
-        "Inventory log feeds directly into the distribution matching step"
+        "Logged: make, model, RAM, storage, processor",
+        "Full triage: battery, display, keyboard, ports",
+        "Clear pass/fail criteria per category",
+        "Failed machines recycled, never landfilled",
+        "Inventory feeds the distribution match"
       ]
     },
     {
@@ -73,13 +73,13 @@
       "label": "Wipe + New OS",
       "iconKey": "security",
       "summary": "A clean slate: every drive wiped, every machine re-imaged.",
-      "detail": "This is the technical core of the program. Every machine that passes triage gets a multi-pass secure erase — the previous owner's data is gone before we touch anything else. We then install a fresh operating system: for machines going to FTC teams, Blair Tech licenses give us Windows installs that are legitimate, activated, and ready to run Android Studio, FTC Dashboard, and the team's build toolchain out of the box. For machines going to general education programs — Milwaukee Robotics Academy, Tech Lit Africa partner sites, and others — we evaluate on a case-by-case basis: Windows where the license covers it, a hardened Linux distribution on older hardware that benefits from a lighter OS. Every install is then validated: the machine boots cleanly, connects to Wi-Fi, installs a test application, and gets a final hardware-functionality pass before it is cleared for distribution. We do not ship machines that we would not be comfortable handing to a student ourselves.",
+      "detail": "The technical core: a multi-pass secure erase, then a fresh OS. FTC-bound machines get activated Windows through Blair Tech, ready for Android Studio. Others get Windows or Linux, tested before it ships.",
       "highlights": [
-        "Multi-pass secure drive erase — zero previous-owner data remains",
-        "Blair Tech licenses for Windows installs on team-bound machines",
-        "Linux options evaluated for older hardware to maximize useful life",
-        "Full post-install validation: boot, Wi-Fi, test app, hardware pass",
-        "Machines are FTC-ready (Android Studio, FTC SDK, build tools) where applicable"
+        "Multi-pass erase — zero old data remains",
+        "Blair Tech licenses power team-bound machines",
+        "Linux on older hardware extends its life",
+        "Validated: boot, Wi-Fi, test app",
+        "FTC-ready: Android Studio, SDK, build tools"
       ]
     },
     {
@@ -88,13 +88,13 @@
       "label": "Distribute",
       "iconKey": "send",
       "summary": "Machines matched to recipients and shipped worldwide.",
-      "detail": "Distribution is where the work becomes real. Each refurbished machine is matched to a specific recipient based on what that program needs: FTC teams in underserved regions need machines that can run Android Studio; community education programs need reliable general-purpose laptops; library programs need machines that handle web browsing and document editing without issues. We coordinate with receiving contacts — coaches, program directors, Tech Lit Africa's in-country logistics — to ensure machines arrive at the right time in the right condition. International shipments require additional documentation and coordination, and we have built up the process knowledge over multiple seasons to handle it smoothly. The last step in the pipeline is also its most motivating: hearing from a team in Libya or Vietnam that the machines arrived and are running their FTC code is the direct feedback loop that keeps the program scaling each year.",
+      "detail": "Each machine goes to whoever needs what it does — FTC teams need Android Studio horsepower, community programs need something reliable. We coordinate with coaches and Tech Lit Africa's in-country logistics to get machines there intact.",
       "highlights": [
-        "Each machine matched to a specific recipient program based on technical requirements",
-        "FTC-ready machines prioritized for FTC teams in underserved regions",
-        "International shipping coordination with Tech Lit Africa and in-country contacts",
-        "Receiving confirmation collected from every recipient organization",
-        "Direct feedback loop — team hears from recipients when machines are in use"
+        "Matched to each recipient's real needs",
+        "FTC-ready machines go to underserved regions first",
+        "Shipping coordinated with Tech Lit Africa",
+        "Confirmation collected from every recipient",
+        "Direct feedback loop once machines arrive"
       ]
     }
   ],
@@ -102,68 +102,68 @@
     {
       "name": "Libya Team 18422",
       "region": "North Africa",
-      "description": "An FTC team in Libya receiving machines configured and ready for Android Studio and the FTC toolchain."
+      "description": "An FTC team in Libya, running Android Studio on our machines."
     },
     {
       "name": "Jamaica Team 24994",
       "region": "Caribbean",
-      "description": "A rookie FTC team in Jamaica that received laptops to build out their software development environment from scratch."
+      "description": "A rookie FTC team in Jamaica, building their setup from scratch."
     },
     {
       "name": "Vietnam Team 25242",
       "region": "Southeast Asia",
-      "description": "An FTC team in Vietnam that received machines as part of a broader push to expand FIRST globally in the Asia-Pacific region."
+      "description": "An FTC team in Vietnam, part of FIRST's growth in Asia-Pacific."
     },
     {
       "name": "Arizona Rez Kids",
       "region": "Arizona, USA",
-      "description": "A community robotics program on tribal land in Arizona, providing computing access to students in a historically underserved region."
+      "description": "A community robotics program on tribal land in Arizona."
     },
     {
       "name": "Milwaukee Robotics Academy",
       "region": "Milwaukee, WI",
-      "description": "A local robotics education program in Milwaukee that uses our refurbished machines for training sessions and after-school programming."
+      "description": "A local robotics program using our machines for training and after-school work."
     },
     {
       "name": "FIRST Wisconsin",
       "region": "Wisconsin, USA",
-      "description": "Wisconsin's regional FIRST organization, which distributes machines to teams across the state that lack adequate computing resources."
+      "description": "Wisconsin's regional FIRST org, distributing machines statewide."
     },
     {
       "name": "Tech Lit Africa",
       "region": "Sub-Saharan Africa",
-      "description": "A nonprofit that provides technology literacy education across Sub-Saharan Africa. Our machines feed into their distribution network."
+      "description": "A nonprofit for tech literacy in Sub-Saharan Africa; our machines feed their network."
     }
   ],
   "partnerOrgs": [
     {
       "name": "Milliman",
       "type": "Corporate Donor",
-      "note": "Primary machine source — Milliman's office hardware refresh cycles feed the bulk of our incoming inventory each season.",
+      "note": "Our primary source — office refreshes feed most of our inventory.",
       "logo": null
     },
     {
       "name": "Reserve Advisors",
       "type": "Corporate Donor",
-      "note": "Annual donor whose consistent contributions have supported multiple distribution cycles since the program's second season.",
+      "note": "An annual donor since our second season.",
       "logo": null
     },
     {
       "name": "Soerens Ford",
       "type": "Local Business Donor",
-      "note": "Local dealership that has run collection drives with us, making it easy for community members to drop off machines at a convenient location.",
+      "note": "Hosts collection drives — an easy community drop-off.",
       "logo": null
     },
     {
       "name": "Tech Lit Africa",
       "type": "Distribution Partner",
-      "note": "Handles all international last-mile logistics for Sub-Saharan shipments — in-country coordination, customs documentation, and final delivery to recipient schools.",
+      "note": "Handles last-mile logistics for Sub-Saharan shipments.",
       "logo": null
     },
     {
       "name": "Brookfield Public Library",
       "type": "Collection Point",
-      "note": "Serves as a convenient community drop-off hub, letting area residents and small offices donate machines without arranging a direct handoff.",
+      "note": "A drop-off hub for residents and small offices.",
       "logo": null
     }
   ],
@@ -189,6 +189,12 @@
       "role": "International distribution partner"
     }
   ],
+  "requestForm": {
+    "label": "Get Involved",
+    "heading": "Donate Or Request A Machine",
+    "subtext": "Have a laptop to give, or need one for your team or program? This opens a pre-filled email either way.",
+    "email": "ftcgearheads@gmail.com"
+  },
   "growth": [
     {
       "season": "2021–22",

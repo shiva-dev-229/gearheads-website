@@ -2,20 +2,20 @@
   "hero": {
     "chip": "Access & Advocacy · FIRST Advocacy",
     "title": "Taking FIRST to the capitol.",
-    "subtitle": "GEarheads doesn't just compete in FIRST — we fight for it. Over three consecutive years, our student advocates have walked the halls of the Wisconsin State Capitol, met with federal legislators in Washington D.C., and pushed the policy changes that unlock robotics access for K–12 students across the state and the country.",
+    "subtitle": "GEarheads doesn't just compete in FIRST — we fight for it. Three years running, we've walked the halls of the Wisconsin Capitol, sat with federal legislators in D.C., and pushed for the policy changes that get robotics into more classrooms.",
     "heroImage": null
   },
   "impact": {
     "label": "What we secured",
-    "text": "The DPI Robotics League Bill passed into law — directing $500,000 in annual state funding toward K–12 robotics programs across Wisconsin. Seven GEarheads students mobilized for this effort, meeting with more than 75 state legislators across three years of advocacy work to make it happen."
+    "text": "The DPI Robotics League Bill passed — $500,000 a year in state funding for K–12 robotics across Wisconsin. Seven students drove the effort, meeting more than 75 legislators over three years to get it done."
   },
   "whyWeAdvocate": {
     "heading": "Why we advocate",
     "paragraphs": [
-      "GEarheads competes because FIRST works. The program teaches students to design under constraints, test against data, collaborate across disciplines, and present ideas to adults with real authority. But FIRST only works if teams can afford to participate — and for many Wisconsin schools, the cost of registration fees, field sets, and practice materials is precisely the barrier that keeps programs from starting or continuing. That is the problem our advocacy is designed to solve.",
-      "When we show up at the Capitol, we are not asking for favors. We are presenting evidence. We bring participation data, program outcome research, and a direct account of what FIRST has done for our own students — the ones standing in the room making the case. That combination is hard for a legislator to dismiss: here is the evidence that the program works, and here is a student in your district who can tell you firsthand what it means.",
-      "The systemic impact of sustained advocacy compounds in ways that a single visit cannot. By returning to the Capitol for a third consecutive year, with updated outcome data and the same faces who built relationships the year before, we converted meetings into trust and trust into legislation. The DPI Robotics League Bill is the result — $500,000 in annual state funding that will outlast any individual team's competitive season and make FIRST accessible to Wisconsin students who have never heard of GEarheads.",
-      "Advocacy is also how we practice the skills FIRST teaches. Preparing a policy brief is a design problem. Making the case to a skeptical legislator is a communication challenge. Tracking a bill through committee is project management. Every tool we develop on the robot — systematic analysis, data-driven argument, iterative refinement — applies directly in the policy arena. We advocate because it is effective, and because the work makes us better engineers."
+      "GEarheads competes because FIRST works — it teaches you to design under constraints, test against data, and pitch ideas to people with real authority. But none of that happens if a school can't afford a team. Registration fees, field sets, materials — that's the wall. Our advocacy exists to knock it down.",
+      "We don't show up at the Capitol asking for favors. We bring evidence — participation numbers, outcome data, and a student who can tell a legislator exactly what FIRST did for them. Hard to wave off.",
+      "One visit doesn't change much. Three years of showing up, same faces, updated data, does. That's how meetings became trust, and trust became a bill — $500,000 a year, every year, for students who've never heard of GEarheads.",
+      "Advocacy also sharpens what FIRST teaches. A policy brief is a design problem. Winning over a skeptical legislator is a communication problem. Tracking a bill through committee is project management. We do it because it works, and because it makes us better engineers."
     ],
     "inlineImage": null,
     "inlineImageCaption": "GEarheads students preparing testimony before Advocacy Day at the Wisconsin State Capitol"
@@ -49,13 +49,13 @@
       "label": "WI Capitol\nAdvocacy Day",
       "iconKey": "landmark",
       "summary": "Three consecutive years of student voices in the Wisconsin State Capitol.",
-      "detail": "FIRST Advocacy Day in Wisconsin sends student robotics teams directly to the Capitol to make the case for FIRST programs to state legislators — in person, face to face. GEarheads has participated for three consecutive years, making us one of the most consistent student advocacy presences in the Wisconsin FIRST community. Each year, team members prepare written testimony and policy briefs, rehearse their talking points with adult mentors, and then walk the marble corridors to meet with their own district representatives as well as key committee chairs. The conversations are substantive: students explain what FIRST programs cost, what they produce, and what funding gaps currently prevent schools from participating. Over three years, we have spoken with more than 75 legislators, building a durable track record of credibility that single-year advocacy trips cannot establish. The cumulative effect — returning faces, consistent messaging, updated outcome data from each season — is precisely what turns a single meeting into a relationship and a relationship into a vote. Year one, legislators are politely curious. Year two, they remember the team. Year three, they sponsor the bill.",
+      "detail": "FIRST Advocacy Day sends student teams into the Wisconsin Capitol to make the case for FIRST funding, in person. GEarheads has shown up three years running — one of the most consistent student voices in the state. We write testimony, rehearse with our mentors, and meet our district reps and committee chairs. Over three years we've talked with more than 75 legislators. Year one, they're curious. Year two, they remember us. Year three, they sponsor the bill.",
       "highlights": [
-        "Three consecutive years at the Wisconsin State Capitol",
-        "Spoke directly with 75+ state legislators across the three-year streak",
-        "Prepared written testimony and policy briefs before each visit",
-        "Met with district representatives and key committee members",
-        "Built a multi-year credibility track record with the legislature"
+        "Three years running at the Wisconsin Capitol",
+        "Talked with 75+ state legislators",
+        "Wrote testimony and policy briefs each year",
+        "Met district reps and committee chairs",
+        "Built real legislative credibility over time"
       ]
     },
     {
@@ -64,13 +64,13 @@
       "label": "FIRST WI\nStudent Board",
       "iconKey": "groups",
       "summary": "A formal seat on the FIRST Wisconsin Student Board of Directors.",
-      "detail": "In addition to showing up on Advocacy Day, GEarheads earned a formal leadership seat on the FIRST Wisconsin Student Board of Directors — the organized body of student representatives who shape FIRST Wisconsin's strategic direction, advocacy priorities, and community programming. A seat on this board means GEarheads is not just a participant in FIRST Wisconsin: we help decide what FIRST Wisconsin advocates for at the state level, how new programs are structured, and how student voices are represented in conversations with adult administrators and state officials. Board membership requires sustained commitment across a full season, attendance at board meetings, and active participation in planning sessions. For a team from Brookfield, having this institutional seat ensures that our community's perspective — suburban, mid-size district, resource-constrained in ways that differ from large urban or rural districts — is consistently in the room when statewide decisions are made. The board also provides a direct line into FIRST national policy conversations, because FIRST Wisconsin's student leadership connects upward into the broader national FIRST advocacy network. What begins at a board meeting in Madison can shape the framing of federal testimony in Washington.",
+      "detail": "GEarheads holds a seat on the FIRST Wisconsin Student Board of Directors, the student group that helps set the state's advocacy priorities. It's real work — meetings and planning all season — and it keeps a suburban, mid-size-district voice like Brookfield's in the room for statewide decisions. It also connects upward into the national FIRST network, so a meeting in Madison can shape testimony in Washington.",
       "highlights": [
-        "Formal seat on the FIRST Wisconsin Student Board of Directors",
-        "Shapes FIRST Wisconsin's advocacy agenda and community programs",
-        "Ensures Elmbrook district perspective is represented statewide",
-        "Sustained multi-meeting commitment across a full season",
-        "Bridges the gap between team-level and state-level FIRST leadership"
+        "Seat on the FIRST Wisconsin Student Board",
+        "Shapes state advocacy and programming",
+        "Represents Elmbrook's perspective statewide",
+        "Meets and plans all season",
+        "Bridges team-level and state-level leadership"
       ]
     },
     {
@@ -79,13 +79,13 @@
       "label": "Governor's Cup\nWashington D.C.",
       "iconKey": "flag",
       "summary": "An hour with Governor Evers and his policy staff in Washington D.C.",
-      "detail": "The FIRST Governor's Cup Washington D.C. trip takes a select group of student teams to the nation's capital to advocate for STEM funding and robotics policy at the federal level. GEarheads participated and secured a meeting that ran for more than an hour with Governor Tony Evers, his spouse, and two members of his policy staff. This was not a photo opportunity: it was a working policy conversation. Students presented data on participation gaps in Wisconsin robotics, made the case for state-level investment in K–12 FIRST programs, and specifically raised the need for the DPI Robotics League funding expansion that would later become law. The Governor's team engaged directly with the specific proposals, asked follow-up questions, and the meeting extended well past its scheduled time — a signal that the conversation had genuine traction. The Washington trip also included meetings with federal legislators on Capitol Hill, exposing our students to both the federal appropriations process and the interplay between state and federal STEM policy. The experience of articulating a policy proposal to a sitting governor and his staff is transformative: it makes the stakes real in a way no classroom exercise can replicate.",
+      "detail": "The FIRST Governor's Cup trip brings a handful of student teams to D.C. to advocate for STEM funding federally. GEarheads landed a meeting with Governor Tony Evers that ran over an hour, with his spouse and two policy staff in the room. Students laid out Wisconsin's robotics funding gaps and raised the DPI proposal that later became law. The Governor's team asked real questions and let the meeting run long. We also met federal legislators on Capitol Hill.",
       "highlights": [
-        "1+ hour meeting with Governor Tony Evers and two policy staff members",
-        "Presented specific policy proposals on K–12 robotics funding gaps",
-        "Meeting extended beyond scheduled time due to depth of discussion",
-        "Also met with federal legislators on Capitol Hill",
-        "Connected state-level DPI funding effort to federal STEM policy context"
+        "1+ hour with Gov. Evers and two policy staff",
+        "Presented K–12 robotics funding proposals",
+        "Meeting ran long — it landed",
+        "Also met federal legislators on Capitol Hill",
+        "Linked the state push to federal STEM policy"
       ]
     },
     {
@@ -94,13 +94,13 @@
       "label": "K–12 DPI\nFunding Push",
       "iconKey": "school",
       "summary": "Expanding Wisconsin's robotics funding from grades 6–12 to K–12.",
-      "detail": "One of the specific policy changes GEarheads advocated for was the expansion of Wisconsin's Department of Public Instruction robotics funding eligibility from grades 6–12 to cover the full K–12 spectrum — bringing elementary school FIRST LEGO League programs under the same funding umbrella as middle and high school FTC and FRC programs. This matters because the pipeline into competitive robotics depends on early exposure. Students who first encounter FIRST in elementary school through FLL are dramatically more likely to progress through the program levels, stay involved through high school, and carry those skills into post-secondary education and careers. By limiting eligibility to grade 6 and above, the prior policy left the most critical on-ramp unfunded and dependent on individual school or parent fundraising. Our advocacy specifically named this gap, provided data on FIRST Wisconsin FLL participation trends, and made the case that the investment in K–12 coverage would yield compounding returns across the full pipeline — not just at the high school competition level. The expanded eligibility means that a fifth-grade student in a Wisconsin elementary school now has a path to a funded FLL team, which becomes the on-ramp to FTC, which becomes the pipeline to college engineering programs and STEM careers.",
+      "detail": "One thing we pushed for: expanding Wisconsin's DPI robotics funding from grades 6–12 down to K–12, so elementary FLL programs get the same support as FTC and FRC. The earlier kids meet FIRST, the more likely they stick with it. Cutting funding off at grade 6 left the biggest on-ramp unpaid for, dependent on parent fundraising. We brought FLL participation data to show funding the whole pipeline pays off. Now a fifth grader has a real path from a funded FLL team to FTC to a college engineering program.",
       "highlights": [
-        "Advocated for expanding DPI eligibility from grades 6–12 to K–12",
-        "Named the FLL funding gap as a pipeline problem, not just an access problem",
-        "Provided FIRST Wisconsin enrollment data to support the expansion case",
-        "Connected elementary-level FLL investment to high school FTC/FRC pipeline outcomes",
-        "Addressed the full FIRST program spectrum, not just competitive robotics"
+        "Pushed DPI eligibility from 6–12 to K–12",
+        "Framed the FLL gap as a pipeline problem",
+        "Backed it with FIRST Wisconsin enrollment data",
+        "Linked FLL investment to FTC/FRC outcomes",
+        "Covers the full FIRST pipeline, not just competition"
       ]
     },
     {
@@ -109,13 +109,13 @@
       "label": "Chips &\nSciences Act",
       "iconKey": "memory",
       "summary": "One of five teams nationally to advocate for the Chips & Sciences Act.",
-      "detail": "At the federal level, GEarheads was selected as one of only five robotics teams in the country to participate in advocacy efforts tied to the CHIPS and Science Act — the landmark federal legislation that directed roughly $280 billion toward semiconductor manufacturing, scientific research, and STEM workforce development in the United States. Our specific role was to advocate for the portions of the Act that fund K–12 STEM education pipelines, making the case to federal legislators that FIRST robotics programs are exactly the kind of applied STEM experience the legislation is designed to generate. Six federal legislators were engaged across these meetings. The national scope of this effort put GEarheads in conversation with federal appropriations staff and policy aides about a pool of educational programming funding that flows from the Act. Being one of five teams selected for this advocacy signals the credibility our team has built not just within Wisconsin, but within the national FIRST policy community. The conversations at this level differ from state advocacy: the questions are sharper, the policy landscape is more complex, and the documentation requirements are higher. Our preparation — detailed data, a clear ask, and a practiced delivery — allowed our students to hold their own in rooms that most high school students never enter.",
+      "detail": "GEarheads was one of five robotics teams nationwide picked to advocate around the CHIPS and Science Act, the roughly $280 billion federal law funding semiconductor manufacturing, research, and STEM workforce development. Our job: convince federal legislators that FIRST robotics is exactly the applied STEM experience the Act is meant to support. We met with six federal legislators. Being chosen said something about the credibility we'd built nationally — these conversations move faster and cut deeper than state-level ones.",
       "highlights": [
-        "One of only 5 robotics teams nationally selected for Chips & Sciences Act advocacy",
+        "One of 5 robotics teams picked nationally",
         "Met with 6 federal legislators on Capitol Hill",
-        "Advocated for the K–12 STEM pipeline provisions within the Act",
-        "Engaged with federal educational programming funding tied to the legislation",
-        "Signals national-level credibility within the FIRST policy community"
+        "Advocated for K–12 STEM pipeline provisions",
+        "Engaged with the Act's education funding",
+        "Signals national credibility in the FIRST policy world"
       ]
     },
     {
@@ -124,13 +124,13 @@
       "label": "DPI Robotics\nLeague Bill",
       "iconKey": "verified",
       "summary": "The bill passed. $500,000 in annual state funding secured.",
-      "detail": "The culmination of three years of state-level advocacy work was the passage of the DPI Robotics League Bill — a piece of Wisconsin legislation that directs $500,000 in annual state funding toward K–12 robotics programs administered through the Department of Public Instruction. This is not a grant program or a pilot: it is permanent statutory funding, meaning programs that qualify can plan and budget around it year over year. Seven GEarheads students were directly involved in the advocacy push that contributed to the bill's passage: presenting testimony, meeting with sponsor legislators, tracking committee progress, and maintaining relationships with legislative offices through the multi-session journey from introduction to floor vote. The $500K annual appropriation funds FIRST registration fees, field sets, practice materials, and program coordination — precisely the categories that price smaller or newer teams out of participation. The bill's passage is the clearest proof of what sustained, data-driven, relationship-built student advocacy can achieve: real law, real money, real access for the next generation of Wisconsin robotics teams. Every future FTC team that forms because their school could finally afford the registration has, in some small part, the GEarheads advocacy class to thank.",
+      "detail": "Three years of state advocacy led here: the DPI Robotics League Bill passed, directing $500,000 a year in permanent state funding to K–12 robotics through the Department of Public Instruction. Not a grant — programs can budget around it every year. Seven GEarheads students carried the push: testifying, meeting sponsors, tracking committee votes, keeping relationships alive across sessions. It covers registration fees, field sets, and materials — the exact costs that price teams out.",
       "highlights": [
-        "$500,000 annual state funding directed to K–12 robotics programs — passed into law",
-        "7 GEarheads students directly involved in the legislative push",
-        "Permanent statutory funding, not a one-time grant",
-        "Covers registration fees, field sets, and program materials that price teams out",
-        "Three years of consistent advocacy converted into a signed bill"
+        "$500,000 a year, signed into law",
+        "7 students led the legislative push",
+        "Permanent funding, not a one-time grant",
+        "Covers fees, field sets, and materials",
+        "Three years of work, one signed bill"
       ]
     }
   ],
@@ -138,25 +138,25 @@
     {
       "name": "Gov. Tony Evers",
       "title": "Governor of Wisconsin",
-      "note": "Met with our delegation for 1+ hour in Washington D.C. during Governor's Cup, alongside his spouse and two policy staff. Engaged directly with our DPI funding proposals.",
+      "note": "Spent over an hour with our delegation in D.C. during Governor's Cup, alongside his spouse and two policy staff, and engaged directly with our DPI funding proposal.",
       "photo": null
     },
     {
       "name": "Sen. Tammy Baldwin",
       "title": "U.S. Senator — Wisconsin",
-      "note": "Federal legislator engaged through GEarheads' Chips & Sciences Act advocacy on Capitol Hill.",
+      "note": "Met with our students on Capitol Hill through the Chips & Sciences Act advocacy work.",
       "photo": null
     },
     {
       "name": "Rep. Adam Neylon",
       "title": "Wisconsin State Assembly",
-      "note": "Key Assembly sponsor and ally for the DPI Robotics League Bill, engaged across multiple advocacy visits.",
+      "note": "Key Assembly sponsor of the DPI Robotics League Bill, engaged with us across multiple Capitol visits.",
       "photo": null
     },
     {
       "name": "Sen. Rob Hutton",
       "title": "Wisconsin State Senate",
-      "note": "Senate sponsor and longtime champion of K–12 FIRST education funding in the Wisconsin legislature.",
+      "note": "Senate sponsor and longtime champion of K–12 FIRST funding in the Wisconsin legislature.",
       "photo": null
     }
   ],
@@ -165,7 +165,7 @@
       "name": "Rep. Adam Neylon",
       "role": "Wisconsin State Assembly",
       "chamber": "State",
-      "context": "Key Assembly sponsor and ally for the DPI Robotics League Bill"
+      "context": "Key Assembly sponsor of the DPI Robotics League Bill"
     },
     {
       "name": "Sen. Rob Hutton",
@@ -177,7 +177,7 @@
       "name": "Gov. Tony Evers",
       "role": "Governor of Wisconsin",
       "chamber": "Executive",
-      "context": "Met for 1+ hr at Governor's Cup D.C. with policy staff present"
+      "context": "Met for over an hour at Governor's Cup D.C. with policy staff present"
     },
     {
       "name": "Sen. Tammy Baldwin",

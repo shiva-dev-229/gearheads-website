@@ -1,10 +1,9 @@
-import { useState, type ComponentType } from 'react'
-import styled, { keyframes } from 'styled-components'
+import type { ComponentType } from 'react'
+import styled from 'styled-components'
 import {
   MdExtension,
   MdPrecisionManufacturing,
-  MdMemory,
-  MdCheckCircle,
+  MdRocketLaunch,
   MdVolunteerActivism,
   MdImage,
   MdPeople,
@@ -31,18 +30,11 @@ const resolve = (file: string | null): string | null => {
 
 // ─── Icon map ─────────────────────────────────────────────────────────────────
 
-const PROGRAM_ICONS: Record<string, ComponentType<{ size?: number }>> = {
+const ACTIVITY_ICONS: Record<string, ComponentType<{ size?: number }>> = {
   extension:              MdExtension,
   precisionManufacturing: MdPrecisionManufacturing,
-  memory:                 MdMemory,
+  rocketLaunch:           MdRocketLaunch,
 }
-
-// ─── Keyframes ────────────────────────────────────────────────────────────────
-
-const fadeUp = keyframes`
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-`
 
 // ─── Layout shell ─────────────────────────────────────────────────────────────
 
@@ -398,214 +390,50 @@ const ApproachImageHint = styled.span`
   max-width: 200px;
 `
 
-// ─── Program stepper ──────────────────────────────────────────────────────────
+// ─── Activities (FLL / CNC / Model Rockets) ───────────────────────────────────
 
-const StepperRoot = styled.div`
+const ActivityList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
 `
 
-const NodesRow = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding: 18px 4px;
+const ActivityBlock = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
 
-  &::-webkit-scrollbar { display: none; }
-`
-
-const NodeWrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex: 1;
-  min-width: 64px;
-
-  &:last-child {
-    flex: none;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
   }
 `
 
-const NodeButton = styled.button`
-  width: 54px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  flex-shrink: 0;
+const ActivityProse = styled.div``
 
-  &:focus-visible {
-    outline: 2px solid ${theme.colors.secondary};
-    outline-offset: 3px;
-    border-radius: 50%;
-  }
-`
-
-const NodeCircle = styled.div<{ $active: boolean; $completed: boolean }>`
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: ${theme.colors.background};
-  box-shadow: ${({ $active }) =>
-    $active
-      ? `${theme.shadows.neoInsetSm}, 0 0 0 2px ${theme.colors.secondary}70, ${theme.shadows.glowGreen}`
-      : theme.shadows.neoRaised};
+const ActivityHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: ${({ $active, $completed }) =>
-    $active
-      ? theme.colors.secondary
-      : $completed
-      ? `${theme.colors.secondary}70`
-      : theme.colors.onSurfaceVariant + '50'};
-  transition: box-shadow 0.25s, color 0.25s;
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
-  }
-`
-
-const NodeLabel = styled.span<{ $active: boolean; $completed: boolean }>`
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: ${({ $active, $completed }) =>
-    $active
-      ? theme.colors.secondary
-      : $completed
-      ? `${theme.colors.secondary}70`
-      : theme.colors.onSurfaceVariant + '40'};
-  transition: color 0.25s;
-  white-space: pre-line;
-  text-align: center;
-  max-width: 64px;
-  line-height: 1.4;
-`
-
-const ConnectorBar = styled.div<{ $filled: boolean }>`
-  flex: 1;
-  height: 4px;
-  border-radius: 2px;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  min-width: 16px;
-  position: relative;
-  overflow: hidden;
-  align-self: flex-start;
-  margin: 25px 5px 0;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 2px;
-    background: ${theme.colors.secondary};
-    width: ${({ $filled }) => ($filled ? '100%' : '0%')};
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: ${({ $filled }) => ($filled ? `0 0 6px ${theme.colors.secondary}80` : 'none')};
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-  }
-`
-
-const ProgramDetailPanel = styled.div`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInset};
-  border-radius: 20px;
-  padding: 28px 32px;
-  animation: ${fadeUp} 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-`
-
-const ProgramStepLabel = styled.p`
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: ${theme.colors.secondary};
-  margin: 0 0 8px;
-  opacity: 0.7;
-`
-
-const ProgramTitle = styled.h3`
-  font-family: ${theme.fonts.headline};
-  font-size: clamp(18px, 2.5vw, 24px);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: ${theme.colors.onSurface};
-  margin: 0 0 10px;
-`
-
-const ProgramSummary = styled.p`
-  font-family: ${theme.fonts.body};
-  font-size: 15px;
-  font-style: italic;
-  line-height: 1.65;
-  color: ${theme.colors.onSurfaceVariant};
-  margin: 0 0 16px;
-  opacity: 0.85;
-`
-
-const ProgramDetail = styled.p`
-  font-family: ${theme.fonts.body};
-  font-size: 15px;
-  line-height: 1.8;
-  color: ${theme.colors.onSurfaceVariant};
-  margin: 0 0 22px;
-`
-
-const HighlightsLabel = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: ${theme.colors.onSurfaceVariant};
-  opacity: 0.4;
-  display: block;
+  gap: 12px;
   margin-bottom: 10px;
 `
 
-const HighlightsList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`
-
-const HighlightItem = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  border-radius: 10px;
-  padding: 11px 14px;
-  font-family: ${theme.fonts.body};
-  font-size: 14px;
+const ActivityHeading = styled.h3`
+  font-family: ${theme.fonts.headline};
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: ${theme.colors.onSurface};
-  line-height: 1.45;
+  margin: 0;
 `
 
-const HighlightIcon = styled.span`
-  color: ${theme.colors.secondary};
-  flex-shrink: 0;
-  margin-top: 1px;
+const ActivityText = styled.p`
+  font-family: ${theme.fonts.body};
+  font-size: 15px;
+  line-height: 1.75;
+  color: ${theme.colors.onSurfaceVariant};
+  margin: 0;
 `
 
 // ─── How it runs cards ────────────────────────────────────────────────────────
@@ -750,46 +578,6 @@ const PersonNote = styled.span`
   margin-top: 2px;
 `
 
-// ─── What's Next card ─────────────────────────────────────────────────────────
-
-const NextCard = styled.div`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaised};
-  border-radius: 22px;
-  padding: 32px 36px;
-  border-left: 3px solid ${theme.colors.secondary};
-  max-width: 720px;
-`
-
-const NextEyebrow = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: ${theme.colors.secondary};
-  display: block;
-  margin-bottom: 10px;
-  opacity: 0.8;
-`
-
-const NextTitle = styled.h3`
-  font-family: ${theme.fonts.headline};
-  font-size: clamp(20px, 2.8vw, 28px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: ${theme.colors.onSurface};
-  margin: 0 0 12px;
-`
-
-const NextText = styled.p`
-  font-family: ${theme.fonts.body};
-  font-size: 15px;
-  line-height: 1.75;
-  color: ${theme.colors.onSurfaceVariant};
-  margin: 0;
-`
-
 // ─── Photo gallery ────────────────────────────────────────────────────────────
 
 const PhotoGallery = styled.div`
@@ -868,7 +656,7 @@ function parseStatValue(value: string): { count: number; suffix: string } | null
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const PROGRAMS = data.programs
+const ACTIVITIES = data.activities
 const STATS = data.stats
 const PEOPLE = data.people
 const HOW = data.howItRuns
@@ -886,9 +674,6 @@ const heroPhotoSrc = (() => {
 const approachPhotoSrc = resolve(APPROACH.inlinePhoto.src)
 
 export default function VeteransPage() {
-  const [activeProgram, setActiveProgram] = useState(0)
-  const program = PROGRAMS[activeProgram]
-
   return (
     <PageRoot>
 
@@ -1014,63 +799,44 @@ export default function VeteransPage() {
 
       <Divider />
 
-      {/* ── 5. Program Journey stepper ────────────────────────────────── */}
+      {/* ── 5. Activities: FLL / CNC / Model Rockets ──────────────────── */}
       <Section>
         <Inner>
           <FadeIn direction="up">
             <SectionLabel>Programs</SectionLabel>
-            <SectionHeading>The Program Journey</SectionHeading>
-            <SectionSubtext>
-              Three structured programs take veterans from hands-on robot building through digital
-              fabrication and into advanced sensor-driven programming.
-            </SectionSubtext>
+            <SectionHeading>What We Run</SectionHeading>
 
-            <StepperRoot>
-              <NodesRow>
-                {PROGRAMS.map((p, i) => {
-                  const Icon = PROGRAM_ICONS[p.iconKey] ?? MdExtension
-                  const isActive = i === activeProgram
-                  const isCompleted = i < activeProgram
-                  const isLast = i === PROGRAMS.length - 1
+            <ActivityList>
+              {ACTIVITIES.map((a) => {
+                const Icon = ACTIVITY_ICONS[a.iconKey] ?? MdExtension
+                const photoUrl = resolve(a.photo.src)
+                return (
+                  <ActivityBlock key={a.id}>
+                    <ActivityProse>
+                      <ActivityHeader>
+                        <ImpactIconWell aria-hidden="true">
+                          <Icon size={20} />
+                        </ImpactIconWell>
+                        <ActivityHeading>{a.heading}</ActivityHeading>
+                      </ActivityHeader>
+                      <ActivityText>{a.text}</ActivityText>
+                    </ActivityProse>
 
-                  return (
-                    <NodeWrapper key={p.id}>
-                      <NodeButton
-                        onClick={() => setActiveProgram(i)}
-                        aria-pressed={isActive}
-                        aria-label={`Program ${i + 1}: ${p.label}`}
-                      >
-                        <NodeCircle $active={isActive} $completed={isCompleted}>
-                          <Icon size={22} />
-                        </NodeCircle>
-                        <NodeLabel $active={isActive} $completed={isCompleted}>
-                          {p.label}
-                        </NodeLabel>
-                      </NodeButton>
-                      {!isLast && <ConnectorBar $filled={activeProgram > i} />}
-                    </NodeWrapper>
-                  )
-                })}
-              </NodesRow>
-
-              <ProgramDetailPanel key={activeProgram} role="tabpanel" aria-label={program.label}>
-                <ProgramStepLabel>Step {program.step} of {PROGRAMS.length}</ProgramStepLabel>
-                <ProgramTitle>{program.label}</ProgramTitle>
-                <ProgramSummary>{program.summary}</ProgramSummary>
-                <ProgramDetail>{program.detail}</ProgramDetail>
-                <HighlightsLabel>Session Highlights</HighlightsLabel>
-                <HighlightsList>
-                  {program.highlights.map((h, i) => (
-                    <HighlightItem key={i}>
-                      <HighlightIcon>
-                        <MdCheckCircle size={16} />
-                      </HighlightIcon>
-                      {h}
-                    </HighlightItem>
-                  ))}
-                </HighlightsList>
-              </ProgramDetailPanel>
-            </StepperRoot>
+                    {photoUrl ? (
+                      <PhotoFrame>
+                        <PhotoImg src={photoUrl} alt={a.heading} />
+                      </PhotoFrame>
+                    ) : (
+                      <PhotoSlot aria-label={`Photo slot: ${a.photo.caption}`}>
+                        <MdImage size={18} color={theme.colors.outlineVariant} aria-hidden="true" />
+                        <PhotoSlotLabel>Photo slot</PhotoSlotLabel>
+                        <PhotoSlotHint>{a.photo.caption}</PhotoSlotHint>
+                      </PhotoSlot>
+                    )}
+                  </ActivityBlock>
+                )
+              })}
+            </ActivityList>
           </FadeIn>
         </Inner>
       </Section>
@@ -1136,23 +902,7 @@ export default function VeteransPage() {
 
       <Divider />
 
-      {/* ── 8. What's Next ────────────────────────────────────────────── */}
-      <Section>
-        <Inner>
-          <FadeIn direction="up">
-            <SectionLabel>Upcoming</SectionLabel>
-            <NextCard>
-              <NextEyebrow>{data.next.label}</NextEyebrow>
-              <NextTitle>{data.next.title}</NextTitle>
-              <NextText>{data.next.text}</NextText>
-            </NextCard>
-          </FadeIn>
-        </Inner>
-      </Section>
-
-      <Divider />
-
-      {/* ── 9. Photo gallery ──────────────────────────────────────────── */}
+      {/* ── 8. Photo gallery ──────────────────────────────────────────── */}
       <Section>
         <Inner>
           <FadeIn direction="up">
