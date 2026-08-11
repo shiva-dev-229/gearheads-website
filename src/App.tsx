@@ -1,9 +1,5 @@
 import { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
-import styled from 'styled-components'
-import { GlobalStyles } from './styles/GlobalStyles'
-import { theme } from './styles/theme'
 
 // Persistent layout
 import Header from './components/Header'
@@ -13,9 +9,12 @@ import Loader from './components/Loader'
 
 // Home page sections — not lazy, in the main bundle
 import HeroSection from './components/HeroSection'
+import ImpactStats from './components/ImpactStats'
 import FeaturesGrid from './components/FeaturesGrid'
+import RobotShowcase from './components/RobotShowcase'
 import SponsorsSection from './components/SponsorsSection'
 import Timeline from './components/Timeline'
+import GetInvolved from './components/GetInvolved'
 import FAQSection from './components/FAQSection'
 
 // ─── Lazy-loaded page components ──────────────────────────────────────────────
@@ -75,53 +74,18 @@ const JoinPage               = lazy(() => import('./pages/JoinPage'))
 const ContactPage            = lazy(() => import('./pages/ContactPage'))
 const NotFoundPage           = lazy(() => import('./pages/NotFoundPage'))
 
-// ─── Layout shells ────────────────────────────────────────────────────────────
-
-const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`
-
-const Main = styled.main`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding-top: 80px;
-`
-
-const TimelineWrapper = styled.div`
-  width: 100%;
-  max-width: ${theme.spacing.containerMax};
-  margin: 0 auto;
-  padding: 0 ${theme.spacing.marginMobile};
-  margin-bottom: 16px;
-
-  @media (min-width: 768px) {
-    padding: 0 ${theme.spacing.marginDesktop};
-  }
-`
-
-const LoaderPage = styled.div`
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
 // ─── Home page ────────────────────────────────────────────────────────────────
 
 function HomePage() {
   return (
     <>
       <HeroSection />
+      <ImpactStats />
       <FeaturesGrid />
+      <RobotShowcase />
       <SponsorsSection />
-      <TimelineWrapper>
-        <Timeline />
-      </TimelineWrapper>
+      <Timeline />
+      <GetInvolved />
       <FAQSection />
     </>
   )
@@ -131,15 +95,12 @@ function HomePage() {
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <BrowserRouter>
-        <PageWrapper>
-          <Header />
-          <ScrollToTop />
-          <Main>
-            <Suspense fallback={<LoaderPage><Loader showText /></LoaderPage>}>
-              <Routes>
+    <BrowserRouter>
+      <Header />
+      <ScrollToTop />
+      <main>
+        <Suspense fallback={<Loader showText />}>
+          <Routes>
                 {/* Home */}
                 <Route path="/" element={<HomePage />} />
 
@@ -230,12 +191,10 @@ export default function App() {
 
                 {/* 404 */}
                 <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </Suspense>
-          </Main>
-          <Footer />
-        </PageWrapper>
-      </BrowserRouter>
-    </ThemeProvider>
+          </Routes>
+        </Suspense>
+      </main>
+      <Footer />
+    </BrowserRouter>
   )
 }

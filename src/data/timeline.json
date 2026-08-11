@@ -3,7 +3,7 @@
     "year": "2017–2018 (FLL)",
     "path": "/about#season-2017-18",
     "title": "Hydro Dynamics — Where It All Began",
-    "desc": "Our first year in FIRST, learning teamwork, problem-solving, and creative design. Built a water-focused project and discovered the foundations of engineering collaboration.",
+    "desc": "Ten fifth-graders from Swanson Elementary entered as Team #31191, built a Fitbit-inspired composting motivator for watershed health, and made it to sectionals in year one.",
     "color": "primary",
     "glow": "rgba(173,198,255,0.8)",
     "side": "left"
@@ -11,8 +11,8 @@
   {
     "year": "2018–2019 (FLL)",
     "path": "/about#season-2018-19",
-    "title": "Into Orbit — Launching to New Heights",
-    "desc": "A breakout season where our robot and project reached new levels. Explored space challenges and earned top recognition while strengthening our passion for STEM.",
+    "title": "Into Orbit — First Trip to Worlds",
+    "desc": "A 1st Place Research Award at Wisconsin State sent us to the FLL World Festival in Detroit — our first-ever Worlds trip — for a research project on retractable satellite solar panels.",
     "color": "secondary",
     "glow": "rgba(74,225,131,0.8)",
     "side": "right"
@@ -21,7 +21,7 @@
     "year": "2019–2020 (FTC)",
     "path": "/about#season-2019-20",
     "title": "Skystone — Our Rookie Journey",
-    "desc": "First full robot build as an FTC team — learning CAD, machining, programming, and competition fundamentals. Laid the groundwork for all future seasons.",
+    "desc": "Our FTC rookie season — one of just three FTC teams in the entire Brookfield school district — and we still reached the Wisconsin State Championship finals.",
     "color": "tertiary",
     "glow": "rgba(255,171,239,0.8)",
     "side": "left"
@@ -30,7 +30,7 @@
     "year": "2020–2021 (FTC)",
     "path": "/about#season-2020-21",
     "title": "Ultimate Goal — Growing Through Challenge",
-    "desc": "Focused on improving design and programming despite a difficult year. Strengthened our engineering workflow and learned how to adapt as a developing team.",
+    "desc": "A hybrid COVID season split between remote and in-person events. We leaned into Vuforia-driven autonomous scoring and won the Control Award twice.",
     "color": "primary",
     "glow": "rgba(173,198,255,0.8)",
     "side": "right"
@@ -38,8 +38,8 @@
   {
     "year": "2021–2022 (FTC)",
     "path": "/about#season-2021-22",
-    "title": "Freight Frenzy — Leveling Up",
-    "desc": "Enhanced robot reliability, strategy, and coding while expanding outreach. Achieved strong competitive results through disciplined engineering and teamwork.",
+    "title": "Freight Frenzy — First Worlds Qualification",
+    "desc": "Our first-ever Inspire Award, a Winning Alliance Captain finish at Wisconsin State, and the program's first FTC World Championship qualification — Houston, Texas.",
     "color": "secondary",
     "glow": "rgba(74,225,131,0.8)",
     "side": "left"
@@ -47,8 +47,8 @@
   {
     "year": "2022–2023 (FTC)",
     "path": "/about#season-2022-23",
-    "title": "POWERPLAY — A Breakout Season",
-    "desc": "Welcomed new members, refined leadership, and earned our first Inspire Award. Captained the winning state alliance and qualified for the World Championship.",
+    "title": "POWERPLAY — Building Roadrunner",
+    "desc": "Built Roadrunner, our first fully custom-fabricated robot, adopted GE HealthCare's DHF engineering framework, and founded the Children's Hospital of Wisconsin STEM program.",
     "color": "tertiary",
     "glow": "rgba(255,171,239,0.8)",
     "side": "right"
@@ -56,8 +56,8 @@
   {
     "year": "2023–2024 (FTC)",
     "path": "/about#season-2023-24",
-    "title": "CENTERSTAGE — Expanding Our Impact",
-    "desc": "Improved design and fabrication processes while growing outreach. Showcased robotics and CNC technology to thousands across Wisconsin.",
+    "title": "CENTERSTAGE — 2nd at Worlds",
+    "desc": "A second trip to the World Championship — Franklin Division, Houston — and a 2nd Place Inspire Award, the program's best Worlds finish at the time.",
     "color": "primary",
     "glow": "rgba(173,198,255,0.8)",
     "side": "left"
@@ -65,8 +65,8 @@
   {
     "year": "2024–2025 (FTC)",
     "path": "/about#season-2024-25",
-    "title": "Into the Deep — Engineering Forward",
-    "desc": "Continued refining robot systems, CAD workflows, and machining skills. Expanded community impact through demos, events, and STEM partnerships.",
+    "title": "Into the Deep — Best Season Yet",
+    "desc": "Ranked 14th in the world by OPR, hosted our first-ever Rookie Qualifier, and won the 1st Place CONNECT Award at Worlds — our first judged award on that stage.",
     "color": "secondary",
     "glow": "rgba(74,225,131,0.8)",
     "side": "right"
@@ -74,8 +74,8 @@
   {
     "year": "2025–2026 (FTC)",
     "path": "/about#season-2025-26",
-    "title": "DECODE — Building the Future",
-    "desc": "Our current season — pushing new design ideas, improving fabrication, and deepening our outreach mission to inspire the next generation.",
+    "title": "DECODE — A New Generation Leads",
+    "desc": "Six new student mentors took full ownership of the season: three robot iterations, $15K+ donated, and 41 Production Hub projects delivered for other teams.",
     "color": "tertiary",
     "glow": "rgba(255,171,239,0.8)",
     "side": "left"

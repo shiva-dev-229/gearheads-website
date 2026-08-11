@@ -41,7 +41,7 @@
 - [ ] Confirm FAQ #9 (GE origin story) with the team — marked as best guess
 - [x] ContactSection — update from TI-Nspire placeholder (email, address, phone) to Gearheads info
 - [x] Replace animated calculator visual in HeroSection with robot/team image or GEarheads animation
-- [ ] Add impact stats strip (1,000+ students impacted · 31+ teams · 28+ events · Worlds appearances)
+- [x] Add impact stats strip (1,000+ students impacted · 31+ teams · 28+ events · Worlds appearances)
 - [x] Verify all 13 sponsor logo images load in carousel
 
 ---

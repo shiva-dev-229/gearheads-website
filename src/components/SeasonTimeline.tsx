@@ -1,15 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
-import styled, { keyframes, css } from 'styled-components'
 import {
-  MdExpandMore, MdCameraAlt,
   MdEmojiEvents, MdWorkspacePremium, MdMilitaryTech,
   MdExplore, MdAutoAwesome, MdEco,
   MdPublic, MdTune, MdSchool, MdCelebration,
 } from 'react-icons/md'
 import type { IconType } from 'react-icons'
-import { theme } from '../styles/theme'
-import BorderGlow from './reactbits/BorderGlow'
-import { chipHoverSubtle } from '../styles/mixins'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -43,7 +37,6 @@ interface SeasonEntry {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-
 function awardTierOrder(t: Award['tier']) {
   return t === 'world' ? 0 : t === 'state' ? 1 : 2
 }
@@ -68,24 +61,6 @@ function ordinal(n: number): string {
   return n + (s[(v - 20) % 10] || s[v] || s[0])
 }
 
-function accentToGlowColors(accent: string): string[] {
-  if (accent === theme.colors.secondary)
-    return [`${theme.colors.secondary}44`, `${theme.colors.secondaryContainer}28`, `${theme.colors.primary}18`]
-  if (accent === theme.colors.primary)
-    return [`${theme.colors.primary}44`, `${theme.colors.primaryContainer}28`, `${theme.colors.secondary}18`]
-  if (accent === theme.colors.tertiary)
-    return [`${theme.colors.tertiary}44`, `${theme.colors.tertiaryContainer}28`, `${theme.colors.primary}18`]
-  return [`${accent}44`, `${accent}28`, `${theme.colors.primary}18`]
-}
-
-// ─── Keyframes ────────────────────────────────────────────────────────────────
-
-
-const tagBlink = keyframes`
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.55; }
-`
-
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const SEASONS: SeasonEntry[] = [
@@ -94,7 +69,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FTC',
     year: '2025–26',
     name: 'DECODE',
-    accent: theme.colors.secondary,
+    accent: '#4ae183',
     glowHSL: '145 74 57',
     gameChallenge: 'Artifact Launch',
     tags: [
@@ -127,7 +102,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FTC',
     year: '2024–25',
     name: 'Into the Deep',
-    accent: theme.colors.secondary,
+    accent: '#4ae183',
     glowHSL: '145 74 57',
     gameChallenge: 'Sample Collection',
     tags: [
@@ -161,7 +136,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FTC',
     year: '2023–24',
     name: 'CENTERSTAGE',
-    accent: theme.colors.primary,
+    accent: '#adc6ff',
     glowHSL: '220 100 83',
     gameChallenge: 'Pixel Placement',
     tags: [
@@ -194,7 +169,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FTC',
     year: '2022–23',
     name: 'POWERPLAY',
-    accent: theme.colors.tertiary,
+    accent: '#ffabef',
     glowHSL: '316 100 83',
     gameChallenge: 'Cone Stacking',
     tags: [
@@ -227,7 +202,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FTC',
     year: '2021–22',
     name: 'Freight Frenzy',
-    accent: theme.colors.primary,
+    accent: '#adc6ff',
     glowHSL: '220 100 83',
     gameChallenge: 'Freight Delivery',
     tags: [
@@ -260,7 +235,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FTC',
     year: '2020–21',
     name: 'Ultimate Goal',
-    accent: theme.colors.tertiary,
+    accent: '#ffabef',
     glowHSL: '316 100 83',
     gameChallenge: 'Ring Toss',
     tags: [
@@ -320,7 +295,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FLL',
     year: '2018–19',
     name: 'Into Orbit',
-    accent: theme.colors.primary,
+    accent: '#adc6ff',
     glowHSL: '220 100 83',
     gameChallenge: 'Space Research',
     tags: [
@@ -348,7 +323,7 @@ const SEASONS: SeasonEntry[] = [
     type: 'FLL',
     year: '2017–18',
     name: 'Hydro Dynamics',
-    accent: theme.colors.primary,
+    accent: '#adc6ff',
     glowHSL: '220 100 83',
     gameChallenge: 'Water Innovation',
     tags: [
@@ -372,781 +347,53 @@ const SEASONS: SeasonEntry[] = [
   },
 ]
 
-// ─── Styled Components ────────────────────────────────────────────────────────
-
-const TimelineRoot = styled.div`
-  position: relative;
-  max-width: ${theme.spacing.containerMax};
-  margin: 0 auto;
-  padding: 0 0 80px;
-
-  @media (min-width: 1150px) {
-    &::before {
-      content: '';
-      position: absolute;
-      left: 70px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      transform: translateX(-50%);
-      background: repeating-linear-gradient(
-        to bottom,
-        ${theme.colors.outlineVariant}44 0px,
-        ${theme.colors.outlineVariant}44 6px,
-        transparent 6px,
-        transparent 16px
-      );
-      pointer-events: none;
-    }
-  }
-`
-
-const Entry = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-  scroll-margin-top: 96px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transition-delay: var(--entry-delay, 0ms);
-
-  &.tl-visible { opacity: 1; transform: none; }
-
-  @media (min-width: 1150px) {
-    display: grid;
-    grid-template-columns: 140px minmax(0, 1fr);
-    align-items: stretch;
-  }
-`
-
-const CardWrapper = styled.div`
-  width: 100%;
-  min-width: 0;
-`
-
-const Rail = styled.div`
-  display: none;
-
-  @media (min-width: 1150px) {
-    display: block;
-    position: relative;
-    z-index: 1;
-  }
-`
-
-const RailSticky = styled.div`
-  position: sticky;
-  top: 96px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 32px;
-`
-
-const SpineNode = styled.div<{ $accent: string }>`
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid ${({ $accent }) => $accent};
-  background: ${theme.colors.background};
-  box-shadow: 0 0 20px ${({ $accent }) => $accent}50, 0 0 6px ${({ $accent }) => $accent}80;
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    border-radius: 50%;
-    background: ${({ $accent }) => $accent};
-    opacity: 0.65;
-  }
-`
-
-const RailYear = styled.span<{ $accent: string }>`
-  font-family: ${theme.fonts.label};
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: ${({ $accent }) => $accent};
-  opacity: 0.85;
-  margin-top: 12px;
-  text-align: center;
-  white-space: nowrap;
-`
-
-const RailSeasonName = styled.span<{ $accent: string }>`
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${({ $accent }) => $accent};
-  opacity: 0.4;
-  margin-top: 6px;
-  text-align: center;
-  max-width: 120px;
-  line-height: 1.4;
-`
-
-const RailOrdinal = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${theme.colors.outlineVariant};
-  opacity: 0.7;
-  margin-top: 4px;
-  text-align: center;
-  white-space: nowrap;
-`
-
-const CardGlowOuter = styled.div`
-  border-radius: 24px;
-  transition: box-shadow 0.25s;
-
-  /* Lift edge-light above content so glow isn't blocked by ExpandSection */
-  .border-glow-card > .edge-light {
-    z-index: 2;
-  }
-
-  .border-glow-card {
-    box-shadow: ${theme.shadows.neoRaised};
-    transition: box-shadow 0.25s;
-  }
-
-  &:hover .border-glow-card {
-    box-shadow: ${theme.shadows.neoRaisedLg};
-  }
-`
-
-
-const CardContentWrapper = styled.div`
-  position: relative;
-`
-
-const CardTop = styled.div`
-  padding: 18px 24px 12px;
-  cursor: pointer;
-  transition: background 0.15s;
-  position: relative;
-  z-index: 1;
-
-  &:hover {
-    background: ${theme.colors.surfaceContainerLow}80;
-  }
-
-  &:active {
-    background: ${theme.colors.surfaceContainer}80;
-  }
-`
-
-const CardBody = styled.div`
-  padding: 0 24px 18px;
-  position: relative;
-  z-index: 1;
-
-  @media (min-width: 1150px) {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    column-gap: 28px;
-  }
-`
-
-const DescCol = styled.div`
-  min-width: 0;
-`
-
-const AwardsCol = styled.div`
-  min-width: 0;
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid ${theme.colors.outlineVariant}22;
-
-  @media (min-width: 1150px) {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-    border-left: 1px solid ${theme.colors.outlineVariant}22;
-    padding-left: 28px;
-  }
-`
-
-const MetaRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-`
-
-const TypeBadge = styled.div<{ $type: 'FTC' | 'FLL' }>`
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 11px;
-  border-radius: 7px;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${({ $type }) => ($type === 'FTC' ? theme.colors.secondary : theme.colors.primary)};
-`
-
-const YearLabel = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 13px;
-  color: ${theme.colors.onSurfaceVariant};
-  letter-spacing: 0.06em;
-`
-
-const ChallengeChip = styled.div`
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: ${theme.colors.primary}14;
-  border: 1px solid ${theme.colors.primary}28;
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${theme.colors.primary};
-  opacity: 0.85;
-
-  ${chipHoverSubtle}
-`
-
-const TagChip = styled.div<{ $variant: Tag['variant'] }>`
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid
-    ${({ $variant }) => {
-      if ($variant === 'worlds') return `${theme.colors.tertiary}38`
-      if ($variant === 'milestone') return `${theme.colors.primary}38`
-      if ($variant === 'current') return `${theme.colors.secondary}50`
-      return `${theme.colors.outlineVariant}30`
-    }};
-  background: ${({ $variant }) => {
-    if ($variant === 'worlds') return `${theme.colors.tertiary}12`
-    if ($variant === 'milestone') return `${theme.colors.primary}12`
-    if ($variant === 'current') return `${theme.colors.secondary}1c`
-    return `${theme.colors.outlineVariant}0a`
-  }};
-  color: ${({ $variant }) => {
-    if ($variant === 'worlds') return theme.colors.tertiary
-    if ($variant === 'milestone') return theme.colors.primary
-    if ($variant === 'current') return theme.colors.secondary
-    return theme.colors.onSurfaceVariant
-  }};
-
-  ${({ $variant }) =>
-    $variant === 'current' &&
-    css`
-      animation: ${tagBlink} 2.5s ease-in-out infinite;
-    `}
-
-  ${chipHoverSubtle}
-`
-
-const SeasonTitleRow = styled.div`
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
-`
-
-const SeasonName = styled.h2`
-  font-family: ${theme.fonts.headline};
-  font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  color: ${theme.colors.onSurface};
-  margin: 0;
-`
-
-const MobileYearTag = styled.span<{ $accent: string }>`
-  font-family: ${theme.fonts.label};
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: ${({ $accent }) => $accent};
-  opacity: 0.75;
-
-  @media (min-width: 1150px) {
-    display: none;
-  }
-`
-
-const SeasonDesc = styled.p`
-  font-family: ${theme.fonts.body};
-  font-size: 13px;
-  line-height: 1.65;
-  color: ${theme.colors.onSurfaceVariant};
-  margin: 0;
-`
-
-const AwardsHeaderRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-`
-
-const AwardsLabel = styled.div`
-  font-family: ${theme.fonts.label};
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${theme.colors.outlineVariant};
-`
-
-const AwardCountBadge = styled.div`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  border-radius: 6px;
-  padding: 4px 10px;
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  color: ${theme.colors.onSurfaceVariant};
-`
-
-const AwardList = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-`
-
-const AwardRow = styled.div<{ $tier: Award['tier']; $accent: string }>`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 7px 10px 7px 12px;
-  border-radius: 8px;
-  border-left: 2px solid ${({ $tier, $accent }) =>
-    $tier === 'world' ? theme.colors.tertiary :
-    $tier === 'state' ? $accent :
-    `${theme.colors.outlineVariant}35`};
-  background: ${theme.colors.surfaceContainerLow};
-  transition: background 0.15s;
-
-  &:hover {
-    background: ${theme.colors.surfaceContainerHigh};
-  }
-`
-
-const AwardIconWrap = styled.div<{ $tier: Award['tier']; $accent: string }>`
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${({ $tier, $accent }) =>
-    $tier === 'world' ? `${theme.colors.tertiary}16` :
-    $tier === 'state' ? `${$accent}16` :
-    `${theme.colors.outlineVariant}10`};
-`
-
-const AwardNameCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  flex: 1;
-  min-width: 0;
-`
-
-const AwardName = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 13px;
-  font-weight: 500;
-  color: ${theme.colors.onSurface};
-  line-height: 1.3;
-`
-
-const AwardEventText = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 12px;
-  color: ${theme.colors.onSurfaceVariant};
-  opacity: 0.5;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-`
-
-const AwardTierChip = styled.span<{ $tier: Award['tier']; $accent: string }>`
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 11px;
-  border-radius: 99px;
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  border: 1px solid ${({ $tier, $accent }) =>
-    $tier === 'world' ? `${theme.colors.tertiary}40` :
-    $tier === 'state' ? `${$accent}40` :
-    `${theme.colors.outlineVariant}25`};
-  background: ${({ $tier, $accent }) =>
-    $tier === 'world' ? `${theme.colors.tertiary}12` :
-    $tier === 'state' ? `${$accent}12` :
-    `${theme.colors.outlineVariant}08`};
-  color: ${({ $tier, $accent }) =>
-    $tier === 'world' ? theme.colors.tertiary :
-    $tier === 'state' ? $accent :
-    `${theme.colors.outlineVariant}bb`};
-
-  ${chipHoverSubtle}
-`
-
-const ExpandSection = styled.div`
-  border-top: 1px solid ${theme.colors.outlineVariant}22;
-  margin-top: 4px;
-  position: relative;
-  z-index: 1;
-  border-radius: 0 0 22px 22px;
-  overflow: hidden;
-`
-
-const ExpandButton = styled.button<{ $accent: string; $open: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 16px 30px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-family: ${theme.fonts.label};
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: ${({ $accent }) => $accent};
-  transition: background 0.15s, color 0.15s;
-
-  &:hover {
-    background: ${theme.colors.surfaceContainerLow};
-  }
-
-  &:active {
-    background: ${theme.colors.surfaceContainer};
-  }
-
-  svg {
-    transition: transform 0.3s ease;
-    transform: ${({ $open }) => ($open ? 'rotate(180deg)' : 'rotate(0deg)')};
-    flex-shrink: 0;
-    opacity: 0.7;
-  }
-`
-
-const ExpandPanelOuter = styled.div<{ $open: boolean }>`
-  display: grid;
-  grid-template-rows: ${({ $open }) => ($open ? '1fr' : '0fr')};
-  transition: grid-template-rows 0.35s ease;
-`
-
-const ExpandPanelInner = styled.div`
-  overflow: hidden;
-`
-
-const HighlightsList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0 24px 20px;
-  display: grid;
-  gap: 8px 24px;
-
-  @media (min-width: 1150px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`
-
-const HighlightItem = styled.li<{ $accent: string }>`
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-family: ${theme.fonts.body};
-  font-size: 13px;
-  line-height: 1.5;
-  color: ${theme.colors.onSurfaceVariant};
-
-  &::before {
-    content: '›';
-    color: ${({ $accent }) => $accent};
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-    opacity: 0.85;
-  }
-`
-
-const PhotosSection = styled.div`
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid ${theme.colors.outlineVariant}22;
-`
-
-const PhotosLabel = styled.div`
-  font-family: ${theme.fonts.label};
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${theme.colors.outlineVariant};
-  margin-bottom: 12px;
-`
-
-const PhotosRow = styled.div`
-  display: flex;
-  gap: 10px;
-
-  @media (max-width: 520px) {
-    flex-direction: column;
-  }
-`
-
-const PhotoSlot = styled.div`
-  flex: 1;
-  height: 90px;
-  border-radius: 10px;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  border: 1.5px dashed ${theme.colors.outlineVariant}38;
-  transition: border-color 0.2s, background 0.2s;
-  overflow: hidden;
-  padding: 8px;
-  cursor: pointer;
-
-  &:hover {
-    border-color: ${theme.colors.outlineVariant}60;
-    background: ${theme.colors.surfaceContainerLow};
-  }
-`
-
-const PhotoSlotLabel = styled.span`
-  font-family: ${theme.fonts.label};
-  font-size: 8px;
-  font-weight: 700;
-  color: ${theme.colors.outlineVariant};
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-`
-
-const PhotoSlotHint = styled.span`
-  font-family: ${theme.fonts.body};
-  font-size: 9px;
-  color: ${theme.colors.outlineVariant};
-  opacity: 0.45;
-  text-align: center;
-  line-height: 1.3;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-`
-
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function SeasonTimeline() {
-  const [expandedId, setExpandedId] = useState<string | null>(null)
-  const entryRefs = useRef<(HTMLDivElement | null)[]>([])
-
-  useEffect(() => {
-    const observers = entryRefs.current.map((el) => {
-      if (!el) return null
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            el.classList.add('tl-visible')
-            obs.disconnect()
-          }
-        },
-        { threshold: 0.06 }
-      )
-      obs.observe(el)
-      return obs
-    })
-    return () => observers.forEach((o) => o?.disconnect())
-  }, [])
-
   return (
-    <TimelineRoot>
+    <div>
       {SEASONS.map((season, i) => {
-        const isOpen = expandedId === season.id
         const sortedAwards = [...season.awards].sort((a, b) => awardTierOrder(a.tier) - awardTierOrder(b.tier))
-        const glowColors = accentToGlowColors(season.accent)
         const seasonNum = SEASONS.length - i
 
         return (
-          <React.Fragment key={season.id}>
-            <Entry
-              id={season.id}
-              ref={(el) => { entryRefs.current[i] = el }}
-              style={{ '--entry-delay': `${Math.min(i * 60, 200)}ms` } as React.CSSProperties}
-            >
-              <Rail>
-                <RailSticky>
-                  <SpineNode $accent={season.accent} />
-                  <RailYear $accent={season.accent}>{season.year}</RailYear>
-                  <RailSeasonName $accent={season.accent}>{season.name}</RailSeasonName>
-                  <RailOrdinal>{ordinal(seasonNum)} season</RailOrdinal>
-                </RailSticky>
-              </Rail>
+          <section key={season.id} id={season.id}>
+            <p>{ordinal(seasonNum)} season</p>
 
-              <CardWrapper>
-              <CardGlowOuter>
+            <p>
+              {season.type} · {season.year} · {season.gameChallenge}
+              {season.tags.map((tag, ti) => <span key={ti}> · {tag.label}</span>)}
+            </p>
 
-                <BorderGlow
-                  backgroundColor={theme.colors.background}
-                  glowColor={season.glowHSL}
-                  colors={glowColors}
-                  borderRadius={24}
-                  glowRadius={24}
-                  glowIntensity={0.65}
-                  coneSpread={22}
-                >
-                  <CardContentWrapper>
+            <h3>{season.name}</h3>
+            <p>{season.description}</p>
 
-                    {/* ── Top: name + description (clickable) ── */}
-                    <CardTop onClick={() => setExpandedId(isOpen ? null : season.id)}>
-                      <MetaRow>
-                        <TypeBadge $type={season.type}>
-                          {season.type === 'FTC' ? '⚙' : '🤖'} {season.type}
-                        </TypeBadge>
-                        <YearLabel>{season.year}</YearLabel>
-                        <ChallengeChip>
-                          {season.gameChallenge}
-                        </ChallengeChip>
-                        {season.tags.map((tag, ti) => (
-                          <TagChip key={ti} $variant={tag.variant}>
-                            {tag.label}
-                          </TagChip>
-                        ))}
-                      </MetaRow>
+            <p>Team photo: {season.teamPhotoHint}</p>
+            <p>Robot photo: {season.robotPhotoHint}</p>
 
-                      <SeasonTitleRow>
-                        <SeasonName>{season.name}</SeasonName>
-                        <MobileYearTag $accent={season.accent}>{season.year}</MobileYearTag>
-                      </SeasonTitleRow>
-                    </CardTop>
+            <h4>Awards &amp; Achievements ({season.awards.length})</h4>
+            <ul>
+              {sortedAwards.map((award, ai) => {
+                const AwardIcon = AWARD_ICONS[award.iconKey] ?? MdEmojiEvents
+                return (
+                  <li key={ai}>
+                    <AwardIcon size={17} />
+                    {' '}{award.title} — {award.event} (
+                    {award.tier === 'world' ? 'Worlds' : award.tier === 'state' ? 'State' : 'Qualifier'})
+                  </li>
+                )
+              })}
+            </ul>
 
-                    <CardBody>
-                      <DescCol>
-                        <SeasonDesc>{season.description}</SeasonDesc>
-
-                        <PhotosSection>
-                          <PhotosLabel>Photos</PhotosLabel>
-                          <PhotosRow>
-                            <PhotoSlot>
-                              <MdCameraAlt size={16} color={theme.colors.outlineVariant} />
-                              <PhotoSlotLabel>Team Photo</PhotoSlotLabel>
-                              <PhotoSlotHint>{season.teamPhotoHint}</PhotoSlotHint>
-                            </PhotoSlot>
-                            <PhotoSlot>
-                              <MdCameraAlt size={16} color={theme.colors.outlineVariant} />
-                              <PhotoSlotLabel>Robot Photo</PhotoSlotLabel>
-                              <PhotoSlotHint>{season.robotPhotoHint}</PhotoSlotHint>
-                            </PhotoSlot>
-                          </PhotosRow>
-                        </PhotosSection>
-                      </DescCol>
-
-                      <AwardsCol>
-                        <AwardsHeaderRow>
-                          <AwardsLabel>Awards &amp; Achievements</AwardsLabel>
-                          <AwardCountBadge>{season.awards.length} total</AwardCountBadge>
-                        </AwardsHeaderRow>
-
-                        <AwardList>
-                          {sortedAwards.map((award, ai) => {
-                            const AwardIcon = AWARD_ICONS[award.iconKey] ?? MdEmojiEvents
-                            const iconColor =
-                              award.tier === 'world' ? theme.colors.tertiary :
-                              award.tier === 'state' ? season.accent :
-                              `${theme.colors.outlineVariant}`
-                            return (
-                              <AwardRow key={ai} $tier={award.tier} $accent={season.accent}>
-                                <AwardIconWrap $tier={award.tier} $accent={season.accent}>
-                                  <AwardIcon size={17} color={iconColor} />
-                                </AwardIconWrap>
-                                <AwardNameCol>
-                                  <AwardName>{award.title}</AwardName>
-                                  <AwardEventText>{award.event}</AwardEventText>
-                                </AwardNameCol>
-                                <AwardTierChip $tier={award.tier} $accent={season.accent}>
-                                  {award.tier === 'world' ? 'Worlds' : award.tier === 'state' ? 'State' : 'Qualifier'}
-                                </AwardTierChip>
-                              </AwardRow>
-                            )
-                          })}
-                        </AwardList>
-                      </AwardsCol>
-                    </CardBody>
-
-                    {/* ── Expand toggle ── */}
-                    <ExpandSection>
-                      <ExpandButton
-                        $accent={season.accent}
-                        $open={isOpen}
-                        onClick={(e) => {
-                          e.stopPropagation()
-                          setExpandedId(isOpen ? null : season.id)
-                        }}
-                        aria-expanded={isOpen}
-                      >
-                        <span>{isOpen ? 'Close Highlights' : 'Season Highlights'}</span>
-                        <MdExpandMore size={16} />
-                      </ExpandButton>
-
-                      <ExpandPanelOuter $open={isOpen}>
-                        <ExpandPanelInner>
-                          <HighlightsList>
-                            {season.highlights.map((h, hi) => (
-                              <HighlightItem key={hi} $accent={season.accent}>
-                                {h}
-                              </HighlightItem>
-                            ))}
-                          </HighlightsList>
-                        </ExpandPanelInner>
-                      </ExpandPanelOuter>
-                    </ExpandSection>
-                  </CardContentWrapper>
-                </BorderGlow>
-              </CardGlowOuter>
-              </CardWrapper>
-            </Entry>
-          </React.Fragment>
+            <details>
+              <summary>Season Highlights</summary>
+              <ul>
+                {season.highlights.map((h, hi) => <li key={hi}>{h}</li>)}
+              </ul>
+            </details>
+          </section>
         )
       })}
-    </TimelineRoot>
+    </div>
   )
 }

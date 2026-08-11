@@ -2,13 +2,15 @@
 
 ## Project Overview
 
-React + TypeScript + Vite multi-page website for **FTC Team #16460 — GEarheads**, a student-led FIRST Tech Challenge robotics team from Brookfield, Wisconsin. Uses styled-components for styling and react-icons (Material Design set) for icons.
+React + TypeScript + Vite multi-page website for **FTC Team #16460 — GEarheads**, a student-led FIRST Tech Challenge robotics team from Brookfield, Wisconsin.
+
+**Current state: intentionally bare-bones.** The site was fully stripped of styling (no CSS, no styled-components, no animation) down to plain semantic HTML rendering real content only, ahead of a from-scratch visual redesign. Do not reintroduce the old dark-neumorphic look, styled-components, or any of the previous design system from memory or by inference — the whole point of the strip-down was a clean slate. When restyling begins, treat it as a new design decision, not a restoration.
 
 ## Stack
 
 - **Framework:** React 18 with TypeScript
 - **Build tool:** Vite
-- **Styling:** styled-components (no Tailwind, no CSS modules)
+- **Styling:** none yet — plain HTML elements, no CSS/styled-components/Tailwind. A styling approach will be chosen when the redesign starts.
 - **Icons:** react-icons (`md` set only)
 
 ## Key Commands
@@ -26,18 +28,17 @@ npm run preview   # Preview production build
 ```
 src/
   assets/         # All static assets (Vite-processed)
-    fonts/        # Asimov.ttf (imported via JS in GlobalStyles.ts)
+    fonts/        # Asimov.ttf
     logos/        # Brand logos
     photos/       # Photography (home/, outreach/, about-hero-bg.jpg)
     sponsor-logos/  # 13 sponsor PNGs (resolved via import.meta.glob in SponsorsSection)
   components/     # React components
   data/           # Static JSON data files (imported directly in components)
   pages/          # Page-level components
-  styles/         # Global styles + theme
   App.tsx         # Root component
   main.tsx        # Entry point
 public/           # Vite static root — only favicon.png lives here
-ai_context/       # AI session context and design reference files
+ai_context/       # AI session context — team/content archives only (see below)
 ```
 
 ---
@@ -46,12 +47,7 @@ ai_context/       # AI session context and design reference files
 
 **Before acting on any instruction, read the relevant files in `ai_context/`.**
 
-| File | When to read |
-|---|---|
-| `design-system.md` | Any UI or styling work — colors, shadows, typography, spacing |
-| `component-map.md` | Adding, modifying, or understanding any component |
-| `ui-conventions.md` | Writing new components, adding interactions, reviewing patterns |
-| `content-overview.md` | Understanding current copy, navigation, assets, or section structure |
+The old per-feature design-decision docs and design-system doc were deleted along with the visual design itself — don't recreate them from memory. What remains in `ai_context/` is source material about the team (competition history, engineering portfolios, outreach documentation), not the old UI.
 
 If a task is significant — a new section, a major refactor, an important design decision, a new feature — **create a file in `ai_context/`** documenting the decision, rationale, and any constraints discovered. Name it clearly (e.g. `sponsors-section.md`, `mobile-menu-redesign.md`). This is how context accumulates across sessions.
 
@@ -61,7 +57,7 @@ If a task is significant — a new section, a major refactor, an important desig
 
 **Every time a UI component is created or significantly modified, invoke the `/ui-ux` skill before writing code.**
 
-This ensures all components fit the site's neumorphic dark design language and do not look AI-generated or template-generic. The skill must be invoked, not just recalled from memory.
+This ensures new components are the product of a deliberate design decision and don't look AI-generated or template-generic. The skill must be invoked, not just recalled from memory. There is no established visual design to match right now — the site is bare-bones pending a from-scratch redesign — so don't default to the old neumorphic look; treat each styling decision as new.
 
 Apply this to: new components, new sections, redesigned sections, new interactive elements (modals, drawers, tooltips, carousels, tabs, etc.).
 
@@ -115,7 +111,7 @@ Every response must begin with the user's name: **Shivansh**.
 
 - Existing files: `faq.json`, `sponsors.json`, `timeline.json`, `team.json`, `about.json`
 - When adding new static content, create or extend a JSON file in `src/data/` rather than hardcoding it in the component
-- Icon components and theme color references cannot go in JSON — use `iconKey`/`colorKey` string maps and resolve them in the component
+- Icon components cannot go in JSON — use `iconKey` string maps and resolve them in the component
 - Sponsor logo images in `sponsors.json` use bare filenames (e.g. `"sponsors-ge-healthcare.png"`); resolved to imported URLs via `import.meta.glob` in SponsorsSection
 
 ---
@@ -126,5 +122,4 @@ Every response must begin with the user's name: **Shivansh**.
 - Prefer editing existing files over creating new ones
 - Do not add abstractions beyond what the task requires
 - Keep components focused and minimal
-- All color values, shadows, fonts, and spacing come from `src/styles/theme.ts` — never hardcode them in components
-- styled-components only for styling — no inline style objects except for truly one-off values
+- No styling framework is chosen yet — don't reach for styled-components, Tailwind, or CSS modules without it being a deliberate decision for the redesign
