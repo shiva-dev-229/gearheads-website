@@ -66,15 +66,15 @@ const Grid = styled.div`
 
 const Card = styled.div<{ $span?: 2 | 3 }>`
   position: relative;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaised};
-  border-radius: 20px;
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.hairline};
+  border-radius: ${theme.rounded.md};
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: box-shadow 0.3s, opacity 550ms ease, transform 550ms ease;
-  transition-delay: 0ms, var(--fade-delay, 0ms), var(--fade-delay, 0ms);
+  transition: border-color 0.2s, background-color 0.2s, opacity 550ms ease, transform 550ms ease;
+  transition-delay: 0ms, 0ms, var(--fade-delay, 0ms), var(--fade-delay, 0ms);
   opacity: 0;
   transform: translateY(28px);
 
@@ -84,37 +84,17 @@ const Card = styled.div<{ $span?: 2 | 3 }>`
   }
 
   &:hover {
-    box-shadow: ${theme.shadows.neoRaisedLg};
+    border-color: ${theme.colors.hairlineStrong};
+    background: ${theme.colors.surfaceRaised};
   }
 
   @media (min-width: 560px) {
-    border-radius: 24px;
     padding: 32px;
     grid-column: ${({ $span }) => ($span === 2 ? 'span 2' : 'span 1')};
   }
 
   @media (min-width: 1024px) {
     grid-column: ${({ $span }) => ($span ? `span ${$span}` : 'span 1')};
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      background: radial-gradient(
-        400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(74, 225, 131, 0.12),
-        transparent 70%
-      );
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
   }
 `
 
@@ -124,8 +104,8 @@ const IconWrap = styled.div`
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInset};
+  background: ${theme.colors.surfaceRaised};
+  border: 1px solid ${theme.colors.hairline};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,13 +147,6 @@ const CardText = styled.p`
   }
 `
 
-function handleCardMouseMove(e: React.MouseEvent<HTMLDivElement>, el: HTMLDivElement | null) {
-  if (!el) return
-  const rect = el.getBoundingClientRect()
-  el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
-  el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
-}
-
 export default function FeaturesGrid() {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -211,7 +184,6 @@ export default function FeaturesGrid() {
           ref={el => { cardRefs.current[0] = el }}
           style={{ '--fade-delay': '0ms' } as React.CSSProperties}
           $span={2}
-          onMouseMove={e => handleCardMouseMove(e, cardRefs.current[0])}
         >
           <IconWrap><MdShowChart /></IconWrap>
           <CardTitle>Competitive Robotics</CardTitle>
@@ -225,7 +197,6 @@ export default function FeaturesGrid() {
         <Card
           ref={el => { cardRefs.current[1] = el }}
           style={{ '--fade-delay': '80ms' } as React.CSSProperties}
-          onMouseMove={e => handleCardMouseMove(e, cardRefs.current[1])}
         >
           <IconWrap><MdArchitecture /></IconWrap>
           <CardTitle>Hands-On Outreach</CardTitle>
@@ -239,7 +210,6 @@ export default function FeaturesGrid() {
         <Card
           ref={el => { cardRefs.current[2] = el }}
           style={{ '--fade-delay': '160ms' } as React.CSSProperties}
-          onMouseMove={e => handleCardMouseMove(e, cardRefs.current[2])}
         >
           <IconWrap><MdQueryStats /></IconWrap>
           <CardTitle>Engineering & Strategy</CardTitle>
@@ -253,7 +223,6 @@ export default function FeaturesGrid() {
           ref={el => { cardRefs.current[3] = el }}
           style={{ '--fade-delay': '240ms' } as React.CSSProperties}
           $span={2}
-          onMouseMove={e => handleCardMouseMove(e, cardRefs.current[3])}
         >
           <IconWrap><MdTerminal /></IconWrap>
           <CardTitle>Software & Coding</CardTitle>

@@ -25,7 +25,7 @@ const CharInner = styled.span<{ $offset: number; $reduced: boolean }>`
   transform: ${({ $offset, $reduced }) =>
     $reduced ? 'none' : `translateY(${$offset}px)`};
   transition: ${({ $reduced }) =>
-    $reduced ? 'none' : `transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1)`};
+    $reduced ? 'none' : `transform 400ms cubic-bezier(0.16, 1, 0.3, 1)`};
 `
 
 export default function HoverTitle({ text, className, delay = 30 }: HoverTitleProps) {

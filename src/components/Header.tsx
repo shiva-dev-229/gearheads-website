@@ -269,8 +269,7 @@ const HeaderRoot = styled.header`
   right: 0;
   z-index: 100;
   background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaisedSm};
-  border-bottom: 1px solid ${theme.colors.outlineVariant}20;
+  border-bottom: 1px solid ${theme.colors.hairline};
 `
 
 const Inner = styled.div`
@@ -352,18 +351,18 @@ const triggerBase = css`
 
 const TriggerNavLinkFlat = styled(NavLink)`
   ${triggerBase}
-  &.active { color: ${theme.colors.primary}; background: ${theme.colors.surfaceContainerLow}; box-shadow: ${theme.shadows.neoInsetSm}; }
-  &.active:hover { color: ${theme.colors.secondary}; box-shadow: none; }
+  &.active { color: ${theme.colors.primary}; background: ${theme.colors.surfaceRaised}; }
+  &.active:hover { color: ${theme.colors.secondary}; }
 `
 
 const TriggerNavLinkDropdown = styled(NavLink)<{ $open: boolean }>`
   ${triggerBase}
   ${({ $open }) => $open ? css`
     color: ${theme.colors.secondary}; background: ${theme.colors.surfaceContainerLow};
-    &.active { color: ${theme.colors.secondary}; box-shadow: none; }
+    &.active { color: ${theme.colors.secondary}; }
   ` : css`
-    &.active { color: ${theme.colors.primary}; background: ${theme.colors.surfaceContainerLow}; box-shadow: ${theme.shadows.neoInsetSm}; }
-    &.active:hover { color: ${theme.colors.secondary}; box-shadow: none; }
+    &.active { color: ${theme.colors.primary}; background: ${theme.colors.surfaceRaised}; }
+    &.active:hover { color: ${theme.colors.secondary}; }
   `}
 `
 
@@ -391,9 +390,9 @@ const MegaPanelCard = styled.div`
   max-width: ${theme.spacing.containerMax};
   margin: 0 auto;
   background: ${theme.colors.surfaceContainerLow};
-  box-shadow: ${theme.shadows.neoRaisedLg};
-  border-radius: 20px;
-  border: 1px solid ${theme.colors.outlineVariant}22;
+  box-shadow: ${theme.shadows.ambient};
+  border-radius: ${theme.rounded.md};
+  border: 1px solid ${theme.colors.hairline};
   padding: 20px;
   animation: ${megaIn} 0.2s ease;
 `
@@ -520,14 +519,13 @@ const JoinButton = styled(Link)`
     border-radius: 8px;
     background: ${theme.colors.background};
     color: ${theme.colors.primary};
-    box-shadow: ${theme.shadows.neoButtonPrimary};
-    border: 1px solid ${theme.colors.primary}28;
-    transition: box-shadow 0.2s, transform 0.15s;
+    border: 1px solid ${theme.colors.primary}40;
+    transition: border-color 0.2s, transform 0.15s, background 0.2s;
     text-decoration: none;
     white-space: nowrap;
 
-    &:hover { transform: translateY(-1px); }
-    &:active { box-shadow: ${theme.shadows.neoButtonPrimaryActive}; transform: translateY(0); }
+    &:hover { border-color: ${theme.colors.primary}70; background: ${theme.colors.surfaceRaised}; }
+    &:active { transform: scale(0.97); }
   }
 `
 

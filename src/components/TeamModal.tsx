@@ -56,7 +56,7 @@ const Card = styled.div`
   width: 100%;
   max-width: 680px;
   overflow: hidden;
-  animation: ${cardIn} 0.28s cubic-bezier(0.34, 1.4, 0.64, 1);
+  animation: ${cardIn} 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
 

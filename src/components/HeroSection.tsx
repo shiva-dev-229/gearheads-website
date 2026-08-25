@@ -20,14 +20,14 @@ const Section = styled.section`
   width: 100%;
   max-width: ${theme.spacing.containerMax};
   margin: 0 auto;
-  padding: 36px ${theme.spacing.marginMobile};
+  padding: ${theme.spacing.sectionPaddingMd} ${theme.spacing.marginMobile};
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
 
   @media (min-width: 768px) {
-    padding: ${theme.spacing.sectionPaddingLg} ${theme.spacing.marginDesktop};
+    padding: ${theme.spacing.sectionPaddingXl} ${theme.spacing.marginDesktopLg};
     flex-direction: row;
   }
 `
@@ -42,9 +42,9 @@ const TextContent = styled.div`
 `
 
 const Badge = styled.div`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoInsetSm};
-  border-radius: 50px;
+  background: ${theme.colors.surfaceRaised};
+  border: 1px solid ${theme.colors.hairline};
+  border-radius: ${theme.rounded.pill};
   padding: 8px 16px;
   display: flex;
   align-items: center;
@@ -72,17 +72,17 @@ const BadgeText = styled.span`
 
 const Headline = styled.h1`
   font-family: ${theme.fonts.display};
-  font-size: 38px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.2;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
   color: ${theme.colors.onSurface};
   display: flex;
   flex-direction: column;
   gap: 4px;
 
   @media (min-width: 768px) {
-    font-size: 52px;
+    font-size: 68px;
   }
 `
 
@@ -191,7 +191,7 @@ const RobotImage = styled.img`
   max-width: 400px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 8px 40px rgba(74, 225, 131, 0.10)) drop-shadow(0 0 24px rgba(75, 142, 255, 0.08));
+  filter: drop-shadow(0 8px 40px rgba(173, 198, 255, 0.14));
   ${floatAnimation}
 
   @media (min-width: 768px) {

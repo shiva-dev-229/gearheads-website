@@ -1,250 +1,182 @@
 ---
-name: GEarheads Website
-description: Dark neumorphic instrument-panel UI for FTC Team #16460's public site
+name: GEarheads Website — Premium Redesign
+description: Restrained, typography-led, dark-based product design for FTC Team #16460's public site — Apple-tier engineering-team aesthetic, not a neumorphic dashboard
 colors:
-  console-blue: "#adc6ff"
-  console-blue-deep: "#0088ff"
-  telemetry-green: "#4ae183"
-  indicator-magenta: "#ffabef"
-  chassis-black: "#131313"
-  raised-panel: "#1c1b1b"
-  elevated-panel: "#2a2a2a"
-  panel-text: "#e5e2e1"
-  secondary-readout: "#c1c6d7"
-  panel-seam: "#414755"
+  ink: "#0a0a0a"
+  surface: "#131313"
+  surface-raised: "#1a1a1a"
+  hairline: "rgba(255,255,255,0.08)"
+  hairline-strong: "rgba(255,255,255,0.14)"
+  text-primary: "#e5e2e1"
+  text-secondary: "#8f8f93"
+  accent-blue: "#adc6ff"
+  accent-green: "#4ae183"
 typography:
   display:
     fontFamily: "Geist, sans-serif"
-    fontSize: "clamp(2.5rem, 5vw + 1rem, 4rem)"
-    fontWeight: 700
-    lineHeight: 1.1
-    letterSpacing: "-0.04em"
+    fontSize: "clamp(2.75rem, 6vw + 1rem, 5.5rem)"
+    fontWeight: 600
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
   headline:
     fontFamily: "Geist, sans-serif"
-    fontSize: "clamp(2rem, 3vw + 1rem, 2.5rem)"
-    fontWeight: 700
-    lineHeight: 1.2
+    fontSize: "clamp(2rem, 3.5vw + 1rem, 3rem)"
+    fontWeight: 600
+    lineHeight: 1.15
     letterSpacing: "-0.02em"
   title:
     fontFamily: "Geist, sans-serif"
-    fontSize: "20px"
-    fontWeight: 700
+    fontSize: "22px"
+    fontWeight: 600
     lineHeight: 1.3
-    letterSpacing: "-0.02em"
-  title-sm:
-    fontFamily: "Geist, sans-serif"
-    fontSize: "15px"
-    fontWeight: 700
-    lineHeight: 1.3
-    letterSpacing: "-0.02em"
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "Inter, sans-serif"
-    fontSize: "15px"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.65
   body-sm:
     fontFamily: "Inter, sans-serif"
-    fontSize: "13px"
+    fontSize: "14px"
     fontWeight: 400
     lineHeight: 1.6
   label:
     fontFamily: "JetBrains Mono, monospace"
     fontSize: "11px"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: 1.4
-    letterSpacing: "0.1em"
+    letterSpacing: "0.08em"
   eyebrow:
     fontFamily: "JetBrains Mono, monospace"
-    fontSize: "9px"
-    fontWeight: 700
+    fontSize: "10px"
+    fontWeight: 600
     lineHeight: 1.4
     letterSpacing: "0.14em"
 rounded:
-  input: "12px"
-  sm: "14px"
-  card: "18px"
-  card-lg: "20px"
-  section: "24px"
-  pill: "50px"
+  sm: "8px"
+  md: "14px"
+  pill: "999px"
   circle: "50%"
 spacing:
   base: "8px"
-  gutter: "24px"
+  gutter: "32px"
   marginMobile: "20px"
-  marginDesktop: "64px"
-  sectionPaddingLg: "80px"
+  marginDesktop: "80px"
+  sectionPaddingMobile: "56px"
+  sectionPaddingDesktop: "144px"
   containerMax: "1280px"
-components:
-  button-primary:
-    backgroundColor: "{colors.chassis-black}"
-    textColor: "{colors.console-blue}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "16px 32px"
-  button-primary-active:
-    backgroundColor: "{colors.chassis-black}"
-    textColor: "{colors.console-blue}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "16px 32px"
-  button-secondary:
-    backgroundColor: "{colors.chassis-black}"
-    textColor: "{colors.panel-text}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "16px 32px"
-  button-secondary-hover:
-    backgroundColor: "{colors.chassis-black}"
-    textColor: "{colors.console-blue}"
-    typography: "{typography.label}"
-    rounded: "{rounded.pill}"
-    padding: "16px 32px"
-  input-field:
-    backgroundColor: "transparent"
-    textColor: "{colors.panel-text}"
-    typography: "{typography.body}"
-    rounded: "{rounded.input}"
-    padding: "16px"
-  card-large:
-    backgroundColor: "{colors.chassis-black}"
-    rounded: "{rounded.section}"
-    padding: "32px"
-  card-medium:
-    backgroundColor: "{colors.chassis-black}"
-    rounded: "{rounded.card}"
-    padding: "28px 24px"
+  proseMax: "680px"
 ---
 
-# Design System: GEarheads Website
+# Design.md — Premium Redesign Spec
 
-## Overview
+This is an implementation spec, not marketing copy. It replaces the neumorphic "Control Console" system (`ai_context/design-tokens-audit.md` has the full before/after token delta) with a restrained, typography-led product aesthetic — the direction a judge, sponsor, or engineering recruiter would read as a serious, expensive build rather than a template.
 
-**Creative North Star: "The Control Console"**
+## Why the neumorphic system is going
 
-Every surface reads as a single instrument panel milled from one piece of dark material — never a set of separate colored cards. Depth comes entirely from how light falls across that one material: raised elements catch light on their upper-left edge and cast shadow to the lower-right, recessed elements do the reverse. Three signal colors — blue, green, magenta — behave like indicator lights on that panel: rare, purposeful, and legible at a glance, never decorative for their own sake. Motion is mechanical and unhurried (spinning rings run on 40–60s cycles, transitions land in 0.2–0.3s) — nothing bounces, nothing plays. The result should feel like an engineering team's own dashboard: precise, tactile, built by people who fabricate their own hardware, not a template borrowed from a generic "dark mode SaaS" aesthetic.
+Dual-tone embossed shadows on every surface (`neoRaised`/`neoInset` and their eight variants) were a distinctive choice in 2024, but neumorphism reads today as a dated UI trend, not as "premium" — the opposite of the goal here. Apple, Linear, and every serious engineering-product site of the last few years get depth from **typography scale, whitespace, and one earned shadow**, not from decorating every card with a light/dark shadow pair. This spec keeps the site's actual brand identity (console blue + telemetry green, near-black base, the Geist/Inter/JetBrains Mono type system, the Asimov wordmark) and throws out the shadow vocabulary, the pill-everything shape language, and the six-tier surface-color scale.
 
-**Key Characteristics:**
-- One base surface color everywhere; zero flat colored panels, zero border-drawn cards
-- Depth exclusively via neumorphic box-shadow pairs (dark shadow + light shadow off the same base)
-- Three-color signal system used sparingly, each color carrying one specific meaning
-- Typography carries hierarchy and personality — no decorative fonts, no illustrated iconography beyond simple line icons
-- Motion is slow, precise, and functional; never playful or bouncy
+## Core brand — non-negotiable
 
-## Colors
+Per `ai_context/design-tokens-audit.md`, these are the team's actual identity (present in the logo file itself), not decoration:
 
-A single near-black base runs under the entire site; the palette's job is signal color and text legibility, not surface variety.
+- **Console Blue `#adc6ff`** — the one interactive color. Links, active states, primary CTA, focus rings, and the rare title that wants emphasis. Nothing else is blue.
+- **Telemetry Green `#4ae183`** — the outreach/positive-signal color, and the "GE" of the wordmark. Used more narrowly than before: outreach-section identity, status/live indicators, the GE Healthcare easter egg. Not a general-purpose second accent.
+- **Near-black base `#0a0a0a`/`#131313`** — the site stays dark. This is a real identity choice (engineering console, not a generic SaaS light theme), not something to soften into a white template.
+- **Asimov wordmark font** — kept exactly as-is on "GEarheads" in the header/footer only. Never used for body or heading type.
+- **Indicator Magenta is retired.** It was a UI-invented third accent, absent from the logo and the easter-egg spec. If a design genuinely needs a third signal color, that's a sign to solve it with typography or spacing instead — don't reintroduce it.
 
-### Primary
-- **Console Blue** (`#adc6ff`): the main interactive signal — links, active nav state, primary CTA button text, accent icons, focus rings, and any section title where color emphasis is wanted.
-- **Console Blue Deep** (`#0088ff`): a more saturated companion used only inside shadow/selection calculations (the primary button's tinted neumorphic shadow, the text-selection background) — never used directly as a text or icon color.
+## Color system
 
-### Secondary
-- **Telemetry Green** (`#4ae183`): positive/live signals — status dots, "FTC" timeline entries, secondary accents that read as active or confirmed.
+| Token | Value | Use |
+|---|---|---|
+| `ink` | `#0a0a0a` | Full-bleed hero/photography backgrounds, footer |
+| `surface` | `#131313` | Base page background |
+| `surface-raised` | `#1a1a1a` | The *only* elevated surface step — used for the rare panel that needs to read as inset (form fields, code blocks) |
+| `hairline` | `rgba(255,255,255,0.08)` | Card/section dividers — a 1px line, not a shadow, does the separating |
+| `hairline-strong` | `rgba(255,255,255,0.14)` | Input borders, active card outline |
+| `text-primary` | `#e5e2e1` | Headings, body |
+| `text-secondary` | `#8f8f93` | Captions, metadata, secondary copy — true neutral gray, not the old cool-blue-tinted secondary |
+| `accent-blue` | `#adc6ff` | Interactive only |
+| `accent-green` | `#4ae183` | Outreach identity + positive/live signals only |
 
-### Tertiary
-- **Indicator Magenta** (`#ffabef`): a rare decorative accent — used for the occasional timeline dot or code-block highlight where a third signal color is needed. Reach for this last.
-
-### Neutral
-- **Chassis Black** (`#131313`): the single base surface for the entire site — body background, every card, every panel. Sections are never differentiated by background color.
-- **Raised Panel** (`#1c1b1b`): a very slightly lighter surface used for the rare component that needs to read as a distinct tray inset into the page (e.g. the Timeline's background block).
-- **Elevated Panel** (`#2a2a2a`): a further step up, used sparingly for the most elevated surface state.
-- **Panel Text** (`#e5e2e1`): primary text and headings on the dark base.
-- **Secondary Readout** (`#c1c6d7`): secondary text, subtitles, placeholders, inactive/label text.
-- **Panel Seam** (`#414755`): dividers — always used at reduced opacity (e.g. `1a` hex alpha), never as a full-strength line.
-
-### Named Rules
-**The One-Base Rule.** Every surface on the site is Chassis Black. Sections, cards, and panels never switch to a different background color to differentiate themselves — shadow depth and spacing are the only tools for that job.
-
-**The Signal Rarity Rule.** Console Blue, Telemetry Green, and Indicator Magenta each carry exactly one meaning (interactive / live-positive / rare-decorative) and appear on a small fraction of any given screen. If a design wants a fourth color, it's using one of these three wrong, not missing a token.
+Cards and sections are told apart by **spacing and a hairline border**, not by background-color steps or shadow. If two adjacent elements need visual separation and a hairline isn't enough, the fix is more whitespace between them — not a new surface tone.
 
 ## Typography
 
-**Display Font:** Geist (fallback: sans-serif)
-**Body Font:** Inter (fallback: sans-serif)
-**Label/Mono Font:** JetBrains Mono (fallback: monospace)
+Same three families as today — Geist (display/headline/title), Inter (body), JetBrains Mono (label/eyebrow) — kept because they're already a deliberate, non-generic choice, not template defaults like Inter-everywhere or Poppins. What changes:
 
-**Character:** Geist carries all heading weight with tight negative letter-spacing for a precise, engineered feel; Inter stays neutral and highly legible for body copy; JetBrains Mono signals "control" and "label" contexts (buttons, nav, badges, form labels) the way a physical panel would use stenciled monospace text.
-
-### Hierarchy
-- **Display** (700, `clamp(2.5rem, 5vw + 1rem, 4rem)`, line-height 1.1, letter-spacing -0.04em): hero H1 only. Individual pages clamp to their own range (as low as 28px on mobile) — the token is the clamp formula, not a fixed pixel.
-- **Headline** (700, `clamp(2rem, 3vw + 1rem, 2.5rem)`, line-height 1.2, letter-spacing -0.02em): section H2 titles.
-- **Title** (700, 18–28px, line-height 1.3, letter-spacing -0.02em): card/panel H3 titles — 20px is the common default; scales up for feature panels, down for dense grids.
-- **Title-sm** (700, 15px, line-height 1.3, letter-spacing -0.02em): compact card titles inside dense grids (delivery cards, run cards) where a full Title would overpower the layout.
-- **Body** (400, 13–16px, line-height 1.6–1.85): paragraphs and descriptions; 15px is the common default, 16px for a page's primary lead paragraph, 13px for tight card copy.
-- **Body-sm** (400, 12–13px, line-height 1.5–1.65): secondary/supporting text — hints, captions, italic taglines.
-- **Label** (700, 10–12px, letter-spacing 0.05–0.1em, uppercase): buttons, nav links, stat labels, form labels, code.
-- **Eyebrow** (700, 8–11px, letter-spacing 0.12–0.16em, uppercase, reduced opacity ~0.6–0.8): the smallest tier — section labels, chip text, badge micro-copy, stat hints. This is the site's most-used text style; treat 9px as a legitimate, deliberate size, not a typo of Label.
-
-### Named Rules
-**The Weight-Not-Decoration Rule.** Hierarchy comes from letter-spacing, weight, and case changes within these font families — never from a fourth decorative typeface or graphic flourish.
-**The Eyebrow-Is-Real Rule.** The 8–11px uppercase eyebrow tier is a deliberate, heavily-reused step in the scale (it appears more than any other text size on outreach pages) — it is not a rounding error against Label and should not be normalized up to 12px.
+- **Display scale goes bigger and heavier-cropped**: `clamp(2.75rem, 6vw + 1rem, 5.5rem)` at weight 600, line-height 1.05, tracking -0.03em. Hero headlines should feel oversized and confident — Apple's headline sizes (34–56px on real Apple.com breakpoints) plus the site's existing appetite for a large display step.
+- **Two fewer steps.** `title-sm` and the separate `body`/`body-sm` split collapse where possible — use `body` (17px/1.65) as the default paragraph size everywhere; drop to `body-sm` (14px) only for genuinely secondary text (captions, metadata), not as a general "smaller card" size.
+- **Eyebrow stays** — it's the site's most load-bearing small-text pattern (per `ai_context/design-system` history) and matches Apple's own micro-label pattern. Keep it uppercase, JetBrains Mono, ~10px, wide tracking.
+- Weight 600 instead of 700 for display/headline/title — 700 reads slightly heavier/bolder than the restrained direction wants; 600 is enough weight to carry hierarchy without shouting.
 
 ## Layout
 
-Single content column capped at `containerMax` (1280px), centered. Horizontal page padding is 20px on mobile (`marginMobile`), stepping up to 64px on desktop (`marginDesktop`) at the 768px breakpoint. Vertical section padding is commonly 36px on mobile, stepping up to `sectionPaddingLg` (80px) on desktop — `sectionPaddingMd` (56px) is defined in `theme.ts` but not currently consumed by any component; treat it as reserved, not as evidence of an unused pattern to remove. Grids favor an asymmetric "bento" mix of `span-2` and `span-1` cards over uniform grids (see FeaturesGrid) to avoid template-generic symmetry. There is one responsive breakpoint used consistently at 768px (mobile stacked → desktop multi-column), with 640px appearing only for button-row wrapping. Gap between grid/flex siblings is `gutter` (24px); the base spacing unit is 8px.
+- **Container stays 1280px**, but prose-width content (long-form outreach/engineering copy) caps at a new `proseMax: 680px` — the current site sometimes runs body copy full-width in two-column layouts; cap it for readability, matching Apple's own text-column widths.
+- **Macro-whitespace.** Section padding goes from 80px to **144px on desktop**, 56px on mobile. This is the single highest-leverage change for "premium" — cramped 48–80px spacing is what makes a site feel like a template; 120px+ is what makes it feel expensive. Don't fill the extra space with more content — it's supposed to be empty.
+- **Bento/asymmetric grids stay**, but sparingly. The existing `$wide`/`$span-2` bento pattern (FeaturesGrid, Innovations bento) is genuinely good and not generic — keep it, but don't reach for a 3-up equal-width card grid as the default "features" layout anywhere it isn't already load-bearing. If a section doesn't have a natural asymmetry (one thing matters more than the others), a single column or a simple 2-up beats a forced bento.
+- **One breakpoint stays the workhorse** (768px), consistent with today.
 
-## Elevation & Depth
+## Shape
 
-Purely neumorphic: there are no borders and no flat colored card backgrounds. Every raised or recessed surface is Chassis Black with a paired box-shadow — one dark shadow (`#080808`), one light shadow (`#1e1e1e`), both offset from the same base. Raised elements cast outward in both directions; recessed elements (inputs, icon wells) invert the same pair as an `inset` shadow. This is the entire depth vocabulary — there is no separate tonal-layering system.
+Three radii, not six: `sm` (8px, inputs/tags/code blocks), `md` (14px, cards/panels/photo frames — the one size most things use), `pill` (999px, buttons and nav pills only), `circle` (avatars, icon wells). Dropping the 12/18/20/24px gradation — it added visual noise without adding meaning once shadows aren't doing the differentiating work anymore.
 
-### Shadow Vocabulary
-- **neoRaised** (`8px 8px 16px #080808, -8px -8px 16px #1e1e1e`): cards, nav, footer at rest.
-- **neoRaisedSm** (`4px 4px 8px #080808, -4px -4px 8px #1e1e1e`): small raised elements.
-- **neoRaisedLg** (`12px 12px 24px #080808, -12px -12px 24px #1e1e1e`): hover state on cards (upgrade from neoRaised).
-- **neoInset** (`inset 8px 8px 16px #080808, inset -8px -8px 16px #1e1e1e`): icon wells, large recessed areas.
-- **neoInsetSm** (`inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e`): form inputs, badge backgrounds, small recesses.
-- **neoButtonPrimary** (blue-tinted outward shadow, `rgba(0,136,255,…)`): primary CTA buttons at rest.
-- **neoButtonPrimaryActive** (blue-tinted inward shadow): primary button press state.
-- **neoButtonSecondary** / **neoButtonSecondaryActive**: neutral outward/inward equivalents for secondary/ghost buttons.
-- **glowBlue / glowGreen / glowPink** (`0 0 8px rgba(…, 0.8)`): subtle single-color glow on hover for icon-only elements (social icons, live indicators, tertiary accents) — never combined into a multi-color glow.
+## Elevation
 
-### Named Rules
-**The Shadow-Only-Depth Rule.** If a component needs to look elevated or recessed, the answer is always a shadow-pair swap on the same Chassis Black base — never a background color change, never a border.
+One shadow, used rarely: `0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35)` — reserved for things that are genuinely floating above the page (sticky header on scroll, dropdown menus, modals, toasts). Cards, panels, and buttons at rest are **flat** — background + hairline border, nothing else. A card's hover state is a hairline-strong border and a barely-perceptible background lift (`surface` → `surface-raised`), not a shadow upgrade. This is the biggest single behavior change from the old system and it's deliberate: shadow-as-default-depth is exactly the neumorphic signature being retired.
 
-## Shapes
+## Imagery — explicit placeholders, not designed around absence
 
-Corner radius scales with a component's role, not its size class alone: `input` (12px) for form fields, `sm` (14px) for compact/dense cards, `card` (18px) for the most common card/panel/photo-frame radius (the single most-used radius on the site), `card-lg` (20px) for stat chips and larger feature cards, `section` (24px) for hero image wells and section-level containers, `pill` (50px) for every button/nav-link/badge, and `circle` (50%) for icon wells and portrait slots. There are no hard corners anywhere in the UI and no borders — all edges are either a full pill, a soft rounded rectangle, or a circle.
+The site already has a `PhotoSlot`/`HeroImageWell` dashed-placeholder convention across the outreach/engineering pages (see `ai_context/outreach-pages.md`, `ai_context/engineering-pages.md`) — keep that convention, upgrade its look:
 
-## Components
+- Placeholder wells get a **flat `surface-raised` fill + a thin centered icon + one line of caption text describing the intended shot** — no dashed border (dashed borders read as "unfinished wireframe"; a solid fill with a caption reads as "reserved space," which is the actual intent).
+- Every hero section gets an explicit large image well sized for a real photo (full-bleed or large 2-col), even on pages that don't have one yet — don't shrink the layout to avoid the empty space. The whitespace-first system means an empty photo well isn't visually broken; it's inert until Shivansh drops in a photo.
+- When a real photo exists, it runs **full-bleed or near-full-bleed with minimal chrome** (no rounded-corner-in-a-card treatment for hero imagery) — photography-first, Apple's own pattern of letting the product/subject fill the frame with typography overlaid or adjacent, not boxed into a card.
+- Never substitute a missing photo with a generic icon illustration, stock gradient, or AI-generated placeholder image. An empty, captioned well is more honest and more premium than a fake stand-in.
 
-### Buttons
-- **Shape:** full pill (`rounded.pill`, 50px), label typography (JetBrains Mono, 11px, uppercase, 0.1em tracking).
-- **Primary:** Chassis Black background, Console Blue text, `neoButtonPrimary` shadow at rest; `:active` swaps to `neoButtonPrimaryActive` (raised → inset). No separate hover-color state.
-- **Secondary/ghost:** Chassis Black background, Panel Text color at rest, shifts to Console Blue on `:hover`; `neoButtonSecondary` at rest, `neoButtonSecondaryActive` on `:active`.
-- Padding: `16px 32px` on the hero-scale CTAs; smaller contexts (badges, chips) scale padding down while keeping the pill shape and label typography.
+## Motion
 
-### Cards / Containers
-- **Corner style:** `rounded.section` (24px) for large/hero-scale cards, `rounded.card` (16px) for medium cards and code blocks.
-- **Background:** always Chassis Black — no exceptions.
-- **Shadow strategy:** `neoRaised` at rest, upgrading to `neoRaisedLg` on hover (see FeaturesGrid card hover behavior).
-- **Border:** none, ever.
-- **Internal padding:** 32px (large cards), 28px/24px (medium cards).
+Grounded in the installed `emil-design-eng`, `find-animation-opportunities`, and `apple-design` skills — consult them directly for edge cases; the summary that governs this site:
 
-### Inputs / Fields
-- **Style:** transparent background, `neoInsetSm` shadow, `rounded.input` (12px), no border, 16px padding, body typography.
-- **Focus:** adds a `0 0 0 1px {console-blue}80` ring layered on top of the existing inset shadow (never replaces the inset).
-- **Placeholder:** Secondary Readout color at reduced opacity (`4d` hex alpha).
-- **Labels:** JetBrains Mono, 12px, uppercase, Secondary Readout color.
+**The gate, before adding any animation:**
+1. **Frequency** — if a user sees it 100+ times/day (nav clicks, repeated toggles), it gets no animation or none at all. Reserve real motion for occasional moments (page-load hero entrance, modal/drawer, form success) and rare/first-time moments (the GE Healthcare easter egg already fits this).
+2. **Purpose** — must be feedback, spatial consistency, state indication, or preventing a jarring appear/disappear. "It looks cool" is not a purpose.
+3. **Speed** — UI motion stays under 300ms (press feedback 100–160ms, dropdowns 150–250ms, modals/drawers 200–500ms). Only marketing/explanatory motion (a hero entrance) is allowed to run longer.
+4. **Easing** — entrances/exits use a strong `ease-out` curve (`cubic-bezier(0.23, 1, 0.32, 1)`), on-screen movement uses `ease-in-out`, hover/color changes use plain `ease`. Never `ease-in` for UI — it delays exactly the moment users are watching.
 
-### Navigation
-- Sticky header, 80px height. Flat links for single destinations; grouped items open mega-menu dropdowns on hover (desktop) or an accordion drawer (mobile), closing on route change or Escape. Active/hover states shift text to Console Blue; the primary "Join the Team" nav item is styled as a pill CTA, not a plain link.
+**What this site keeps:** the counter-rotating ring motif (Hero, Loader) — it's slow (40–60s), mechanical, and already passes the "purpose" gate as a signature brand moment, not decoration. Scroll-reveal entrances (`FadeIn`, `BlurText`) stay, but tune them toward the Apple/emil defaults — `translateY(12–16px) + opacity` over ~500–600ms with the strong ease-out curve above, not a slow 800ms+ blur-heavy reveal on every section.
 
-### Signature Component: Counter-Rotating Neumorphic Rings
-The dual ring motif (used in the Hero's robot frame and in the full-page `Loader`) is the site's most distinctive custom widget: two concentric circles in raised neumorphic shadow, rotating in opposite directions at slow, offset durations (hero rings run 40s/60s; keep this "mechanical, not playful" pacing whenever the motif is reused elsewhere).
+**What this site drops:** cursor-tracking glow effects on every card (`FeaturesGrid`'s `::before` mouse-glow, wherever else it was copied) — it's a "tens of times/day" frequency interaction with no purpose beyond decoration, which fails the gate outright. Keep spring/glow-style interaction only where a gesture actually drives it (a real drag, not a passive hover).
 
-## Do's and Don'ts
+## Actively avoid — AI slop patterns
 
-### Do:
-- **Do** keep every surface on Chassis Black (`#131313`) and express all hierarchy through shadow, not color or borders.
-- **Do** use the single 768px breakpoint for mobile↔desktop layout changes; treat 640px as a minor exception reserved for button-row wrapping only.
-- **Do** keep interactive transitions to 0.2s (color/shadow) and 0.3s (transform/expand-collapse) — this pacing is load-bearing for the "precise instrument, not playful app" feel.
-- **Do** mix `span-2`/`span-1` card widths in grids (the bento pattern) rather than uniform equal-width grids.
-- **Do** pair color with text or an icon for any meaningful state; color alone must never carry meaning (accessibility).
+Reference `find-animation-opportunities` and `emil-design-eng` directly when in doubt; the concrete list for this site:
 
-### Don't:
-- **Don't** introduce a flat colored background for any card or section — every surface must be Chassis Black with shadow-based depth.
-- **Don't** use border-drawn card outlines anywhere; depth is shadow-only.
-- **Don't** use a white or light background anywhere on the site, including inside modals or overlays.
-- **Don't** use `console-blue-deep` (`#0088ff`) as a direct text or icon color — it exists only for shadow tinting and the selection highlight.
-- **Don't** add a fourth accent color; if Console Blue, Telemetry Green, and Indicator Magenta don't cover the need, the need is probably better solved with typography or spacing.
-- **Don't** use bouncy, playful, or decorative motion (spring overshoot, elastic easing) — motion here reads as mechanical and deliberate, never delightful-for-its-own-sake.
+- **No cursor-glow-on-every-card.** Already flagged above under Motion — it's the single most common "AI SaaS template" tell.
+- **No double-bezel/nested-shell card chrome, no magnetic buttons, no glassmorphism.** These are the *current* generation of AI-generated "premium" template patterns (they show up verbatim in some of the newly installed taste skills, e.g. `high-end-visual-design`) — they read as trend-chasing today the same way neumorphism did two years ago. Depth here comes from typography and whitespace, full stop.
+- **No generic 3-up icon-in-a-circle feature grids.** The existing bento asymmetry (`$wide` cards) already avoids this; don't regress to uniform equal-width cards when extending to new pages.
+- **No stock-photo energy.** Real photography or an honest empty well (see Imagery above) — never a generic stock image standing in for the team's actual work.
+- **No AI copywriting clichés** ("elevate," "seamless," "unleash," "game-changer," "delve," "revolutionize"). The site's existing outreach copy voice (per `ai_context/outreach-pages.md` Revision 3 — conversational, specific, cut of brochure phrasing) is already the right register; new copy matches it.
+- **No emoji anywhere in the UI.** Icons come from `react-icons/md` per existing convention.
+- **No rainbow/multi-color gradients**, no neon glow stacking multiple colors at once. If a glow is used at all, it's one color, low opacity, tied to the one relevant accent — same rule the old system already had right.
+
+## Component direction (maps to existing components)
+
+- **Header/Footer** (`Header.tsx`, `Footer.tsx`): flat background (no shadow at rest), gains the single ambient shadow only once scrolled/sticky. Nav links lose any glow-on-hover; underline or color-shift only.
+- **Buttons**: pill shape kept (it's a genuine brand signature, not generic) — primary is solid `accent-blue` text on flat `surface`, no shadow; active state is a subtle `scale(0.97)` + background shift, not an inset-shadow swap.
+- **Cards** (`FeaturesGrid`, outreach program cards, engineering explorer panels): flat `surface` fill, `hairline` border, `md` radius. Hover = `hairline-strong` border + `surface-raised` background, optionally `translateY(-2px)`. No shadow upgrade.
+- **Inputs** (`ContactSection` form): flat `surface-raised` fill, `hairline-strong` border, no inset shadow. Focus = border shifts to `accent-blue` + a 1px outer ring — clean and simple over the current inset-shadow-plus-ring stack.
+- **Accordions/steppers** (DHF accordion, control-loop node walk, iteration loop — see `ai_context/engineering-pages.md`, `ai_context/software-pages.md`): keep the interaction patterns (they're genuinely good, not generic), restyle chrome to flat + hairline instead of neumorphic panels.
+- **Timeline/SeasonTimeline**: keep the left-rail sticky-year layout (`ai_context/season-timeline-redesign.md`) — it's a good information-density solution, independent of the shadow system. Restyle the entry card chrome only.
+- **Photo galleries and PhotoSlot placeholders**: see Imagery section above.
+
+## Rollout order
+
+1. **Tokens + primitives** — `theme.ts`, `GlobalStyles.ts`, `mixins.ts` (shared hover mixin loses the shadow-upgrade behavior).
+2. **Header, Footer, Loader** — every page inherits these; highest leverage first.
+3. **Home page** — highest-visibility flagship; validates the whole system end to end (Hero, FeaturesGrid, SponsorsSection, Timeline, FAQSection).
+4. **Contact + About** — next-highest-traffic, already fully built.
+5. **Engineering, Programming, Outreach** — largest surface area (12 outreach pages + 2 consolidated section pages); apply the restyle to shared patterns once (the accordion/stepper/card chrome), which cascades across all of them since they reuse the same component patterns per `ai_context/outreach-pages.md`.
+6. **Tutorial pages** (`VideoCourseTutorial.tsx`, Git tutorial) — shared shell, one restyle covers 6 routes.
+7. **Remaining stubs** (Robot, Seasons, Team, Impact, Sponsors, Media, Join) — apply the system when those pages get built; not part of this redesign pass since there's no existing visual design to migrate.

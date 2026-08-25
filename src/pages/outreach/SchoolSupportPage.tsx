@@ -219,7 +219,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`
@@ -359,14 +358,10 @@ const AccordionItem = styled.div<{ $open: boolean }>`
   border: 1px solid
     ${({ $open }) =>
       $open ? `${theme.colors.outlineVariant}55` : `${theme.colors.outlineVariant}25`};
-  border-left: 3px solid
-    ${({ $open }) => ($open ? theme.colors.secondary : 'transparent')};
   transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 
   &:hover {
     box-shadow: ${theme.shadows.neoRaisedLg};
-    border-left-color: ${({ $open }) =>
-      $open ? theme.colors.secondary : `${theme.colors.secondary}55`};
   }
 `
 

@@ -6,8 +6,8 @@ import { theme } from '../styles/theme'
 import logoImg from '../assets/logos/logo-black-removebg-preview.png'
 
 const FooterWrapper = styled.footer`
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaised};
+  background: ${theme.colors.ink};
+  border-top: 1px solid ${theme.colors.hairline};
   padding: 48px ${theme.spacing.marginMobile} 0;
 
   @media (min-width: 768px) {
@@ -135,7 +135,7 @@ const OpenInNewIcon = styled(MdOpenInNew)`
 const BottomBar = styled.div`
   margin-top: 64px;
   padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.65);
+  border-top: 1px solid ${theme.colors.hairline};
   display: flex;
   align-items: center;
   justify-content: space-between;

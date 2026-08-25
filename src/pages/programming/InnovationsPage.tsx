@@ -102,28 +102,8 @@ const BentoCard = styled.div<{ $wide: boolean }>`
     transform: none;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: radial-gradient(
-      440px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(74, 225, 131, 0.12),
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 0;
-  }
-
   &:hover {
     box-shadow: ${theme.shadows.neoRaisedLg};
-  }
-
-  &:hover::before {
-    opacity: 1;
   }
 
   @media (min-width: 720px) {
@@ -190,15 +170,6 @@ const CardDesc = styled.p`
   margin: 0;
 `
 
-// ─── Cursor-follow gradient ───────────────────────────────────────────────────
-
-function handleCardMouseMove(e: React.MouseEvent<HTMLDivElement>, el: HTMLDivElement | null) {
-  if (!el) return
-  const rect = el.getBoundingClientRect()
-  el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
-  el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
-}
-
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function InnovationsSection() {
@@ -244,7 +215,6 @@ export default function InnovationsSection() {
                   $wide={item.wide}
                   ref={(el) => { cardRefs.current[i] = el }}
                   style={{ '--bento-delay': `${Math.min(i * 60, 260)}ms` } as React.CSSProperties}
-                  onMouseMove={(e) => handleCardMouseMove(e, cardRefs.current[i])}
                 >
                   <CardIconWell>
                     <Icon size={24} />

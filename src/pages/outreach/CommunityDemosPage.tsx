@@ -185,7 +185,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`
@@ -415,28 +414,8 @@ const BentoCard = styled.div<{ $wide: boolean }>`
     transform: none;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: radial-gradient(
-      440px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      ${theme.colors.secondary}1e,
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 0;
-  }
-
   &:hover {
-    box-shadow: ${theme.shadows.neoRaisedLg};
-  }
-
-  &:hover::before {
-    opacity: 1;
+    box-shadow: ;
   }
 
   @media (min-width: 720px) {
@@ -669,13 +648,6 @@ function parseStatValue(value: string): { count: number; suffix: string } | null
   return { count: parseInt(m[1], 10), suffix: m[2] }
 }
 
-function handleCardMouseMove(e: React.MouseEvent<HTMLDivElement>, el: HTMLDivElement | null) {
-  if (!el) return
-  const rect = el.getBoundingClientRect()
-  el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
-  el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
-}
-
 // ─── Static data ──────────────────────────────────────────────────────────────
 
 type PhotoEntry = { src: string | null; caption: string; folder?: string }
@@ -866,7 +838,7 @@ export default function CommunityDemosPage() {
                   $wide={venue.wide}
                   ref={(el) => { cardRefs.current[i] = el }}
                   style={{ '--bento-delay': `${Math.min(i * 60, 260)}ms` } as React.CSSProperties}
-                  onMouseMove={(e) => handleCardMouseMove(e, cardRefs.current[i])}
+
                   aria-label={venue.title}
                 >
                   <CardIconWell aria-hidden="true">

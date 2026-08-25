@@ -69,21 +69,15 @@ const accentColor = (accent: Accent) =>
   accent === 'blue' ? theme.colors.primary : theme.colors.secondary
 
 const FAQItem = styled.div<{ $open: boolean; $accent: Accent }>`
-  background: ${({ $open }) => ($open ? theme.colors.surfaceContainerLow : theme.colors.background)};
-  box-shadow: ${({ $open }) => ($open ? theme.shadows.neoRaisedLg : theme.shadows.neoRaised)};
-  border-radius: 16px;
+  background: ${({ $open }) => ($open ? theme.colors.surfaceRaised : theme.colors.surface)};
+  border-radius: ${theme.rounded.md};
   overflow: hidden;
   border: 1px solid
-    ${({ $open }) =>
-      $open ? `${theme.colors.outlineVariant}55` : `${theme.colors.outlineVariant}25`};
-  border-left: 3px solid
-    ${({ $open, $accent }) => ($open ? accentColor($accent) : 'transparent')};
-  transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    ${({ $open }) => ($open ? theme.colors.hairlineStrong : theme.colors.hairline)};
+  transition: background 0.22s ease, border-color 0.22s ease;
 
   &:hover {
-    box-shadow: ${theme.shadows.neoRaisedLg};
-    border-left-color: ${({ $open, $accent }) =>
-      $open ? accentColor($accent) : `${accentColor($accent)}55`};
+    border-color: ${theme.colors.hairlineStrong};
   }
 `
 

@@ -4,13 +4,7 @@
 
 ## What was done (Revision 2)
 
-### Bug fixed
-- Removed unused `const team = TEAMS[activeTeam]` (TS6133) — the variable was declared but
-  never consumed in the render. Fix: deleted the binding entirely. The accordion uses
-  `TEAMS[activeTeam]` inline where needed (it actually doesn't — the accordion maps over all
-  teams directly, so no local binding was required).
-
-### New sections added to the page (8 sections total)
+### Sections (8 total)
 1. **Hero** — upgraded to `HeroLayout` 2-col (copy + `HeroImageWell`). Resolves `heroImage.src`
    from the `hapa bots` folder via `resolve()`; falls back to `HeroImagePlaceholder` with
    `MdImage` icon if no photo exists.
@@ -37,12 +31,6 @@
 - `closingGallery[]` — 6 dashed photo placeholder entries with specific captions.
 - Team `description` fields for RedCat, C-Gull, NC, Hapa Bots expanded with `\n\n` paragraph
   breaks so the accordion renders them multi-paragraph.
-
-### TS strict compliance
-- `noUnusedLocals` clean: removed `MdCheckCircle` import (was imported but not used — only
-  `MdCheckCircleOutline` is used in the accordion highlights).
-- `_FadeUpAnchor` styled-component retained to keep `fadeUp` keyframe referenced.
-- All data accessed via typed `data.*` paths — JSON shape matches what the component reads.
 
 ## Photo folder
 Only `src/assets/photos/outreach/hapa bots/` exists for this page. The one real image

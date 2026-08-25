@@ -44,7 +44,7 @@ const Card = styled.div`
   width: 100%;
   max-width: 520px;
   overflow: hidden;
-  animation: ${cardIn} 0.28s cubic-bezier(0.34, 1.3, 0.64, 1);
+  animation: ${cardIn} 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 `
 
 const CardTop = styled.div<{ $color: string }>`

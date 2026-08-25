@@ -35,10 +35,10 @@ HomePage (inline in App.tsx)
 ## Component Reference
 
 ### `Header` (`src/components/Header.tsx`)
-- Sticky, z-index 100, 80px height
-- Brand: `MdPrecisionManufacturing` icon + **GE**arheads wordmark (GE in secondary/green)
-- Desktop nav: mega-menu with grouped dropdowns for About, STEM, Outreach, Seasons; flat link for Home; "Join the Team" primary CTA
-- Mobile: hamburger → `MobileDrawer` with accordion-style section toggles
+- Fixed, z-index 100, 80px height, flat background with a hairline bottom border (no shadow at rest)
+- Brand: logo image (`assets/logos/logo-black-removebg-preview.png`) + **GE**arheads wordmark in the Asimov font (GE in secondary/green; swaps to `#0088ff` on GE HealthCare sponsor-card hover — see the GE Healthcare easter egg spec)
+- Desktop nav: mega-menu with grouped dropdowns for About, Design (Software/Mechanical), Outreach, Resources; "Contact Us" primary CTA button, top-right. See `ai_context/content-overview.md` for the full current nav tree — it changed since this section was first written.
+- Mobile: hamburger → `StaggeredMenu` (`src/components/reactbits/StaggeredMenu.tsx`) full-screen overlay with accordion children
 - Dropdown state managed by `openLabel` + hover timers; closes on route change and Escape key
 - Nav items with `to != null` use `TriggerNavLinkDropdown` (NavLink-based); items with `to: null` use `TriggerButton`
 

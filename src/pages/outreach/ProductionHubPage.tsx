@@ -449,12 +449,12 @@ const FieldLabel = styled.label`
 `
 
 const fieldBase = `
-  background: transparent;
-  box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e;
-  border-radius: 12px;
-  border: none;
+  background: ${theme.colors.surfaceRaised};
+  border-radius: ${theme.rounded.sm};
+  border: 1px solid ${theme.colors.hairlineStrong};
   padding: 14px 16px;
   width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
 `
 
 const Input = styled.input`
@@ -469,8 +469,8 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.primary}80;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
   }
 `
 
@@ -488,8 +488,8 @@ const Textarea = styled.textarea`
 
   &:focus {
     outline: none;
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.primary}80;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
   }
 `
 
@@ -511,8 +511,8 @@ const Select = styled.select`
 
   &:focus {
     outline: none;
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.primary}80;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
   }
 
   option {
@@ -596,28 +596,8 @@ const BentoCard = styled.div<{ $wide: boolean }>`
     transform: none;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: radial-gradient(
-      440px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(74, 225, 131, 0.12),
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 0;
-  }
-
   &:hover {
-    box-shadow: ${theme.shadows.neoRaisedLg};
-  }
-
-  &:hover::before {
-    opacity: 1;
+    box-shadow: ;
   }
 
   @media (min-width: 720px) {
@@ -904,13 +884,6 @@ function parseStatValue(value: string): { count: number; suffix: string } | null
   return { count: parseInt(m[1], 10), suffix: m[2] }
 }
 
-function handleCardMouseMove(e: React.MouseEvent<HTMLDivElement>, el: HTMLDivElement | null) {
-  if (!el) return
-  const rect = el.getBoundingClientRect()
-  el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
-  el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
-}
-
 // ─── Component ────────────────────────────────────────────────────────────────
 
 const SERVICES  = data.services
@@ -1123,7 +1096,7 @@ export default function ProductionHubPage() {
                   $wide={item.wide}
                   ref={(el) => { cardRefs.current[i] = el }}
                   style={{ '--bento-delay': `${Math.min(i * 60, 260)}ms` } as React.CSSProperties}
-                  onMouseMove={(e) => handleCardMouseMove(e, cardRefs.current[i])}
+
                   aria-label={item.title}
                 >
                   <CardIconWell aria-hidden="true">

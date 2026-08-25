@@ -130,14 +130,10 @@ const DhfItem = styled.div<{ $open: boolean; $accent: DhfAccent }>`
   border: 1px solid
     ${({ $open }) =>
       $open ? `${theme.colors.outlineVariant}55` : `${theme.colors.outlineVariant}25`};
-  border-left: 3px solid
-    ${({ $open, $accent }) => ($open ? dhfAccentColor($accent) : 'transparent')};
   transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
 
   &:hover {
     box-shadow: ${theme.shadows.neoRaisedLg};
-    border-left-color: ${({ $open, $accent }) =>
-      $open ? dhfAccentColor($accent) : `${dhfAccentColor($accent)}55`};
   }
 `
 

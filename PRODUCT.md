@@ -40,7 +40,7 @@ Three things held together, none subordinate to the others, and the combination 
 
 - **Confirmed stack:** React 18 + TypeScript + Vite, styled-components for styling (no Tailwind/CSS modules), react-icons (`md` set), react-router-dom v7, GSAP/Motion for animation. See `CLAUDE.md` for enforced conventions (static content in `src/data/*.json`, theme tokens only, no hardcoded colors/shadows).
 - **Deployment:** currently `ftcgearheads.netlify.app`; deployment target migration is an open decision (TODO.md §1).
-- **Build status (as of this writing):** Home page and most outreach detail pages are built out; Engineering section pages are built; Robot section, Programming detail pages, Seasons pages, and several standalone pages (`/impact`, `/sponsors`, `/media`, `/join`, `/team`) remain stubs or partially built — see `TODO.md` for the authoritative per-page checklist.
+- **Build status (as of this writing):** Home, About, Engineering, Programming, and all 12 Outreach detail pages are built; Software/Engineering sub-pages were consolidated into single scrolling pages with anchor nav. Robot section, Seasons pages, and several standalone pages (`/impact`, `/sponsors`, `/media`, `/join`, `/team`) remain stubs or partially built — see `TODO.md` for the authoritative per-page checklist.
 - **Explicitly undecided / open data conflicts** (do not silently resolve — flag to the user): computers-this-season is recorded as both 54 and 56 in source materials; computers-all-time as both 150 and 156; new-member count as "9 new members" vs. 6 new + 2 student mentors; Worlds appearance years conflict between portfolio text ("2022 & 2024") and posters (2024 & 2025); Maker Faire year-invited-back as both 4th and 5th; Children's Hospital cumulative sessions as both 14 and 21; advocacy-day streak as both 2 and 3 years. Full list in `TODO.md` §10.
 - **Missing/uncollected evidence:** formal sponsor tiers and benefits, downloadable sponsorship packet, tax-status/donation instructions, curated high-res photo library for `/media`, full team roster and member bios, confirmed public contact email (currently `ftcgearheads@gmail.com` pending confirmation), hospital/VA photo-publication permissions.
 - **Accessibility:** no formal standard was specified as a product requirement in source docs, but the team's own pre-deploy checklist (`TODO.md` §11) targets WCAG AA contrast and full keyboard-navigation audit — treat as the working bar.
@@ -49,7 +49,7 @@ Three things held together, none subordinate to the others, and the combination 
 
 - Name: **GEarheads**, Team #16460, Brookfield, Wisconsin.
 - Voice: identity built around student-led ownership of both engineering and outreach; outreach described in-repo as "not optional — it's who we are."
-- Existing visual system: neumorphic dark UI (documented in `ai_context/design-system.md` — read before any visual work).
+- Existing visual system: neumorphic dark UI (documented in `DESIGN.md` — read before any visual work).
 - Contact: ftcgearheads@gmail.com (pending confirmation), 16900 Gebhardt Rd, Brookfield WI, +1 (262) 408-9209. Social: Instagram @ftcgearheads16460, YouTube @ftcgearheads.
 - GE Healthcare origin: the team's DHF (Design History File) engineering framework and GE Elfuns retiree-mentorship partnership both trace to a GE Healthcare connection; exact origin story (FAQ #9 on the home page) is flagged in-repo as unconfirmed with the team.
 

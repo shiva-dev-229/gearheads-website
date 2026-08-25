@@ -38,18 +38,6 @@ const Ring = styled.div<{ $size: number; $reverse?: boolean; $color: string; $op
   animation: ${({ $reverse }) => ($reverse ? spinReverse : spin)} 1.4s linear infinite;
 `
 
-const ThirdRing = styled.div<{ $size: number }>`
-  position: absolute;
-  width: ${({ $size }) => $size}px;
-  height: ${({ $size }) => $size}px;
-  border-radius: 50%;
-  border: 1.5px solid transparent;
-  border-bottom-color: ${theme.colors.tertiary};
-  border-left-color: ${theme.colors.tertiary};
-  opacity: 0.35;
-  animation: ${spin} 2.8s linear infinite;
-`
-
 const Stage = styled.div<{ $size: number }>`
   position: relative;
   width: ${({ $size }) => $size}px;
@@ -88,7 +76,6 @@ export default function Loader({ size = 80, showText = false }: Props) {
   return (
     <Wrapper>
       <Stage $size={outerSize}>
-        <ThirdRing $size={outerSize} />
         <Ring $size={size} $color={theme.colors.primary} $opacity={1} />
         <Ring $size={innerSize} $color={theme.colors.secondary} $opacity={0.55} $reverse />
         <CenterIcon>

@@ -34,8 +34,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${theme.colors.primaryContainer};
-    color: ${theme.colors.onPrimaryContainer};
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.ink};
   }
 
   a {

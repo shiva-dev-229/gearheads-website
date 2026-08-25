@@ -180,9 +180,8 @@ const MachinePanel = styled.div<{ $active: boolean }>`
   `}
 
   @media (max-width: 767px) {
-    flex: none;
-    height: ${({ $active }) => $active ? '420px' : '52px'};
-    transition: height 0.44s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: ${({ $active }) => $active ? '0 0 420px' : '0 0 52px'};
+    transition: flex-basis 0.44s cubic-bezier(0.4, 0, 0.2, 1);
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
@@ -509,7 +508,6 @@ const ProductionHubNote = styled.div`
   background: ${theme.colors.background};
   box-shadow: ${theme.shadows.neoRaisedSm};
   border-radius: 14px;
-  border-left: 3px solid ${theme.colors.secondary}70;
 `
 
 const ProductionHubText = styled.p`

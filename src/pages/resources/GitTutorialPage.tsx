@@ -128,7 +128,7 @@ const ProgressFill = styled.div<{ $pct: number }>`
   width: ${({ $pct }) => $pct}%;
   background: linear-gradient(90deg, ${theme.colors.primary}, ${theme.colors.secondary});
   border-radius: 2px;
-  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 `
 
 const ProgressLabel = styled.span`

@@ -739,17 +739,15 @@ const AwardRow = styled.div<{ $tier: Award['tier']; $accent: string }>`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 7px 10px 7px 12px;
+  padding: 7px 12px;
   border-radius: 8px;
-  border-left: 2px solid ${({ $tier, $accent }) =>
-    $tier === 'world' ? theme.colors.tertiary :
-    $tier === 'state' ? $accent :
-    `${theme.colors.outlineVariant}35`};
+  border: 1px solid ${theme.colors.hairline};
   background: ${theme.colors.surfaceContainerLow};
-  transition: background 0.15s;
+  transition: background 0.15s, border-color 0.15s;
 
   &:hover {
     background: ${theme.colors.surfaceContainerHigh};
+    border-color: ${theme.colors.hairlineStrong};
   }
 `
 

@@ -8,13 +8,15 @@ export const chipWiggle = keyframes`
   100% { transform: rotate(0deg); }
 `
 
-// For chips that start at neoRaisedSm — lifts to neoRaised on hover
+// Flat-system hover (DESIGN.md): border + background step, no shadow upgrade.
 export const chipHover = css`
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  border: 1px solid ${theme.colors.hairline};
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: ${theme.shadows.neoRaised};
+    border-color: ${theme.colors.hairlineStrong};
+    background-color: ${theme.colors.surfaceRaised};
 
     svg {
       @media (prefers-reduced-motion: no-preference) {
@@ -24,24 +26,24 @@ export const chipHover = css`
   }
 
   &:active {
-    transform: translateY(0);
-    box-shadow: ${theme.shadows.neoInsetSm};
+    transform: translateY(0) scale(0.97);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    transition: box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
     &:hover { transform: none; }
     &:active { transform: none; }
   }
 `
 
-// For chips with no base shadow (transparent/border-only) — appears as neoRaisedSm on hover
+// Subtler variant for chips that shouldn't gain a background on hover — border only.
 export const chipHoverSubtle = css`
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  border: 1px solid ${theme.colors.hairline};
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: ${theme.shadows.neoRaisedSm};
+    border-color: ${theme.colors.hairlineStrong};
 
     svg {
       @media (prefers-reduced-motion: no-preference) {
@@ -51,12 +53,11 @@ export const chipHoverSubtle = css`
   }
 
   &:active {
-    transform: translateY(0);
-    box-shadow: ${theme.shadows.neoInsetSm};
+    transform: translateY(0) scale(0.97);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    transition: box-shadow 0.2s ease;
+    transition: border-color 0.2s ease;
     &:hover { transform: none; }
     &:active { transform: none; }
   }

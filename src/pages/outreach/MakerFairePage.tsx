@@ -205,7 +205,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`
@@ -440,28 +439,8 @@ const BentoCard = styled.div<{ $wide: boolean }>`
     transform: none;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: radial-gradient(
-      440px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      ${theme.colors.secondary}1e,
-      transparent 70%
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    z-index: 0;
-  }
-
   &:hover {
-    box-shadow: ${theme.shadows.neoRaisedLg};
-  }
-
-  &:hover::before {
-    opacity: 1;
+    box-shadow: ;
   }
 
   @media (min-width: 720px) {
@@ -530,7 +509,6 @@ const RecruitCallout = styled.div`
   box-shadow: ${theme.shadows.neoRaised};
   border-radius: 22px;
   padding: 32px 36px;
-  border-left: 3px solid ${theme.colors.secondary};
   max-width: 720px;
 `
 
@@ -731,13 +709,6 @@ function parseStatValue(value: string): { count: number; suffix: string } | null
   return { count: parseInt(m[1], 10), suffix: m[2] }
 }
 
-function handleCardMouseMove(e: React.MouseEvent<HTMLDivElement>, el: HTMLDivElement | null) {
-  if (!el) return
-  const rect = el.getBoundingClientRect()
-  el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
-  el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
-}
-
 // ─── Component ────────────────────────────────────────────────────────────────
 
 const HIGHLIGHTS = data.highlights
@@ -927,7 +898,7 @@ export default function MakerFairePage() {
                   $wide={item.wide}
                   ref={(el) => { cardRefs.current[i] = el }}
                   style={{ '--bento-delay': `${Math.min(i * 60, 260)}ms` } as React.CSSProperties}
-                  onMouseMove={(e) => handleCardMouseMove(e, cardRefs.current[i])}
+
                   aria-label={item.title}
                 >
                   <CardIconWell aria-hidden="true">

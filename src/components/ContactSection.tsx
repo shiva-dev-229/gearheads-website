@@ -118,26 +118,6 @@ const PathwayCard = styled.div<{ $span?: 2 }>`
 
   @media (min-width: 1024px) {
     grid-column: ${({ $span }) => ($span === 2 ? 'span 2' : 'span 1')};
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      background: radial-gradient(
-        400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(173, 198, 255, 0.1),
-        transparent 70%
-      );
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    &:hover::before {
-      opacity: 1;
-    }
   }
 `
 
@@ -378,9 +358,7 @@ const FormCard = styled.div`
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background:
-      radial-gradient(ellipse 60% 40% at 90% 10%, ${theme.colors.secondary}07, transparent 70%),
-      radial-gradient(ellipse 60% 40% at 10% 90%, ${theme.colors.primary}07, transparent 70%);
+    background: radial-gradient(ellipse 60% 40% at 90% 10%, ${theme.colors.primary}08, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
@@ -424,28 +402,26 @@ const FieldLabel = styled.label`
 
 const inputBase = `
   width: 100%;
-  background: transparent;
-  box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e;
-  border-radius: 12px;
-  border: none;
+  background: ${theme.colors.surfaceRaised};
+  border-radius: ${theme.rounded.sm};
+  border: 1px solid ${theme.colors.hairlineStrong};
   padding: 16px;
   color: ${theme.colors.onSurface};
   font-family: ${theme.fonts.body};
   font-size: 16px;
-  transition: box-shadow 0.25s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 
   &::placeholder {
     color: ${theme.colors.onSurfaceVariant}4d;
   }
 
   &:hover:not(:focus) {
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.outlineVariant}44;
+    border-color: ${theme.colors.outlineVariant}88;
   }
 
   &:focus {
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 2px ${theme.colors.secondary}22, 0 0 0 1px ${theme.colors.secondary}40;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
     outline: none;
   }
 `
@@ -570,13 +546,6 @@ export default function ContactSection() {
     formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
-  function handlePathwayMouseMove(e: React.MouseEvent<HTMLElement>) {
-    const el = e.currentTarget
-    const rect = el.getBoundingClientRect()
-    el.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`)
-    el.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`)
-  }
-
   return (
     <Section id="contact-us">
       <SectionHeader>
@@ -593,7 +562,6 @@ export default function ContactSection() {
             const Icon = PATHWAY_ICONS[pathway.iconKey]
             const cardProps = {
               $span: pathway.span === 2 ? (2 as const) : undefined,
-              onMouseMove: handlePathwayMouseMove,
             }
             const inner = (
               <>

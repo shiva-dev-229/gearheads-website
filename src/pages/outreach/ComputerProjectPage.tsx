@@ -235,7 +235,6 @@ const ImpactNote = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 18px;
   padding: 22px 26px;
-  border-left: 3px solid ${theme.colors.secondary};
 `
 
 const ImpactIconWell = styled.div`
@@ -784,7 +783,6 @@ const NarrativeBlock = styled.div`
   box-shadow: ${theme.shadows.neoInset};
   border-radius: 20px;
   padding: 32px 28px;
-  border-left: 3px solid ${theme.colors.secondary};
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -808,7 +806,6 @@ const NarrativeCallout = styled.blockquote`
   background: ${theme.colors.background};
   box-shadow: ${theme.shadows.neoRaisedSm};
   border-radius: 14px;
-  border-left: 2px solid ${theme.colors.secondary}60;
   font-family: ${theme.fonts.body};
   font-size: 14px;
   font-style: italic;
@@ -995,12 +992,12 @@ const FieldLabel = styled.label`
 `
 
 const fieldBase = `
-  background: transparent;
-  box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e;
-  border-radius: 12px;
-  border: none;
+  background: ${theme.colors.surfaceRaised};
+  border-radius: ${theme.rounded.sm};
+  border: 1px solid ${theme.colors.hairlineStrong};
   padding: 14px 16px;
   width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
 `
 
 const Input = styled.input`
@@ -1015,8 +1012,8 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.primary}80;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
   }
 `
 
@@ -1034,8 +1031,8 @@ const Textarea = styled.textarea`
 
   &:focus {
     outline: none;
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.primary}80;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
   }
 `
 
@@ -1057,8 +1054,8 @@ const Select = styled.select`
 
   &:focus {
     outline: none;
-    box-shadow: inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e,
-      0 0 0 1px ${theme.colors.primary}80;
+    border-color: ${theme.colors.primary};
+    box-shadow: 0 0 0 3px ${theme.colors.primary}22;
   }
 
   option {

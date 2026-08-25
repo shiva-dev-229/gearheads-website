@@ -52,23 +52,37 @@ export const theme = {
     outlineVariant: '#414755',
     inverseSurface: '#e5e2e1',
     inverseOnSurface: '#313030',
+
+    // Premium redesign tokens (DESIGN.md) — flat system, additive so
+    // unmigrated pages keep working on the tokens above during rollout.
+    ink: '#0a0a0a',
+    surfaceRaised: '#1a1a1a',
+    hairline: 'rgba(255, 255, 255, 0.08)',
+    hairlineStrong: 'rgba(255, 255, 255, 0.14)',
+    textSecondary: '#8f8f93',
   },
 
   shadows: {
-    neoRaised: '8px 8px 16px #080808, -8px -8px 16px #1e1e1e',
-    neoInset: 'inset 8px 8px 16px #080808, inset -8px -8px 16px #1e1e1e',
-    neoRaisedSm: '4px 4px 8px #080808, -4px -4px 8px #1e1e1e',
-    neoInsetSm: 'inset 4px 4px 8px #080808, inset -4px -4px 8px #1e1e1e',
-    neoButtonPrimary:
-      '4px 4px 10px rgba(0, 136, 255, 0.15), -4px -4px 10px rgba(0, 136, 255, 0.05), inset 2px 2px 5px rgba(0, 136, 255, 0.2)',
-    neoButtonSecondary: '4px 4px 10px #080808, -4px -4px 10px #1e1e1e',
-    neoButtonPrimaryActive:
-      'inset 4px 4px 10px rgba(0, 136, 255, 0.2), inset -4px -4px 10px rgba(0, 136, 255, 0.05)',
-    neoButtonSecondaryActive: 'inset 4px 4px 10px #080808, inset -4px -4px 10px #1e1e1e',
-    neoRaisedLg: '12px 12px 24px #080808, -12px -12px 24px #1e1e1e',
+    // Flat system (DESIGN.md): every "neo*" token now renders a crisp hairline
+    // ring via box-shadow instead of a dual-tone embossed shadow. Same token
+    // names/call sites across ~30 unmigrated page files, new flat look — this
+    // is the single highest-leverage edit in the rollout, so page files don't
+    // each need a bespoke shadow-removal pass to stop looking neumorphic.
+    neoRaised: '0 0 0 1px rgba(255, 255, 255, 0.08)',
+    neoRaisedSm: '0 0 0 1px rgba(255, 255, 255, 0.08)',
+    neoRaisedLg: '0 0 0 1px rgba(255, 255, 255, 0.14)',
+    neoInset: 'inset 0 0 0 1px rgba(255, 255, 255, 0.14)',
+    neoInsetSm: 'inset 0 0 0 1px rgba(255, 255, 255, 0.14)',
+    neoButtonPrimary: '0 0 0 1px rgba(173, 198, 255, 0.4)',
+    neoButtonPrimaryActive: 'inset 0 0 0 1px rgba(173, 198, 255, 0.5)',
+    neoButtonSecondary: '0 0 0 1px rgba(255, 255, 255, 0.14)',
+    neoButtonSecondaryActive: 'inset 0 0 0 1px rgba(255, 255, 255, 0.2)',
     glowBlue: '0 0 8px rgba(173, 198, 255, 0.8)',
     glowGreen: '0 0 8px rgba(74, 225, 131, 0.8)',
     glowPink: '0 0 8px rgba(255, 171, 239, 0.8)',
+
+    // Single earned shadow for the flat system — sticky header, dropdowns, modals only.
+    ambient: '0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35)',
   },
 
   fonts: {
@@ -88,6 +102,19 @@ export const theme = {
     sectionPaddingLg: '80px',
     gutter: '24px',
     base: '8px',
+
+    // Premium redesign tokens (DESIGN.md)
+    marginDesktopLg: '80px',
+    sectionPaddingXl: '144px',
+    gutterLg: '32px',
+    proseMax: '680px',
+  },
+
+  rounded: {
+    sm: '8px',
+    md: '14px',
+    pill: '999px',
+    circle: '50%',
   },
 } as const
 

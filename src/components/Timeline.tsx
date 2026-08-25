@@ -133,8 +133,8 @@ const EntryDot = styled.div`
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: ${theme.colors.background};
-  box-shadow: ${theme.shadows.neoRaised};
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.hairline};
   display: none;
   align-items: center;
   justify-content: center;
@@ -152,7 +152,7 @@ const DotCore = styled.div`
   background: var(--entry-color, ${theme.colors.primary});
   box-shadow: 0 0 8px var(--entry-glow, rgba(173, 198, 255, 0.6));
   transform: scale(0.6);
-  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 
   .rb-visible & {
     transform: scale(1);

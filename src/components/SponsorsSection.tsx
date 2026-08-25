@@ -163,22 +163,22 @@ const ArrowBtn = styled.button`
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: ${theme.colors.background};
+  background: ${theme.colors.surface};
+  border: 1px solid ${theme.colors.hairline};
   color: ${theme.colors.onSurfaceVariant};
-  box-shadow: ${theme.shadows.neoRaisedSm};
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: color 0.2s, box-shadow 0.2s;
+  transition: color 0.2s, border-color 0.2s, transform 0.15s;
 
   &:hover {
     color: ${theme.colors.secondary};
-    box-shadow: ${theme.shadows.neoRaised};
+    border-color: ${theme.colors.hairlineStrong};
   }
 
   &:active {
-    box-shadow: ${theme.shadows.neoInsetSm};
+    transform: scale(0.94);
   }
 
   svg {
@@ -197,7 +197,9 @@ const DotsRow = styled.div`
 
 const Dot = styled.button<{ $active: boolean }>`
   height: 7px;
-  width: ${({ $active }) => ($active ? 18 : 7)}px;
+  width: 18px;
+  transform-origin: left center;
+  transform: scaleX(${({ $active }) => ($active ? 1 : 7 / 18)});
   border-radius: 4px;
   border: none;
   padding: 0;
@@ -205,7 +207,7 @@ const Dot = styled.button<{ $active: boolean }>`
   background: ${({ $active }) =>
     $active ? theme.colors.primary : theme.colors.outlineVariant};
   opacity: ${({ $active }) => ($active ? 1 : 0.4)};
-  transition: width 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease;
 `
 
 // ─── Component ────────────────────────────────────────────────

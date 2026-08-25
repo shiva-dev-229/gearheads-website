@@ -469,9 +469,8 @@ const PillarPanel = styled.div<{ $active: boolean }>`
   ${({ $active }) => !$active && `&:hover ${PanelLabelVert} { opacity: 0.65; }`}
 
   @media (max-width: 767px) {
-    flex: none;
-    height: ${({ $active }) => $active ? '340px' : '56px'};
-    transition: height 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+    flex: ${({ $active }) => $active ? '0 0 340px' : '0 0 56px'};
+    transition: flex-basis 0.48s cubic-bezier(0.4, 0, 0.2, 1);
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.045);
   }
@@ -960,7 +959,7 @@ const ActivePill = styled.div<{ $animated: boolean }>`
   pointer-events: none;
   z-index: 0;
   transition: ${({ $animated }) => $animated
-    ? 'left 0.38s cubic-bezier(0.34, 1.15, 0.64, 1), width 0.3s cubic-bezier(0.34, 1.15, 0.64, 1)'
+    ? 'left 0.38s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
     : 'none'};
 `
 
@@ -1388,17 +1387,15 @@ const SubmitBtn = styled.button`
   align-items: center;
   gap: 9px;
   white-space: nowrap;
-  box-shadow: 4px 4px 12px rgba(0,0,0,0.4), -2px -2px 8px #1e1e1e,
-              inset 1px 1px 4px rgba(74,225,131,0.35);
+  box-shadow: 0 0 0 1px rgba(74,225,131,0.4);
   transition: box-shadow 0.18s, transform 0.12s;
 
   &:hover {
-    box-shadow: 4px 4px 12px rgba(0,0,0,0.4), -2px -2px 8px #1e1e1e,
-                inset 1px 1px 4px rgba(74,225,131,0.35), ${theme.shadows.glowGreen};
+    box-shadow: 0 0 0 1px rgba(74,225,131,0.6), ${theme.shadows.glowGreen};
     transform: translateY(-2px);
   }
   &:active {
-    box-shadow: inset 3px 3px 8px rgba(0,0,0,0.3), inset -2px -2px 6px rgba(74,225,131,0.1);
+    box-shadow: inset 0 0 0 1px rgba(74,225,131,0.5);
     transform: translateY(0);
   }
 `
