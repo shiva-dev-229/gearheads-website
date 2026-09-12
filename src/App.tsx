@@ -212,8 +212,8 @@ export default function App() {
                 <Route path="/resources/parts"              element={<PartsPage />} />
                 <Route path="/resources/qualifier-prep"     element={<Navigate to="/resources/qualifier-prep/engineering-portfolio" replace />} />
                 <Route path="/resources/qualifier-prep/:slug" element={<QualifierPrepPage />} />
-                <Route path="/resources/sponsorship"        element={<Navigate to="/resources/sponsorship/why-sponsors-say-yes" replace />} />
-                <Route path="/resources/sponsorship/:slug"  element={<SponsorshipGuidePage />} />
+                <Route path="/resources/sponsorship"        element={<SponsorshipGuidePage />} />
+                <Route path="/resources/sponsorship/:slug"  element={<Navigate to="/resources/sponsorship" replace />} />
 
                 {/* Standalone */}
                 <Route path="/impact"    element={<ImpactPage />} />
