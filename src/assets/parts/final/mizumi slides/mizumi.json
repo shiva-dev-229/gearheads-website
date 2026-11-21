@@ -1,0 +1,36 @@
+{
+  "timestamp": "9/28/2026 23:05:21",
+  "email_address": "28agarwa@elmbrookstu",
+  "name_of_owner": "Aryav Agarwal",
+  "name_of_part": "Misumi Slides",
+  "description": "MISUMI Slides — Linear slide c",
+  "materials": [
+    "6x 3D Printed Pully Brac",
+    "2x 60T_2M_Pulley",
+    "6x M3 40 mm Button He",
+    "2x MISUMI SAR230 Line",
+    "24x 0.5mm Shims",
+    "24x REV Small Pulley Be",
+    "1x Modified L-Bracket",
+    "1x Mounting Block",
+    "1x goBILDA 5203 Series"
+  ],
+  "print_fabrication_notes": "The light blue pulley brackets",
+  "code": [
+    {
+      "file_type": "java",
+      "name": "LinearSlide.java",
+      "code": "package org.firstinspires.ftc.teamcode.subsystems;\n\nimport com.qualcomm.robotcore.hardware.DcMotor;\nimport com.qualcomm.robotcore.hardware.HardwareMap;\nimport com.qualcomm.robotcore.util.ElapsedTime;\n\n/**\n * Two-position (UP / DOWN) linear slide with a PID controller.\n * Call setPosition() to pick a target, then update() every loop.\n * The slides must be fully lowered at init, because the encoder is zeroed there.\n */\npublic class LinearSlide {\n    public enum Position {UP, DOWN}\n\n    // Tune these for your robot (encoder ticks and motor power)\n    private static final int UP_TICKS = 500; // TODO: Use OP Mode to find value\n    private static final int DOWN_TICKS = 0; // TODO: Use OP Mode to find value\n    private static final int TOLERANCE = 10; // TODO: Change if slide position is out of range\n    private static final double KP = 0.003, KI = 0, KD = 0; // TODO: Use OP Mode to find value\n    private static final double HOLD_POWER = 0.15; // Power to hold UP against gravity & OP Mode to Tune\n\n    private final DcMotor motor;\n    private Position target = Position.DOWN; // Setting current state of motor based on enum\n    private boolean active = false;\n\n    private final ElapsedTime timer = new ElapsedTime();\n    private double integral, lastError;\n\n    public LinearSlide(HardwareMap hardwareMap) {\n        motor = hardwareMap.get(DcMotor.class, \"slideMotor\");\n        motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);\n        motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);\n        motor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);\n    }\n\n    public void setPosition(Position position) {\n        target = position;\n        integral = 0;\n        lastError = 0;\n        timer.reset();\n        active = true;\n    }\n\n    /**\n     * Runs the controller. Call once every loop.\n     */\n    public void update() {\n        if (!active) return;\n\n        double error = ticks(target) - motor.getCurrentPosition();\n        double dt = Math.max(timer.seconds(), 1e-3);\n        timer.reset();\n\n        integral += error * dt;\n        double power = KP * error + KI * integral + KD * (error - lastError) / dt;\n        lastError = error;\n\n        if (target == Position.UP) power += HOLD_POWER;\n        motor.setPower(Math.max(-1, Math.min(1, power)));\n    }\n\n    public boolean isAtPosition() {\n        return Math.abs(ticks(target) - motor.getCurrentPosition()) <= TOLERANCE;\n    }\n\n    /**\n     * Cuts power so the slides float down under gravity.\n     */\n    public void stop() {\n        active = false;\n        motor.setPower(0);\n    }\n\n    private int ticks(Position p) {\n        return p == Position.UP ? UP_TICKS : DOWN_TICKS;\n    }\n}\n"
+    },
+    {
+      "file_type": "java",
+      "name": "LinearSlideTuning.java",
+      "code": "package org.firstinspires.ftc.teamcode.testopmodes;\n\nimport com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;\nimport com.qualcomm.robotcore.eventloop.opmode.TeleOp;\n\nimport org.firstinspires.ftc.teamcode.subsystems.LinearSlide;\n\n@TeleOp(name = \"Linear Slide Tuner\", group = \"LinearSlide\")\npublic class LinearSlideTuning extends LinearOpMode {\n    @Override\n    public void runOpMode() throws InterruptedException {\n        LinearSlide slide = new LinearSlide(hardwareMap);\n\n        waitForStart();\n        while (opModeIsActive()) {\n            // P: dpad left / right\n            if (gamepad2.dpadRightWasPressed()) slide.kP += 0.0001;\n            if (gamepad2.dpadLeftWasPressed()) slide.kP -= 0.0001;\n\n            // I: dpad up / down\n            if (gamepad2.dpadUpWasPressed()) slide.kI += 0.000001;\n            if (gamepad2.dpadDownWasPressed()) slide.kI -= 0.000001;\n\n            // D: B up / X down\n            if (gamepad2.bWasPressed()) slide.kD += 0.0001;\n            if (gamepad2.xWasPressed()) slide.kD -= 0.0001;\n\n            // F (hold power): Y up / A down\n            if (gamepad2.yWasPressed()) slide.holdPower += 0.001;\n            if (gamepad2.aWasPressed()) slide.holdPower -= 0.001;\n\n            // Move slide: left bumper = UP, right bumper = DOWN\n            if (gamepad1.leftBumperWasPressed()) slide.setPosition(LinearSlide.Position.UP);\n            if (gamepad1.rightBumperWasPressed()) slide.setPosition(LinearSlide.Position.DOWN);\n\n            // Cut power so you can move the slide by hand and read the ticks\n            if (gamepad1.aWasPressed()) slide.stop();\n\n            slide.update();\n\n            telemetry.addData(\"P\", \"%.6f\", slide.kP);\n            telemetry.addData(\"I\", \"%.10f\", slide.kI);\n            telemetry.addData(\"D\", \"%.6f\", slide.kD);\n            telemetry.addData(\"F (hold power)\", \"%.4f\", slide.holdPower);\n            telemetry.addData(\"Target\", slide.getTarget());\n            telemetry.addData(\"Ticks\", slide.getPositionTicks());\n            telemetry.addData(\"At position\", slide.isAtPosition());\n            telemetry.update();\n        }\n    }\n}\n"
+    },
+    {
+      "file_type": "java",
+      "name": "LinearSlideTest.java",
+      "code": "package org.firstinspires.ftc.teamcode.testopmodes;\n\nimport com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;\nimport com.qualcomm.robotcore.eventloop.opmode.TeleOp;\n\nimport org.firstinspires.ftc.teamcode.subsystems.LinearSlide;\n\n@TeleOp(name = \"Linear Slide Test\", group = \"LinearSlide\")\npublic class LinearSlideTest extends LinearOpMode {\n    @Override\n    public void runOpMode() throws InterruptedException {\n        LinearSlide slide = new LinearSlide(hardwareMap);\n\n        waitForStart();\n        while (opModeIsActive()) {\n            if (gamepad1.leftBumperWasPressed()) {\n                slide.setPosition(LinearSlide.Position.UP);\n            }\n            if (gamepad1.rightBumperWasPressed()) {\n                slide.setPosition(LinearSlide.Position.DOWN);\n            }\n\n            slide.update();\n\n            telemetry.addData(\"Target (UP/DOWN)\", slide.getTarget());\n            telemetry.addData(\"Ticks\", slide.getPositionTicks());\n            telemetry.addData(\"At position\", slide.isAtPosition());\n            telemetry.update();\n        }\n    }\n}\n"
+    }
+  ]
+}

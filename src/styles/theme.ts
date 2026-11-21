@@ -57,6 +57,8 @@ export const theme = {
     // unmigrated pages keep working on the tokens above during rollout.
     ink: '#0a0a0a',
     surfaceRaised: '#1a1a1a',
+    // Matches the opaque white backdrop of exported CAD preview PNGs.
+    cadBackdrop: '#ffffff',
     hairline: 'rgba(255, 255, 255, 0.08)',
     hairlineStrong: 'rgba(255, 255, 255, 0.14)',
     textSecondary: '#8f8f93',

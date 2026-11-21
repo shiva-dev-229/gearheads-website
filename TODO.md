@@ -26,7 +26,7 @@
 - [x] All 45 page stub files created under `src/pages/`
 - [x] Rename package from `nspire-site` to something appropriate in `package.json`
 - [x] Update `<title>` and favicon from TI-Nspire defaults to GEarheads branding
-- [ ] Configure deployment target (migrate from / extend `ftcgearheads.netlify.app`)
+- [x] Configure deployment target — Vercel (`vercel.json`)
 - [ ] Verify `public/assets/sponsor-logos` symlink resolves correctly in production build
 
 ---
@@ -481,7 +481,7 @@ All season pages are stubs — content will be added as materials and time allow
 - [ ] Audit keyboard navigation and focus management across the site
 - [ ] Check color contrast (WCAG AA) for key text/background combinations
 - [ ] Run Lighthouse performance audit
-- [ ] Confirm deployment target (keep existing `ftcgearheads.netlify.app` or add new domain)
+- [x] Confirm deployment target — Vercel
 - [ ] Update `.gitignore` for any new artifacts added during build
 - [x] Remove or update any remaining TI-Nspire references in components (`ContactSection` placeholder data, component-map.md, content-overview.md)
 

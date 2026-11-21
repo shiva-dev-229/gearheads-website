@@ -1,0 +1,14 @@
+{
+  "timestamp": "10/12/2026 18:45:39",
+  "email_address": "27emacir@elmbrookstudents.org",
+  "name_of_owner": "Roman Emaci",
+  "name_of_part": "Hub Protection Plates",
+  "description": "The plate is a polycarbonate sheet cut to cover more than the REV robotics Control Hub area, raised off the hub’s surface using threaded standoffs that connects the outer and inner plates of the robot. The standoff height prevents the impacts to the protection plate from reaching the Control Hub along with the protection plates material(Polycarbonate) high impact resistance to prevent shattering.",
+  "materials": [
+    "Polycarbonate sheet, 1/4“",
+    "Standoffs, M4 * 2 inch (6mm round)",
+    "M4 button head screws, 14mm"
+  ],
+  "print_fabrication_notes": "Assembly instructions\n1. Take a sheet of Polycarbonate and put measure marks for how you want to cut it based on your robots design and how much area you want to cover the control hub.\n2. Cut the Polycarbonate sheet to your measurement requirements and make sure to filet any sharp corners\n3. Drill the holes you marked in step 1\n4. Align the finished piece of polycarbonate protection plate to the location of your REV robotics Control hub.\n5. Align the standoffs on the holes and then put M4 Button head 14mm screws on both sides of the standoffs",
+  "code": []
+}

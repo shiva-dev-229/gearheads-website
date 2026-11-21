@@ -1,0 +1,13 @@
+{
+  "timestamp": "10/18/2026 12:28:07",
+  "email_address": "32sinurb@elmbrookstudents.org",
+  "name_of_owner": "Benjamin Sinur",
+  "name_of_part": "Battery Holder",
+  "description": "There are 4 different types of battery holder each one for a different purpose. The 2 of them are for the GObilda battery. One of them is for the battery being vertical. And the other is for it being for the battery when it is horizontal. The other 2 battery holders are for REV Robotics. One of them is also for the battery being vertical. And the other one is also for it being horizontal.",
+  "materials": [
+    "PLA Material"
+  ],
+  "print_fabrication_notes": "Print on 3d printer.",
+  "files": "STL File ( need smaller files for drivetrain, mizumi slides, claw ) -> reach out to shivansh, Image ( for display on website )",
+  "code": []
+}

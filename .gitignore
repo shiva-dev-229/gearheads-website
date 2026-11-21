@@ -70,3 +70,12 @@ pnpm-lock.yaml
 
 # Local lesson-plan / working notes, not part of the site
 /temp/
+
+# Local screenshots folder
+/scs/
+
+# Vercel CLI local link
+.vercel/
+
+# Source-resolution STL not used by the site (68MB, exceeds GitHub's 50MB warning)
+src/assets/parts/claw.stl
